@@ -121,6 +121,13 @@
 %% Of note is the shared affiliation of the first two authors, and the
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
+\author{Anne-Marie Rommerdahl}
+\affiliation{%
+ \institution{SDU}
+ \city{Odense}
+ \country{Denmark}}
+\email{anrom25@student.sdu.dk}
+
 \author{Ben Trovato}
 \authornote{Both authors contributed equally to this research.}
 \email{trovato@corporation.com}
@@ -148,42 +155,6 @@
   \city{Rocquencourt}
   \country{France}
 }
-
-\author{Aparna Patel}
-\affiliation{%
- \institution{Rajiv Gandhi University}
- \city{Doimukh}
- \state{Arunachal Pradesh}
- \country{India}}
-
-\author{Huifen Chan}
-\affiliation{%
-  \institution{Tsinghua University}
-  \city{Haidian Qu}
-  \state{Beijing Shi}
-  \country{China}}
-
-\author{Charles Palmer}
-\affiliation{%
-  \institution{Palmer Research Laboratories}
-  \city{San Antonio}
-  \state{Texas}
-  \country{USA}}
-\email{cpalmer@prl.com}
-
-\author{John Smith}
-\affiliation{%
-  \institution{The Th{\o}rv{\"a}ld Group}
-  \city{Hekla}
-  \country{Iceland}}
-\email{jsmith@affiliation.org}
-
-\author{Julius P. Kumquat}
-\affiliation{%
-  \institution{The Kumquat Consortium}
-  \city{New York}
-  \country{USA}}
-\email{jpkumquat@consortium.net}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -271,6 +242,11 @@ The ``\verb|acmart|'' document class can be used to prepare articles
 for any ACM publication --- conference or journal, and for any stage
 of publication, from review to final ``camera-ready'' copy, to the
 author's own version, with {\itshape very} few changes to the source.
+
+\section{Background and Related Work}
+Despite the growing focus on low-code platforms, there is still a limited focus on the reuse of models. Some low-code development platforms (LCDP) offer catalogs of reusable artifacts, though these are often generic in nature\cite{LowCodePlatform}.
+Some proposed tools focus on providing recommendations for models to the user, with these recommendations being based on a pre-defined collection of models. Notably, two of these tools focus on collections of models created by 'experts'\cite{OSTRICH}\cite{ReuseKnowledgeGraphs}.
+On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool (how to insert reference to existin tool??). 
 
 \section{Template Overview}
 As noted in the introduction, the ``\verb|acmart|'' document class can
