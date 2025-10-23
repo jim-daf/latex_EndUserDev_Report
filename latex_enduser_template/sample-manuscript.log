@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.21)  23 OCT 2025 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.21)  23 OCT 2025 23:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -972,32 +972,35 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 Package natbib Warning: Citation `ScratchExample' on page 2 undefined on input line 264.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 6.6pt on input line 293.
+(Font)              scaled to size 6.6pt on input line 292.
 
 
 [2.2{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-4.enc}]
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+
 
 [3.3]
 
 [4.4]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 485.
+(Font)              scaled to size 9.0pt on input line 484.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 519.
+(Font)              scaled to size 8.0pt on input line 518.
 
 
 [5.5]
 <sample-franklin.png, id=194, 411.5375pt x 323.2075pt>
 File: sample-franklin.png Graphic file (type png)
 <use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 614.
+Package pdftex.def Info: sample-franklin.png  used on input line 613.
 (pdftex.def)             Requested size: 430.00462pt x 337.71095pt.
 
 
 [6.6{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
 
 [7.7 <./sample-franklin.png>]
-Overfull \hbox (5.76688pt too wide) in paragraph at lines 669--671
+Overfull \hbox (5.76688pt too wide) in paragraph at lines 668--670
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) The bib-li-og-ra-phy is in-cluded in your source doc-u-ment with these two com-mands, placed just be-fore the [][]\T1/zi4/m/n/9 \end{document}
  []
 
@@ -1005,7 +1008,7 @@ Overfull \hbox (5.76688pt too wide) in paragraph at lines 669--671
 
 [8.8]
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 9.0pt on input line 787.
+(Font)              scaled to size 9.0pt on input line 786.
 
 
 [9.9] Processing 'acks' comment.
@@ -1043,7 +1046,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package natbib Warning: There were undefined citations.
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 842.
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 841.
 
 
 
@@ -1062,13 +1065,13 @@ Package rerunfilecheck Info: File `sample-manuscript.out' has not changed.
 Here is how much of TeX's memory you used:
  21694 strings out of 468081
  357396 string characters out of 5425788
- 839096 words of memory out of 5000000
+ 838095 words of memory out of 5000000
  49204 multiletter control sequences out of 15000+600000
  833596 words of font info for 475 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,17n,131p,1090b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathRM.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-manuscript.pdf (12 pages, 714874 bytes).
+Output written on sample-manuscript.pdf (12 pages, 714549 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  101 named destinations out of 1000 (max. 500000)

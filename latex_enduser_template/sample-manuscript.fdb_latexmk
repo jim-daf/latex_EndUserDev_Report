@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex sample-manuscript"] 1761252568.94359 "sample-manuscript.aux" "sample-manuscript.bbl" "sample-manuscript" 1761253213.72019 0
+["bibtex sample-manuscript"] 1761252568.94359 "sample-manuscript.aux" "sample-manuscript.bbl" "sample-manuscript" 1761253880.12864 0
   "./ACM-Reference-Format.bst" 1761236224 96784 12e0ced1522ea2bfa9b2fb12855c7e9e ""
   "./sample-base.bib" 1761252551 55655 893024c01d68f0ec7dc5961235987781 ""
-  "sample-manuscript.aux" 1761253212 9095 3982673821ef1f39d64cac2775c8572d "pdflatex"
+  "sample-manuscript.aux" 1761253879 9095 3982673821ef1f39d64cac2775c8572d "pdflatex"
   (generated)
   "sample-manuscript.bbl"
   "sample-manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1761253210.27217 "c:/Users/jimda/Desktop/latex/latex_EndUserDev_Report/latex_enduser_template/sample-manuscript.tex" "sample-manuscript.pdf" "sample-manuscript" 1761253213.72094 0
+["pdflatex"] 1761253877.22905 "c:/Users/jimda/Desktop/latex/latex_EndUserDev_Report/latex_enduser_template/sample-manuscript.tex" "sample-manuscript.pdf" "sample-manuscript" 1761253880.12923 0
   "C:/Users/jimda/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761049547 186066 c797610d3c7aadc509276bf4bcd8a24b ""
   "C:/Users/jimda/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1761049317 13321623 9c8deaf527f1ffc07227f5b9cdc1cd32 ""
   "C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-4.enc" 1557958141 7693 0f2dce6d313c82989ec3a67fc24df2a0 ""
@@ -212,13 +212,13 @@
   "C:/Users/jimda/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/jimda/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "acmart.cls" 1761236224 126053 bf94e8b8ef9ae7d25b87840eb83e79b2 ""
-  "c:/Users/jimda/Desktop/latex/latex_EndUserDev_Report/latex_enduser_template/sample-manuscript.tex" 1761253208 34369 5f1f754c8212afcdde6d533c7071f0f7 ""
-  "comment.cut" 1761253212 64 0754424945249fbfae64d8991d811e64 "pdflatex"
+  "c:/Users/jimda/Desktop/latex/latex_EndUserDev_Report/latex_enduser_template/sample-manuscript.tex" 1761253876 34233 8bebc8f0de74c42b678c599056ae53c3 ""
+  "comment.cut" 1761253878 64 0754424945249fbfae64d8991d811e64 "pdflatex"
   "sample-franklin.png" 1761236224 95030 b5b117690b64777baa16f25a8c628f74 ""
-  "sample-manuscript.aux" 1761253212 9095 3982673821ef1f39d64cac2775c8572d "pdflatex"
+  "sample-manuscript.aux" 1761253879 9095 3982673821ef1f39d64cac2775c8572d "pdflatex"
   "sample-manuscript.bbl" 1761252569 26012 5de10d4247b5ef203364d07b6535443b "bibtex sample-manuscript"
-  "sample-manuscript.out" 1761253212 4642 66bef49d59c8fd3db125c6cbed22d2a8 "pdflatex"
-  "sample-manuscript.tex" 1761253208 34369 5f1f754c8212afcdde6d533c7071f0f7 ""
+  "sample-manuscript.out" 1761253879 4642 66bef49d59c8fd3db125c6cbed22d2a8 "pdflatex"
+  "sample-manuscript.tex" 1761253876 34233 8bebc8f0de74c42b678c599056ae53c3 ""
   (generated)
   "comment.cut"
   "sample-manuscript.aux"
