@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{40}
+\begin{thebibliography}{43}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -121,6 +121,17 @@ Retrieved May 27, 2019 from \tempurl}
 \newblock \bibinfo{journal}{\emph{Robotics Aut. Systems}}. Manuscript submitted
   for review.
 \newblock
+
+
+\bibitem[Bock and Frank(2021)]%
+        {LowCodePlatform}
+\bibfield{author}{\bibinfo{person}{Alexander Bock} {and}
+  \bibinfo{person}{Ulrich Frank}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Low-Code Platform}.
+\newblock \bibinfo{journal}{\emph{Business and Information Systems
+  Engineering}}  \bibinfo{volume}{63} (\bibinfo{year}{2021}).
+\newblock
+\href{https://doi.org/10.1007/s12599-021-00726-8}{doi:\nolinkurl{10.1007/s12599-021-00726-8}}
 
 
 \bibitem[Bornmann et~al\mbox{.}(2019)]%
@@ -298,6 +309,22 @@ Retrieved May 27, 2019 from \tempurl}
 \shownote{Fourier integral operators}.
 
 
+\bibitem[Ibrahimi and Moudilos(2022)]%
+        {ReuseKnowledgeGraphs}
+\bibfield{author}{\bibinfo{person}{Ilirian Ibrahimi} {and}
+  \bibinfo{person}{Dimitris Moudilos}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Towards model reuse in low-code development
+  platforms based on knowledge graphs}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 25th International Conference on
+  Model Driven Engineering Languages and Systems: Companion Proceedings}}
+  (Montreal, Quebec, Canada) \emph{(\bibinfo{series}{MODELS '22})}.
+  \bibinfo{publisher}{Association for Computing Machinery},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{826–836}.
+\newblock
+\showISBNx{9781450394673}
+\href{https://doi.org/10.1145/3550356.3561570}{doi:\nolinkurl{10.1145/3550356.3561570}}
+
+
 \bibitem[IEEE(2004)]%
         {2004:ITE:1009386.1010128}
 IEEE \bibinfo{year}{2004}\natexlab{}.
@@ -367,6 +394,19 @@ IEEE \bibinfo{year}{2004}\natexlab{}.
   (\bibinfo{date}{Jan.-March} \bibinfo{year}{2005}).
 \newblock
 \href{https://doi.org/10.1145/1057270.1057278}{doi:\nolinkurl{10.1145/1057270.1057278}}
+
+
+\bibitem[Lourenço et~al\mbox{.}(2021)]%
+        {OSTRICH}
+\bibfield{author}{\bibinfo{person}{Hugo Lourenço}, \bibinfo{person}{Carla
+  Ferreira}, {and} \bibinfo{person}{João~Costa Seco}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{OSTRICH - A Type-Safe Template Language for
+  Low-Code Development}. In \bibinfo{booktitle}{\emph{2021 ACM/IEEE 24th
+  International Conference on Model Driven Engineering Languages and Systems
+  (MODELS)}}. \bibinfo{pages}{216--226}.
+\newblock
+\href{https://doi.org/10.1109/MODELS50736.2021.00030}{doi:\nolinkurl{10.1109/MODELS50736.2021.00030}}
 
 
 \bibitem[Novak(2003)]%
