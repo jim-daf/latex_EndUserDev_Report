@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sample-manuscript.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: sample-base.bib
+Warning--I didn't find a database entry for "ScratchExample"
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--page numbers missing in both pages and numpages fields in LowCodePlatform
+Warning--empty publisher in ChallengesInBlockBasedEnvironments
+Warning--empty address in ChallengesInBlockBasedEnvironments
+Warning--page numbers missing in both pages and numpages fields in ChallengesInBlockBasedEnvironments
+Warning--empty author in 2004:ITE:1009386.1010128
+Warning--page numbers missing in both pages and numpages fields in Koschke2006SoftwareClonesSurvey
+Warning--articleno or eid field, but no numpages field, in Lee05
+Warning--page numbers missing in both pages and numpages fields in Lee05
+Warning--articleno or eid, but no pages or numpages field in Lee05
+Warning--empty publisher in OSTRICH
+Warning--empty address in OSTRICH
+Warning--page numbers missing in both pages and numpages fields in blockBasedLanguagesForRobotProgramming
+Warning--page numbers missing in both pages and numpages fields in Reiser2014
+Warning--articleno or eid field, but no numpages field, in rous08
+Warning--page numbers missing in both pages and numpages fields in rous08
+Warning--articleno or eid, but no pages or numpages field in rous08
+You've used 47 entries,
+            6273 wiz_defined-function locations,
+            2045 strings with 29724 characters,
+and the built_in function-call counts, 44923 in all, are:
+= -- 5684
+> -- 1115
+< -- 5
++ -- 358
+- -- 460
+* -- 3023
+:= -- 4350
+add.period$ -- 244
+call.type$ -- 47
+change.case$ -- 280
+chr.to.int$ -- 45
+cite$ -- 63
+duplicate$ -- 4171
+empty$ -- 2942
+format.name$ -- 491
+if$ -- 10653
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 107
+newline$ -- 479
+num.names$ -- 322
+pop$ -- 1447
+preamble$ -- 1
+purify$ -- 646
+quote$ -- 0
+skip$ -- 1567
+stack$ -- 0
+substring$ -- 3450
+swap$ -- 390
+text.length$ -- 95
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1140
+warning$ -- 16
+while$ -- 313
+width$ -- 0
+write$ -- 1014
+(There were 17 warnings)
