@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.21)  23 OCT 2025 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.21)  23 OCT 2025 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -788,191 +788,191 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  Excluding 'CCSXML' comment.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 241.
-LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF on input line 241.
+(Font)              scaled to size 12.0pt on input line 248.
+LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF on input line 248.
  (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/libertine\t1linuxbiolinumt-tlf.fd
 File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/LinuxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 241.
+(Font)              scaled to size 12.0pt on input line 248.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 241.
+(Font)              scaled to size 12.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 241.
+(Font)              scaled to size 9.0pt on input line 248.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
  (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 10.95pt on input line 241.
+(Font)              scaled to size 10.95pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.1pt on input line 241.
-LaTeX Font Info:    Trying to load font information for TS1+LinuxBiolinumT-TLF on input line 241.
+(Font)              scaled to size 6.1pt on input line 248.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxBiolinumT-TLF on input line 248.
  (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/libertine\ts1linuxbiolinumt-tlf.fd
 File: TS1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxBiolinumT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 241.
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 241.
+(Font)              scaled to size 5.5pt on input line 248.
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 248.
  (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/libertine\ts1linuxlibertinet-tlf.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 241.
+(Font)              scaled to size 5.5pt on input line 248.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 241.
+(Font)              scaled to size 7.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 241.
+(Font)              scaled to size 6.0pt on input line 248.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 241.
+(Font)              scaled to size 8.0pt on input line 248.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 243.
+(Font)              scaled to size 9.0pt on input line 250.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 245.
+(Font)              scaled to size 9.0pt on input line 252.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
+(Font)              scaled to size 6.6pt on input line 252.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 245.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 256.
+(Font)              scaled to size 6.6pt on input line 252.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 263.
  (C:\Users\jimda\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 256.
+(Font)              scaled to size 9.0pt on input line 263.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 259.
+(Font)              scaled to size 9.0pt on input line 266.
 
 
 [1.1{C:/Users/jimda/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_afusau.enc}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 264.
+(Font)              scaled to size 9.0pt on input line 271.
 
 
-Package natbib Warning: Citation `ScratchExample' on page 2 undefined on input line 264.
+Package natbib Warning: Citation `ScratchExample' on page 2 undefined on input line 271.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 6.6pt on input line 292.
+(Font)              scaled to size 6.6pt on input line 299.
 
 
 [2.2{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-4.enc}]
@@ -984,23 +984,23 @@ Underfull \vbox (badness 1953) has occurred while \output is active []
 
 [4.4]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 484.
+(Font)              scaled to size 9.0pt on input line 491.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 518.
+(Font)              scaled to size 8.0pt on input line 525.
 
 
 [5.5]
 <sample-franklin.png, id=194, 411.5375pt x 323.2075pt>
 File: sample-franklin.png Graphic file (type png)
 <use sample-franklin.png>
-Package pdftex.def Info: sample-franklin.png  used on input line 613.
+Package pdftex.def Info: sample-franklin.png  used on input line 620.
 (pdftex.def)             Requested size: 430.00462pt x 337.71095pt.
 
 
 [6.6{C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
 
 [7.7 <./sample-franklin.png>]
-Overfull \hbox (5.76688pt too wide) in paragraph at lines 668--670
+Overfull \hbox (5.76688pt too wide) in paragraph at lines 675--677
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) The bib-li-og-ra-phy is in-cluded in your source doc-u-ment with these two com-mands, placed just be-fore the [][]\T1/zi4/m/n/9 \end{document}
  []
 
@@ -1008,7 +1008,7 @@ Overfull \hbox (5.76688pt too wide) in paragraph at lines 668--670
 
 [8.8]
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 9.0pt on input line 786.
+(Font)              scaled to size 9.0pt on input line 793.
 
 
 [9.9] Processing 'acks' comment.
@@ -1046,7 +1046,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package natbib Warning: There were undefined citations.
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 841.
+Class acmart Warning: \vspace should only be used to provide space above/below surrounding objects on input line 848.
 
 
 
@@ -1063,15 +1063,15 @@ Package rerunfilecheck Info: File `sample-manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 66BEF49D59C8FD3DB125C6CBED22D2A8;4642.
  ) 
 Here is how much of TeX's memory you used:
- 21694 strings out of 468081
- 357396 string characters out of 5425788
- 838095 words of memory out of 5000000
- 49204 multiletter control sequences out of 15000+600000
- 833596 words of font info for 475 fonts, out of 8000000 for 9000
+ 21690 strings out of 468081
+ 357297 string characters out of 5425788
+ 838520 words of memory out of 5000000
+ 49205 multiletter control sequences out of 15000+600000
+ 833115 words of font info for 472 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,17n,131p,1090b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathRM.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/jimda/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-manuscript.pdf (12 pages, 714549 bytes).
+Output written on sample-manuscript.pdf (12 pages, 714655 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  101 named destinations out of 1000 (max. 500000)
