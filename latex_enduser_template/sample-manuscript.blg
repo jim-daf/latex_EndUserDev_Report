@@ -8,13 +8,14 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: sample-base.bib
-Warning--I didn't find a database entry for "ScratchExample"
+Warning--I didn't find a database entry for "Lin2021Landscape"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--page numbers missing in both pages and numpages fields in David2017
 Warning--page numbers missing in both pages and numpages fields in LowCodePlatform
 Warning--empty publisher in ChallengesInBlockBasedEnvironments
 Warning--empty address in ChallengesInBlockBasedEnvironments
@@ -28,48 +29,49 @@ Warning--empty publisher in OSTRICH
 Warning--empty address in OSTRICH
 Warning--page numbers missing in both pages and numpages fields in blockBasedLanguagesForRobotProgramming
 Warning--page numbers missing in both pages and numpages fields in Reiser2014
+Warning--page numbers missing in both pages and numpages fields in Ritschel2025
 Warning--articleno or eid field, but no numpages field, in rous08
 Warning--page numbers missing in both pages and numpages fields in rous08
 Warning--articleno or eid, but no pages or numpages field in rous08
-You've used 47 entries,
+You've used 50 entries,
             6273 wiz_defined-function locations,
-            2045 strings with 29724 characters,
-and the built_in function-call counts, 44923 in all, are:
-= -- 5684
-> -- 1115
+            2064 strings with 30426 characters,
+and the built_in function-call counts, 48539 in all, are:
+= -- 6178
+> -- 1296
 < -- 5
-+ -- 358
-- -- 460
-* -- 3023
-:= -- 4350
-add.period$ -- 244
-call.type$ -- 47
-change.case$ -- 280
-chr.to.int$ -- 45
-cite$ -- 63
-duplicate$ -- 4171
-empty$ -- 2942
-format.name$ -- 491
-if$ -- 10653
++ -- 421
+- -- 520
+* -- 3349
+:= -- 4728
+add.period$ -- 259
+call.type$ -- 50
+change.case$ -- 312
+chr.to.int$ -- 48
+cite$ -- 68
+duplicate$ -- 4430
+empty$ -- 3129
+format.name$ -- 563
+if$ -- 11540
 int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 107
-newline$ -- 479
-num.names$ -- 322
-pop$ -- 1447
+missing$ -- 119
+newline$ -- 506
+num.names$ -- 343
+pop$ -- 1557
 preamble$ -- 1
-purify$ -- 646
+purify$ -- 702
 quote$ -- 0
-skip$ -- 1567
+skip$ -- 1645
 stack$ -- 0
-substring$ -- 3450
-swap$ -- 390
+substring$ -- 3660
+swap$ -- 408
 text.length$ -- 95
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1140
-warning$ -- 16
-while$ -- 313
+type$ -- 1188
+warning$ -- 18
+while$ -- 324
 width$ -- 0
-write$ -- 1014
-(There were 17 warnings)
+write$ -- 1072
+(There were 19 warnings)
