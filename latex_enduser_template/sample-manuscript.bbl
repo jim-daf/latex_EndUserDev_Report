@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{43}
+\begin{thebibliography}{47}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -179,6 +179,20 @@ Retrieved May 27, 2019 from \tempurl}
   \bibinfo{year}{2007}), \bibinfo{numpages}{50}~pages.
 \newblock
 \href{https://doi.org/10.1145/1219092.1219093}{doi:\nolinkurl{10.1145/1219092.1219093}}
+
+
+\bibitem[Cossio-Mercado and Fernández(2025)]%
+        {ChallengesInBlockBasedEnvironments}
+\bibfield{author}{\bibinfo{person}{Christian~Gustavo Cossio-Mercado} {and}
+  \bibinfo{person}{Gonzalo~Pablo Fernández}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Challenges in the development of a block-based
+  programming environment for Arduino}. In \bibinfo{booktitle}{\emph{50a
+  Conferencia Latinoamericana de Informática (CLEI)}}.
+\newblock
+\urldef\tempurl%
+\url{https://www.researchgate.net/publication/396119595}
+\showURL{%
+\tempurl}
 
 
 \bibitem[Douglass et~al\mbox{.}(1998)]%
@@ -363,6 +377,20 @@ IEEE \bibinfo{year}{2004}\natexlab{}.
 \newblock
 
 
+\bibitem[Koschke(2006)]%
+        {Koschke2006SoftwareClonesSurvey}
+\bibfield{author}{\bibinfo{person}{Rainer Koschke}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Survey of Research on Software Clones}.
+\newblock \bibinfo{journal}{\emph{Dagstuhl Seminar Proceedings}}
+  \bibinfo{volume}{06301} (\bibinfo{year}{2006}).
+\newblock
+\urldef\tempurl%
+\url{http://drops.dagstuhl.de/opus/volltexte/2007/962}
+\showURL{%
+\tempurl}
+
+
 \bibitem[Kosiur(2001)]%
         {Kosiur01}
 \bibfield{author}{\bibinfo{person}{David Kosiur}.}
@@ -407,6 +435,24 @@ IEEE \bibinfo{year}{2004}\natexlab{}.
   (MODELS)}}. \bibinfo{pages}{216--226}.
 \newblock
 \href{https://doi.org/10.1109/MODELS50736.2021.00030}{doi:\nolinkurl{10.1109/MODELS50736.2021.00030}}
+
+
+\bibitem[Mayr-Dorn et~al\mbox{.}(2021)]%
+        {blockBasedLanguagesForRobotProgramming}
+\bibfield{author}{\bibinfo{person}{Christoph Mayr-Dorn}, \bibinfo{person}{Mario
+  Winterer}, \bibinfo{person}{Christian Salomon}, \bibinfo{person}{Doris
+  Hohensinger}, {and} \bibinfo{person}{Rudolf Ramler}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Considerations for using Block-Based Languages for
+  Industrial Robot Programming – a Case Study}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Conference on Industrial Robot
+  Programming}}. \bibinfo{publisher}{Johannes Kepler University},
+  \bibinfo{address}{Linz, Austria}.
+\newblock
+\newblock
+\shownote{Supported by the Austrian Ministry for Transport, Innovation and
+  Technology, the Federal Ministry for Digital and Economic Affairs, and the
+  Province of Upper Austria in the frame of the COMET center SCCH.}.
 
 
 \bibitem[Novak(2003)]%
@@ -591,6 +637,21 @@ Retrieved May 27, 2017 from \tempurl}
 \url{http://www.ctan.org/pkg/acmart}
 \showURL{%
 Retrieved May 27, 2017 from \tempurl}
+
+
+\bibitem[Zakeri-Nasrabadi et~al\mbox{.}(2023)]%
+        {Zakeri2023CodeSimilarityReview}
+\bibfield{author}{\bibinfo{person}{Morteza Zakeri-Nasrabadi},
+  \bibinfo{person}{Saeed Parsa}, \bibinfo{person}{Mohammad Ramezani},
+  \bibinfo{person}{Chanchal Roy}, {and} \bibinfo{person}{Masoud Ekhtiarzadeh}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{A Systematic Literature Review on Source Code
+  Similarity Measurement and Clone Detection: Techniques, Applications, and
+  Challenges}.
+\newblock \bibinfo{journal}{\emph{Journal of Systems and Software}}
+  \bibinfo{volume}{200} (\bibinfo{year}{2023}), \bibinfo{pages}{111582}.
+\newblock
+\href{https://doi.org/10.1016/j.jss.2023.111582}{doi:\nolinkurl{10.1016/j.jss.2023.111582}}
 
 
 \end{thebibliography}
