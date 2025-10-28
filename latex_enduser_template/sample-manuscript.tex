@@ -273,6 +273,13 @@ of publication, from review to final ``camera-ready'' copy, to the
 author's own version, with {\itshape very} few changes to the source.
 
 \section{Background and Related Work}
+%% ---- Background ----
+%% 1 Background abt. reuse. What is it, and why is it important? (anne)
+%% 2 What is the current state of 'reuse' for low-code? Anne paragraph (anne)
+%% 3 In what ways have different low-code tools tackled 'reuse'? We look at different low-code tools, not just block-based ones. What are the strengths and weaknesses of their approach to reuse? MAKE SURE TO MENTION TOOLS BY NAME! (dimitris)
+%% 4 Now we look at block-based tools for robots (for example, scratch, VEXcode GO, OpenRoberta). How do they tackle reuse? (jeremy + Mohamad)
+%% 5 Based on the identified weaknesses in current practices for reuse, we propose our own idea (explain how it's gonna work) (Nasifa)
+
 %% ----Re-done intro----
 Software reuse is a broad term, that refers to the practice of reusing previosuly written code, rather than coding from scratch. It is one of the key practices of software engineering. It is in fact such an important part of software engineering, that one of the ways to measure the quality of software is by it's 'Reusability'(cite ref to reusability QA here) - i.e. the degree to which the application or its components can be reused. 
 There are many different ways to do reuse in software engineering. Software libraries and frameworks are good examples of software that are intended to be reused. Developers may also scour the internet for things such as open-source software, or code snippets from websites like StackOverFlow, which can be reused. 
@@ -288,7 +295,11 @@ Despite reuse being an important practice in software engineering, there is stil
 %% ---------------------
 Despite the growing focus on low-code platforms, there is still a limited focus on the reuse of models. Some low-code development platforms (LCDP) offer catalogs of reusable artifacts, though these are often generic in nature\cite{LowCodePlatform}.
 Some proposed tools focus on providing recommendations for models to the user, with these recommendations being based on a pre-defined collection of models. Notably, two of these tools focus on collections of models created by 'experts'\cite{OSTRICH}\cite{ReuseKnowledgeGraphs}.
-On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool \cite{ScratchExample}.
+On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool\cite{ScratchExample}.
+
+To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
+For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
+However, current platforms\cite{SevenDevPlatforms} tend to provide features for block composition rather than promoting reuse, and none offer explicit visualizations that highlight reusable components. The absence of such features represents a barrier to achieving higher levels of efficiency and modular design.
 
 Block-based programming is a modality commonly found in imperative programming tools for end-users, blocks are typically used to
 describe imperative, story like sequences of commands, like animations or robot and  manufacturing steps\cite{Ritschel2025}. Moreover, BBP is an increasingly widespread approach to programming that uses 
@@ -296,13 +307,8 @@ a programming-command-as-puzzle-piece metaphor to help students understand how a
 where commands can be used \cite{David2017}.
 Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting 
 the transition to text-based languages rather than exploring how features within BBP environments \cite{Lin2021Landscape}—such 
-as abstraction or reuse—can enhance learning outcomes . In contrast, our work emphasizes guided abstraction, 
+as abstraction or reuse—can enhance learning outcomes. In contrast, our work emphasizes guided abstraction, 
 helping users understand and practice modular design directly within block-based environments.
-
-To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
-For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
-However, current platforms\cite{SevenDevPlatforms} tend to provide features for block composition rather than promoting reuse, and none offer explicit visualizations that highlight reusable components. The absence of such features represents a barrier to achieving higher levels of efficiency and modular design.
-
 
 Research also indicates that block based programming 
 environments should guide the end users towards good code organization as many may lack the necessary knowledge or may become 
