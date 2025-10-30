@@ -281,21 +281,31 @@ author's own version, with {\itshape very} few changes to the source.
 %% 5 Based on the identified weaknesses in current practices for reuse, we propose our own idea (explain how it's gonna work) (Nasifa)
 
 %% ----Re-done intro----
-Software reuse is a broad term, that refers to the practice of reusing previosuly written code, rather than coding from scratch. It is one of the key practices of software engineering. It is in fact such an important part of software engineering, that one of the ways to measure the quality of software is by it's 'Reusability'(cite ref to reusability QA here) - i.e. the degree to which the application or its components can be reused. 
+Software reuse is a broad term, that refers to the practice of reusing previosuly written code, rather than coding from scratch. It is one of the key practices of software engineering. It is in fact such an important part of software engineering, that one of the ways to measure the quality of software is by it's 'Reusability'\cite{SoftwareArchitectureInPractice} - i.e. the degree to which the application or its components can be reused. 
 There are many different ways to do reuse in software engineering. Software libraries and frameworks are good examples of software that are intended to be reused. Developers may also scour the internet for things such as open-source software, or code snippets from websites like StackOverFlow, which can be reused. 
 
-There are multiple benefits to software reuse, depending on how the reuse is performed. Firstly, reuse is a great time-saver. Not only can the developer avoid the task of writing code itself, they may also be able to avoid figuring out the logic of the software, and testing the reused software (assuming the software is from a trusted source). Another benefit is found through modularity. By breaking down a software system into smaller modules, the logic beind features or functions can be contained within a module, and can be tested thoroughly. (add more benefits?).
+There are multiple benefits to software reuse, depending on how the reuse is performed. One example is saving time. Not only can the developer avoid spending time writing the syntax of the code, they may also be able to avoid figuring out the logic of the software, and testing the reused software (assuming the software is tested by its creator). Another benefit is found through modularity. By breaking down a software system into smaller modules, the logic beind features or functions can be contained within a module, and can be tested thoroughly.
 
-Despite reuse being an important practice in software engineering, there is still a limited focus on this practice when it comes to low-code development platforms (LCDP).
---from here: what reuse is there for low-code? What research? IN GENERAL
--- Then, what tools? examples of how tools tackle reuse
--- Then, what tools for blocks and robots? How do they tackle reuse? What are their strengths/weaknesses/limitations? MAKE SURE TO MENTION BY NAME!!
--- Show the tool we'll be working on (what does it do for reuse, and weaknesses).
--- Based on all that, what is our idea? What gap is it, we're addressing and how?
+Despite reuse being an important practice in software engineering, there is still a limited focus on this practice when it comes to low-code development platforms (LCDP). This lack of reuse focus can easily impact the so-called 'Citizen Developers', who have little or no coding knowledge, and may thus miss out on the benefits of reuse. 
+%%--from here: what reuse is there for low-code? What research? IN GENERAL
+%%-- Then, what tools? examples of how tools tackle reuse
+%%-- Then, what tools for blocks and robots? How do they tackle reuse? What are their strengths/weaknesses/limitations? MAKE SURE TO MENTION BY NAME!!
+%%-- Show the tool we'll be working on (what does it do for reuse, and weaknesses).
+%%-- Based on all that, what is our idea? What gap is it, we're addressing and how?
 %% ---------------------
-Despite the growing focus on low-code platforms, there is still a limited focus on the reuse of models. Some low-code development platforms (LCDP) offer catalogs of reusable artifacts, though these are often generic in nature\cite{LowCodePlatform}.
-Some proposed tools focus on providing recommendations for models to the user, with these recommendations being based on a pre-defined collection of models. Notably, two of these tools focus on collections of models created by 'experts'\cite{OSTRICH}\cite{ReuseKnowledgeGraphs}.
+A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. 
+%%Maybe move SevenDevPlatforms up here?
+There have been proposed some ideas on how to promote reuse for LCPs, such as the strongly-typed rich templating language OSTRICH, developed for the model-driven low-code platform OutSystems. OutSystems provides scaffolding mechanisms for common development patterns and sample screen templates, both designed by experts on domain-specific languages (DSL).
+The practice of using templates in the OutSystems platform involves cloning and modifying samples, which may require more knowledge than the end-user posseses.
+The goal of OSTRICH is to remove this need for adapation when using templates, to remove the knowledge-barrier when making use of the available templates. This is done by abstracting and parameterizing the templates. 
+A limitation of OSTRICH, is that it currently only supports the top nine most used production-ready screen templates from OutSystems. The end-user may not create and save their own templates, nor can they re-apply a template which they have customized. 
+% type of experts NOT defined! page 1
+
+Another approach focused on enabling model reuse by converting and merging heterogeneous models together into several graphs, which are then merged into one single graph (The Knowledge Graph), which acts as the repository of models. The Knowledge Graph can be queried to predict the next modeling step, based on the model being constructed by the user. This approach focuses on how to store, query, recommend and integrate the pre-defined models effeciently. End-Users can also persist their own models to the repository for later reuse.\\
+For citizen developers, this feature of recommending models which have been constructed by domain experts and then developed by model experts could prove very useful. However, while the user may persist their own models, the study is clearly not focused on guiding the user towards reusing their own models.\\ 
 On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool\cite{ScratchExample}.
+
+%having a graph serve as the model repository, created by converting and merging heterogeneous models together\cite{ReuseKnowledgeGraphs}. This approach aims to enable model reuse by merging the graphs into a single graph (the Knowledge graph), and then querying the Knowledge Graph to predict the next modeling step, based on the model being constructed by the user. This approach focuses on how to store, query, recommend and integrate the pre-defined models effeciently. End-Users can also persist their own models to the repository for later reuse. 
 
 To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
 For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
