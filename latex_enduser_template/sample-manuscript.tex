@@ -376,51 +376,28 @@ Adler et al. (2021) introduced a search-based refactoring approach to improve th
 \subsection{Problem Investigation}
 \subsection{Treatment Design}
 \subsection{Treatment Validation}
-The primary parameter given to the ``\verb|acmart|'' document class is
-the {\itshape template style} which corresponds to the kind of publication
-or SIG publishing the work. This parameter is enclosed in square
-brackets and is a part of the {\verb|documentclass|} command:
-\begin{verbatim}
-  \documentclass[STYLE]{acmart}
-\end{verbatim}
-
-Journals use one of three template styles. All but three ACM journals
-use the {\verb|acmsmall|} template style:
-\begin{itemize}
-\item {\texttt{acmsmall}}: The default journal template style.
-\item {\texttt{acmlarge}}: Used by JOCCH and TAP.
-\item {\texttt{acmtog}}: Used by TOG.
-\end{itemize}
-
-The majority of conference proceedings documentation will use the {\verb|acmconf|} template style.
-\begin{itemize}
-\item {\texttt{sigconf}}: The default proceedings template style.
-\item{\texttt{sigchi}}: Used for SIGCHI conference articles.
-\item{\texttt{sigplan}}: Used for SIGPLAN conference articles.
-\end{itemize}
+The treatment validation for this study will employ a mixed-methods evaluation approach to 
+assess the effectiveness of the proposed features for guiding users in creating reusable 
+custom blocks within the OpenRoberta environment. Participants will be recruited from local 
+educational institutions, specifically targeting chemistry students and teachers who 
+frequently engage in lab work. A total number of participants will be selected to ensure a 
+diverse range of experience levels with block-based programming. The experimental setup will 
+involve a controlled environment where participants will be divided into two groups: one 
+using the enhanced OpenRoberta platform with guided block creation features and the other 
+using the standard version without these enhancements.
+The procedure will consist of a pre-test to evaluate participants' prior understanding of 
+modular programming concepts, followed by a series of tasks designed to create reusable 
+blocks from provided code segments. Each participant will be observed while they complete 
+these tasks, and their interactions with the platform will be recorded. Data gathering will 
+involve both quantitative measures, such as task completion time and accuracy in creating 
+reusable blocks, and qualitative feedback collected through post-task interviews and surveys.
+Analysis will focus on comparing performance metrics between the two groups, as well as 
+thematic analysis of qualitative data to identify user experiences and perceptions regarding 
+the usability and effectiveness of the new features. This comprehensive approach will allow 
+for a thorough understanding of the impact of guided block creation on user engagement and 
+learning outcomes in block-based programming.
 
 
-In addition to specifying the {\itshape template style} to be used in
-formatting your work, there are a number of {\itshape template parameters}
-which modify some part of the applied template style. A complete list
-of these parameters can be found in the {\itshape \LaTeX\ User's Guide.}
-
-Frequently-used parameters, or combinations of parameters, include:
-\begin{itemize}
-\item {\texttt{anonymous,review}}: Suitable for a ``double-anonymous''
-  conference submission. Anonymizes the work and includes line
-  numbers. Use with the \texttt{\string\acmSubmissionID} command to print the
-  submission's unique ID on each page of the work.
-\item{\texttt{authorversion}}: Produces a version of the work suitable
-  for posting by the author.
-\item{\texttt{screen}}: Produces colored hyperlinks.
-\end{itemize}
-
-This document uses the following string as the first command in the
-source file:
-\begin{verbatim}
-\documentclass[manuscript,screen,review]{acmart}
-\end{verbatim}
 
 \section{Modifications}
 
