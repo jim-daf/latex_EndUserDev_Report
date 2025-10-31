@@ -293,7 +293,10 @@ Despite reuse being an important practice in software engineering, there is stil
 %%-- Show the tool we'll be working on (what does it do for reuse, and weaknesses).
 %%-- Based on all that, what is our idea? What gap is it, we're addressing and how?
 %% ---------------------
-A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. 
+A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. 
+The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being 
+categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", 
+but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. 
 %%Maybe move SevenDevPlatforms up here?
 There have been proposed some ideas on how to promote reuse for LCPs, such as the strongly-typed rich templating language OSTRICH, developed for the model-driven low-code platform OutSystems. OutSystems provides scaffolding mechanisms for common development patterns and sample screen templates, both designed by experts on domain-specific languages (DSL).
 The practice of using templates in the OutSystems platform involves cloning and modifying samples, which may require more knowledge than the end-user posseses.
@@ -306,6 +309,22 @@ For citizen developers, this feature of recommending models which have been cons
 On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool\cite{ScratchExample}.
 
 %having a graph serve as the model repository, created by converting and merging heterogeneous models together\cite{ReuseKnowledgeGraphs}. This approach aims to enable model reuse by merging the graphs into a single graph (the Knowledge graph), and then querying the Knowledge Graph to predict the next modeling step, based on the model being constructed by the user. This approach focuses on how to store, query, recommend and integrate the pre-defined models effeciently. End-Users can also persist their own models to the repository for later reuse. 
+%Low code platform tools that focus on reuse
+Building on the ideas discussed for improving reuse in low-code development platforms (LCDPs), 
+several popular tools show these concepts in action. 
+For instance, Webflow\cite{webflow} is a leading low-code platform that offers a wealth of features for building responsive websites. 
+One of its standout features is the ability to create reusable components and UI kits, which can significantly 
+speed up the development process. With Webflow’s intuitive interface, 
+developers can quickly design and prototype components, and then reuse them across multiple pages and projects.
+
+In a similar way, Mendix\cite{mendix} takes this further for full enterprise apps by offering 
+shareable building blocks like simple actions (microflows) and UI parts that anyone 
+on a team can grab and use again without recoding. Through its Marketplace, a free online hub, 
+you can download ready templates, connectors for tools like Salesforce, and basic setups 
+that fit right into new projects, making everything faster and more uniform. 
+This approach builds on the flexibility seen in platforms like Webflow, but adds 
+strong team tools and AI suggestions to spot and create reusable pieces, empowering 
+even beginners to build complex apps while keeping reuse simple and widespread.
 
 To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
 For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
