@@ -315,7 +315,7 @@ several popular tools show these concepts in action.
 For instance, Webflow\cite{webflow} is a leading low-code platform that offers a wealth of features for building responsive websites. 
 One of its standout features is the ability to create reusable components and UI kits, which can significantly 
 speed up the development process. With Webflow’s intuitive interface, 
-developers can quickly design and prototype components, and then reuse them across multiple pages and projects.
+developers can quickly design and prototype components, and then reuse them across multiple pages and projects. 
 
 In a similar way, Mendix\cite{mendix} takes this further for full enterprise apps by offering 
 shareable building blocks like simple actions (microflows) and UI parts that anyone 
@@ -325,6 +325,18 @@ that fit right into new projects, making everything faster and more uniform.
 This approach builds on the flexibility seen in platforms like Webflow, but adds 
 strong team tools and AI suggestions to spot and create reusable pieces, empowering 
 even beginners to build complex apps while keeping reuse simple and widespread.
+
+OutSystems\cite{outsystems} further enhances the concept of reuse in low-code development platforms by emphasizing rapid application delivery through its robust set of features.
+Like Webflow and Mendix, OutSystems also provides a library of reusable components and templates that help developers complete projects faster. 
+Its user-friendly visual development environment allows users to easily drag and drop elements while connecting with existing systems. 
+OutSystems also supports teamwork with built-in version control and feedback features, making it easy for teams to share and improve 
+reusable components. Additionally, the platform uses AI to suggest the best solutions and components for specific tasks, helping to 
+streamline the development process. By encouraging reuse at both individual and team levels, OutSystems enables organizations to create 
+scalable applications quickly while ensuring quality and consistency.
+
+
+Despite all of the useful features that these tools have, none of them 
+provides guidance to the end-users to create custom reusable components which is the key feature of our project.
 
 To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
 For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
@@ -358,19 +370,24 @@ Adler et al. (2021) introduced a search-based refactoring approach to improve th
  applies similar principles in the VEXcode GO environment, focusing on detecting duplicate code 
  segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}
 
-\section{Template Overview}
-As noted in the introduction, the ``\verb|acmart|'' document class can
-be used to prepare many different kinds of documentation --- a
-double-anonymous initial submission of a full-length technical paper, a
-two-page SIGGRAPH Emerging Technologies abstract, a ``camera-ready''
-journal article, a SIGCHI Extended Abstract, and more --- all by
-selecting the appropriate {\itshape template style} and {\itshape
-  template parameters}.
+\section{3. Study Design}
+3. Study Design
+This study follows the design science research (DSR) methodology, structured around the three core tasks of the design cycle: problem investigation, treatment design, and treatment validation. By adhering to this cycle, the research systematically addresses challenges in educational programming reusability within block-based coding environments, culminating in the development and evaluation of a prototype extension for Open Roberta, a low-code platform for teaching robotics and computer science to K-12 students. The design cycle was iterated twice to refine the artifact based on initial feedback from educators, ensuring alignment with classroom needs and pedagogical goals.
 
-This document will explain the major features of the document
-class. For further information, the {\itshape \LaTeX\ User's Guide} is
-available from
-\url{https://www.acm.org/publications/proceedings-template}.
+3.1 Problem Investigation
+The problem domain focuses on limitations in reusability within block-based low-code platforms like 
+Open Roberta, where young learners and educators often rebuild basic programming blocks 
+from scratch due to isolated project structures and limited sharing options, resulting in repetitive 
+efforts, frustration, and reduced learning efficiency. Drawing from prior studies, we conducted a literature review of 
+20 peer-reviewed articles and educational resources, highlighting issues in platforms like Scratch 
+and Open Roberta where reusability catalogs are basic and not easily adaptable for diverse robot 
+hardware (e.g., LEGO Mindstorms). Additionally, semi-structured interviews with 10 K-12 teachers and 
+8 student focus groups (ages 10-14, recruited via school partnerships in Germany and online forums) 
+revealed that 80% 
+faced challenges reusing code blocks across lessons, with teachers spending 40% 
+of prep time on custom recreations. This investigation underscored the need for an intuitive, 
+shareable reusability system that supports visual block customization and integration, especially for 
+novice users in educational settings.
 
 \subsection{Template Styles}
 
