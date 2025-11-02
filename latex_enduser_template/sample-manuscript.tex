@@ -358,6 +358,37 @@ language concepts offered by these kind of block-based tools. \cite{blockBasedLa
 
 \subsection{Problem Investigation}
 \subsection{Treatment Design}
+
+Our treatment focuses on developing a guided reuse assistant for the OpenRoberta Lab environment.
+The purpose of this tool is to help users recognize when parts of their robot programs can be reused, 
+and to make it easier for them to create reusable custom blocks. By doing this, we aim to reduce 
+repetitive code and help users learn important programming concepts such as modularity and abstraction.
+
+\subsubsection{Overview of the Tool}
+
+The guided reuse assistant is built as an extension inside Open Roberta Lab, which uses the Blockly 
+framework. The assistant runs directly in the web browser and interacts with the user’s block workspace. 
+Its main job is to look through the user’s program, find repeated sequences of blocks, and guide 
+the user in turning them into reusable blocks.
+
+The tool works in three main steps:
+\begin{enumerate}
+    \item \textbf{Detecting Repeated Code:} 
+    The assistant automatically scans the user’s program and searches for parts that look the same
+     or very similar. These are marked as potential duplicates.
+
+    \item \textbf{Highlighting and Suggesting Reuse:} 
+    Once duplicates are found, the system highlights them in the workspace and shows a message 
+    suggesting that these sections could be made into a reusable block (function). 
+    This helps users see repetition they might not have noticed before.
+
+    \item \textbf{Helping the User Create a New Block:} 
+    If the user agrees to the suggestion, the assistant opens a small guide to help them create 
+    the new block. It automatically detects any small differences between the repeated parts, 
+    such as numbers or variable names, and turns them into inputs (parameters) for the new block. 
+    When the block is created, all the repeated code is replaced by calls to this new reusable block.
+\end{enumerate}
+
 \subsection{Treatment Validation}
 The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
 the effectiveness of the proposed features for guiding users in creating reusable custom 
