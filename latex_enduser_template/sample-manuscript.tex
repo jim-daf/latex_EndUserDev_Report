@@ -351,23 +351,7 @@ examples, Mayr-Dorn et al. mention that it is possible to express even
 large and highly complex real-world robot programs with the
 language concepts offered by these kind of block-based tools. \cite{blockBasedLanguagesForRobotProgramming} 
 
-Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting 
-the transition to text-based languages rather than exploring how features within BBP environments \cite{Lin2021Landscape}—such 
-as abstraction or reuse—can enhance learning outcomes . In contrast, our work emphasizes guided abstraction, 
-helping users understand and practice modular design directly within block-based environments.
-Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with facilities 
-for reusing individual custom blocks to promote procedural abstraction and improve code quality. 
-They observed that while Scratch enables remixing of entire projects, it lacks mechanisms for reusing 
-smaller, modular pieces of code. Their work suggests that supporting such fine-grained code reuse could 
-enhance programmer productivity, creativity, and learning outcomes. Building on this idea, our project 
-applies similar principles within the OpenRoberta environment by automating the detection of duplicate 
-code segments and guiding users toward creating reusable custom blocks.
-Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch
- programs by automatically applying small code transformations, such as simplifying control structures 
- and splitting long scripts. Their findings demonstrated that automated refactoring can significantly 
- enhance code quality and readability for novice programmers. Building upon this concept, our project 
- applies similar principles in the OpenRoberta environment, focusing on detecting duplicate code 
- segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}.
+
 
 \section{Study Design}
 
@@ -396,6 +380,17 @@ perceptions of the new features’ usability and effectiveness.
 This comprehensive evaluation will provide a detailed understanding of how useful and effective 
 is the block creation guidance feature to the end-users.
 
+Existing block-based environments provide mechanisms for reuse, but lack intelligent support to help users recognize and apply reuse in practice.
+
+To address this gap, our project introduces a guided reuse assistant within the Open Roberta Lab environment.
+The tool is designed to help users identify and apply reuse more easily while creating their robot programs. It works by automatically scanning a user’s block-based program to detect repeated code segments that appear in different parts of the workspace. Once these duplicates are found, the system highlights them visually, drawing the user’s attention to patterns that could be simplified.
+
+When repeated blocks are detected, the assistant suggests creating a reusable custom block (function). It then helps the user generate this new block by identifying the small differences between the repeated parts—such as numbers, variables, or parameters—and turning these differences into inputs for the new block. After the user confirms, the system automatically replaces all the repeated sequences with calls to the newly created reusable block.
+
+By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our tool aims to make block-based programming more structured and efficient.
+It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
+
+In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
 
 
 \section{Modifications}
