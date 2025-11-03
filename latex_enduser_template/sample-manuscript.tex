@@ -334,12 +334,35 @@ reusable components. Additionally, the platform uses AI to suggest the best solu
 streamline the development process. By encouraging reuse at both individual and team levels, OutSystems enables organizations to create 
 scalable applications quickly while ensuring quality and consistency.
 
+In order to analyze how block-based robotics environments address reuse area, 4 representative platforms were compared: mBlock, MakeCode, SPIKE LEGO, VEXcode GO and Open Roberta. The comparison focused on three main dimensions of reuse: structural reuse (through user-defined blocks or functions), social reuse (through sharing or remixing existing projects), and interoperable reuse (through import/export capabilities).
+
+\begin{table}[H]
+  \small   
+  \caption{Block Based Robotics Environments Reuse Support}
+  \label{tab:reuse_support}
+  \begin{tabular}{lcccc}
+    \toprule
+    Platform & Structural Reuse & Social Reuse & Interoperable Reuse & Reuse Support \\
+    \midrule
+    VEXcode GO    & X & X &  & Medium \\
+    mBlock        & X & X & X & Medium \\
+    MakeCode      & X & X & X & Medium \\
+    Spike Lego    & X &  & X & Low \\
+    Open Roberta  &  & X &  & Low \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+In this context, “reuse support” represents a scale that measures how effectively each platform facilitates reuse-related features. High reuse support indicates that users can easily create, share, and adapt existing components or projects. Medium reuse support suggests that some reuse mechanisms are available but limited in scope or flexibility. Low reuse support implies that the platform provides only minimal or restricted features to promote reuse and improve user productivity.
+
+As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.
+
+
+
 Despite all of the useful features that these tools have, none of them 
 provides guidance to the end-users to create custom reusable components which is the key feature of our project.
 
-To address these limitations, previous works have focused on helping users recognize repetitive code patterns and encouraging the encapsulation of logic into reusable abstractions. 
-For example, some systems employ pattern recognition or code-clone detection techniques \cite{Koschke2006SoftwareClonesSurvey}\cite{Zakeri2023CodeSimilarityReview}. 
-However, current platforms\cite{SevenDevPlatforms} tend to provide features for block composition rather than promoting reuse, and none offer explicit visualizations that highlight reusable components. The absence of such features represents a barrier to achieving higher levels of efficiency and modular design.
 
 
 
@@ -356,7 +379,67 @@ language concepts offered by these kind of block-based tools. \cite{blockBasedLa
 \section{Study Design}
 
 
+
+
 \subsection{Problem Investigation}
+
+
+\subsubsection{Problem Context and Motivation}
+
+End-user development (EUD) for collaborative robots (cobots) presents unique challenges, 
+particularly for users without formal programming training. In domains such as chemistry 
+laboratories, educational robotics, and industrial settings, end-users need to program 
+robots to perform specific tasks but often lack the software engineering knowledge to 
+write maintainable, well-structured code.
+
+One critical challenge in EUD is code reuse. Users frequently create repetitive code 
+because they struggle to recognize duplicate patterns, lack knowledge about abstraction 
+mechanisms, or find existing tools too complex to use effectively. This problem manifests 
+in several ways: programs become unnecessarily long and difficult to maintain, small 
+changes require modifications in multiple locations increasing the risk of errors, and 
+users miss opportunities to learn fundamental programming concepts such as modularity 
+and abstraction.
+
+In visual programming environments like Open Roberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated 
+sequences into reusable components.
+
+\subsubsection{Stakeholder Analysis}
+
+\begin{itemize}
+    \item \textbf{Chemistry Laboratory Personnel:} Chemists and lab technicians who use 
+    cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality 
+    control procedures. They possess deep domain expertise in chemistry but limited 
+    programming knowledge, often creating long, repetitive programs that become difficult 
+    to maintain when adapting experimental protocols. Their primary need is to quickly 
+    create and modify robot programs without becoming programming experts.
+\end{itemize}
+
+\subsubsection{Artifact Requirements}
+
+\begin{table}[H]
+  \small   
+  \caption{Functional and Non-Functional Requirements}
+  \label{tab:requirements}
+  \begin{tabular}{p{1.5cm}p{0.8cm}p{8cm}p{1.3cm}}
+    \toprule
+    \textbf{Type} & \textbf{ID} & \textbf{Description} & \textbf{Priority} \\
+    \midrule
+  Functional 
+    & FR1 & Detect duplicate/similar block sequences & High \\
+    & FR2 & Visually highlight detected duplications & High \\
+    & FR3 & Suggest creation of reusable custom blocks & High \\
+    & FR4 & Allow users to accept/reject suggestions & High \\
+    \midrule
+  Non-Functional
+    & NFR1 & Seamless Open Roberta Lab integration & High \\
+    & NFR2 & Intuitive interface for end users & High \\
+    & NFR3 & No interference with existing workflow & High \\
+    & NFR4 & Clear visual feedback during detection & High \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
 \subsection{Treatment Design}
 
 Our treatment focuses on developing a guided reuse assistant for the OpenRoberta Lab environment.
