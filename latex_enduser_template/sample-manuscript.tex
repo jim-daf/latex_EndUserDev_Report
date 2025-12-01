@@ -384,23 +384,19 @@ It encourages users to build programs that are modular and easier to maintain, h
 
 
 \subsubsection{Problem Context and Motivation}
-
+%Problem investigation should be more specific to the chemistry end users. So we need problems that could happen in the chemistry lab and not generic problems of reuse.
 End-user development (EUD) for collaborative robots (cobots) presents unique challenges, 
 particularly for users without formal programming training. In domains such as chemistry 
 laboratories, educational robotics, and industrial settings, end-users need to program 
 robots to perform specific tasks but often lack the software engineering knowledge to 
 write maintainable, well-structured code.
+In the domain of Chemistry, one of the most prevelant and important tasks is performing experiments in labs, in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
+Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and suspectible to human error - such as a step being overlooked, instructions being misread, etc.
+Using robots in labs also comes with the added bonus of chemists not having to handle dangerous chemicals. 
 
-One critical challenge in EUD is code reuse. Users frequently create repetitive code 
-because they struggle to recognize duplicate patterns, lack knowledge about abstraction 
-mechanisms, or find existing tools too complex to use effectively. This problem manifests 
-in several ways: programs become unnecessarily long and difficult to maintain, small 
-changes require modifications in multiple locations increasing the risk of errors, and 
-users miss opportunities to learn fundamental programming concepts such as modularity 
-and abstraction.
+One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which in turn may turn them away from using cobots, as the inconvenience outweighs the benefits.
+%and users miss opportunities to learn fundamental programming concepts such as modularity and abstraction.
 
-In visual programming environments like Open Roberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated 
-sequences into reusable components.
 
 \subsubsection{Stakeholder Analysis}
 
@@ -414,7 +410,7 @@ sequences into reusable components.
 \end{itemize}
 
 \subsubsection{Artifact Requirements}
-
+% make paragrapg of table 2 the need behaind each ine of this requiremnts. whta the solutioon? we should talk about what must be done and should.
 \begin{table}[H]
   \small   
   \caption{Functional and Non-Functional Requirements}
@@ -442,7 +438,7 @@ sequences into reusable components.
 \subsection{Treatment Design}
 
 Our treatment focuses on developing a guided reuse assistant for the OpenRoberta Lab environment.
-The purpose of this tool is to help users recognize when parts of their robot programs can be reused, 
+The purpose of this tool is to help users recognize which parts of their robot programs can be reused, 
 and to make it easier for them to create reusable custom blocks. By doing this, we aim to reduce 
 repetitive code and help users learn important programming concepts such as modularity and abstraction.
 
@@ -472,32 +468,43 @@ The tool works in three main steps:
 \end{enumerate}
 
 \subsection{Treatment Validation}
+%Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
+\subsubsection{Data Gathering and Analysis}
 The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
-the effectiveness of the proposed features for guiding users in creating reusable custom 
-blocks within the OpenRoberta environment. Participants will be recruited from local 
-educational institutions, specifically chemistry students and teachers who frequently engage 
+the effectiveness of the proposed features for guiding users in creating reusable custom blocks within the OpenRoberta environment. Participants will be recruited from local educational institutions, specifically chemistry students and teachers who frequently engage 
 in laboratory work. A sufficient number of (x) participants will be selected to ensure a diverse 
 range of experience levels with block-based programming.
+% will this ensure diverse range block-based programming experince tho?
 The experimental setup will take place in a controlled environment, where participants will 
 be divided into two groups: one using the enhanced OpenRoberta platform with guided block 
 creation features, and the other using the standard version without these enhancements. 
-The procedure will begin with a pre-test to evaluate participants’ prior understanding of 
-modular programming concepts, followed by a series of tasks in which they will create 
-reusable blocks from given code segments. Participants’ interactions with the platform will 
-be observed throughout the experiment.
+The procedure will begin with a survey to evaluate participants’ prior understanding of 
+modular programming concepts, followed by two tasks containing several repetitative steps, to make the user focus on reuse. 
+%followed by a series of tasks in which they will create reusable blocks from given code segments. 
+Participants’ interactions with the platform will be observed throughout the experiment.
 Data collection will include both quantitative measures, such as task completion time and 
 accuracy in creating reusable blocks and qualitative feedback obtained through post-task 
 interview. For the qualitative feedback, both groups will have to repeat the task, with the group 
 that initially used the enhanced OpenRoberta platform now using the standard version, while the 
 other group will use the enhanced version. 
-The analysis will compare performance metrics between the two groups 
-and apply thematic analysis to the qualitative data to identify user experiences and 
-perceptions of the new features’ usability and effectiveness.
-This comprehensive evaluation will provide a detailed understanding of how useful and effective 
-is the block creation guidance feature to the end-users.
+The analysis will compare performance metrics between the two groups and apply thematic analysis to the qualitative data to identify user experiences and perceptions of the new features’ usability and effectiveness. This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
 
+%"Task execution" We need to explain what exactly will be the task
+\subsubsection{Task Execution}
+Before the tasks, the participants will be given a short introduction to the OpenRoberta Lab, as well as the cobot simulator. 
+The participants will then perform two tasks, each task described by a set of pre-defined steps to perform. 
+The first task will be generic in nature. The purpose of this task is to make the user more familiar with block-based programming and the OpenRoberta Lab. 
+%go more in detail? or just refer to instructions in appendix?
 
+The second task is more focused on the domain of chemistry, as it is modelled after the instructions to a real lab experiment perfomed by chemistry students. The experiment instructions were obtained from one of the participants, and can be found in appendix XXX.
+% to write in more detail, i need to know how the simulator has been changed, and if the task has been changed
+The instructions for both tasks can be found in appendix XXX.
 
+%"Participant recruitment" We need to explain how we will recruit our participants and interview them to get their background with demographic questions. If I ask my chemistry roommate to get participants through him I need to mention validity threat because this is convenience sampling
+\subsubsection{Participant Recruitment}
+The participants will be chemistry students and one supervisor from the University of Southern Denmark (SDU). One of the authors of this paper knows a student from the chemistry line, who was recruited and also assisted in recruiting others from his class. 
+
+The participants will be asked to fill out a survery before starting the tasks, in order to asses their background, as well as their knowledge about block-based programming, the use of cobots, OpenRoberta Lab and their experience with programming. 
 
 \section{Modifications}
 
