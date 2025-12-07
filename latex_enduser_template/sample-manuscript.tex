@@ -51,6 +51,8 @@
   \providecommand\BibTeX{{%
     Bib\TeX}}}
 
+\usepackage{array}
+
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -228,12 +230,7 @@
 \maketitle
 
 \section{Introduction}
-ACM's consolidated article template, introduced in 2017, provides a
-consistent \LaTeX\ style for use across ACM publications, and
-incorporates accessibility and metadata-extraction functionality
-necessary for future Digital Library endeavors. Numerous ACM and
-SIG-specific \LaTeX\ templates have been examined, and their unique
-features incorporated into this single new template.
+
 
 \section{Background and Related Work}
 %% ---- Background ----
@@ -447,7 +444,7 @@ The tool works in three main steps:
 \end{enumerate}
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % validity threat here or in discussion?
-%Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
+% Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
 %"Task execution" We need to explain what exactly will be the task
 \subsection{Treatment Validation}
 The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
@@ -497,7 +494,6 @@ The participants will be instructed to program the robot to execute the followin
 \end{enumerate}
 
 Most optimal solution pre-defined by the researchers:
-% UNCOMMENT THE LINES BELOW TO ADD A SCREENSHOT OF YOUR BLOCKS
  \begin{figure}[h]
      \centering
      \includegraphics[width=0.8\textwidth]{most optimal solution.png}
@@ -518,22 +514,162 @@ Guidance will be provided from the researchers to the participants throughout th
 \subsubsection{Data Gathering and Analysis}
 Data collection focuses on both quantitative performance and qualitative feedback from participants:
 \begin{enumerate}
-    \item \textbf{Task Completion Time:} Comparing the participants who first used the enhanced version of OpenRoberta against those who first used the standard version.
+    \item \textbf{Task Completion Time:} Comparing the participants who will first use the enhanced version of OpenRoberta against those who will first use the standard version.
     \item \textbf{Solution Accuracy:} Evaluated by comparing the participant's block configuration against the pre-defined optimal solution.
     \item \textbf{Qualitative Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the utility of the block creation guidance features.
 \end{enumerate}
 
 This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\section{Results}
 % In this section, you should present the results obtained during the treatment validation. The section should be organized around the research questions, presenting detailed results and key findings for each one of the RQs
-The treatment validation concluded with 10 participants total. The results show that all participants preferred the enhanced version of OpenRoberta Lab compared to the standard version, with 25\% of participants finding the enhanced version to be 'better' than the original, and 75\% found it to be 'much better'. [insert piechart]. Results also showed that 75\% of participants found the enhanced version 'easy' to use and 25\% finding it 'very easy'.\\
+The treatment validation concluded with 10 participants in total. The results show that all participants 
+preferred the enhanced version of OpenRoberta Lab compared to the standard version, with 25\% of participants 
+finding the enhanced version to be 'better' than the original, and 75\% found it to be 'much better'. 
+[insert piechart]. Results also showed that 75\% of participants found the enhanced version 'easy' to use 
+and 25\% finding it 'very easy'.\\
 %we need the time the users took to finish their tasks, and 'accuracy' in creating blocks. (did all users decide to use the tool to create blocks when presented with the choice? Did Dimitris instruct them to do it, or did they perform the task without any interference from observers?)
 % analyse the qualitative results
 % results about the highlights
-Results showed a high level of satisfaction with the highlights, with 87,5\% of users being 'satifisfied' or 'very satisfied', while 12,5\% felt neutral about the highlights. 
+Results showed a high level of satisfaction with the highlights, with 87,5\% of users being 'satifisfied' or 
+'very satisfied', while 12,5\% felt neutral about the highlights. 
 % suggestions for changes
+\section{Results}
+% -----------------------------------------------------------------------------------------
+% OVERVIEW
+% -----------------------------------------------------------------------------------------
+The treatment validation was concluded with a total of 10 participants. 
+The analysis of the collected data combines quantitative metrics regarding user preference and satisfaction 
+with qualitative feedback derived from survey responses.
 
+
+\subsection{Performance Evaluation}
+To evaluate the efficiency and effectiveness of the proposed reusable component features, 
+we analyzed two primary metrics: Task Completion Time and Solution Accuracy.
+
+% -----------------------------------------------------------------------------------------
+% TASK COMPLETION TIME
+% -----------------------------------------------------------------------------------------
+\subsubsection{Task Completion Time}
+The total time required to complete the experimental task was recorded for both the \textit{Standard} and \textit{Enhanced} conditions. 
+
+We compared the performance of participants based on the order of conditions (see Table \ref{tab:time_comparison_vertical}).
+The analysis reveals a significant reduction in task duration when using the Enhanced 
+version. The average completion time for the participants that used the Enhanced version first was $8.5$ 
+minutes, compared to $10$ minutes for the Standard version. 
+\begin{equation}
+    \text{Efficiency Improvement} = \frac{10.0 - 8.5}{10.0} \times 100\% = 15\%
+\end{equation} 
+
+
+
+%\begin{itemize}
+ %   \item \textbf{Enhanced OpenRoberta version First:} Participants who started with the Enhanced version completed the task in an average of 8 and a half minutes.
+ %   \item \textbf{Standard OpenRoberta version First:} Participants who started with the Standard version completed the task in an average of 10 minutes.
+%\end{itemize}
+\begin{table}[h]
+    \centering
+    \caption{Breakdown of Mean Task Completion Times}
+    \label{tab:time_comparison_vertical}
+    % 'm{10cm}' allows the text to wrap and centers it vertically
+    % 'c' centers the number vertically
+    \begin{tabular}{m{10cm} | c} 
+        \hline
+        \textbf{Experimental Condition} & \textbf{Mean Time (min)} \\
+        \hline
+        % No '\\' here. Text and number are on the same row.
+        \textit{Group of Participants that used the Enhanced OpenRoberta Version First} & 8.5 \\
+        \hline
+        \textit{Group of Participants that used the Standard OpenRoberta Version First} & 10.0 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+% -----------------------------------------------------------------------------------------
+% SOLUTION ACCURACY 
+% -----------------------------------------------------------------------------------------
+\subsubsection{Solution Accuracy}
+Solution accuracy was evaluated by comparing participant solutions against the optimal reference 
+solution defined in the treatment evaluation.
+
+\paragraph{Adoption of Reusable Blocks}
+A key metric was the voluntary adoption of the custom reusable component. 
+In the \textit{Enhanced} version, $10/10$ participants successfully implemented a custom reusable block to handle the repetitive object placement steps. 
+In contrast, in the \textit{Standard} condition, participants predominantly relied on linear, repetitive code structures.
+Without the guidance features, none of them recognized the opportunity to create a reusable block.
+
+% -----------------------------------------------------------------------------------------
+% SURVEY QUANTITATIVE RESULTS
+% -----------------------------------------------------------------------------------------
+\subsection{Survey Quantitative Results}
+
+\subsubsection{User preference between Standard and Enhanced Versions of OpenRoberta}
+The survey results indicate a unanimous preference for the enhanced version of the OpenRoberta Lab. 
+As illustrated in Figure \ref{fig:compare_versions}, 70\% of participants rated the enhanced version 
+as ``much better'' than the standard version, while the remaining 30\% rated it as ``better.'' 
+No participants preferred the standard version or rated the two versions as equivalent.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{survey_comp_enh_sta.png}
+    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \label{fig:compare_versions}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{usability_of_feature.png}
+    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \label{fig:usability_of_feature}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{hl_eval.png}
+    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \label{fig:hl_eval}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{hl_pref.png}
+    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \label{fig:hl_pref}
+\end{figure}
+
+\subsubsection{Usability of the Guidance Feature}
+Regarding usability of the enhanced OpenRoberta version, we received high acceptance scores. As illustrated in Figure \ref{fig:usability_of_feature}, 40\% of participants found the 
+enhanced version ``very easy'' to use, and 60\% rated it as ``easy.''
+No participants rated the enhanced version as ``Neither easy nor difficult,'' ``Difficult,'' or ``Very difficult'' to use.
+\subsubsection{Evaluation of the Visual Highlighting}
+A key component of the enhanced version was the visual highlighting designed 
+to guide the user into an automatic custom reusable block creation. 
+As shown in Figure \ref{fig:hl_eval}, results showed a high level of user satisfaction, with 90\% of participants reporting they were either ``satisfied'' 
+(20\%) or ``very satisfied'' (70\%) with the features. Only one participant (10\%) expressed a neutral stance.
+
+\subsubsection{Visual Highlighting Style Preference}
+When asked about specific highlighting preferences, as depicted in Figure \ref{fig:hl_pref} the \textit{Animated Color Highlight} was the most popular choice, 
+preferred by 50\% of the users. A significant portion of participants (30\%) expressed no strong preference 
+between the styles, suggesting that the presence of guidance was more important than the specific animation style 
+used.
+
+% -----------------------------------------------------------------------------------------
+% SURVEY QUALITATIVE RESULTS
+% -----------------------------------------------------------------------------------------
+\subsection{Qualitative Feedback}
+The post-experiment survey included open-ended questions to gather detailed feedback. The thematic analysis of 
+these responses revealed two primary findings:
+
+\paragraph{Efficiency and Speed}
+When asked to identify the biggest difference between the two versions, the majority of participants cited 
+\textit{efficiency}. Responses frequently described the enhanced version as ``faster'' and noted that it 
+``saved a lot of time.'' This aligns with the quantitative preference data, suggesting that the reusability 
+features successfully reduced the perceived workload.
+
+\paragraph{Suggestions for Improvement}
+Participants also provided constructive feedback regarding the function blocks. Two participants specifically 
+suggested that the system should more clearly \textit{``specify parameter names''} within the function blocks to 
+improve clarity. Another participant noted that the function call block should be pre-configured for immediate 
+use in the blockchain. These suggestions highlight a need for clearer labeling in future iterations of the 
+interface.
+
+%----------------------------------------------------------------------------------------------------------------------
 \section{Discussion}
 %In this section, you should discuss the results presented in the previous section. The discussion should be organized around lessons learned (5.1), implications for practice (5.2), and threats to validity (5.3). The whole discussion must be grounded on the existing literature and argue how your contributions advance the state-of-the-art in the chosen EUSE area
 \subsection{Lessons Learned}
@@ -554,173 +690,6 @@ Changes suggested by the participants mainly focus on smaller customizations of 
 %...other stuff?
 
 
-
-
-
-\section{Tables}
-
-The ``\verb|acmart|'' document class includes the ``\verb|booktabs|''
-package --- \url{https://ctan.org/pkg/booktabs} --- for preparing
-high-quality tables.
-
-Table captions are placed {\itshape above} the table.
-
-Because tables cannot be split across pages, the best placement for
-them is typically the top of the page nearest their initial cite.  To
-ensure this proper ``floating'' placement of tables, use the
-environment \textbf{table} to enclose the table's contents and the
-table caption.  The contents of the table itself must go in the
-\textbf{tabular} environment, to be aligned properly in rows and
-columns, with the desired horizontal and vertical rules.  Again,
-detailed instructions on \textbf{tabular} material are found in the
-\textit{\LaTeX\ User's Guide}.
-
-Immediately following this sentence is the point at which
-Table~\ref{tab:freq} is included in the input file; compare the
-placement of the table here with the table in the printed output of
-this document.
-
-\begin{table}
-  \caption{Frequency of Special Characters}
-  \label{tab:freq}
-  \begin{tabular}{ccl}
-    \toprule
-    Non-English or Math&Frequency&Comments\\
-    \midrule
-    \O & 1 in 1,000& For Swedish names\\
-    $\pi$ & 1 in 5& Common in math\\
-    \$ & 4 in 5 & Used in business\\
-    $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-To set a wider table, which takes up the whole width of the page's
-live area, use the environment \textbf{table*} to enclose the table's
-contents and the table caption.  As with a single-column table, this
-wide table will ``float'' to a location deemed more
-desirable. Immediately following this sentence is the point at which
-Table~\ref{tab:commands} is included in the input file; again, it is
-instructive to compare the placement of the table here with the table
-in the printed output of this document.
-
-\begin{table*}
-  \caption{Some Typical Commands}
-  \label{tab:commands}
-  \begin{tabular}{ccl}
-    \toprule
-    Command &A Number & Comments\\
-    \midrule
-    \texttt{{\char'134}author} & 100& Author \\
-    \texttt{{\char'134}table}& 300 & For tables\\
-    \texttt{{\char'134}table*}& 400& For wider tables\\
-    \bottomrule
-  \end{tabular}
-\end{table*}
-
-Always use midrule to separate table header rows from data rows, and
-use it only for this purpose. This enables assistive technologies to
-recognise table headers and support their users in navigating tables
-more easily.
-
-\section{Math Equations}
-You may want to display math equations in three distinct styles:
-inline, numbered or non-numbered display.  Each of the three are
-discussed in the next sections.
-
-\subsection{Inline (In-text) Equations}
-A formula that appears in the running text is called an inline or
-in-text formula.  It is produced by the \textbf{math} environment,
-which can be invoked with the usual
-\texttt{{\char'134}begin\,\ldots{\char'134}end} construction or with
-the short form \texttt{\$\,\ldots\$}. You can use any of the symbols
-and structures, from $\alpha$ to $\omega$, available in
-\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a few
-examples of in-text equations in context. Notice how this equation:
-\begin{math}
-  \lim_{n\rightarrow \infty}x=0
-\end{math},
-set here in in-line math style, looks slightly different when
-set in display style.  (See next section).
-
-\subsection{Display Equations}
-A numbered display equation---one set off by vertical space from the
-text and centered horizontally---is produced by the \textbf{equation}
-environment. An unnumbered display equation is produced by the
-\textbf{displaymath} environment.
-
-Again, in either environment, you can use any of the symbols and
-structures available in \LaTeX\@; this section will just give a couple
-of examples of display equations in context.  First, consider the
-equation, shown as an inline equation above:
-\begin{equation}
-  \lim_{n\rightarrow \infty}x=0
-\end{equation}
-Notice how it is formatted somewhat differently in
-the \textbf{displaymath}
-environment.  Now, we'll enter an unnumbered equation:
-\begin{displaymath}
-  \sum_{i=0}^{\infty} x + 1
-\end{displaymath}
-and follow it with another numbered equation:
-\begin{equation}
-  \sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
-\end{equation}
-just to demonstrate \LaTeX's able handling of numbering.
-
-\section{Figures}
-
-The ``\verb|figure|'' environment should be used for figures. One or
-more images can be placed within a figure. If your figure contains
-third-party material, you must clearly identify it as such, as shown
-in the example below.
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{sample-franklin}
-  \caption{1907 Franklin Model D roadster. Photograph by Harris \&
-    Ewing, Inc. [Public domain], via Wikimedia
-    Commons. (\url{https://goo.gl/VLCRBB}).}
-  \Description{A woman and a girl in white dresses sit in an open car.}
-\end{figure}
-
-Your figures should contain a caption which describes the figure to
-the reader.
-
-Figure captions are placed {\itshape below} the figure.
-
-Every figure should also have a figure description unless it is purely
-decorative. These descriptions convey what’s in the image to someone
-who cannot see it. They are also used by search engine crawlers for
-indexing images, and when images cannot be loaded.
-
-A figure description must be unformatted plain text less than 2000
-characters long (including spaces).  {\bfseries Figure descriptions
-  should not repeat the figure caption – their purpose is to capture
-  important information that is not already provided in the caption or
-  the main text of the paper.} For figures that convey important and
-complex new information, a short text description may not be
-adequate. More complex alternative descriptions can be placed in an
-appendix and referenced in a short figure description. For example,
-provide a data table capturing the information in a bar chart, or a
-structured list representing a graph.  For additional information
-regarding how best to write figure descriptions and why doing this is
-so important, please see
-\url{https://www.acm.org/publications/taps/describing-figures/}.
-
-\subsection{The ``Teaser Figure''}
-
-A ``teaser figure'' is an image, or set of images in one figure, that
-are placed after all author and affiliation information, and before
-the body of the article, spanning the page. If you wish to have such a
-figure in your article, place the command immediately before the
-\verb|\maketitle| command:
-\begin{verbatim}
-  \begin{teaserfigure}
-    \includegraphics[width=\textwidth]{sampleteaser}
-    \caption{figure caption}
-    \Description{figure description}
-  \end{teaserfigure}
-\end{verbatim}
 
 \section{Citations and Bibliographies}
 
