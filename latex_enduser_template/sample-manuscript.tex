@@ -375,10 +375,218 @@ The tool also offers the functionality to create the custom block for the end-us
 By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our tool aims to make block-based programming more structured and efficient.
 It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
 %In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
+
+
+
+% ---------------------------------------------------
+% SECTION 3: STUDY DESIGN
+% Re-structured based on Wieringa's Design Science Methodology
+% ---------------------------------------------------
+
 \section{Study Design}
+\label{sec:study_design}
+
+Following the Design Science methodology, our study is structured into three main phases: problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to assess the artifact's performance in a controlled environment.
+
+\subsection{Problem Investigation}
+\label{subsec:prob_investigation}
+
+\subsubsection{Problem Context and Motivation}
+
+End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, end-users need to program 
+robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured code.
+In the domain of Chemistry, one of the most prevelant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
+Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and suspectible to human error - such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
+One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
+Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
+
+\subsubsection{Stakeholder Analysis}
+
+Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality control procedures. 
+They possess deep domain expertise in chemistry but limited programming knowledge, often creating long, repetitive programs that become difficult to maintain when adapting experimental protocols. 
+Their primary need is to quickly create and modify robot programs without becoming programming experts.
+
+
+\subsection{Treatment Design}
+\label{subsec:treatment_design}
+
+To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to the chemist's goal of creating maintainable and reusable robot programs.
+Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences (FR1) and visually highlighting these duplications within the user's workspace (FR2).
+These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go unnoticed. Once detected, the system must suggest the creation of reusable custom blocks (FR3), allowing the user to accept or reject these suggestions(FR4).
+This signs are important, as they give the end-user control over the reuse process, allowing them to decide when and how to apply reuse in their programs.
+Regarding non-functional requirements, the artifact must seamlessly integrate with the existing Open Roberta Lab environment (NFR1) to ensure a smooth user experience.
+The interface should be intuitive for end-users (NFR2), minimizing the learning curve and making it easy to understand and use the reuse features. Additionally, the artifact should not interfere with the existing workflow (NFR3), allowing users to continue their programming tasks without disruption. Finally, clear visual feedback during the detection process (NFR4) is essential to help users understand what the system is doing and how to respond to its suggestions.
+
+
+\subsubsection{Artifact Specification: The Reuse Assistant}
+To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
 
 
 
+\subsubsection{Architecture}
+The system architecture follows a client-side approach, executing all detection and suggestion logic within the user's browser, to ensure responsiveness and seamless integration. It consists of three primary components:
+\begin{itemize}
+
+
+    \item \textbf{Duplicate Detection Module:} This module analyzes the block structure to identify repetitive patterns. It traverses the AST to generate structural signatures for sequences of blocks, abstraction over literal values (e.g., numbers, strings) to detect patterns that are structurally identical but parametrically different.
+    
+    \item \textbf{User Interface Feedback:} This component is responsible for visually highlighting detected duplicates within the Open Roberta Lab workspace. It overlays visual cues, such as colour highlights, animated highlights and border Highlights, around duplicate sequences to draw the user's attention. Additionally, it provides interactive elements (pop-ups) to suggest creating reusable custom blocks.
+    
+    \item \textbf{Custom Block Creation Module:} Upon user acceptance of a reuse suggestion, this component facilitates the creation of a new custom block. It extracts the common structure from the duplicate sequences, identifies variable parameters, and generates a new block definition that encapsulates the reusable logic. The module then replaces all instances of the duplicate sequences with calls to the newly created custom block. 
+    Also, it ensures that the new block is added to a visible panel for easy access or later changes.
+
+\end{itemize}
+
+
+\subsubsection{Detection Algorithm}
+The core of the assistant is the sequence detection algorithm, encapsulated in the highlightOnlyFunctionCandidates function. The algorithm operates in several steps:
+
+\begin{itemize}
+
+
+    \item \textbf{Linearization:} It first converts the hierarchical block structure into a linear chain of significant operational blocks, filtering out simple literals to focus on logic and action blocks.
+    
+    \item \textbf{Signature Generation:} For a sliding window of block sequences (ranging from a minimum to a maximum length), it generates a unique "structural signature." This signature is a hash or string representation of the block types and their connectivity, ignoring specific parameter values.
+    
+    \item \textbf{Pattern Matching:} The algorithm aggregates sequences with identical signatures. If a signature appears more than once (frequency $\ge$ 2), it is flagged as a candidate for reuse.
+
+    \item \textbf{Parameter Extraction:} Once a duplicate group is identified, the extractLiteralParameters function compares the instances to identify varying literals. These variations are mapped to future function parameters, ensuring the created abstraction is generalized correctly.
+
+
+\end{itemize}
+
+\subsubsection{User Interface and Interaction}
+
+The user interface is designed to be intuitive (NFR2) and non-disruptive (NFR3). When the detection algorithm identifies a candidate, the system visually highlights the blocks on the canvas (FR2). A non-blocking toast notification appears, prompting the user to confirm the refactoring (FR4). If confirmed, the system automatically generates the custom block definition in a dedicated workspace area (handling visibility via revealDefinitionWorkspacePane) and updates the main workspace, replacing the redundant code with concise function calls. This process abstracts the complexity of manual function creation, guiding the user toward modular design practices.
+
+
+% [TODO: Insert here your technical description from your original section 3.2.1. 
+% Explain briefly the architecture, the detection algorithm, and how the UI works.]
+
+
+
+
+\subsection{Treatment Validation}
+%Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
+\subsubsection{Data Gathering and Analysis}
+The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
+the effectiveness of the proposed features for guiding users in creating reusable custom blocks within the OpenRoberta environment. 
+Participants will be recruited from local educational institutions, specifically chemistry students and teachers who frequently engage in laboratory work. A sufficient number of (x) participants will be selected to ensure a diverse range of experience levels with block-based programming.
+% will this ensure diverse range block-based programming experince tho?
+
+A pre-experiment survey/interview** will be used to gather data about the participants' demographic, and their understanding of modular programming concepts. This is followed by two tasks to be done in the OpenRoberta Lab, designed to make the user focus on reuse. 
+The experimental setup will take place in a controlled environment, where participants will 
+be divided into two groups: one using the enhanced OpenRoberta platform with guided block 
+creation features, and the other using the standard version without these enhancements. 
+%followed by a series of tasks in which they will create reusable blocks from given code segments. 
+Participants’ interactions with the platform will be observed throughout the experiment.
+Data collection will include both quantitative measures, such as task completion time and 
+accuracy in creating reusable blocks and qualitative feedback obtained through a post-task 
+interview. For the qualitative feedback, both groups will have to repeat the task, with the group 
+that initially used the enhanced OpenRoberta platform now using the standard version, while the 
+other group will use the enhanced version. 
+The analysis will compare performance metrics between the two groups and apply thematic analysis to the qualitative data to identify user experiences and perceptions of the new features’ usability and effectiveness. This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
+
+%"Participant recruitment" We need to explain how we will recruit our participants and interview them to get their background with demographic questions. If I ask my chemistry roommate to get participants through him I need to mention validity threat because this is convenience sampling
+\subsubsection{Participant Recruitment}
+The participants will be chemistry students and one supervisor from the University of Southern Denmark (SDU). One of the authors of this paper knows a student from the chemistry line whom was recruited for the experiment. This student also assisted in recruiting others from his class. 
+%Im not sure if we actually should mention the validity threat here or in the discussion section. We can just move the paragraph if we want
+It should be noted, that this selection of participants classifies as a convenience sampling. As such, they may not represent the general population. 
+
+The participants will be asked to fill out a survey before starting the tasks, in order to asses their background, as well as their knowledge about block-based programming, the use of cobots, OpenRoberta Lab and their experience with programming. The survey can be found in appendix XXX.
+
+%"Task execution" We need to explain what exactly will be the task
+\subsubsection{Task Execution}
+Before the tasks, the participants will be given a short introduction to the OpenRoberta Lab, as well as the cobot simulator. 
+The participants will then perform two tasks, each task described by a set of pre-defined steps to perform. 
+The first task will be generic in nature. The purpose of this task is to make the user more familiar with block-based programming and the OpenRoberta Lab. 
+%go more in detail? or just refer to instructions in appendix?
+
+The second task is more focused on the domain of chemistry, as it is modelled after a real lab experiment perfomed by chemistry students at SDU (appendix XXX). The experiment instructions were obtained from one of the participants.
+% to write in more detail, i need to know how the simulator has been changed, and if the task has been changed
+The instructions for both tasks can be found in appendix XXX.
+
+
+
+
+% \subsection{Treatment Validation}
+% \label{subsec:treatment_validation}
+
+
+
+% This study employs a Single-Case Mechanism Experiment design [Reference to Design Science Book]. Since we are testing a prototype with students acting as a model of the real world—rather than deploying it permanently in a real chemical plant—this constitutes a validation study rather than a field evaluation.
+
+% \subsubsection{Knowledge Goals and Validation Questions}
+% The goal of this validation is to predict the effects of the artifact when interacting with its intended context. Specifically, we aim to answer the following knowledge questions:
+
+% \begin{itemize}
+%     \item \textbf{KQ1 (Effect):} Does the Reuse Assistant reduce the time required to complete repetitive programming tasks compared to the standard environment?
+%     \item \textbf{KQ2 (Effect):} Does the tool increase the number of reusable abstractions (functions) created by the users?
+%     \item \textbf{KQ3 (Usability):} Is the guidance provided by the tool perceived as useful and easy to follow by users with limited programming experience?
+% \end{itemize}
+
+% \subsubsection{Research Design: Validation Model and Setup}
+% We constructed a \textbf{validation model} to simulate the real-world context. The model consists of the artifact (our OpenRoberta extension) interacting with a simulated context (chemistry students performing lab protocols). Students act as a model for the target population (professional chemists) due to their similar domain knowledge and lack of professional programming training.
+
+% Participants were exposed to two scenarios (treatments):
+% \begin{enumerate}
+%     \item \textit{Task A (Control/Standard):} Programming a standard titration procedure using the standard OpenRoberta interface.
+%     \item \textit{Task B (Treatment/Guided):} Programming a similar repetitive liquid handling task using the Guided Reuse Assistant.
+% \end{enumerate}
+% % [TODO: You can add details here about the specific tasks if needed, or reference the Appendix]
+
+% \subsubsection{Measurement Design}
+% To answer KQ1 and KQ2, we collected quantitative data through system logs, measuring task completion time and the count of custom blocks created. To answer KQ3, we conducted a post-task questionnaire and semi-structured interviews to understand the mechanisms behind the users' behavior (e.g., why they accepted or rejected specific suggestions).
+
+% \subsubsection{Threats to Validity}
+% As this is a validation study using a model (students), there are threats to external validity regarding how professional chemists might react under real time-pressure in a physical lab. However, the mechanism of identifying duplicates is independent of the user's profession, supporting the internal validity of our technical approach.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Study Design}
+Following the Design Science methodology, our study is structured into three main phases: problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to assess the artifact's performance in a controlled environment.
 
 \subsection{Problem Investigation}
 \subsubsection{Problem Context and Motivation}
@@ -390,12 +598,21 @@ robots to perform specific tasks but often lack the software engineering knowled
 write maintainable, well-structured code.
 In the domain of Chemistry, one of the most prevelant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
 Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and suspectible to human error - such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
-
 One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
 %and users miss opportunities to learn fundamental programming concepts such as modularity and abstraction. - not relevant for chemists?
 
 
+To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to the chemist's goal of creating maintainable and reusable robot programs.
+Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences (FR1) and visually highlighting these duplications within the user's workspace (FR2).
+These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go unnoticed. Once detected, the system must suggest the creation of reusable custom blocks (FR3), allowing the user to accept or reject these suggestions(FR4).
+This signs are important, as they give the end-user control over the reuse process, allowing them to decide when and how to apply reuse in their programs.
+Regarding non-functional requirements, the artifact must seamlessly integrate with the existing Open Roberta Lab environment (NFR1) to ensure a smooth user experience.
+The interface should be intuitive for end-users (NFR2), minimizing the learning curve and making it easy to understand and use the reuse features. Additionally, the artifact should not interfere with the existing workflow (NFR3), allowing users to continue their programming tasks without disruption. Finally, clear visual feedback during the detection process (NFR4) is essential to help users understand what the system is doing and how to respond to its suggestions.
+
+
+
 \subsubsection{Stakeholder Analysis}
+
 
 \begin{itemize}
     \item \textbf{Chemistry Laboratory Personnel:} Chemists and lab technicians who use 
@@ -406,31 +623,14 @@ One critical challenge in EUD is code reuse. Users frequently create repetitive 
     create and modify robot programs without becoming programming experts.
 \end{itemize}
 
-\subsubsection{Artifact Requirements}
+
+
+
+
+
 % make paragrapg of table 2 the need behaind each ine of this requiremnts. whta the solutioon? we should talk about what must be done and should.
-\begin{table}[H]
-  \small   
-  \caption{Functional and Non-Functional Requirements}
-  \label{tab:requirements}
-  \begin{tabular}{p{1.5cm}p{0.8cm}p{8cm}p{1.3cm}}
-    \toprule
-    \textbf{Type} & \textbf{ID} & \textbf{Description} & \textbf{Priority} \\
-    \midrule
-  Functional 
-    & FR1 & Detect duplicate/similar block sequences & High \\
-    & FR2 & Visually highlight detected duplications & High \\
-    & FR3 & Suggest creation of reusable custom blocks & High \\
-    & FR4 & Allow users to accept/reject suggestions & High \\
-    \midrule
-  Non-Functional
-    & NFR1 & Seamless Open Roberta Lab integration & High \\
-    & NFR2 & Intuitive interface for end users & High \\
-    & NFR3 & No interference with existing workflow & High \\
-    & NFR4 & Clear visual feedback during detection & High \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-The artifact requirements can be seen in table \ref{tab:requirements}. 
+
+
 % FR1 the core of our tool. We do the work for the user, who doesn't have knowledge about practices of reuse.
 % FR2 the more visible functions are, the more likely it is that users will be able to know what to do next. - lecture 1 review of HCI. 
 % FR3 same as FR1. We make the option of a custom block more visible to the end-user. Also check lecture 2 about Reuse. 
