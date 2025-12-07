@@ -128,7 +128,6 @@
  \country{Denmark}}
 \email{anrom25@student.sdu.dk}
 
-
 \author{Jeremy Alexander Ramírez Galeotti}
 \affiliation{%
  \institution{SDU}
@@ -157,33 +156,7 @@
  \country{Denmark}}
 \email{mokar25@student.sdu.dk}
 
-\author{Ben Trovato}
-\authornote{Both authors contributed equally to this research.}
-\email{trovato@corporation.com}
-\orcid{1234-5678-9012}
-\author{G.K.M. Tobin}
-\authornotemark[1]
-\email{webmaster@marysville-ohio.com}
-\affiliation{%
-  \institution{Institute for Clarity in Documentation}
-  \city{Dublin}
-  \state{Ohio}
-  \country{USA}
-}
 
-\author{Lars Th{\o}rv{\"a}ld}
-\affiliation{%
-  \institution{The Th{\o}rv{\"a}ld Group}
-  \city{Hekla}
-  \country{Iceland}}
-\email{larst@affiliation.org}
-
-\author{Valerie B\'eranger}
-\affiliation{%
-  \institution{Inria Paris-Rocquencourt}
-  \city{Rocquencourt}
-  \country{France}
-}
 
 %%
 %% By default, the full list of authors will be used in the page
@@ -472,195 +445,117 @@ The tool works in three main steps:
     such as numbers or variable names, and turns them into inputs (parameters) for the new block. 
     When the block is created, repeated code is replaced by the new reusable block.
 \end{enumerate}
-
-\subsection{Treatment Validation}
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% validity threat here or in discussion?
 %Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
-\subsubsection{Data Gathering and Analysis}
-The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
-the effectiveness of the proposed features for guiding users in creating reusable custom blocks within the OpenRoberta environment. 
-Participants will be recruited from local educational institutions, specifically chemistry students and teachers who frequently engage in laboratory work. A sufficient number of (x) participants will be selected to ensure a diverse range of experience levels with block-based programming.
-% will this ensure diverse range block-based programming experince tho?
-
-A pre-experiment survey/interview** will be used to gather data about the participants' demographic, and their understanding of modular programming concepts. This is followed by two tasks to be done in the OpenRoberta Lab, designed to make the user focus on reuse. 
-The experimental setup will take place in a controlled environment, where participants will 
-be divided into two groups: one using the enhanced OpenRoberta platform with guided block 
-creation features, and the other using the standard version without these enhancements. 
-%followed by a series of tasks in which they will create reusable blocks from given code segments. 
-Participants’ interactions with the platform will be observed throughout the experiment.
-Data collection will include both quantitative measures, such as task completion time and 
-accuracy in creating reusable blocks and qualitative feedback obtained through a post-task 
-interview. For the qualitative feedback, both groups will have to repeat the task, with the group 
-that initially used the enhanced OpenRoberta platform now using the standard version, while the 
-other group will use the enhanced version. 
-The analysis will compare performance metrics between the two groups and apply thematic analysis to the qualitative data to identify user experiences and perceptions of the new features’ usability and effectiveness. This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
-
-%"Participant recruitment" We need to explain how we will recruit our participants and interview them to get their background with demographic questions. If I ask my chemistry roommate to get participants through him I need to mention validity threat because this is convenience sampling
-\subsubsection{Participant Recruitment}
-The participants will be chemistry students and one supervisor from the University of Southern Denmark (SDU). One of the authors of this paper knows a student from the chemistry line whom was recruited for the experiment. This student also assisted in recruiting others from his class. 
-%Im not sure if we actually should mention the validity threat here or in the discussion section. We can just move the paragraph if we want
-It should be noted, that this selection of participants classifies as a convenience sampling. As such, they may not represent the general population. 
-
-The participants will be asked to fill out a survey before starting the tasks, in order to asses their background, as well as their knowledge about block-based programming, the use of cobots, OpenRoberta Lab and their experience with programming. The survey can be found in appendix XXX.
-
 %"Task execution" We need to explain what exactly will be the task
+\subsection{Treatment Validation}
+The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
+the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within 
+the OpenRoberta environment. 
+
+\subsubsection{Participant Recruitment}
+A total of 10 participants will be selected to ensure a diverse range of experience levels with block-based programming. 
+Time constraints and resource availability have influenced the decision to limit the number of participants.
+Participants will be recruited from a diverse pool of individuals affiliated with the University of Southern Denmark and the broader chemistry community. 
+This group of participants includes chemistry teachers, professional chemical engineers, and students currently enrolled in chemistry-intensive curricula. 
+To ensure relevant practical expertise, the selection specifically targets those who frequently engage in laboratory environments. 
+The experimental sessions will be conducted across a range of environments to accommodate participant availability. 
+Physical sessions will take place within the chemistry laboratories at the University of Southern Denmark (SDU) as well as a private residential setting. 
+For remote participants, sessions will be administered virtually using Discord for communication and AnyDesk for remote desktop control.
+
+\paragraph{Ethical Considerations and Sampling}
+Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
+It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsubsection{Task Execution}
-Before the tasks, the participants will be given a short introduction to the OpenRoberta Lab, as well as the cobot simulator. 
-The participants will then perform two tasks, each task described by a set of pre-defined steps to perform. 
-The first task will be generic in nature. The purpose of this task is to make the user more familiar with block-based programming and the OpenRoberta Lab. 
-%go more in detail? or just refer to instructions in appendix?
+The participants will initially be given a short introduction to the OpenRoberta UI, as well as the mujoco robot simulator. 
+They will then perform one task which is described by a set of pre-defined steps to perform. This task has been specifically designed to promote the reusability aspect.
+The task is focused on the domain of chemistry, as it is modelled after a real lab experiment perfomed by chemistry students at SDU. 
 
-The second task is more focused on the domain of chemistry, as it is modelled after a real lab experiment perfomed by chemistry students at SDU (appendix XXX). The experiment instructions were obtained from one of the participants.
-% to write in more detail, i need to know how the simulator has been changed, and if the task has been changed
-The instructions for both tasks can be found in appendix XXX.
+The participants will be instructed to program the robot to execute the following sequence of operations:
 
-\section{Modifications}
+\begin{enumerate}
+    \item Move the robot arm above mix cylinder
+    \item Mix the chemistry ingredients
+    \item Move the robot arm above the analysis pad
+    \item Analyze the sample
+    \item If the solution is analyzed (use if statement) then show a response message in the laptop’s screen 
+    \item Place the following three objects into their corresponding slots in the chemistry equipment toolbox:
+    \begin{itemize}
+        \item Methanol cylinder
+        \item Chloroform syringe
+        \item Toluene syringe
+    \end{itemize}
+    \item Important notes for the participants:
+    \begin{itemize}
+        \item \textit{After placing an object to its slot in the toolbox \textbf{wait 2 seconds} before you move to pick a new one.}
+        \item \textit{After placing the \textbf{chloroform syringe} to its slot, \textbf{move the robot arm up by 10 cm} before you move to pick the next chemistry object }
+        \item \textit{Click the \textbf{play} button on the bottom right corner to start the simulation}
+        \item \textit{Click the \textbf{reset} button on the bottom right corner to reset the scene of the robot simulator}
+    \end{itemize}
+\end{enumerate}
 
-Modifying the template --- including but not limited to: adjusting
-margins, typeface sizes, line spacing, paragraph and list definitions,
-and the use of the \verb|\vspace| command to manually adjust the
-vertical spacing between elements of your work --- is not allowed.
+Most optimal solution pre-defined by the researchers:
+% UNCOMMENT THE LINES BELOW TO ADD A SCREENSHOT OF YOUR BLOCKS
+ \begin{figure}[h]
+     \centering
+     \includegraphics[width=0.8\textwidth]{most optimal solution.png}
+     \caption{The optimal solution implemented in OpenRoberta, utilizing a custom block for the object placement sequence.}
+     \Description{Block-based program showing the optimal solution with a custom reusable block for placing chemistry objects into toolbox slots.}
+     \label{fig:optimal_solution}
+ \end{figure}
 
-{\bfseries Your document will be returned to you for revision if
-  modifications are discovered.}
+Instead of creating a long linear sequence of blocks (hard-coding the movement for all three objects), the most optimal solution utilizes a **Custom Reusable Component** to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
+This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
-\section{Typefaces}
+All the participants will try to complete the task using both the standard and the enhanced version of OpenRoberta. 
+Half of the participants will begin using the enhanced version of OpenRoberta, while the other half will start with the standard version.
+Participants’ interactions with the platform will be observed throughout the task.
+Guidance will be provided from the researchers to the participants throughout the task.
 
-The ``\verb|acmart|'' document class requires the use of the
-``Libertine'' typeface family. Your \TeX\ installation should include
-this set of packages. Please do not substitute other typefaces. The
-``\verb|lmodern|'' and ``\verb|ltimes|'' packages should not be used,
-as they will override the built-in typeface families.
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Data Gathering and Analysis}
+Data collection focuses on both quantitative performance and qualitative feedback from participants:
+\begin{enumerate}
+    \item \textbf{Task Completion Time:} Comparing the participants who first used the enhanced version of OpenRoberta against those who first used the standard version.
+    \item \textbf{Solution Accuracy:} Evaluated by comparing the participant's block configuration against the pre-defined optimal solution.
+    \item \textbf{Qualitative Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the utility of the block creation guidance features.
+\end{enumerate}
 
-\section{Title Information}
+This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
+% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Results}
+% In this section, you should present the results obtained during the treatment validation. The section should be organized around the research questions, presenting detailed results and key findings for each one of the RQs
+The treatment validation concluded with 10 participants total. The results show that all participants preferred the enhanced version of OpenRoberta Lab compared to the standard version, with 25\% of participants finding the enhanced version to be 'better' than the original, and 75\% found it to be 'much better'. [insert piechart]. Results also showed that 75\% of participants found the enhanced version 'easy' to use and 25\% finding it 'very easy'.\\
+%we need the time the users took to finish their tasks, and 'accuracy' in creating blocks. (did all users decide to use the tool to create blocks when presented with the choice? Did Dimitris instruct them to do it, or did they perform the task without any interference from observers?)
+% analyse the qualitative results
+% results about the highlights
+Results showed a high level of satisfaction with the highlights, with 87,5\% of users being 'satifisfied' or 'very satisfied', while 12,5\% felt neutral about the highlights. 
+% suggestions for changes
 
-The title of your work should use capital letters appropriately -
-\url{https://capitalizemytitle.com/} has useful rules for
-capitalization. Use the {\verb|title|} command to define the title of
-your work. If your work has a subtitle, define it with the
-{\verb|subtitle|} command.  Do not insert line breaks in your title.
+\section{Discussion}
+%In this section, you should discuss the results presented in the previous section. The discussion should be organized around lessons learned (5.1), implications for practice (5.2), and threats to validity (5.3). The whole discussion must be grounded on the existing literature and argue how your contributions advance the state-of-the-art in the chosen EUSE area
+\subsection{Lessons Learned}
+Based on the feedback from the participants, as well as observations of how they solved the task, the participants found the enhanced version of OpenRoberta Lab to be better than the standard version. Noteably, 7 out of 8 participants commented on how the enhanced version let them perform their task faster. As described in section 2, this is also one of the main benefits of reuse in the field of software engineering. 
+%need to review the screen recordings as well!! How was the users' behavior when using the enhanced tool? How long does it take them to insert a custom block into the workflow, after they've clicked 'yes' to letting our tool create one for them? Did they seem confused or hestitant when they used the tool for the first time?
+While a somewhat large(?) percentage of the participants had no preference in regards to the visual look of the highlight, half of the users picked the 'Animated Color Highlight'. This suggests that dynamic visuals - in this case: the blocks changing color repeatedly - are well-suited for catching the user's attention. 
+% Another thing we should refine in section 3 - we should prolly explain more about why we designed the tool the way we did. Need to back it up with research. 
 
-If your title is lengthy, you must define a short version to be used
-in the page headers, to prevent overlapping text. The \verb|title|
-command has a ``short title'' parameter:
-\begin{verbatim}
-  \title[short title]{full title}
-\end{verbatim}
 
-\section{Authors and Affiliations}
+Changes suggested by the participants mainly focus on smaller customizations of the tool and the OpenRoberta Lab UI. It would be amiss to claim that the lack of suggested changes, focused on the tool overall, indicate that there is no need for improvement of the tool. As many of the participants consider themselves 'beginners' in regards to Computer Programming, it's likely that they lack ideas about other ways the tool could have been designed. Instead, these answers can be interpreted as the participants having little to no issue with the current design. 
 
-Each author must be defined separately for accurate metadata
-identification.  As an exception, multiple authors may share one
-affiliation. Authors' names should not be abbreviated; use full first
-names wherever possible. Include authors' e-mail addresses whenever
-possible.
+\subsection{Implications for Practice}
+% From what I could find, this section is basically about the potential effects/significance of our study's findings. How can the results we found influence real-life practices and research? Basically smth like; participants showed positive reactions to our tool, finding it both easier to use, but also faster. Our solution/idea is worth doing further research about, as the results suggest that our idea can successfully help end-users perform reuse. 
 
-Grouping authors' names or e-mail addresses, or providing an ``e-mail
-alias,'' as shown below, is not acceptable:
-\begin{verbatim}
-  \author{Brooke Aster, David Mehldau}
-  \email{dave,judy,steve@university.edu}
-  \email{firstname.lastname@phillips.org}
-\end{verbatim}
+\subsection{Threats to Validity}
+\subsubsection{Convenience Sampling} The participants to the study were either aquantiances of one of the authors of the study, or were recruited through these aquantiances. As such, the results of this study do not represent the general population within the domain of chemistry. 
+\subsubsection{Limitations to observation} Due to constraints with time and flexibility, only on the the authors was present to observe the participants. To ensure that data from the observation was not affected by this, a screen recording of each participant performing the task was saved. Several of the authors reviewed and discussed these recordings together to extract data.
+%...other stuff?
 
-The \verb|authornote| and \verb|authornotemark| commands allow a note
-to apply to multiple authors --- for example, if the first two authors
-of an article contributed equally to the work.
 
-If your author list is lengthy, you must define a shortened version of
-the list of authors to be used in the page headers, to prevent
-overlapping text. The following command should be placed just after
-the last \verb|\author{}| definition:
-\begin{verbatim}
-  \renewcommand{\shortauthors}{McCartney, et al.}
-\end{verbatim}
-Omitting this command will force the use of a concatenated list of all
-of the authors' names, which may result in overlapping text in the
-page headers.
 
-The article template's documentation, available at
-\url{https://www.acm.org/publications/proceedings-template}, has a
-complete explanation of these commands and tips for their effective
-use.
 
-Note that authors' addresses are mandatory for journal articles.
-
-\section{Rights Information}
-
-Authors of any work published by ACM will need to complete a rights
-form. Depending on the kind of work, and the rights management choice
-made by the author, this may be copyright transfer, permission,
-license, or an OA (open access) agreement.
-
-Regardless of the rights management choice, the author will receive a
-copy of the completed rights form once it has been submitted. This
-form contains \LaTeX\ commands that must be copied into the source
-document. When the document source is compiled, these commands and
-their parameters add formatted text to several areas of the final
-document:
-\begin{itemize}
-\item the ``ACM Reference Format'' text on the first page.
-\item the ``rights management'' text on the first page.
-\item the conference information in the page header(s).
-\end{itemize}
-
-Rights information is unique to the work; if you are preparing several
-works for an event, make sure to use the correct set of commands with
-each of the works.
-
-The ACM Reference Format text is required for all articles over one
-page in length, and is optional for one-page articles (abstracts).
-
-\section{CCS Concepts and User-Defined Keywords}
-
-Two elements of the ``acmart'' document class provide powerful
-taxonomic tools for you to help readers find your work in an online
-search.
-
-The ACM Computing Classification System ---
-\url{https://www.acm.org/publications/class-2012} --- is a set of
-classifiers and concepts that describe the computing
-discipline. Authors can select entries from this classification
-system, via \url{https://dl.acm.org/ccs/ccs.cfm}, and generate the
-commands to be included in the \LaTeX\ source.
-
-User-defined keywords are a comma-separated list of words and phrases
-of the authors' choosing, providing a more flexible way of describing
-the research being presented.
-
-CCS concepts and user-defined keywords are required for for all
-articles over two pages in length, and are optional for one- and
-two-page articles (or abstracts).
-
-\section{Sectioning Commands}
-
-Your work should use standard \LaTeX\ sectioning commands:
-\verb|\section|, \verb|\subsection|, \verb|\subsubsection|,
-\verb|\paragraph|, and \verb|\subparagraph|. The sectioning levels up to
-\verb|\subsusection| should be numbered; do not remove the numbering
-from the commands.
-
-Simulating a sectioning command by setting the first word or words of
-a paragraph in boldface or italicized text is {\bfseries not allowed.}
-
-Below are examples of sectioning commands.
-
-\subsection{Subsection}
-\label{sec:subsection}
-
-This is a subsection.
-
-\subsubsection{Subsubsection}
-\label{sec:subsubsection}
-
-This is a subsubsection.
-
-\paragraph{Paragraph}
-
-This is a paragraph.
-
-\subparagraph{Subparagraph}
-
-This is a subparagraph.
 
 \section{Tables}
 
