@@ -516,7 +516,7 @@ Data collection focuses on both quantitative performance and qualitative feedbac
 \begin{enumerate}
     \item \textbf{Task Completion Time:} Comparing the participants who will first use the enhanced version of OpenRoberta against those who will first use the standard version.
     \item \textbf{Solution Accuracy:} Evaluated by comparing the participant's block configuration against the pre-defined optimal solution.
-    \item \textbf{Qualitative Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the utility of the block creation guidance features.
+    \item \textbf{Survey Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the utility of the block creation guidance features.
 \end{enumerate}
 
 This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
@@ -660,105 +660,89 @@ interface.
 %----------------------------------------------------------------------------------------------------------------------
 \section{Discussion}
 %In this section, you should discuss the results presented in the previous section. The discussion should be organized around lessons learned (5.1), implications for practice (5.2), and threats to validity (5.3). The whole discussion must be grounded on the existing literature and argue how your contributions advance the state-of-the-art in the chosen EUSE area
-\subsection{Lessons Learned}
-Based on the feedback from the participants, as well as observations of how they solved the task, the participants found the enhanced version of OpenRoberta Lab to be better than the standard version. Noteably, 7 out of 8 participants commented on how the enhanced version let them perform their task faster. As described in section 2, this is also one of the main benefits of reuse in the field of software engineering. 
-%need to review the screen recordings as well!! How was the users' behavior when using the enhanced tool? How long does it take them to insert a custom block into the workflow, after they've clicked 'yes' to letting our tool create one for them? Did they seem confused or hestitant when they used the tool for the first time?
-While a somewhat large(?) percentage of the participants had no preference in regards to the visual look of the highlight, half of the users picked the 'Animated Color Highlight'. This suggests that dynamic visuals - in this case: the blocks changing color repeatedly - are well-suited for catching the user's attention. 
+%need to review the screen recordings as well!! How was the users' behavior when using the enhanced tool? How long does it take them to insert a custom block into the workflow, after they've clicked 'yes' to letting our tool create one for them? Did they seem confused or hesitant when they used the tool for the first time?
 % Another thing we should refine in section 3 - we should prolly explain more about why we designed the tool the way we did. Need to back it up with research. 
 
+\subsection{Lessons Learned}
+Utilizing OpenRoberta Lab as a representative block-based robotics environment, this study examined the 
+efficacy of automated guidance mechanisms in promoting software reuse among chemistry students and educators 
+engaged in laboratory experimentation.
 
-Changes suggested by the participants mainly focus on smaller customizations of the tool and the OpenRoberta Lab UI. It would be amiss to claim that the lack of suggested changes, focused on the tool overall, indicate that there is no need for improvement of the tool. As many of the participants consider themselves 'beginners' in regards to Computer Programming, it's likely that they lack ideas about other ways the tool could have been designed. Instead, these answers can be interpreted as the participants having little to no issue with the current design. 
+
+Based on the feedback from the participants, as well as observations of how they solved the task, 
+the participants found the enhanced version of OpenRoberta Lab to be better than the standard version. 
+Noteably, 9 out of 10 participants commented on how the enhanced version let them perform their task faster. 
+As described in section 2, this is also one of the main benefits of reuse in the field of software engineering. 
+
+\subsubsection{Overcoming the Recognition Barrier for Reuse}
+A defining finding of this study is the contrast in adoption rates: 100\% of participants utilized 
+reusable blocks in the \textit{Enhanced} version of OpenRoberta Lab, compared to 0\% in the \textit{Standard}. 
+This confirms the literature cited in Section 1 regarding the high barrier to entry for "Citizen Developers". 
+Despite the task being repetitive by design, participants in the standard environment prioritized immediate 
+task completion over code optimization (linear programming). The \textit{Enhanced} version successfully 
+shifted this behavior not by forcing reuse, but by lowering the cognitive cost of identifying opportunities. 
+This suggests that for domain experts like chemists, the barrier to reuse is not a lack of utility, but a 
+lack of recognition.
+
+\subsubsection{Impact of Automated Construction of Reusable Components} 
+The 15\% reduction in task completion time highlights the value 
+of automating the block creation process. In the standard environment, creating a reusable component requires
+a manual, multi-step process of defining a function and relocating blocks. The enhanced version streamlined 
+this by automating the structural setup of the custom block once a duplicate was detected. This confirms that 
+removing the "friction" of manual block assembly is crucial for encouraging reusability among non-programmers.
+
+\subsubsection{Visual Salience in Learning}
+The user preference for the \textit{Animated Color Highlight} (50\% preference) and the high satisfaction 
+rates (90\% satisfied/very satisfied) underscore the importance of visual salience. In a dense visual 
+environment like OpenRoberta, static cues are easily overlooked. The dynamic nature of the animation acted 
+as a "Just-in-Time" trigger, interrupting the user's tunnel vision exactly when the redundancy occurred. 
+This supports the use of proactive, visually distinct interruptions in educational IDEs to correct inefficient
+patterns in real-time.
+
+\subsubsection{Suggestions by Participants}
+Changes suggested by the participants mainly focus on smaller customizations of the tool and the OpenRoberta 
+Lab UI. It would be amiss to claim that the lack of suggested changes, focused on the tool overall, indicate 
+that there is no need for improvement of the tool. As many of the participants consider themselves 'beginners'
+in regards to Computer Programming, it's likely that they lack ideas about other ways the tool could have been 
+designed. Instead, these answers can be interpreted as the participants having little to no issue with the 
+current design. 
 
 \subsection{Implications for Practice}
 % From what I could find, this section is basically about the potential effects/significance of our study's findings. How can the results we found influence real-life practices and research? Basically smth like; participants showed positive reactions to our tool, finding it both easier to use, but also faster. Our solution/idea is worth doing further research about, as the results suggest that our idea can successfully help end-users perform reuse. 
+The findings of this study have broader implications for the design of End-User Development (EUD) environments 
+and educational technology. The success of the enhanced OpenRoberta interface suggests three key shifts for 
+future tool development:
+
+\subsubsection{Transitioning from Passive to Proactive Environments}
+Current block-based environments (such as Scratch or standard OpenRoberta) largely rely on a \textit{passive} 
+interaction model, where advanced features like "Functions" sit in a toolbox waiting to be discovered. 
+Our study demonstrates that domain experts (e.g., chemists) often fail to utilize these features voluntarily, 
+even when they would be beneficial. The 100\% adoption rate in the Enhanced condition implies that EUD tools 
+must evolve into \textit{active assistants}. Development environments should incorporate background monitoring
+systems that detect inefficient patterns (such as code duplication) and proactively intervene with 
+architectural suggestions.
+
+\subsubsection{Learning by Example}
+Beyond just making the task faster, the tool also acted as a teaching aid. By pointing out the repetitive 
+code and showing how to fix it, the tool created a "learning moment" exactly when the user needed it. 
+This suggests that automation tools can have two benefits: they help experts work faster, but they also teach 
+beginners difficult concepts—like how to organize blocks of code and use inputs—simply by showing them a 
+practical example.
 
 \subsection{Threats to Validity}
-\subsubsection{Convenience Sampling} The participants to the study were either aquantiances of one of the authors of the study, or were recruited through these aquantiances. As such, the results of this study do not represent the general population within the domain of chemistry. 
-\subsubsection{Limitations to observation} Due to constraints with time and flexibility, only on the the authors was present to observe the participants. To ensure that data from the observation was not affected by this, a screen recording of each participant performing the task was saved. Several of the authors reviewed and discussed these recordings together to extract data.
-%...other stuff?
+\subsubsection{Convenience Sampling} 
+The participants to the study were either aquantiances of one of the authors of the study, or were recruited 
+through these aquantiances. As such, the results of this study do not represent the general population within 
+the domain of chemistry. 
+\subsubsection{Limitations to observation} 
+Due to constraints with time and flexibility, only one of the authors was present to observe the participants. 
+To ensure that data from the observation was not affected by this, a screen recording of each participant 
+performing the task was saved. Several of the authors reviewed and discussed these recordings together to 
+extract data.
 
 
 
-\section{Citations and Bibliographies}
 
-The use of \BibTeX\ for the preparation and formatting of one's
-references is strongly recommended. Authors' names should be complete
---- use full first names (``Donald E. Knuth'') not initials
-(``D. E. Knuth'') --- and the salient identifying features of a
-reference should be included: title, year, volume, number, pages,
-article DOI, etc.
-
-The bibliography is included in your source document with these two
-commands, placed just before the \verb|\end{document}| command:
-\begin{verbatim}
-  \bibliographystyle{ACM-Reference-Format}
-  \bibliography{bibfile}
-\end{verbatim}
-where ``\verb|bibfile|'' is the name, without the ``\verb|.bib|''
-suffix, of the \BibTeX\ file.
-
-Citations and references are numbered by default. A small number of
-ACM publications have citations and references formatted in the
-``author year'' style; for these exceptions, please include this
-command in the {\bfseries preamble} (before the command
-``\verb|\begin{document}|'') of your \LaTeX\ source:
-\begin{verbatim}
-  \citestyle{acmauthoryear}
-\end{verbatim}
-
-
-  Some examples.  A paginated journal article \cite{Abril07}, an
-  enumerated journal article \cite{Cohen07}, a reference to an entire
-  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
-  monograph/whole book in a series (see 2a in spec. document)
-  \cite{Harel79}, a divisible-book such as an anthology or compilation
-  \cite{Editor00} followed by the same example, however we only output
-  the series if the volume number is given \cite{Editor00a} (so
-  Editor00a's series should NOT be present since it has no vol. no.),
-  a chapter in a divisible book \cite{Spector90}, a chapter in a
-  divisible book in a series \cite{Douglass98}, a multi-volume work as
-  book \cite{Knuth97}, a couple of articles in a proceedings (of a
-  conference, symposium, workshop for example) (paginated proceedings
-  article) \cite{Andler79, Hagerup1993}, a proceedings article with
-  all possible elements \cite{Smith10}, an example of an enumerated
-  proceedings article \cite{VanGundy07}, an informally published work
-  \cite{Harel78}, a couple of preprints \cite{Bornmann2019,
-    AnzarootPBM14}, a doctoral dissertation \cite{Clarkson85}, a
-  master's thesis: \cite{anisi03}, an online document / world wide web
-  resource \cite{Thornburg01, Ablamowicz07, Poker06}, a video game
-  (Case 1) \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05}
-  and (Case 3) a patent \cite{JoeScientist001}, work accepted for
-  publication \cite{rous08}, 'YYYYb'-test for prolific author
-  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
-  contain 'duplicate' DOI and URLs (some SIAM articles)
-  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
-  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
-  presentation~\cite{Reiser2014}. An article under
-  review~\cite{Baggett2025}. A
-  couple of citations with DOIs:
-  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
-  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}.
-  Artifacts: \cite{R} and \cite{UMassCitations}.
-
-\section{Acknowledgments}
-
-Identification of funding sources and other support, and thanks to
-individuals and groups that assisted in the research and the
-preparation of the work should be included in an acknowledgment
-section, which is placed just before the reference section in your
-document.
-
-This section has a special environment:
-\begin{verbatim}
-  \begin{acks}
-  ...
-  \end{acks}
-\end{verbatim}
-so that the information contained therein can be more easily collected
-during the article metadata extraction phase, and to ensure
-consistency in the spelling of the section heading.
-
-Authors should not prepare this section as a numbered or unnumbered {\verb|\section|}; please use the ``{\verb|acks|}'' environment.
 
 \section{Appendices}
 
@@ -831,35 +815,6 @@ To Robert, for the bagels and explaining CMYK and color spaces.
 %% If your work has an appendix, this is the place to put it.
 \appendix
 
-\section{Research Methods}
-
-\subsection{Part One}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-malesuada, quam in pulvinar varius, metus nunc fermentum urna, id
-sollicitudin purus odio sit amet enim. Aliquam ullamcorper eu ipsum
-vel mollis. Curabitur quis dictum nisl. Phasellus vel semper risus, et
-lacinia dolor. Integer ultricies commodo sem nec semper.
-
-\subsection{Part Two}
-
-Etiam commodo feugiat nisl pulvinar pellentesque. Etiam auctor sodales
-ligula, non varius nibh pulvinar semper. Suspendisse nec lectus non
-ipsum convallis congue hendrerit vitae sapien. Donec at laoreet
-eros. Vivamus non purus placerat, scelerisque diam eu, cursus
-ante. Etiam aliquam tortor auctor efficitur mattis.
-
-\section{Online Resources}
-
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla mollis, in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
-
-Nam interdum magna at lectus dignissim, ac dignissim lorem
-rhoncus. Maecenas eu arcu ac neque placerat aliquam. Nunc pulvinar
-massa et mattis lacinia.
 
 \end{document}
 \endinput
