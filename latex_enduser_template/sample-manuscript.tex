@@ -257,10 +257,8 @@
 %% 5 Based on the identified weaknesses in current practices for reuse, we propose our own idea (explain how it's gonna work) (Nasifa)
 
 %% ----Re-done intro----
-Software reuse is a broad term, that refers to the practice of reusing previously written code, rather than coding from scratch. It is such an important part of software engineering, that one of the ways to measure the quality of software is by it's 'Reusability'\cite{SoftwareArchitectureInPractice} - i.e. the degree to which the application or its components can be reused. 
+Software reuse is a broad term, that refers to the practice of reusing previously written code, rather than coding from scratch. It is such an important part of software engineering, that one of the ways to measure the quality of software is by its 'Reusability'\cite{SoftwareArchitectureInPractice}, i.e. the degree to which the application or its components can be reused. 
 There are multiple benefits to practicing reuse in software engineering. One developer could save time by using another developer's reusable component, rather than coding their own. The developer avoids both the work of writing the syntax and designing the logic of the component. The developer can design their own reusable components, keeping all the logic in one place, which can then be tested thoroughly. However, despite reuse being an important practice in software engineering, there is still a limited focus on this practice when it comes to low-code development platforms (LCDP).
-
-%There are many different ways to do reuse in software engineering. Software libraries and frameworks are good examples of software that are intended to be reused. Developers may also scour the internet for things such as open-source software, or code snippets from websites like StackOverFlow, which can be reused. 
 
 %%--from here: what reuse is there for low-code? What research? IN GENERAL
 %%-- Then, what tools? examples of how tools tackle reuse
@@ -268,52 +266,18 @@ There are multiple benefits to practicing reuse in software engineering. One dev
 %%-- Show the tool we'll be working on (what does it do for reuse, and weaknesses).
 %%-- Based on all that, what is our idea? What gap is it, we're addressing and how?
 %% ---------------------
-A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. This lack of focus on promoting reuse may impact the so-called 'Citizen Developers', who have little or no coding knowledge, and whom may then miss out on the benefits of reuse.
+A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. This lack of focus on promoting reuse may impact the so-called 'Citizen Developers', who have little or no coding knowledge, and whom may then miss out on the benefits of reuse. Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting the transition to text-based languages rather than exploring how features within BBP environments \cite{Lin2021Landscape}—such as abstraction or reuse—can enhance learning outcomes.
 
-%%Maybe move SevenDevPlatforms up here?
-There have been proposed some ideas on how to promote reuse for LCPs, such as the strongly-typed rich templating language OSTRICH, developed for the model-driven low-code platform OutSystems\cite{OSTRICH}. OutSystems provides scaffolding mechanisms for common development patterns and sample screen templates, both designed by experts on domain-specific languages (DSL).
-The practice of using templates in the OutSystems platform involves cloning and modifying samples, which may require more knowledge than the end-user posseses.
-The goal of OSTRICH is to remove this need for adapation when using templates, to remove the knowledge-barrier when making use of the available templates. This is done by abstracting and parameterizing the templates. 
-A limitation of OSTRICH, is that it currently only supports the top nine most used production-ready screen templates from OutSystems. The end-user may not create and save their own templates, nor can they re-apply a template which they have customized. 
-% type of experts NOT defined! page 1
+There have been proposed some ideas on how to promote reuse for LCPs, such as the templating language OSTRICH, developed for model-driven low-code platform OutSystems\cite{OSTRICH}. OSTRICH is designed to assist the end-user in making use of OutSystems' available templates, by abstracting and parameterizing the templates. However, OSTRICH only supports the top nine most used production-ready screen templates, and does not allow the end-user to create and save their own templates, or re-apply a template which they have customized. Another approach focused on enabling the reuse of models, by providing recommendations to the end-user, based on the models stored in a graph acting as a repository. While the graph allows end-users to reuse their own models, there is no mention of guiding the user towards reusing their own models.
 
-Another approach focused on enabling reuse of models, by converting and merging models into a single graph (the Knowledge Graph), which acts as a repository of models\cite{ReuseKnowledgeGraphs}. This graph is used to provide recommendations to the end-user, based on the model they're currently building. While this feature of recommending models (either constructed by domain experts and then developed by model experts, or made by the end-user themselves) could prove very useful, the study is clearly not focused on guiding the user towards reusing their own models.
-
-%Another approach focused on enabling model reuse by converting and merging heterogeneous models together into several graphs, which are then merged into one single graph (The Knowledge Graph), which acts as the repository of models. The Knowledge Graph can be queried to predict the next modeling step, based on the model being constructed by the user. This approach focuses on how to store, query, recommend and integrate the pre-defined models effeciently. End-Users can also persist their own models to the repository for later reuse.\\
-%For citizen developers, this feature of recommending models which have been constructed by domain experts and then developed by model experts could prove very useful. However, while the user may persist their own models, the study is clearly not focused on guiding the user towards reusing their own models.\\ 
-%On the other hand, some existing LCDPs offer the user the ability to create their own models - for example by defining a new block in a block-based tool\cite{ScratchExample}.
-
-%having a graph serve as the model repository, created by converting and merging heterogeneous models together\cite{ReuseKnowledgeGraphs}. This approach aims to enable model reuse by merging the graphs into a single graph (the Knowledge graph), and then querying the Knowledge Graph to predict the next modeling step, based on the model being constructed by the user. This approach focuses on how to store, query, recommend and integrate the pre-defined models effeciently. End-Users can also persist their own models to the repository for later reuse. 
 %Low code platform tools that focus on reuse
-Building on the ideas discussed for improving reuse in low-code development platforms (LCDPs), 
-several popular tools show these concepts in action. 
-For instance, Webflow\cite{webflow} is a leading low-code platform that offers a wealth of features for building responsive websites. 
-One of its standout features is the ability to create reusable components and UI kits, which can significantly 
-speed up the development process. With Webflow’s intuitive interface, 
-developers can quickly design and prototype components, and then reuse them across multiple pages and projects. 
-Despite all of the useful features that this tools has, it does not 
-provide guidance to the end-users to create custom reusable components. % which is the key feature of our project.
-
-In a similar way, Mendix\cite{mendix} takes this further for full enterprise apps by offering 
-shareable building blocks like simple actions (microflows) and UI parts that anyone 
-on a team can grab and use again without recoding. Through its Marketplace, a free online hub, 
-you can download ready templates, connectors for tools like Salesforce, and basic setups 
-that fit right into new projects, making everything faster and more uniform. 
-This approach builds on the flexibility seen in platforms like Webflow, but adds 
-strong team tools and AI suggestions to spot and create reusable pieces, empowering 
-even beginners to build complex apps while keeping reuse simple and widespread. This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions,
-a lot of times these suggestions are not accurate enough (how do we know this??**).
-
-OutSystems\cite{outsystems} further enhances the concept of reuse in low-code development platforms by emphasizing rapid application delivery through its robust set of features.
-Like Webflow and Mendix, OutSystems also provides a library of reusable components and templates that help developers complete projects faster. 
-Its user-friendly visual development environment allows users to easily drag and drop elements while connecting with existing systems. 
-OutSystems also supports teamwork with built-in version control and feedback features, making it easy for teams to share and improve 
-reusable components. Additionally, the platform uses AI to suggest the best solutions and components for specific tasks. By encouraging reuse at both individual and team levels, OutSystems enables organizations to create scalable applications quickly while ensuring quality and consistency. Similarly to the previous tool explained, the AI suggestions that this tool provides are not always accurate to successfully guide the end-user to create custom reusable components (again, how do we know this?**).
-
-
-
-In order to analyze how block-based robotics environments address reuse area, 4 representative platforms were compared: mBlock, MakeCode, SPIKE LEGO, VEXcode GO and Open Roberta. The comparison focused on three main dimensions of reuse: structural reuse (through user-defined blocks or functions), social reuse (through sharing or remixing existing projects), and interoperable reuse (through import/export capabilities).
-
+%[x does this, y does that, but a common trend seen in all of them is the almost nonexistent guidance towards using these features. If a user doesnt know/care about reuse, that mentality is never challenged.]
+Several popular low-code development platforms (LCDPs) provide different kinds of support for reuse. Webflow\cite{webflow}, a LCDP for responsive websites, offers the ability to create reusable components and UI kits, which can be reused across multiple pages and projects. 
+Mendix\cite{mendix} and OutSystems offer even more functionality to support reuse, offering several ways to end-users to share their code with each other, and offering pre-made components. Both of these platforms also utilize AI to enhance reuse. Outsystems provides AI suggestions to spot and create reusable pieces, while Mendix uses AI to suggest the best solutions and components for specific tasks. However, for both of these platforms, the AI suggestions provided are not always accurate to successfully guide the end-user to create custom reusable components ***(How do we know this? What makes it 'accurate'?**).\\
+%Mendix\cite{mendix} also offers the ability for end-users to create reusable building blocks, and these can be shared with others. The platform provides AI suggestions to spot and create reusable pieces, empowering even beginners to build complex apps while keeping reuse simple and widespread. This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions, a lot of times these suggestions are not accurate enough*****(HOW do we know whether it's accurate???)****
+% Webflow - Despite all of the useful features that this tools has, it does not provide guidance to the end-users to create custom reusable components. % which is the key feature of our project.
+% Mendix - This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions, a lot of times these suggestions are not accurate enough (how do we know this??**).
+In order to analyze how block-based robotics environments address reuse, 4 representative platforms were compared: mBlock, MakeCode, SPIKE LEGO, VEXcode GO and Open Roberta. The comparison focused on three main dimensions of reuse: structural reuse (through user-defined blocks or functions), social reuse (through sharing or remixing existing projects), and interoperable reuse (through import/export capabilities).
 \begin{table}[H]
   \small   
   \caption{Block Based Robotics Environments Reuse Support}
@@ -330,25 +294,11 @@ In order to analyze how block-based robotics environments address reuse area, 4 
     \bottomrule
   \end{tabular}
 \end{table}
+In this context, “reuse support” represents a scale that measures how effectively each platform facilitates reuse-related features. High reuse support indicates that users can easily create, share, and adapt existing components or projects. Medium reuse support suggests that some reuse mechanisms are available but limited in scope or flexibility. Low reuse support implies that the platform provides only minimal or restricted features to promote reuse.
 
-
-In this context, “reuse support” represents a scale that measures how effectively each platform facilitates reuse-related features. High reuse support indicates that users can easily create, share, and adapt existing components or projects. Medium reuse support suggests that some reuse mechanisms are available but limited in scope or flexibility. Low reuse support implies that the platform provides only minimal or restricted features to promote reuse and improve user productivity.
-
-As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.
-
-
-%Research also indicates that block based programming environments should guide the end users towards good code organization as many may lack the necessary knowledge or may become stuck due to errors.\cite{ChallengesInBlockBasedEnvironments} Although block based programming tools like Blockly were invented to teach programming to beginners by simple examples, Mayr-Dorn et al. mention that it is possible to express even large and highly complex real-world robot programs with the language concepts offered by these kind of block-based tools. \cite{blockBasedLanguagesForRobotProgramming} 
-
-Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting the transition to text-based languages rather than exploring how features within BBP environments \cite{Lin2021Landscape}—such as abstraction or reuse—can enhance learning outcomes. In contrast, our work emphasizes guided abstraction, helping users understand and practice modular design directly within block-based environments.
-
-Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with 
-facilities for reusing individual custom blocks to promote procedural abstraction and improve 
-code quality. They observed that while Scratch enables remixing of entire projects, it lacks 
-mechanisms for reusing smaller, modular pieces of code. Their work suggests that supporting such 
-fine-grained code reuse could enhance programmer productivity, creativity, and learning outcomes. 
-Building on this idea, our project applies similar principles within the OpenRoberta environment 
-by automating the detection of duplicate code segments and guiding users toward creating reusable 
-custom blocks.
+As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\\\
+A study by Techapalokul and Tilevich (2019) suggests that supporting mechanisms for reusing smaller, modular pieces of code can enhance programmer productivity, creativity and learning outcomes. 
+%Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with facilities for reusing individual custom blocks to promote procedural abstraction and improve code quality. They observed that while Scratch enables remixing of entire projects, it lacks mechanisms for reusing smaller, modular pieces of code. Their work suggests that supporting such fine-grained code reuse could enhance programmer productivity, creativity, and learning outcomes. Building on this idea, our project applies similar principles within the OpenRoberta environment by automating the detection of duplicate code segments and guiding users toward creating reusable custom blocks.
 Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. Building upon this concept, our project applies similar principles in the OpenRoberta environment, focusing on detecting duplicate code segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}.
 
 Existing block-based environments provide mechanisms for reuse, but lack intelligent support to help users recognize and apply reuse in practice. To address this gap, our project introduces a guided reuse assistant within the Open Roberta Lab environment.
