@@ -825,51 +825,9 @@ and note that in the appendix, sections are lettered, not
 numbered. This document has two appendices, demonstrating the section
 and subsection identification method.
 
-\section{Multi-language papers}
 
-Papers may be written in languages other than English or include
-titles, subtitles, keywords and abstracts in different languages (as a
-rule, a paper in a language other than English should include an
-English title and an English abstract).  Use \verb|language=...| for
-every language used in the paper.  The last language indicated is the
-main language of the paper.  For example, a French paper with
-additional titles and abstracts in English and German may start with
-the following command
-\begin{verbatim}
-\documentclass[sigconf, language=english, language=german,
-               language=french]{acmart}
-\end{verbatim}
 
-The title, subtitle, keywords and abstract will be typeset in the main
-language of the paper.  The commands \verb|\translatedXXX|, \verb|XXX|
-begin title, subtitle and keywords, can be used to set these elements
-in the other languages.  The environment \verb|translatedabstract| is
-used to set the translation of the abstract.  These commands and
-environment have a mandatory first argument: the language of the
-second argument.  See \verb|sample-sigconf-i13n.tex| file for examples
-of their usage.
 
-\section{SIGCHI Extended Abstracts}
-
-The ``\verb|sigchi-a|'' template style (available only in \LaTeX\ and
-not in Word) produces a landscape-orientation formatted article, with
-a wide left margin. Three environments are available for use with the
-``\verb|sigchi-a|'' template style, and produce formatted output in
-the margin:
-\begin{description}
-\item[\texttt{sidebar}:]  Place formatted text in the margin.
-\item[\texttt{marginfigure}:] Place a figure in the margin.
-\item[\texttt{margintable}:] Place a table in the margin.
-\end{description}
-
-%%
-%% The acknowledgments section is defined using the "acks" environment
-%% (and NOT an unnumbered section). This ensures the proper
-%% identification of the section in the article metadata, and the
-%% consistent spelling of the heading.
-\begin{acks}
-To Robert, for the bagels and explaining CMYK and color spaces.
-\end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
