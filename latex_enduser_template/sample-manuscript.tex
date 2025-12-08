@@ -341,7 +341,7 @@ The system enables the execution of block-based programs on a simulated cobot th
 
 
 \subsubsection{Detection Algorithm}
-	exttt{highlightOnlyFunctionCandidates} function. The approach is intentionally simple so it is easy to read
+The approach is intentionally simple so it is easy to read
 and to implement in a real block editor. The algorithm follows three main steps:
 %\begin{itemize}
  %   \item \textbf{Linearization:} Convert the workspace into a flat, ordered list of blocks (preserving execution order).
@@ -349,7 +349,6 @@ and to implement in a real block editor. The algorithm follows three main steps:
  %   \item \textbf{Pattern Matching:} Use the block type sequence as a key; group occurrences with the same key and report keys seen more than once.
 %\end{itemize}
 
-\texttt{highlightOnlyFunctionCandidates} function. The algorithm operates in several steps:
 \begin{itemize}
 
 
@@ -361,6 +360,7 @@ and to implement in a real block editor. The algorithm follows three main steps:
 
 
 \end{itemize}
+
 
 The pseudocode below is short, explicit, and uses straightforward data structures (lists).
 
@@ -434,7 +434,9 @@ If confirmed, the system automatically generates the custom block definition in 
 workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
 the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
 This process abstracts the complexity of manual function creation, guiding the user toward modular 
-design practices.
+design practices. 
+After the user presses the run simulation button, the robot simulator of mujoco opens up and executes the commands provided by the user inside the Open Roberta workspace. This is illustrated in Figure \ref{fig:mujoco_simulator}.
+
 
 % --- START: Split UI figures ---
 \begin{figure}[htbp]
@@ -453,6 +455,15 @@ design practices.
     \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
     \caption{Reuse Assistant workflow — refactoring: the automated refactoring result, showing the new custom block definition and the simplified main program.}
     \label{fig:ui_interaction_refactor}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.65\linewidth]{mujoco}
+    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
+    \caption{Mujoco robot simulator executing the commands from Open Roberta.}
+    \label{fig:mujoco_simulator}
 \end{figure}
 % --- END: Split UI figures ---
 
@@ -623,19 +634,19 @@ No participants preferred the standard version or rated the two versions as equi
 \begin{figure}[h]
     \centering
     \includebestgraphics[width=\textwidth]{usability_of_feature}
-    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \caption{Summary of participant responses regarding usability of the guidance feature in the enhanced version of OpenRoberta}
     \label{fig:usability_of_feature}
 \end{figure}
 \begin{figure}[h]
     \centering
     \includebestgraphics[width=\textwidth]{hl_eval}
-    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \caption{Summary of participant responses regarding evaluation of the visual highlighting in the enhanced version of OpenRoberta}
     \label{fig:hl_eval}
 \end{figure}
 \begin{figure}[h]
     \centering
     \includebestgraphics[width=\textwidth]{hl_pref}
-    \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
+    \caption{Summary of participant responses regarding visual highlighting style preference in the enhanced version of OpenRoberta}
     \label{fig:hl_pref}
 \end{figure}
 
@@ -686,7 +697,7 @@ Utilizing OpenRoberta Lab as a representative block-based robotics environment, 
 efficacy of automated guidance mechanisms in promoting software reuse among chemistry students and educators 
 engaged in laboratory experimentation.
 
-
+\subsubsection{Overall User Preference}
 Based on the feedback from the participants, as well as observations of how they solved the task, 
 the participants found the enhanced version of OpenRoberta Lab to be better than the standard version. 
 Noteably, 9 out of 10 participants commented on how the enhanced version let them perform their task faster. 
