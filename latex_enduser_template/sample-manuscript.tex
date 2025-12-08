@@ -490,7 +490,8 @@ design practices.
 % --- START: Split UI figures ---
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\linewidth]{highlight.png}
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.85\linewidth]{highlight}
     \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
     \caption{Reuse Assistant workflow — detection: the interface detects and highlights duplicate blocks by changing their color to green.}
     \label{fig:ui_interaction_highlight}
@@ -498,7 +499,8 @@ design practices.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\linewidth]{custom_component.png}
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.85\linewidth]{custom_component}
     \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
     \caption{Reuse Assistant workflow — refactoring: the automated refactoring result, showing the new custom block definition and the simplified main program.}
     \label{fig:ui_interaction_refactor}
