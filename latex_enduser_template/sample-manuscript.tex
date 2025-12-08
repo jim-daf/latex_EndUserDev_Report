@@ -52,7 +52,23 @@
     Bib\TeX}}}
 
 \usepackage{array}
-
+\usepackage{placeins}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% Prefer vector (PDF) charts when available; fallback to PNG/JPG.
+\usepackage{ifthen}
+\newcommand{\includebestgraphics}[2][]{%
+    % #1 = optional includegraphics options, #2 = base filename without extension
+    \IfFileExists{#2.pdf}{%
+        \includegraphics[#1]{#2.pdf}%
+    }{\IfFileExists{#2.png}{%
+        \includegraphics[#1]{#2.png}%
+    }{\IfFileExists{#2.jpg}{%
+        \includegraphics[#1]{#2.jpg}%
+    }{%
+        \PackageWarning{includegraphics}{File `#2' not found with .pdf/.png/.jpg extensions}%
+    }}}
+}
 %% Rights management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
@@ -166,7 +182,7 @@
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
-\renewcommand{\shortauthors}{Trovato et al.}
+\renewcommand{\shortauthors}{}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
@@ -346,102 +362,152 @@ By combining ideas from procedural abstraction (organizing code into meaningful,
 It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
 %In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
 \section{Study Design}
+\label{sec:study_design}
 
-
-
+Following the Design Science methodology, our study is structured into three main phases: problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to assess the artifact's performance in a controlled environment.
 
 \subsection{Problem Investigation}
+\label{subsec:prob_investigation}
+
 \subsubsection{Problem Context and Motivation}
-%Problem investigation should be more specific to the chemistry end users. So we need problems that could happen in the chemistry lab and not generic problems of reuse.
-End-user development (EUD) for collaborative robots (cobots) presents unique challenges, 
-particularly for users without formal programming training. In domains such as chemistry 
-laboratories, educational robotics, and industrial settings, end-users need to program 
-robots to perform specific tasks but often lack the software engineering knowledge to 
-write maintainable, well-structured code.
-In the domain of Chemistry, one of the most prevelant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
-Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and suspectible to human error - such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
 
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
-%and users miss opportunities to learn fundamental programming concepts such as modularity and abstraction. - not relevant for chemists?
-
+End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, end-users need to program 
+robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured code.
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
+Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
+One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
+Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
 
 \subsubsection{Stakeholder Analysis}
 
-\begin{itemize}
-    \item \textbf{Chemistry Laboratory Personnel:} Chemists and lab technicians who use 
-    cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality 
-    control procedures. They possess deep domain expertise in chemistry but limited 
-    programming knowledge, often creating long, repetitive programs that become difficult 
-    to maintain when adapting experimental protocols. Their primary need is to quickly 
-    create and modify robot programs without becoming programming experts.
-\end{itemize}
+Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality control procedures. 
+They possess deep domain expertise in chemistry but limited programming knowledge, often creating long, repetitive programs that become difficult to maintain when adapting experimental protocols. 
+Their primary need is to quickly create and modify robot programs without becoming programming experts.
 
-\subsubsection{Artifact Requirements}
-% make paragrapg of table 2 the need behaind each ine of this requiremnts. whta the solutioon? we should talk about what must be done and should.
-\begin{table}[H]
-  \small   
-  \caption{Functional and Non-Functional Requirements}
-  \label{tab:requirements}
-  \begin{tabular}{p{1.5cm}p{0.8cm}p{8cm}p{1.3cm}}
-    \toprule
-    \textbf{Type} & \textbf{ID} & \textbf{Description} & \textbf{Priority} \\
-    \midrule
-  Functional 
-    & FR1 & Detect duplicate/similar block sequences & High \\
-    & FR2 & Visually highlight detected duplications & High \\
-    & FR3 & Suggest creation of reusable custom blocks & High \\
-    & FR4 & Allow users to accept/reject suggestions & High \\
-    \midrule
-  Non-Functional
-    & NFR1 & Seamless Open Roberta Lab integration & High \\
-    & NFR2 & Intuitive interface for end users & High \\
-    & NFR3 & No interference with existing workflow & High \\
-    & NFR4 & Clear visual feedback during detection & High \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-The artifact requirements can be seen in table \ref{tab:requirements}. 
-% FR1 the core of our tool. We do the work for the user, who doesn't have knowledge about practices of reuse.
-% FR2 the more visible functions are, the more likely it is that users will be able to know what to do next. - lecture 1 review of HCI. 
-% FR3 same as FR1. We make the option of a custom block more visible to the end-user. Also check lecture 2 about Reuse. 
-% FR4 We want to give users the freedom to choose. The tool should support the end-user, it should not become an obstacle that they cannot avoid. Allows for customization (lecture 1 and 2).
-
-% NFR1 an objective of EUD. We don't want to disrupt existing workflow. See 'objectives of EUD' lecture 2. 
-% NFR2 Also objectives of EUD. 
-% NFR3 Basically the exact same as NFR1 (or is at least also 'covered' by NFR1). Should we perhaps delete this requirement?
-% NFR4 ...
 
 \subsection{Treatment Design}
+\label{subsec:treatment_design}
 
-Our treatment focuses on developing a guided reuse assistant for the OpenRoberta Lab environment.
-The purpose of this tool is to help users recognize which parts of their robot programs can be reused, 
-and to make it easier for them to create reusable custom blocks. By doing this, we aim to reduce 
-repetitive code and help users learn important programming concepts such as modularity and abstraction.
+To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to the chemist's goal of creating maintainable and reusable robot programs.
+Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences and visually highlighting these duplications within the user's workspace.
+These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go unnoticed. Once detected, the system must suggest the creation of reusable custom blocks, allowing the user to accept or reject these suggestions.
+These signals are important, as they give the end-user control over the reuse process, allowing them to decide when and how to apply reuse in their programs.
+Regarding non-functional requirements, the artifact must seamlessly integrate with the existing Open Roberta Lab environment to ensure a smooth user experience.
+The interface should be intuitive for end-users, minimizing the learning curve and making it easy to understand and use the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to help users understand what the system is doing and how to respond to its suggestions.
 
-\subsubsection{Overview of the Tool}
 
-The guided reuse assistant is built as an extension inside Open Roberta Lab, which uses the Blockly 
-framework. The assistant runs directly in the web browser and interacts with the user’s block workspace. 
-Its main job is to look through the user’s program, find repeated sequences of blocks, and guide 
-the user in turning them into reusable blocks.
+\subsubsection{Artifact Specification: The Reuse Assistant}
+To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
 
-The tool works in three main steps:
+
+
+\subsubsection{Architecture}
+
+The system enables the execution of block-based programs on a simulated cobot through a three-tier architecture, as illustrated in \ref{fig:architecture-zoom}. The workflow consists of the following stages:
+
 \begin{enumerate}
-    \item \textbf{Detecting Repeated Code:} 
-    The assistant automatically scans the user’s program and searches for parts that look the same
-     or very similar. These are marked as potential duplicates.
-
-    \item \textbf{Highlighting and Suggesting Reuse:} 
-    Once duplicates are found, the system highlights them in the workspace and shows a message 
-    suggesting that these sections could be made into a reusable block (function). 
-    This helps users see repetition they might not have noticed before.
-
-    \item \textbf{Helping the User Create a New Block:} 
-    If the user agrees to the suggestion, the assistant opens a small guide to help them create 
-    the new block. It automatically detects any small differences between the repeated parts, 
-    such as numbers or variable names, and turns them into inputs (parameters) for the new block. 
-    When the block is created, repeated code is replaced by the new reusable block.
+    \item \textbf{Client Side (Open Roberta):} The user interacts with the Open Roberta UI to assemble block sequences. The Reuse Assistant operates at this layer, analyzing blocks in real-time. Upon execution, the client generates specific data structures ("Generated Headers") representing the program logic.
+    \item \textbf{Backend (Flask Server):} The client transmits these headers via HTTP POST requests to a Flask-based API Endpoint. A "Translator" component processes the data, mapping the abstract block definitions to concrete Python methods compatible with the robot's control logic.
+    \item \textbf{Simulation (Mujoco):} The mapped methods trigger the execution of commands within the Mujoco Simulator, which renders the physical behavior of the cobot in the virtual environment.
 \end{enumerate}
+
+
+
+% Zoomed version of the architecture figure on its own page
+\begin{figure}[p]
+    \centering
+    \phantomsection
+    \includegraphics[width=\linewidth]{ArchitectureH2.png}
+    \caption{System architecture}
+    \label{fig:architecture-zoom}
+    \Description{System architecture diagram showing the Client Side, Backend, and Simulator tiers in more detail.}
+\end{figure}
+
+
+
+\subsubsection{Detection Algorithm}
+The core of the reuse assistance, located on the Client Side, is the sequence detection algorithm encapsulated in the \texttt{highlightOnlyFunctionCandidates} function. The algorithm operates in several steps:
+\begin{itemize}
+
+
+    \item \textbf{Linearization:} It first converts the hierarchical block structure into a linear chain of significant operational blocks, filtering out simple literals to focus on logic and action blocks.
+    
+    \item \textbf{Pattern Key Generation:} For a sliding window of block sequences (ranging from a minimum to a maximum length), it generates a unique "structural pattern key." This key is a hash or string representation of the block types and their connectivity, ignoring specific parameter values.
+    
+    \item \textbf{Pattern Matching:} The algorithm aggregates sequences by identical pattern keys. If a pattern key appears more than once (frequency $\ge$ 2), it is flagged as a candidate for reuse.
+
+    \item \textbf{Parameter Extraction:} Once a duplicate group is identified, the \texttt{extractLiteralParameters} function compares the instances to identify varying literals. These variations are mapped to future function parameters, ensuring the created abstraction is generalized correctly.
+
+
+\end{itemize}
+
+
+
+\begin{algorithm}[H]
+\caption{Sequence Detection and Pattern Key Generation}
+\label{alg:detection}
+\begin{algorithmic}[1]
+\REQUIRE $Blocks$: List of blocks in workspace
+\ENSURE $Candidates$: List of duplicate sequences
+\STATE $LinearChain \leftarrow$ \textbf{Linearize}($Blocks$)
+\STATE $Patterns \leftarrow$ Map$\langle$String, List$\langle$Sequence$\rangle\rangle$
+\FOR{$len \leftarrow \text{MinLen}$ \TO $\text{MaxLen}$}
+    \FOR{$i \leftarrow 0$ \TO $\text{length}(LinearChain) - len$}
+        \STATE $sequence \leftarrow LinearChain[i : i+len]$
+        \STATE $sequenceKey \leftarrow$ ``''
+        \FORALL{$block$ \textbf{ in } $sequence$}
+            \STATE $sequenceKey \leftarrow sequenceKey + block.type$
+        \ENDFOR
+        \STATE $Patterns[sequenceKey]$.add($sequence$)
+    \ENDFOR
+\ENDFOR
+\STATE $Candidates \leftarrow$ []
+\FORALL{$sequenceKey$ \textbf{ in } $Patterns$}
+    \IF{$\text{size}(Patterns[sequenceKey]) \ge 2$}
+        \STATE $Candidates$.add($Patterns[sequenceKey]$)
+    \ENDIF
+\ENDFOR
+\RETURN $Candidates$
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm 1. illustrates the core logic for identifying reusable candidates by abstracting literal values.
+
+
+
+% [TODO: Insert here your technical description from your original section 3.2.1. 
+% Explain briefly the architecture, the detection algorithm, and how the UI works.]
+\subsubsection{User Interface and Interaction}
+The user interface is designed to be intuitive and non-disruptive. When the detection 
+algorithm identifies a candidate, the system visually highlights the blocks on the canvas as illustrated in Figure \ref{fig:ui_interaction_highlight}. 
+A non-blocking toast notification appears, prompting the user to confirm the refactoring. 
+If confirmed, the system automatically generates the custom block definition in a dedicated 
+workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
+the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
+This process abstracts the complexity of manual function creation, guiding the user toward modular 
+design practices.
+
+% --- START: Split UI figures ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{highlight.png}
+    \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
+    \caption{Reuse Assistant workflow — detection: the interface detects and highlights duplicate blocks by changing their color to green.}
+    \label{fig:ui_interaction_highlight}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{custom_component.png}
+    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
+    \caption{Reuse Assistant workflow — refactoring: the automated refactoring result, showing the new custom block definition and the simplified main program.}
+    \label{fig:ui_interaction_refactor}
+\end{figure}
+% --- END: Split UI figures ---
+
+% Esto prohíbe que las imágenes pasen de aquí hacia abajo. 
+% Se imprimirán antes de que empiece la sección 3.3 obligatoriamente.
+\FloatBarrier
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % validity threat here or in discussion?
 % Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
@@ -598,25 +664,26 @@ No participants preferred the standard version or rated the two versions as equi
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{survey_comp_enh_sta.png}
+    % Use PDF (vector) if present, otherwise PNG/JPG
+    \includebestgraphics[width=\textwidth]{survey_comp_enh_sta}
     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
     \label{fig:compare_versions}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{usability_of_feature.png}
+    \includebestgraphics[width=\textwidth]{usability_of_feature}
     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
     \label{fig:usability_of_feature}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{hl_eval.png}
+    \includebestgraphics[width=\textwidth]{hl_eval}
     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
     \label{fig:hl_eval}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{hl_pref.png}
+    \includebestgraphics[width=\textwidth]{hl_pref}
     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
     \label{fig:hl_pref}
 \end{figure}
