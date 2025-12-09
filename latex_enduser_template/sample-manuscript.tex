@@ -214,6 +214,7 @@
 
 
 \section{Background and Related Work}
+\label{sec:background_relatedWork}
 %% ---- Background ----
 %% 1 Background abt. reuse. What is it, and why is it important? (anne)
 %% 2 What is the current state of 'reuse' for low-code? Anne paragraph (anne)
@@ -460,7 +461,7 @@ After the user presses the run simulation button, the robot simulator of mujoco 
 \begin{figure}[htbp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.65\linewidth]{mujoco}
+    \includebestgraphics[width=0.85\linewidth]{mujoco}
     \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
     \caption{Mujoco robot simulator executing the commands from Open Roberta.}
     \label{fig:mujoco_simulator}
@@ -475,6 +476,7 @@ After the user presses the run simulation button, the robot simulator of mujoco 
 % Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
 %"Task execution" We need to explain what exactly will be the task
 \subsection{Treatment Validation}
+\label{subsec:treatment_validation}
 The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
 the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within 
 the OpenRoberta environment. 
@@ -530,7 +532,7 @@ Most optimal solution pre-defined by the researchers:
      \label{fig:optimal_solution}
  \end{figure}
 
-Instead of creating a long linear sequence of blocks (hard-coding the movement for all three objects), the most optimal solution utilizes a **Custom Reusable Component** to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
+Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
 This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
 All the participants will try to complete the task using both the standard and the enhanced version of OpenRoberta. 
@@ -544,7 +546,7 @@ Data collection focuses on both quantitative performance and qualitative feedbac
 \begin{enumerate}
     \item \textbf{Task Completion Time:} Comparing the participants who will first use the enhanced version of OpenRoberta against those who will first use the standard version.
     \item \textbf{Solution Accuracy:} Evaluated by comparing the participant's block configuration against the pre-defined optimal solution.
-    \item \textbf{Survey Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the utility of the block creation guidance features.
+    \item \textbf{Survey Feedback:} Collected via a post-experiment survey designed to capture demographic data and subjective perceptions of the effectiveness and usability of the block creation guidance feature.
 \end{enumerate}
 
 This comprehensive evaluation will provide a detailed understanding of how useful and effective is the block creation guidance feature to the end-users.
@@ -559,14 +561,16 @@ with qualitative feedback derived from survey responses.
 
 
 \subsection{Performance Evaluation}
-To evaluate the efficiency and effectiveness of the proposed reusable component features, 
-we analyzed two primary metrics: Task Completion Time and Solution Accuracy.
+To evaluate the efficiency and effectiveness of the proposed reusable component 
+features, we analyzed two primary metrics: Task Completion Time and Solution Accuracy.
 
 % -----------------------------------------------------------------------------------------
 % TASK COMPLETION TIME
 % -----------------------------------------------------------------------------------------
 \subsubsection{Task Completion Time}
-The total time required to complete the experimental task was recorded for both the \textit{Standard} and \textit{Enhanced} conditions. 
+The total time required to complete the experimental task was recorded for both 
+the participants that first used the \textit{Standard} version of OpenRoberta and 
+for those who used the \textit{Enhanced} version first. 
 
 We compared the performance of participants based on the order of conditions (see Table \ref{tab:time_comparison_vertical}).
 The analysis reveals a significant reduction in task duration when using the Enhanced 
@@ -586,16 +590,13 @@ minutes, compared to $10$ minutes for the Standard version.
     \centering
     \caption{Breakdown of Mean Task Completion Times}
     \label{tab:time_comparison_vertical}
-    % 'm{10cm}' allows the text to wrap and centers it vertically
-    % 'c' centers the number vertically
-    \begin{tabular}{m{10cm} | c} 
+    \begin{tabular}{| p{8cm} | c | c |} 
         \hline
-        \textbf{Experimental Condition} & \textbf{Mean Time (min)} \\
+        \textbf{Experimental Condition} & \textbf{Mean Time (min)} & \textbf{Efficiency} \\
         \hline
-        % No '\\' here. Text and number are on the same row.
-        \textit{Group of Participants that used the Enhanced OpenRoberta Version First} & 8.5 \\
+        \textit{Participants who used Enhanced Version First} & 8.5 & 15\% \\
         \hline
-        \textit{Group of Participants that used the Standard OpenRoberta Version First} & 10.0 \\
+        \textit{Participants who used Standard Version First} & 10.0 & --- \\
         \hline
     \end{tabular}
 \end{table}
@@ -605,7 +606,7 @@ minutes, compared to $10$ minutes for the Standard version.
 % -----------------------------------------------------------------------------------------
 \subsubsection{Solution Accuracy}
 Solution accuracy was evaluated by comparing participant solutions against the optimal reference 
-solution defined in the treatment evaluation.
+solution defined in the treatment validation (see Section \ref{subsec:treatment_validation}).
 
 \paragraph{Adoption of Reusable Blocks}
 A key metric was the voluntary adoption of the custom reusable component. 
@@ -654,16 +655,18 @@ No participants preferred the standard version or rated the two versions as equi
 Regarding usability of the enhanced OpenRoberta version, we received high acceptance scores. As illustrated in Figure \ref{fig:usability_of_feature}, 40\% of participants found the 
 enhanced version ``very easy'' to use, and 60\% rated it as ``easy.''
 No participants rated the enhanced version as ``Neither easy nor difficult,'' ``Difficult,'' or ``Very difficult'' to use.
+
 \subsubsection{Evaluation of the Visual Highlighting}
 A key component of the enhanced version was the visual highlighting designed 
 to guide the user into an automatic custom reusable block creation. 
-As shown in Figure \ref{fig:hl_eval}, results showed a high level of user satisfaction, with 90\% of participants reporting they were either ``satisfied'' 
+As shown in Figure \ref{fig:hl_eval}, results showed a high level of user satisfaction,
+with 90\% of participants reporting they were either ``satisfied'' 
 (20\%) or ``very satisfied'' (70\%) with the features. Only one participant (10\%) expressed a neutral stance.
 
 \subsubsection{Visual Highlighting Style Preference}
 When asked about specific highlighting preferences, as depicted in Figure \ref{fig:hl_pref} the \textit{Animated Color Highlight} was the most popular choice, 
 preferred by 50\% of the users. A significant portion of participants (30\%) expressed no strong preference 
-between the styles, suggesting that the presence of guidance was more important than the specific animation style 
+between the styles, suggesting that the presence of guidance was more important than the specific highlight style 
 used.
 
 % -----------------------------------------------------------------------------------------
@@ -675,8 +678,7 @@ these responses revealed two primary findings:
 
 \paragraph{Efficiency and Speed}
 When asked to identify the biggest difference between the two versions, the majority of participants cited 
-\textit{efficiency}. Responses frequently described the enhanced version as ``faster'' and noted that it 
-``saved a lot of time.'' This aligns with the quantitative preference data, suggesting that the reusability 
+\textit{efficiency}. Responses frequently described the enhanced version as ``faster''. This aligns with the quantitative preference data, suggesting that the reusability 
 features successfully reduced the perceived workload.
 
 \paragraph{Suggestions for Improvement}
@@ -694,14 +696,15 @@ interface.
 
 \subsection{Lessons Learned}
 Utilizing OpenRoberta Lab as a representative block-based robotics environment, this study examined the 
-efficacy of automated guidance mechanisms in promoting software reuse among chemistry students and educators 
-engaged in laboratory experimentation.
+efficacy of automated guidance mechanisms in promoting software reuse among chemistry students and 
+educators engaged in laboratory experimentation.
 
 \subsubsection{Overall User Preference}
 Based on the feedback from the participants, as well as observations of how they solved the task, 
 the participants found the enhanced version of OpenRoberta Lab to be better than the standard version. 
-Noteably, 9 out of 10 participants commented on how the enhanced version let them perform their task faster. 
-As described in section 2, this is also one of the main benefits of reuse in the field of software engineering. 
+Noteably, 9 out of 10 participants commented on how the enhanced version let them perform their task 
+faster. As described in section \ref{sec:background_relatedWork}, this is also one of the main benefits of reuse in the field of 
+software engineering. 
 
 \subsubsection{Overcoming the Recognition Barrier for Reuse}
 A defining finding of this study is the contrast in adoption rates: 100\% of participants utilized 
@@ -715,18 +718,21 @@ lack of recognition.
 
 \subsubsection{Impact of Automated Construction of Reusable Components} 
 The 15\% reduction in task completion time highlights the value 
-of automating the block creation process. In the standard environment, creating a reusable component requires
-a manual, multi-step process of defining a function and relocating blocks. The enhanced version streamlined 
-this by automating the structural setup of the custom block once a duplicate was detected. This confirms that 
-removing the "friction" of manual block assembly is crucial for encouraging reusability among non-programmers.
+of automating the custom block creation process. In the standard environment, creating a reusable component requires
+a manual, multi-step process of defining a custom block. But without creating a custom reusable component, 
+the end-users had to manually import the repetitive block sequences to the workspace. 
+The enhanced version streamlined this by automating the structural setup of the custom block once a 
+duplicate sequence of blocks was detected. 
+%This confirms that removing the "friction" of manual block assembly is crucial for encouraging reusability among the end-users.
 
-\subsubsection{Visual Salience in Learning}
+\subsubsection{Importance of Visual Highlighting}
 The user preference for the \textit{Animated Color Highlight} (50\% preference) and the high satisfaction 
-rates (90\% satisfied/very satisfied) underscore the importance of visual salience. In a dense visual 
-environment like OpenRoberta, static cues are easily overlooked. The dynamic nature of the animation acted 
-as a "Just-in-Time" trigger, interrupting the user's tunnel vision exactly when the redundancy occurred. 
-This supports the use of proactive, visually distinct interruptions in educational IDEs to correct inefficient
-patterns in real-time.
+rates (90\% satisfied/very satisfied) for the visual highlight underscore the 
+importance of clear visual signals to the end users. 
+In a dense visual environment like OpenRoberta, static cues are easily overlooked. The dynamic nature 
+of the animation highlight acted as a "Just-in-Time" trigger, interrupting the user's tunnel vision exactly when 
+the redundancy occurred. This supports the use of proactive, visually distinct interruptions in 
+educational block based environments to successfully guide and take the attention of the end users.
 
 \subsubsection{Suggestions by Participants}
 Changes suggested by the participants mainly focus on smaller customizations of the tool and the OpenRoberta 
@@ -735,6 +741,9 @@ that there is no need for improvement of the tool. As many of the participants c
 in regards to Computer Programming, it's likely that they lack ideas about other ways the tool could have been 
 designed. Instead, these answers can be interpreted as the participants having little to no issue with the 
 current design. 
+
+
+
 
 \subsection{Implications for Practice}
 % From what I could find, this section is basically about the potential effects/significance of our study's findings. How can the results we found influence real-life practices and research? Basically smth like; participants showed positive reactions to our tool, finding it both easier to use, but also faster. Our solution/idea is worth doing further research about, as the results suggest that our idea can successfully help end-users perform reuse. 
@@ -748,15 +757,13 @@ interaction model, where advanced features like "Functions" sit in a toolbox wai
 Our study demonstrates that domain experts (e.g., chemists) often fail to utilize these features voluntarily, 
 even when they would be beneficial. The 100\% adoption rate in the Enhanced condition implies that EUD tools 
 must evolve into \textit{active assistants}. Development environments should incorporate background monitoring
-systems that detect inefficient patterns (such as code duplication) and proactively intervene with 
-architectural suggestions.
+systems that detect inefficient patterns (such as code duplication) and proactively intervene with suggestions.
 
 \subsubsection{Learning by Example}
 Beyond just making the task faster, the tool also acted as a teaching aid. By pointing out the repetitive 
-code and showing how to fix it, the tool created a "learning moment" exactly when the user needed it. 
-This suggests that automation tools can have two benefits: they help experts work faster, but they also teach 
-beginners difficult concepts—like how to organize blocks of code and use inputs—simply by showing them a 
-practical example.
+block sequences and showing how to improve that, the tool created a "learning moment" exactly when the user needed it. 
+This suggests that automation reuse assistants can have two benefits: they help domain experts work faster, but they also teach 
+beginners difficult concepts like how to organize blocks of code by simply showing it to them in practice.
 
 \subsection{Threats to Validity}
 \subsubsection{Convenience Sampling} 
