@@ -545,9 +545,9 @@ Guidance will be provided from the researchers to the participants throughout th
 \subsubsection{Data Gathering and Analysis}
 Data collection focuses on both quantitative performance and qualitative feedback from participants:
 \begin{enumerate}
-    \item \textbf{Task Completion Time:} Comparing the participants who will first use the enhanced version of OpenRoberta against those who will first use the standard version.
-    \item \textbf{Solution Accuracy:} Evaluated by comparing the participant's block configuration against the pre-defined optimal solution.
-    \item \textbf{Survey Feedback:} Collected via post-experiment surveys designed to capture demographic data and subjective perceptions of the effectiveness and usability of the block creation guidance feature.
+    \item \textbf{Task Completion Time:} Measured for both versions (Enhanced and Original) to compare performance across groups. Statistical analysis included paired t-tests to evaluate within-group improvements and between-group comparisons to identify order effects (carryover effects).
+    \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature.
+    \item \textbf{Workload Assessment:} Measured using the NASA Task Load Index (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
 
 This comprehensive evaluation will provide a detailed understanding of how useful and effective is the Reuse Assistant feature to the end-users.
@@ -875,13 +875,20 @@ The consistent outlier pattern (one participant with low SUS scores and high wor
 
 \subsubsection{Internal Validity}
 
-\paragraph{Order Effects and Carryover}
-While the crossover design allowed within-subjects comparison, the significant order effect (p=.008) indicates that the sequence of conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse Assistant from the impact of prior experience. The 481-second performance gap between groups suggests that learning from the first condition substantially influenced performance in the second condition.
+\paragraph{Carryover effect}
+While the crossover design allowed within-subjects comparison, the significant order effect (p=.008) indicates that the sequence of 
+conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse 
+Assistant from the impact of prior experience. The 481-second performance gap between groups suggests that learning from the first 
+condition substantially influenced performance in the second condition.
 
-\textit{Mitigation:} We explicitly analyzed and reported the order effect as a finding rather than treating it as unwanted noise. The crossover design, despite this limitation, provided valuable insights about how prior experience shapes users' ability to benefit from automation. Future studies could employ between-subjects designs to isolate tool effects, though this would sacrifice statistical power given small sample sizes typical in EUD research.
+\textit{Mitigation:} We explicitly analyzed and reported the order effect as a finding rather than treating it as unwanted noise. 
+The crossover design, despite this limitation, provided valuable insights about how prior experience shapes users' ability to benefit 
+from automation. Future studies could employ between-subjects designs to isolate tool effects, though this would sacrifice statistical 
+power given small sample sizes typical in EUD research.
 
 \paragraph{Task Specificity}
-The experimental task, while modeled on authentic chemistry lab procedures, represented a single workflow pattern with clear repetitive sequences. The Reuse Assistant's effectiveness may not generalize to tasks with:
+The experimental task, while modeled on authentic chemistry lab procedures, represented a single workflow pattern with clear repetitive 
+sequences. The Reuse Assistant's effectiveness may not generalize to tasks with:
 \begin{itemize}
     \item Less obvious repetition patterns
     \item Longer or more complex reusable sequences
@@ -889,24 +896,27 @@ The experimental task, while modeled on authentic chemistry lab procedures, repr
     \item Nested or hierarchical code structures
 \end{itemize}
 
-\textit{Mitigation:} The task was designed in consultation with chemistry educators and reflected realistic laboratory automation scenarios. However, broader validation across diverse task types and domains is necessary to establish generalizability.
+\textit{Mitigation:} The task was designed in consultation with chemistry educators and reflected realistic laboratory automation 
+scenarios. However, broader validation across diverse task types and domains is necessary to establish generalizability.
 
 \subsubsection{External Validity}
 
 \paragraph{Convenience Sampling and Population Representation}
-Participants were recruited through the researchers' professional networks at the University of Southern Denmark, constituting a convenience sample. This introduces several limitations:
+Participants were recruited through the researchers' professional networks at the University of Southern Denmark, constituting a 
+convenience sample. This introduces several limitations:
 
 \begin{itemize}
-    \item \textbf{Geographic concentration:} All participants affiliated with a single institution in Denmark, potentially reflecting local educational approaches and cultural attitudes toward automation.
-    \item \textbf{Self-selection bias:} Volunteers may be more technologically inclined or motivated than typical chemistry professionals who would use cobot programming in practice.
-    \item \textbf{Limited domain diversity:} While participants included chemistry teachers, students, and professional chemical engineers, they do not represent the full spectrum of potential end-user developers in laboratory automation.
-    \item \textbf{Sample size:} With N=10 for performance evaluation and N=11 for usability assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles (such as the consistent outlier).
+    \item \textbf{Geographic and institutional diversity:} While the study included participants from multiple countries (both local and international participants connected online), recruitment relied primarily on the researchers' professional networks, which may not represent the full geographic and cultural diversity of potential end-users in laboratory automation contexts.
+    \item \textbf{Self-selection bias:} Volunteers may be more technologically inclined or motivated than typical professionals who would use cobot programming in practice, potentially overestimating the tool's ease of adoption among less motivated users.
+    \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory coursework experience, they represent primarily academic contexts rather than industrial laboratory settings where cobot programming would be deployed professionally.
+    \item \textbf{Sample size:} With N=10 for performance evaluation,usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles (such as the consistent outlier), limiting the generalizability of findings to broader populations.
 \end{itemize}
 
 \textit{Implications:} Findings should be interpreted as preliminary evidence rather than definitive proof of effectiveness across all end-user developer populations. Replication studies with larger, more diverse samples from multiple institutions and countries are necessary to establish the robustness of these results.
 
 \paragraph{Ecological Validity: Laboratory vs. Authentic Use}
-The study was conducted in a controlled setting with researcher guidance available, tasks completed in a single session, and no real-world consequences for errors. This differs from authentic usage where:
+The study was conducted in a controlled setting with researcher guidance available, tasks completed in a single session, and 
+no real-world consequences for errors. This differs from authentic usage where:
 
 \begin{itemize}
     \item Users work independently without expert support
@@ -915,7 +925,9 @@ The study was conducted in a controlled setting with researcher guidance availab
     \item Users balance programming with their primary professional responsibilities
 \end{itemize}
 
-\textit{Mitigation:} We included chemistry domain experts as participants rather than generic users, and the task was based on actual laboratory procedures. However, longitudinal field studies observing the Reuse Assistant in authentic work contexts are necessary to validate its practical impact.
+\textit{Mitigation:} We included chemistry domain experts as participants rather than generic users, and the task was based on actual 
+laboratory procedures. However, longitudinal field studies observing the Reuse Assistant in authentic work contexts are necessary to 
+validate its practical impact.
 
 \subsubsection{Construct Validity}
 
