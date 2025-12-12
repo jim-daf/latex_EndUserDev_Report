@@ -214,14 +214,12 @@
 
 This paper addresses these three questions:
 \begin{itemize}
-    \item RQ1: How effective is the enhanced OpenRoberta at promoting use of reusable custom blocks?
-    \item RQ2: How effective are the visual highlights at guiding the user towards creating reusable custom blocks?
-    \item RQ3: How the enhanced OpenRoberta compare to the standard OpenRoberta, in terms of:
-    \begin{enumerate}
-        \item User preference
-        \item Task completion time
-        \item Solution accuracy
-    \end{enumerate}
+    \item RQ1: How does OpenRoberta with the Reuse Assistant compare to the standard OpenRoberta in terms of task performance?
+    \item RQ2: How well does the Reuse Assistant perform in terms of usability?
+    \item RQ3: To what effect does the Reuse Assistant promote the creation and usage of reusable custom blocks?
+    \begin{itemize}
+        \item Which factors influenced the end user's decision on whether or not to make use of the Reuse Assistant?
+    \end{itemize}
 \end{itemize}
 
 
@@ -274,7 +272,7 @@ In order to analyze how block-based robotics environments address reuse, 4 repre
 \end{table}
 In this context, “reuse support” represents a scale that measures how effectively each platform facilitates reuse-related features. High reuse support indicates that users can easily create, share, and adapt existing components or projects. Medium reuse support suggests that some reuse mechanisms are available but limited in scope or flexibility. Low reuse support implies that the platform provides only minimal or restricted features to promote reuse.
 
-As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\\\
+As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\
 A study by Techapalokul and Tilevich (2019) suggests that supporting mechanisms for reusing smaller, modular pieces of code can enhance programmer productivity, creativity and learning outcomes. 
 %Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with facilities for reusing individual custom blocks to promote procedural abstraction and improve code quality. They observed that while Scratch enables remixing of entire projects, it lacks mechanisms for reusing smaller, modular pieces of code. Their work suggests that supporting such fine-grained code reuse could enhance programmer productivity, creativity, and learning outcomes. Building on this idea, our project applies similar principles within the OpenRoberta environment by automating the detection of duplicate code segments and guiding users toward creating reusable custom blocks.
 Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. Building upon this concept, our project applies similar principles in the OpenRoberta environment, focusing on detecting duplicate code segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}.
@@ -301,10 +299,13 @@ Following the Design Science methodology, our study is structured into three mai
 
 End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, end-users need to program 
 robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured code.
-In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
-Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
-Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
+%One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
+%not sure if this abt attention model should be in related work instead??
+One critical challenge in EUD is code reuse. According to Blackwell's Attention Investment Model [cite that], users decisions about whether to engage in programming activites, are based on an implicit cost-benefit analysis. How big an investment must be made to create the program, how great will the pay-off be, and what is the risk that the investment won't pay off. While the usage of reusable components can be a great way to lower the cost of creating a program, the decision whether to create such a component is also subject to a cost-benefit analysis. Several visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. This leaves end-users with the added cost of having to figure out how each platform supports reuse, and how to make use of the provided features. 
+%[the cost investment is greater bc takes longer to create code, and debugging etc. Also learning how to reuse is an investment.]
+%This results in a learning barrier [cite KO learning barrier],  
+As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
 
 \subsubsection{Stakeholder Analysis}
 
@@ -703,8 +704,14 @@ interface.
 %----------------------------------------------------------------------------------------------------------------------
 \section{Discussion}
 %In this section, you should discuss the results presented in the previous section. The discussion should be organized around lessons learned (5.1), implications for practice (5.2), and threats to validity (5.3). The whole discussion must be grounded on the existing literature and argue how your contributions advance the state-of-the-art in the chosen EUSE area
-%need to review the screen recordings as well!! How was the users' behavior when using the enhanced tool? How long does it take them to insert a custom block into the workflow, after they've clicked 'yes' to letting our tool create one for them? Did they seem confused or hesitant when they used the tool for the first time?
 % Another thing we should refine in section 3 - we should prolly explain more about why we designed the tool the way we did. Need to back it up with research. 
+\subsection{Implications for Theory}
+\subsubsection{Attention Investment Model} lol
+%Questions you should consider when developing the implications section:
+%●  What is the significance of your findings?
+%●  How do the findings of your study fit with or contradict existing research on this topic?
+%●  Do your results support or challenge existing theories? If they support them, what new information do they contribute? If they challenge them, why do you think that is?
+
 
 \subsection{Lessons Learned}
 Utilizing OpenRoberta Lab as a representative block-based robotics environment, this study examined the 
@@ -754,9 +761,6 @@ in regards to Computer Programming, it's likely that they lack ideas about other
 designed. Instead, these answers can be interpreted as the participants having little to no issue with the 
 current design. 
 
-
-
-
 \subsection{Implications for Practice}
 % From what I could find, this section is basically about the potential effects/significance of our study's findings. How can the results we found influence real-life practices and research? Basically smth like; participants showed positive reactions to our tool, finding it both easier to use, but also faster. Our solution/idea is worth doing further research about, as the results suggest that our idea can successfully help end-users perform reuse. 
 The findings of this study have broader implications for the design of End-User Development (EUD) environments 
@@ -781,6 +785,8 @@ beginners difficult concepts like how to organize blocks of code by simply showi
 \subsubsection{External Validity - Convenience Sampling} 
 The participants to the study were either aquantiances of one of the authors of the study, or were recruited through these aquantiances.
 As the study is focused on the domain of chemistry rather than general use, this did leade to a smaller sample pool of possible participants. As such, the results of this study cannot be generalized.
+\subsubsection{Internal Validity - Learning Effect}
+As all participants complete the same task twice, it is inevitable that there will be a carryover effect in regards to learning. This can affect some of the results, such as task completion time. Two things were done to mitigate this. Firstly, experiment sequence was mixed between subjects. If the first participant first completed the task using the standard OpenRoberta, then the enhanced version, then the second participant would do it in the opposite order. Secondly, the experiments were balanced, meaning half of the participants did the standard -> enhanced sequence, while the other half did enhanced -> standard. In this way, the overall effect on the results is minimized.
 \subsubsection{Construct Validity - Ambiguous Metrics}
 Certain questions in the survey were too ambigous to provide valid measurements. This included asking participants how 'easy' they found the enhanced version of OpenRoberta, what level of programming knowledge they posess and whether they were satisfied with the highlights. To mitigate this, another questionnaire was created, based on [XX], which the participants were asked to answer less than one week post-experiment.
 \subsubsection{Interpretive Validity - Ambiguous Answers}
