@@ -39,17 +39,27 @@
 %% For submission and review of your manuscript please change the
 %% command to \documentclass[manuscript, screen, review]{acmart}.
 %%
-%% When submitting camera ready or to TAPS, please change the command
+%% When submitting camera ready or TAPS, please change the command
 %% to \documentclass[sigconf]{acmart} or whichever template is required
 %% for your publication.
 %%
 %%
-\documentclass[manuscript,screen,review]{acmart}
+\documentclass[manuscript,screen,nonacm]{acmart}
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
     Bib\TeX}}}
+
+% Force one-sided layout with uniform margins
+\usepackage{geometry}
+\geometry{
+  left=1in,
+  right=1in,
+  top=1in,
+  bottom=1in,
+  asymmetric
+}
 
 \usepackage{array}
 \usepackage{placeins}
@@ -290,8 +300,8 @@ There have been proposed some ideas on how to promote reuse for LCPs, such as th
 %Low code platform tools that focus on reuse
 %[x does this, y does that, but a common trend seen in all of them is the almost nonexistent guidance towards using these features. If a user doesnt know/care about reuse, that mentality is never challenged.]
 Several popular low-code development platforms (LCDPs) provide different kinds of support for reuse. Webflow\cite{webflow}, a LCDP for responsive websites, offers the ability to create reusable components and UI kits, which can be reused across multiple pages and projects. 
-Mendix\cite{mendix} and OutSystems offer even more functionality to support reuse, offering several ways to end-users to share their code with each other, and offering pre-made components. Both of these platforms also utilize AI to enhance reuse. Outsystems provides AI suggestions to spot and create reusable pieces, while Mendix uses AI to suggest the best solutions and components for specific tasks. However, for both of these platforms, the AI suggestions provided are not always accurate to successfully guide the end-user to create custom reusable components ***(How do we know this? What makes it 'accurate'?**).\\
-%Mendix\cite{mendix} also offers the ability for end-users to create reusable building blocks, and these can be shared with others. The platform provides AI suggestions to spot and create reusable pieces, empowering even beginners to build complex apps while keeping reuse simple and widespread. This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions, a lot of times these suggestions are not accurate enough*****(HOW do we know whether it's accurate???)****
+Mendix\cite{mendix} and OutSystems offer even more functionality to support reuse, offering several ways to end-users to share their code with each other, and offering pre-made components. Both of these platforms also utilize AI to enhance reuse. Outsystems provides AI suggestions to spot and create reusable pieces, while Mendix uses AI to suggest the best solutions and components for specific tasks. However, for both of these platforms, the AI suggestions provided are not always accurate to successfully guide the end-user to create custom reusable components.\\
+%Mendix\cite{mendix} also offers the ability for end-users to create reusable building blocks, and these can be shared with others. The platform provides AI suggestions to spot and create reusable pieces, empowering even beginners to build complex apps while keeping reuse simple and widespread. This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions, a lot of times these suggestions are not accurate enough*****(HOW do we know whether it's accurate???)    ***(How do we know this? What makes it 'accurate'?**)****
 % Webflow - Despite all of the useful features that this tools has, it does not provide guidance to the end-users to create custom reusable components. % which is the key feature of our project.
 % Mendix - This tool does offer guidance for the end-users to create custom reusable components through its AI suggestions, a lot of times these suggestions are not accurate enough (how do we know this??**).
 In order to analyze how block-based robotics environments address reuse, 4 representative platforms were compared: mBlock, MakeCode, SPIKE LEGO, VEXcode GO and Open Roberta. The comparison focused on three main dimensions of reuse: structural reuse (through user-defined blocks or functions), social reuse (through sharing or remixing existing projects), and interoperable reuse (through import/export capabilities).
@@ -366,11 +376,9 @@ The interface should be intuitive for end-users, minimizing the learning curve a
 \subsubsection{Artifact Specification: The Reuse Assistant}
 To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
 
-
-
 \subsubsection{Architecture}
 
-The system enables the execution of block-based programs on a simulated cobot through a three-tier architecture, as illustrated in \ref{fig:architecture-zoom}. The workflow consists of the following stages:
+The system enables the execution of block-based programs on a simulated cobot through a three-tier architecture, as illustrated in figure \ref{fig:architecture-zoom}. The workflow consists of the following stages:
 
 \begin{enumerate}
     \item \textbf{Client Side (Open Roberta):} The user interacts with the Open Roberta UI to assemble block sequences. The Reuse Assistant operates at this layer, analyzing blocks in real-time. Upon execution, the client generates specific data structures ("Generated Headers") representing the program logic.
@@ -518,9 +526,6 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \label{fig:mujoco_simulator}
 \end{figure}
 % --- END: Split UI figures ---
-
-% Esto prohíbe que las imágenes pasen de aquí hacia abajo. 
-% Se imprimirán antes de que empiece la sección 3.3 obligatoriamente.
 \FloatBarrier
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % validity threat here or in discussion?
@@ -606,6 +611,10 @@ This comprehensive evaluation provided a detailed understanding of how useful an
 \section{Results}
 \subsection{Research Question 1: Can the Reuse Assistant improve the end-users performance? }
 
+To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants under both conditions (Enhanced and Original versions). The study employed a crossover design where participants were divided into two groups: Group A experienced the Enhanced version first, while Group B started with the Original version. This design allowed us to assess not only the tool's effectiveness but also potential order effects arising from learning transfer between conditions.
+
+Table \ref{tab:participant_times} presents the individual completion times for all participants across both conditions. The data reveal substantial variability in performance outcomes depending on the presentation order, with Group B participants showing consistent improvements when moving from Original to Enhanced, while Group A participants exhibited the opposite pattern.
+
 \begin{table}[h]
 \centering
 \setlength{\tabcolsep}{8pt}
@@ -639,6 +648,8 @@ P10 & B (Original $\to$ Enhanced) & 259 seconds & 506 seconds & -247 seconds \\
 \label{tab:participant_times}
 \end{table}
 
+Figure \ref{fig:boxplot} visualizes the distribution of completion times across both conditions and groups. The boxplot illustrates the central tendency, spread, and potential outliers in the data, providing a clear visual representation of performance differences between the Enhanced and Original versions.
+
 \begin{figure}[h]
 \centering
 % Use PDF (vector) if present, otherwise PNG/JPG
@@ -646,6 +657,8 @@ P10 & B (Original $\to$ Enhanced) & 259 seconds & 506 seconds & -247 seconds \\
 \caption{Boxplot of task completion times}
 \label{fig:boxplot}
 \end{figure}
+
+To statistically evaluate these observed differences, we conducted paired t-tests and a Welch's t-test to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, including overall comparisons, within-group improvements, and the analysis of order effects (carryover effects).
 
 \begin{table}[h]
 \centering
