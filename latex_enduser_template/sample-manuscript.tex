@@ -929,20 +929,20 @@ This aligns with theories of learning transfer and expertise development \cite{K
 The SUS results (mean: 84.1) place the Reuse Assistant in the "Excellent" category, with 90\% of participants rating it above the 
 industry average of 68. This high usability score demonstrates that automated guidance can be both powerful and easy to use. The feature achieved this by focusing on simplicity: visual highlighting to show duplicates and one-click acceptance to create reusable blocks. This suggests that effective end-user tools should prioritize clarity over complexity.
 
-The NASA-TLX results (mean: 1.88, with temporal demand at 1.2 and frustration at 1.7) further support this finding, showing that effective guidance does not require complex interactions. The combination of high SUS scores and low NASA-TLX scores demonstrates that the Reuse Assistant successfully reduces barriers without adding mental burden. The key to this success is \textit{making the invisible visible} rather than increasing system sophistication.
+The NASA-TLX results (mean: 1.88, with temporal demand at 1.2 and frustration at 1.7) further support this finding, showing that effective guidance does not require complex interactions. The combination of high SUS scores and low NASA-TLX scores demonstrates that the Reuse Assistant successfully reduces barriers without adding mental burden. The key to this success is directly showing users duplicate code patterns through visual highlighting and providing one-click refactoring, rather than adding complexity.
 
 The bimodal distribution in both SUS scores and NASA-TLX workload (with one consistent outlier) suggests that while most users experience minimal burden, a small subset encounters significant difficulties. This pattern indicates individual differences in openness to automated guidance, potentially related to prior mental models, learning preferences, or comfort with system-initiated interactions.
 
-\subsubsection{Design Principle 1: From Passive Toolboxes to Active Assistants}
+\subsubsection{From Passive Toolboxes to Active Assistants}
 Current block-based programming environments (Scratch, Blockly, standard OpenRoberta) follow a passive interaction model where reuse 
-mechanisms exist as features waiting to be discovered. Our 0\% adoption rate in the standard condition demonstrates the limitations of this 
-approach for end-user developers, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
-The 100\% adoption rate with automated detection proves that tool designers must shift from providing 
+mechanisms exist as features waiting to be discovered. The 0\% adoption rate in the standard condition demonstrates the limitations of this 
+approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
+The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing 
 capabilities to actively guiding their use.
 
-\textbf{Practical Recommendation:} Development environments targeting domain experts should implement background analysis systems that continuously monitor for patterns that show code smells (repetition, long sequences, similar structures). Rather than requiring users to manually invoke refactoring tools, the system should actively show opportunities through non-intrusive notifications. This "ambient intelligence" approach respects user agency (through opt-in confirmations) while addressing the fundamental recognition barrier.
+% \textbf{Practical Recommendation:} Development environments targeting domain experts should implement background analysis systems that continuously monitor for patterns that show code smells (repetition, long sequences, similar structures). Rather than requiring users to manually invoke refactoring tools, the system should actively show opportunities through non-intrusive notifications. This "ambient intelligence" approach respects user agency (through opt-in confirmations) while addressing the fundamental recognition barrier.
 
-\subsubsection{Design Principle 2: Strategic Introduction of Automation}
+\subsubsection{Strategic Introduction of Automation}
 The order effect findings have direct implications for training and onboarding. Organizations introducing automated coding assistants 
 should consider implementing a staged approach:
 
@@ -954,8 +954,8 @@ should consider implementing a staged approach:
 
 This staged approach goes against the intuitive "make it easy from the start" philosophy but may lead to better long-term adoption and appropriate use of automation features.
 
-\subsubsection{Design Principle 3: Minimize Interaction Complexity}
-The exceptionally low NASA-TLX scores (temporal demand: 1.2, frustration: 1.7) demonstrate that effective guidance need not be complex. The Reuse Assistant succeeded through:
+\subsubsection{Minimize Interaction Complexity}
+The exceptionally low NASA-TLX scores (temporal demand: 1.2, frustration: 1.7) demonstrate that effective guidance need to not be complex. The Reuse Assistant succeeded through:
 
 \begin{itemize}
     \item \textbf{Visual highlighting:} Simple color change to indicate detected patterns
@@ -963,25 +963,39 @@ The exceptionally low NASA-TLX scores (temporal demand: 1.2, frustration: 1.7) d
     \item \textbf{Immediate feedback:} Instant display of the created reusable component
 \end{itemize}
 
-\textbf{Practical Recommendation:} Designers should resist the temptation to add configuration options, customization parameters, or complex workflows to guidance features. The key is \textit{making the invisible visible}, not providing sophisticated controls. For end-user developers, the interaction cost must be minimal to avoid creating new barriers while removing old ones.
+\textbf{Practical Recommendation:} Designers should resist the temptation to add 
+configuration options, customization parameters, or complex workflows to guidance features. 
+The key is directly showing users opportunities for improvement in their code 
+(duplicate sequence of blocks that could become reusable components) and offering an 
+immediate solution (one-click refactoring), not adding settings menus or advanced 
+configuration panels. 
+For end-users, the interaction cost must be minimal to avoid creating new barriers
+while removing old ones.
 
-\subsubsection{Design Principle 4: Plan for Individual Differences}
-The consistent outlier pattern (one participant with low SUS scores and high workload across all dimensions) indicates that approximately 10\% of users may struggle with automated guidance. This is likely cannot be avoided given individual differences in learning preferences and comfort with system-initiated interactions.
+% \subsubsection{Plan for Individual Differences}
+% The consistent outlier pattern (one participant with low SUS scores and high workload 
+% across all dimensions) indicates that approximately 10\% of users may struggle with 
+% automated guidance. This cannot be avoided given individual differences in learning 
+% preferences and comfort with system-initiated interactions.
 
-\textbf{Practical Recommendation:} Provide a clearly visible mechanism to disable automated suggestions for users who find them distracting or confusing. Additionally, supplement automated detection with alternative pathways (manual invocation, documentation, tutorials) to ensure users who reject proactive guidance can still access reuse mechanisms if they choose to seek them out.
+% \textbf{Practical Recommendation:} Provide a clearly visible mechanism to disable automated 
+% suggestions for users who find them distracting or confusing. Additionally, supplement 
+% automated detection with alternative pathways (manual invocation, documentation, tutorials) 
+% to ensure users who reject proactive guidance can still access reuse mechanisms if they 
+% choose to seek them out.
 
 \subsection{Threats to Validity}
 
 \subsubsection{Internal Validity}
 
 \paragraph{Carryover effect}
-While the crossover design allowed within-subjects comparison, the significant order effect (p=.008) indicates that the sequence of 
+While the within subjects design allowed within-subjects comparison, the significant order effect (p=.008) indicates that the sequence of 
 conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse 
 Assistant from the impact of prior experience. The 481-second performance gap between groups suggests that learning from the first 
 condition substantially influenced performance in the second condition.
 
 \textit{Mitigation:} We explicitly analyzed and reported the order effect as a finding rather than treating it as unwanted noise. 
-The crossover design, despite this limitation, provided valuable insights about how prior experience shapes users' ability to benefit 
+The within subjects design, despite this limitation, provided valuable insights about how prior experience shapes users' ability to benefit 
 from automation. Future studies could employ between-subjects designs to isolate tool effects, though this would sacrifice statistical 
 power given small sample sizes typical in EUD research.
 
@@ -1001,7 +1015,8 @@ convenience sample. This introduces several limitations:
 \textit{Implications:} Findings should be interpreted as preliminary evidence rather than final proof of effectiveness across all end-user developer populations. Replication studies with larger, more diverse samples from multiple institutions and countries are necessary to establish the robustness of these results.
 
 \paragraph{Ecological Validity: Laboratory vs. Authentic Use}
-The study was conducted in a controlled setting with researcher guidance available, tasks completed in a single session, and 
+The study was conducted in a controlled setting with researcher guidance available, 
+tasks completed in a single session, and 
 no real-world consequences for errors. This differs from authentic usage where:
 
 \begin{itemize}
@@ -1011,8 +1026,10 @@ no real-world consequences for errors. This differs from authentic usage where:
     \item Users balance programming with their primary professional responsibilities
 \end{itemize}
 
-\textit{Mitigation:} We included chemistry domain experts as participants rather than generic users, and the task was based on actual 
-laboratory procedures. However, longitudinal field studies observing the Reuse Assistant in authentic work contexts are necessary to 
+\textit{Mitigation:} We included chemistry domain experts as participants rather than 
+generic users, and the task was based on actual 
+laboratory procedures. However, long-term field studies observing the Reuse Assistant 
+in authentic work contexts are necessary to 
 validate its practical impact.
 
 \subsubsection{Construct Validity}
@@ -1023,22 +1040,22 @@ We used standardized instruments (SUS, NASA-TLX) which have established validity
 \begin{itemize}
     \item \textbf{SUS limitation:} Measures perceived usability rather than objective usability metrics such as error rates or task success beyond completion time.
     \item \textbf{NASA-TLX limitation:} Assesses subjective workload perception, which may not correlate perfectly with objective cognitive load or learning outcomes.
-    \item \textbf{Performance metrics:} Completion time captures efficiency but not code quality, maintainability, or the user's conceptual understanding of reuse principles.
+    % \item \textbf{Performance metrics:} Completion time captures efficiency but not code quality, maintainability, or the user's conceptual understanding of reuse principles.
 \end{itemize}
 
 %\textit{Future work:} Add to these measures with code quality metrics (complexity, maintainability indices), comprehension assessments (asking users to explain or modify reusable components), and longitudinal evaluation of whether users internalize reuse concepts or remain dependent on automated detection.
 
-\paragraph{Single Outlier Pattern}
-One participant (P03) consistently reported low usability (SUS: 52.5) and high workload (NASA-TLX: 4.33) across all measures. While we interpreted this as evidence of individual differences, alternative explanations include:
+% \paragraph{Single Outlier Pattern}
+% One participant (P03) consistently reported low usability (SUS: 52.5) and high workload (NASA-TLX: 4.33) across all measures. While we interpreted this as evidence of individual differences, alternative explanations include:
 
-\begin{itemize}
-    \item Technical issues during the session (software bugs, hardware problems)
-    \item Misunderstanding of questionnaire items or rating scales
-    \item Fatigue or external stressors unrelated to the tool
-    \item Genuine fundamental incompatibility between the user's mental model and the tool's interaction paradigm
-\end{itemize}
+% \begin{itemize}
+%     \item Technical issues during the session (software bugs, hardware problems)
+%     \item Misunderstanding of questionnaire items or rating scales
+%     \item Fatigue or external stressors unrelated to the tool
+%     \item Genuine fundamental incompatibility between the user's mental model and the tool's interaction paradigm
+% \end{itemize}
 
-\textit{Limitation:} With only one outlier, we cannot determine which explanation is correct or whether this represents 10\% of the population or a unique case. Larger samples are needed to characterize the distribution of user experiences.
+% \textit{Limitation:} With only one outlier, we cannot determine which explanation is correct or whether this represents 10\% of the population or a unique case. Larger samples are needed to characterize the distribution of user experiences.
 
 \section{Conclusion and Future Work}
 
@@ -1061,7 +1078,7 @@ domain experts should actively guide users rather than waiting for them to disco
 
 \subsection{Future Work}
 
-Future research should address several limitations of this study. First, longitudinal studies in authentic work settings would reveal 
+Future research should address several limitations of this study. First, long-term studies in authentic work settings would reveal 
 whether users internalize reuse concepts or remain dependent on automated detection. Second, studies with larger and more diverse 
 samples would better characterize individual differences in receptivity to automated guidance. Third, the tool should be tested with 
 more complex tasks featuring less obvious duplication patterns and nested structures. Finally, research should explore whether the 
