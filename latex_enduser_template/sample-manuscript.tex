@@ -264,9 +264,9 @@ blocks through visual highlighting and one-click refactoring. Through a within s
 we evaluated whether proactive automated assistance can overcome the barriers that prevent end-users from adopting reuse practices.
 
 Our investigation examined three research questions: (1) Can the Reuse Assistant improve end-user performance? (2) Is the Reuse Assistant 
-sufficiently usable for end-users? (3) What is the perceived workload when using the Reuse Assistant? The results showed that automated 
-guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.1), and imposed minimal cognitive 
-burden (NASA-TLX mean: 1.88).
+sufficiently usable for end-users? (3) What is the perceived workload when using the Reuse Assistant? 
+%The results showed that automated guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.1), and imposed minimal cognitive burden (NASA-TLX mean: 1.88).
+% You dont present any kind of results in the introduction!! You can very briefly summarize results in the abstract, bc its an overview of the whole report, but the intro is just an introduction to the rest of the report!!
 
 The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} by demonstrating that 
 proactive assistance can transform feature adoption from a high-cost investment to a low-cost opportunistic choice. 
@@ -347,13 +347,14 @@ Following the Design Science methodology \cite{Wieringa2014}, our study is struc
 \label{subsec:prob_investigation}
 
 \subsubsection{Problem Context and Motivation}
-
 End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, end-users need to program 
 robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured code.
-In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
-Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals. 
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
-Several  visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. As lab work in chemistry involves many repetitive tasks, these challenges can easily become an obstacle for the chemists, which may turn them away from using cobots, as the inconvenience outweighs the benefits.
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
+%One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. 
+%not sure if this abt attention model should be in related work instead??
+One critical challenge in EUD is code reuse. According to Blackwell's Attention Investment Model \cite{BlackwellAttentionInvestment}, users decisions about whether to engage in programming activites, are based on an implicit cost-benefit analysis. How big an investment must be made to create the program, how great will the pay-off be, and what is the risk that the investment won't pay off. While the usage of reusable components can be a great way to lower the cost of creating a program, the decision whether to create such a component is also subject to a cost-benefit analysis. Several visual programming environments, like OpenRoberta Lab, don't provide assistance in identifying when code should be reused or how to extract repeated sequences into reusable components. This leaves end-users with the added cost of having to figure out how each platform supports reuse, and how to make use of the provided features. 
+%[the cost investment is greater bc takes longer to create code, and debugging etc. Also learning how to reuse is an investment.]
+So, while the use of robots in chemistry lab work offer great benefits, the challenge of automating the repetitive work may turn chemists away from using robots, as the investment and risk outweighs the benefits.
 
 \subsubsection{Stakeholder Analysis}
 
@@ -887,7 +888,7 @@ Excluding this outlier, the remaining nine participants showed remarkably consis
 
 %----------------------------------------------------------------------------------------------------------------------
 \section{Discussion}
-
+%Do your results support or challenge existing theories? If they support them, what new information do they contribute? If they challenge them, why do you think that is?
 This study evaluated the Reuse Assistant, an automated guidance tool designed to help end-users recognize and implement code 
 reuse in block-based programming environments. Through a crossover study with 10 participants from the chemistry domain, we assessed the 
 tool's impact on performance (RQ1), usability (RQ2), and perceived workload (RQ3). The findings reveal both the potential and limitations
@@ -994,29 +995,27 @@ conditions fundamentally altered the user experience. This carryover effect mean
 Assistant from the impact of prior experience. The 481-second performance gap between groups suggests that learning from the first 
 condition substantially influenced performance in the second condition.
 
-\textit{Mitigation:} We explicitly analyzed and reported the order effect as a finding rather than treating it as unwanted noise. 
+\textit{Mitigation:} We explicitly analyzed and reported the order effect as a finding rather than treating it as unwanted noise. Furthermore, the experiments were balanced, meaning half of the participants performed the task with the Reuse Assistant first, then again using the standard OpenRoberta. The other half did the reverse sequence. In this way, the overall effect on the results is minimized.
 The within subjects design, despite this limitation, provided valuable insights about how prior experience shapes users' ability to benefit 
 from automation. Future studies could employ between-subjects designs to isolate tool effects, though this would sacrifice statistical 
 power given small sample sizes typical in EUD research.
 
 \subsubsection{External Validity}
-
 \paragraph{Convenience Sampling and Population Representation}
 Participants were recruited through the researchers' professional networks at the University of Southern Denmark, creating a 
 convenience sample. This introduces several limitations:
 
 \begin{itemize}
-    \item \textbf{Geographic and institutional diversity:} While the study included participants from multiple countries (both local and international participants connected online), recruitment relied primarily on the researchers' professional networks, which may not represent the full geographic and cultural diversity of potential end-users in laboratory automation contexts.
+    \item \textbf{Geographic and institutional diversity:} While the study included participants from multiple countries (both local and international participants connected online), recruitment relied primarily on the researchers' professional networks, which may not represent the full geographic and cultural diversity of potential end-users in the domain of chemistry. %laboratory automation contexts.
     \item \textbf{Self-selection bias:} Volunteers may be more technologically inclined or motivated than typical professionals who would use cobot programming in practice, potentially overestimating the tool's ease of adoption among less motivated users.
     \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory coursework experience, they represent primarily academic contexts rather than industrial laboratory settings where cobot programming would be used professionally.
-    \item \textbf{Sample size:} With N=10 for performance evaluation,usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles (such as the consistent outlier), limiting the generalizability of findings to broader populations.
+    \item \textbf{Sample size:} With 10 participants for performance evaluation, usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles (such as the consistent outlier), limiting the generalizability of findings to broader populations.
 \end{itemize}
 
 \textit{Implications:} Findings should be interpreted as preliminary evidence rather than final proof of effectiveness across all end-user developer populations. Replication studies with larger, more diverse samples from multiple institutions and countries are necessary to establish the robustness of these results.
 
 \paragraph{Ecological Validity: Laboratory vs. Authentic Use}
-The study was conducted in a controlled setting with researcher guidance available, 
-tasks completed in a single session, and 
+The study was conducted in a controlled setting with researcher guidance available, tasks completed in a single session, and 
 no real-world consequences for errors. This differs from authentic usage where:
 
 \begin{itemize}
@@ -1026,11 +1025,7 @@ no real-world consequences for errors. This differs from authentic usage where:
     \item Users balance programming with their primary professional responsibilities
 \end{itemize}
 
-\textit{Mitigation:} We included chemistry domain experts as participants rather than 
-generic users, and the task was based on actual 
-laboratory procedures. However, long-term field studies observing the Reuse Assistant 
-in authentic work contexts are necessary to 
-validate its practical impact.
+\textit{Mitigation:} We included chemistry domain experts as participants rather than generic users, and the task was based on actual laboratory procedures. However, long-term field studies observing the Reuse Assistant in authentic work contexts are necessary to validate its practical impact.
 
 \subsubsection{Construct Validity}
 
@@ -1038,10 +1033,15 @@ validate its practical impact.
 We used standardized instruments (SUS, NASA-TLX) which have established validity in usability research. However:
 
 \begin{itemize}
-    \item \textbf{SUS limitation:} Measures perceived usability rather than objective usability metrics such as error rates or task success beyond completion time.
-    \item \textbf{NASA-TLX limitation:} Assesses subjective workload perception, which may not correlate perfectly with objective cognitive load or learning outcomes.
+    \item \textbf{SUS limitation:} SUS measures perceived usability rather than objective usability metrics, such as error rates or task success beyond completion time.
+    \item \textbf{NASA-TLX limitation:} NASA-TLX assesses subjective workload perception, which may not correlate perfectly with objective cognitive load or learning outcomes.
     % \item \textbf{Performance metrics:} Completion time captures efficiency but not code quality, maintainability, or the user's conceptual understanding of reuse principles.
 \end{itemize}
+
+%add this maybe if enough space***
+%\subsubsection{Descriptive Validity - Limitations to observation} 
+%Due to constraints with time and flexibility between the authors and the participants, only one of the authors was present to observe the participants during the experiment. 
+%To ensure that data from the observation was not affected by this, a screen recording of each participant performing the task was saved. Several of the authors reviewed and discussed these recordings together to extract data.
 
 %\textit{Future work:} Add to these measures with code quality metrics (complexity, maintainability indices), comprehension assessments (asking users to explain or modify reusable components), and longitudinal evaluation of whether users internalize reuse concepts or remain dependent on automated detection.
 
@@ -1058,13 +1058,12 @@ We used standardized instruments (SUS, NASA-TLX) which have established validity
 % \textit{Limitation:} With only one outlier, we cannot determine which explanation is correct or whether this represents 10\% of the population or a unique case. Larger samples are needed to characterize the distribution of user experiences.
 
 \section{Conclusion and Future Work}
-
 This study examined whether automated guidance can help end-users recognize and apply code reuse in block-based programming. 
 We developed the Reuse Assistant, a tool that automatically detects duplicate code sequences and guides users to create reusable 
 custom blocks in the OpenRoberta environment.
 
 The results showed a clear difference in reuse adoption. While no participants created reusable blocks in the standard environment, 
-all participants successfully created them with the help of the Reuse Assistant. The feature received high usability ratings (SUS mean: 84.1) and low 
+all participants successfully created reusable blocks when help from the Reuse Assistant was available. The feature received high usability ratings (SUS mean: 84.1) and low 
 workload scores (NASA-TLX mean: 1.88), demonstrating that automated guidance can be both effective and easy to use.
 
 Our findings contribute to theory by extending the Attention Investment Model and the Learning Barriers Framework. 
@@ -1075,17 +1074,11 @@ appreciate automation benefits.
 For practice, this study demonstrates that simple design choices matter. Visual highlighting, one-click acceptance, and immediate 
 feedback were sufficient to achieve high adoption of reusable blocks without adding complexity. 
 The results suggest that programming environments for 
-domain experts should actively guide users rather than waiting for them to discover 
-features independently.
+domain experts should actively guide users rather than waiting for them to discover features independently.
 
 \subsection{Future Work}
-
-Future research should test the Reuse Assistant in real laboratory settings over extended 
-periods to determine whether users learn to recognize reuse opportunities independently. 
-Studies with more participants from diverse backgrounds would help identify which user 
-groups benefit most from automated guidance. The feature should also be evaluated with more 
-complex programming tasks and tested in other end-user programming environments beyond 
-OpenRoberta.
+Future research should test the Reuse Assistant in real laboratory settings over extended periods to determine whether users learn to  recognize reuse opportunities independently. Studies with more participants from diverse backgrounds would help identify which user 
+groups benefit most from automated guidance. The feature should also be evaluated with more complex programming tasks and tested in other end-user programming environments beyond OpenRoberta.
 
 %%
 %% The next two lines define the bibliography style to be used, and
