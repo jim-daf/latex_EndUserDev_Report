@@ -142,7 +142,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title[]{Guiding End-Users Toward Software Reuse: An Evaluation of Automated Assistance in Block-Based Programming for Chemistry Laboratory Automation}
+\title[]{Guiding End-Users towards Software Reuse: An Evaluation of Automated Assistance in Block-Based Programming for Chemistry Laboratory Automation}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -201,15 +201,25 @@
 \begin{abstract}
 
 
-\noindent\textbf{\textit{Abstract}—Background: End-users who program collaborative robots for laboratory automation often create repetitive code because they struggle to recognize opportunities for reuse. While block-based programming environments provide accessible interfaces, they do not actively guide users toward creating reusable components.}
+\noindent\textbf{\textit{Abstract}—Background: End-users who program collaborative 
+robots for laboratory automation often create repetitive code because they struggle to 
+recognize opportunities for reuse. While block-based programming environments provide 
+accessible interfaces, they do not actively guide users toward creating reusable components.}
 
-\noindent\textbf{Objective: This study investigates whether automated guidance can help end-users recognize and apply code reuse practices. We developed the Reuse Assistant, a feature that automatically detects duplicate code sequences in OpenRoberta and guides users to create reusable custom blocks through visual highlighting and one-click refactoring.}
+\noindent\textbf{Objective: This study investigates whether automated guidance can help 
+end-users recognize and apply code reuse practices. We developed the Reuse Assistant,
+a feature that automatically detects duplicate code sequences within the OpenRoberta environment and guides users to create reusable custom blocks through visual highlighting and one-click refactoring.}
 
 \noindent\textbf{Study Design: Through a within subjects study with 18 participants from the chemistry domain, we evaluated the feature's impact on performance, usability, and perceived workload.}
 
-\noindent\textbf{Results: Automated guidance increased reuse adoption from 0\% in the standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved high usability scores (SUS mean: 84.1) and imposed minimal cognitive burden (NASA-TLX mean: 1.92). The significant carryover effect revealed that prior manual experience helps users appreciate automation benefits.}
+\noindent\textbf{Results: Automated guidance increased reuse adoption from 0\% in the 
+standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved 
+high usability scores (SUS mean: 84.03) and imposed minimal cognitive burden (NASA-TLX mean score: 1.92). 
+The significant carryover effect revealed that prior manual experience helps users appreciate automation benefits.}
 
-\noindent\textbf{Conclusions: Our findings extend the Attention Investment Model and Learning Barriers Framework, demonstrating that proactive assistance can transform feature adoption from a high-cost investment to a low-cost opportunistic choice. The results provide design principles for developing end-user programming tools that effectively guide domain experts without adding complexity.}
+\noindent\textbf{Conclusions: The dramatic shift in adoption proves that users are capable of using advanced features if the system actively guides them. 
+However, the order effect suggests that some manual experience is necessary to fully benefit from automation. Participants who struggled with manual coding first 
+developed a mental model that allowed them to better appreciate and efficiently use the automated assistance.}
 \end{abstract}
 %%
 %% This command processes the author and affiliation and title
@@ -267,8 +277,12 @@ Our investigation examined three research questions: (1) Can the Reuse Assistant
 sufficiently usable for end-users? (3) What is the perceived workload when using the Reuse Assistant? 
 The results showed that automated guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.03), and imposed minimal cognitive burden (NASA-TLX mean score: 2).
 
-The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} by demonstrating that proactive assistance can transform feature adoption from a high-cost investment to a low-cost opportunistic choice. 
-We also extend Ko et al.'s Learning Barriers Framework \cite{KoLearningBarriers} by showing that the selection barrier dominates in block-based environments for end-users. From a practical perspective, our results demonstrate that simple design principles (visual highlighting, one-click acceptance, immediate feedback) can effectively guide end-users without adding complexity, as evidenced by high usability and low workload scores.
+The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} 
+and Learning Barriers Framework \cite{KoLearningBarriers} by demonstrating that proactive assistance transforms feature adoption from a 
+high-cost investment to a low-cost opportunistic choice, effectively eliminating the selection barrier. However, we also identify a critical 
+"order effect," suggesting that manual experience is a prerequisite for maximizing the efficiency of automated tools. 
+From a practical perspective, our results show that while simple design principles (visual highlighting, one-click acceptance) achieve high usability, 
+the most effective adoption occurs when automation is introduced after users have developed a mental model of the manual process.
 
 \section{Background and Related Work}
 \label{sec:background_relatedWork}
