@@ -389,7 +389,7 @@ To satisfy the requirements above, we designed the Reuse Assistant as an extensi
 
 \subsubsection{Architecture}
 
-The system enables the execution of block-based programs on a simulated cobot through a three-tier architecture, as illustrated in figure \ref{fig:architecture-zoom}. The workflow consists of the following stages:
+The system enables the execution of block-based programs on a simulated cobot through a three-tier architecture, as illustrated in figure \ref{fig:architecture}. The workflow consists of the following stages:
 
 \begin{enumerate}
     \item \textbf{Client Side (Open Roberta):} The user interacts with the Open Roberta UI to assemble block sequences. The Reuse Assistant operates at this layer, analyzing blocks in real-time. Upon execution, the client generates specific data structures ("Generated Headers") representing the program logic.
@@ -400,16 +400,16 @@ The system enables the execution of block-based programs on a simulated cobot th
 
 
 % Zoomed version of the architecture figure on its own page
-\begin{figure}[p]
+\begin{figure}[ht] 
     \centering
-    \phantomsection
-    \includegraphics[height=0.9\textheight,keepaspectratio]{ArchitectureH2.png}
-    \caption{System architecture}
-    \label{fig:architecture-zoom}
-    \Description{System architecture diagram showing the Client Side, Backend, and Simulator tiers in more detail.}
+    % width=\textwidth ensures it fills the page width
+    % keepaspectratio ensures it doesn't get distorted
+    \includegraphics[width=\textwidth, keepaspectratio]{ArchitectureH2.png}
+    \caption{System architecture: Data flow from Client Side to Simulator}
+    \label{fig:architecture}
 \end{figure}
 
-
+\FloatBarrier
 
 \subsubsection{Detection Algorithm}
 The approach is intentionally simple so it is easy to read
@@ -621,7 +621,7 @@ This comprehensive evaluation provided a detailed understanding of how useful an
 end-users.
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Results}
-\subsection{Research Question 1: Can the Reuse Assistant improve the end-users performance? }
+\subsection{Research Question 1: How does the Reuse Assistant affect the end-users performance? }
 
 To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants under 
 both conditions (Enhanced and Original versions of OpenRoberta). The study employed a within subjects design where participants were divided into two groups: 
@@ -669,30 +669,32 @@ P17 & 560 seconds & 440 seconds & 120 seconds \\
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|r|r|r|}
 \hline
-\textbf{Participant ID} & \textbf{Completion time(Enhanced version)} & \textbf{Completion time(Original version)} & \textbf{Difference (s)} \\
+\textbf{Participant ID} & \textbf{Completion time(Enhanced version)} & \textbf{Completion time(Original version)} & \textbf{Time Difference} \\
 \hline
-P02 & 411 & 477 & -66 \\
+P02 & 411 seconds & 477 seconds & -66 seconds \\
 \hline
-P04 & 189 & 435 & -246 \\
+P04 & 189 seconds & 435 seconds & -246 seconds \\
 \hline
-P05 & 200 & 367 & -167 \\
+P05 & 200 seconds & 367 seconds & -167 seconds \\
 \hline
-P08 & 266 & 485 & -219 \\
+P08 & 266 seconds & 485 seconds & -219 seconds \\
 \hline
-P10 & 259 & 506 & -247 \\
+P10 & 259 seconds & 506 seconds & -247 seconds \\
 \hline
-P12 & 450 & 720 & -270 \\
+P12 & 450 seconds & 720 seconds & -270 seconds \\
 \hline
-P14 & 540 & 670 & -130 \\
+P14 & 540 seconds & 670 seconds & -130 seconds \\
 \hline
-P16 & 335 & 400 & -65 \\
+P16 & 335 seconds & 400 seconds & -65 seconds \\
 \hline
-P18 & 540 & 862 & -322 \\
+P18 & 540 seconds & 862 seconds & -322 seconds \\
 \hline
 \end{tabular}
 \caption{Task Completion Times: Group B (Original $\to$ Enhanced)}
 \label{tab:group_b_times}
 \end{table}
+
+\FloatBarrier
 
 Figure \ref{fig:boxplot} illustrates the impact of the carryover effect on performance. The data reveal that participants who used the Enhanced version had 
 significantly reduced completion times for Group B while Group A participants experienced slow times with the enhanced version and showed improved performance with the 
@@ -776,11 +778,12 @@ coding strategies is crucial for users to fully appreciate and effectively utili
 % \caption{Individual task completion times}
 % \label{fig:individual_times}
 % \end{figure}
-
+\subsection{Research Question 2: To what extent does the reuse assistant facilitate reusability?}
+\label{subsec:rq2_results}
 % -----------------------------------------------------------------------------------------
 % SOLUTION ACCURACY 
 % -----------------------------------------------------------------------------------------
-\subsubsection{Solution Accuracy}
+\subsubsection{How much does the reuse assistant promote reusability?}
 Solution accuracy was evaluated by comparing participant solutions against the optimal reference 
 solution defined in the treatment validation (see Section \ref{subsec:treatment_validation}).
 
@@ -806,10 +809,10 @@ considered functionally correct.
 \end{figure}
 
 
-\subsection{Research Question 2: Is the Reuse Assistant assessed as sufficiently usable for the end-users?}
-\label{subsec:rq2_results}
+\subsection{Research Question 3: How do the end-users assess/experience the reuse assistant in terms of usability?}
+\label{subsec:rq3_results}
 
-To answer the second research question regarding the perceived usability of the system, 
+To answer the third research question regarding the perceived usability of the system, 
 we administered the System Usability Scale (SUS) questionnaire to all $N=18$ participants 
 immediately following the treatment validation.
 
@@ -892,8 +895,8 @@ positive feedback.
 
 
 
-\subsection{Research Question 3: What is the perceived workload when using the Reuse Assistant? }
-\label{subsec:rq3_results}
+\subsection{Research Question 4: How do participants assess the perceived workload when operating the Reuse Assistant? }
+\label{subsec:rq4_results}
 
 To assess the cognitive demands imposed by the Reuse Assistant, we administered the NASA 
 Task Load Index (NASA-TLX) questionnaire to all participants after completing the task with 
