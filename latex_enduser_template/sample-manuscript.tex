@@ -635,11 +635,11 @@ Group A participants exhibited the opposite pattern.
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|r|r|r|}
 \hline
-\textbf{Participant ID} & \textbf{Completion time (Enhanced version)} & \textbf{Completion time (Original version)} & \textbf{Time Difference} \\
+\textbf{Participant ID} & \textbf{Completion time with Reuse Assistant} & \textbf{Completion time without Reuse Assistant} & \textbf{Difference} \\
 \hline
 P01 & 481 seconds & 331 seconds & 150 seconds \\
 \hline
-P03 & 921 seconds & 275 seconds & 646 seconds \\
+P03 & 515 seconds & 320 seconds & 195 seconds \\
 \hline
 P06 & 733 seconds & 314 seconds & 419 seconds \\
 \hline
@@ -651,12 +651,12 @@ P11 & 735 seconds & 364 seconds & 371 seconds \\
 \hline
 P13 & 610 seconds & 407 seconds & 203 seconds \\
 \hline
-P15 & 410 seconds & 540 seconds & -140 seconds \\
+P15 & 410 seconds & 540 seconds & -130 seconds \\
 \hline
 P17 & 560 seconds & 440 seconds & 120 seconds \\
 \hline
 \end{tabular}
-\caption{Task Completion Times: Group A (Solved the task first with Enhanced and then moved to Original)}
+\caption{Task Completion Times of group A: Group A participants solved the task first with the benefits of the Reuse Assistant feature and then without it.}
 \label{tab:group_a_times}
 \end{table}
 
@@ -666,7 +666,7 @@ P17 & 560 seconds & 440 seconds & 120 seconds \\
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|r|r|r|}
 \hline
-\textbf{Participant ID} & \textbf{Completion time(Enhanced version)} & \textbf{Completion time(Original version)} & \textbf{Time Difference} \\
+\textbf{Participant ID} & \textbf{Completion time with Reuse Assistant} & \textbf{Completion time without Reuse Assistant} & \textbf{Difference} \\
 \hline
 P02 & 411 seconds & 477 seconds & -66 seconds \\
 \hline
@@ -687,26 +687,32 @@ P16 & 335 seconds & 400 seconds & -65 seconds \\
 P18 & 540 seconds & 862 seconds & -322 seconds \\
 \hline
 \end{tabular}
-\caption{Task Completion Times: Group B (Original $\to$ Enhanced)}
+\caption{Task Completion Times of group B: Group B participants solved the task first without the benefits of the Reuse Assistant feature and then with it.}
 \label{tab:group_b_times}
 \end{table}
 
 \FloatBarrier
 
-Figure \ref{fig:boxplot} illustrates the impact of the carryover effect on performance. The data reveal that participants who used the Enhanced version had 
-significantly reduced completion times for Group B while Group A participants experienced slow times with the enhanced version and showed improved performance with the 
-standard.
+The paired boxplots \ref{fig:boxplot} illustrate the impact of the Reuse Assistant on task completion times across two 
+counterbalanced groups. Both groups demonstrated a learning effect, achieving faster times in their second 
+attempt regardless of condition. However, the magnitude of improvement differed substantially between the groups. 
+Group A, which transitioned from using the Reuse Assistant to working without it, showed an average time reduction of 174.9s 
+(Standard Deviation = 158.9s).
+In contrast, Group B participants, which operated without the feature benefits in their first attempt and utilized the Reuse Assistant in their second attempt, exhibited a 
+significantly larger efficiency gain, with an average time reduction of 192.4 seconds (Standard Deviation = 90.9 seconds). This suggests that while task 
+familiarity contributed to speed, the introduction of the Reuse Assistant provided a distinct performance advantage.
 
 \begin{figure}[h]
 \centering
 % Use PDF (vector) if present, otherwise PNG/JPG
 \includebestgraphics[width=1.1\columnwidth]{Boxplot}
-\caption{Boxplot of task completion times}
+\caption{Distribution of task completion times (in seconds) comparing Group A and Group B participants across both conditions (with and without Reuse Assistant).}
 \label{fig:boxplot}
 \end{figure}
 
-To statistically evaluate these observed differences, we conducted paired t-tests and a Welch's t-test to compare performance improvements between groups. 
-Table \ref{tab:stat_results} summarizes the statistical test results, including overall comparisons, within-group improvements, and the analysis of the order effect (carryover effect).
+To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
+to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
+including overall comparisons, within-group improvements, and the analysis of the order effect.
 
 \begin{table}[h]
 \centering
@@ -717,14 +723,14 @@ Table \ref{tab:stat_results} summarizes the statistical test results, including 
 \hline
 \textbf{Test} & \textbf{t-Value} & \textbf{p-value} \\
 \hline
-Overall Comparison & 0.25 & 0.802 \\
+Overall Comparison & -0.16 & 0.872 \\
 \hline
 %Wilcoxon Signed-Rank (Overall) & 27.00 & 1.000 \\
-Group A Improvement & 3.02 & 0.017 \\
+Group A Improvement & 3.30 & 0.011 \\
 \hline
 Group B Improvement & -6.35 & < 0.001 \\
 \hline
-Carryover Effect & 5.18 & < 0.001 \\
+Order Effect & 6.02 & < 0.001 \\
 \hline
 \end{tabular}
 \caption{Statistical Test Results}
@@ -737,36 +743,47 @@ The analysis reveals distinct patterns between the two groups and identifies a s
 effect.
 
 \paragraph{Overall Comparison}
-When combining all 18 participants regardless of the order in which they experienced the two OpenRoberta versions, the overall mean time difference was +16.28 seconds (Standard Deviation = 271.28), leading to a t-value = 0.25 (\textit{p} = 0.805). This non-significant result indicates no overall difference when order is ignored.
+When combining all 18 participants regardless of the order in which they experienced the two OpenRoberta versions (the one with the reuse assistant feature 
+benefits and the other without them), 
+the overall mean time difference was -8.78 seconds (Standard Deviation = 226.90), leading to a t-value = -0.16 (\textit{p} = 0.872). This non-significant 
+result indicates no overall difference when order is ignored.
 
-\paragraph{Group B Analysis (Original $\to$ Enhanced)}
-Group B participants started with the Original version and then used the Enhanced version of OpenRoberta. We calculated the difference (Original - Enhanced) for each participant, with negative values indicating faster performance on Enhanced. The mean improvement was -192.44 seconds (SD = 90.91), yielding a t-value of -6.35 (\textit{p} < 0.001). This statistically significant result demonstrates that participants who learned with the Original version first showed substantial speed improvements when switching to the Enhanced version.
+\paragraph{Group A Analysis}
+Group A participants experienced the benefits of the Reuse Assistant in their first attempt and then tried to solve the task without them in their second attempt. 
+The mean difference (Completion time with Reuse Assistant - Completion time without Reuse Assistant) was 174.9 seconds (Standard Deviation = 158.9 seconds), 
+producing a significant result with a t-value of 3.30 (\textit{p} = 0.011). The positive value indicates that these participants were \textit{faster} on their 
+second attempt which was without the Reuse Assistant benefits. 
 
-\paragraph{Group A Analysis (Enhanced $\to$ Original)}
-Group A started with the Enhanced version and switched to Original. The mean difference (Original - Enhanced) was +225.0 seconds 
-(Standard Deviation = 234.19), producing a t-value of 3.02 (\textit{p} = 0.017). The positive value indicates that these 
-participants were \textit{slower} on the Enhanced version when it was presented first. This counterintuitive finding suggests a 
-learning curve effect: participants encountered the automated reuse features before developing manual strategies, potentially requiring 
-more time to understand the feature's suggestions.
+\paragraph{Group B Analysis}
+Group B participants experienced the benefits of the Reuse Assistant in their second attempt and tried to solve the task without them in their first attempt. 
+We calculated the time difference (Completion time with Reuse Assistant - Completion time without Reuse Assistant) for each participant. 
+The mean improvement was -192.44 seconds (SD = 90.91), yielding a t-value of -6.35 (\textit{p} < 0.001). This statistically significant 
+result demonstrates that these participants were a lot \textit{faster} on their second attempt which was with the Reuse Assistant benefits. 
+The low standard deviation reveals that there was a consistent pattern in how much faster participants worked with the feature.
 
-
-\paragraph{Order Effect (Carryover Effect)}
+\paragraph{Order Effect Analysis}
 To determine whether the order in which participants experienced the two versions influenced their performance, we conducted a Welch's 
 t-test, comparing the improvement scores between Group A and Group B. This analysis revealed a highly significant order effect 
-(t = 5.18, \textit{p} < 0.001).
+(t = 6.02, \textit{p} < 0.001).
 
-The magnitude of this effect is substantial: there was a gap of 417 seconds between the two groups' mean improvement scores. 
-Group B participants, who started with the Original version, showed an average improvement of -192.44 seconds when they switched to 
-Enhanced. In contrast, Group A participants, who started with Enhanced, showed an average change of +225.0 seconds (meaning they were 
-actually slower on Enhanced). This creates a total difference of approximately 417 seconds between the groups' experiences.
+The difference between the two groups was massive with a gap of 367 seconds. Group B participants, who started the task without the Reuse Assistant, 
+finished 192 seconds faster once they had the Reuse Assistant benefits. In contrast, Group A participants started with the Reuse Assistant, but they actually 
+took 175 seconds longer to finish compared to their subsequent performance in the unassisted condition.
 
-This finding demonstrates that presentation order profoundly impacts user performance. Participants who first struggled with the original 
-version (Group B) were able to recognize and appreciate the value of the automated reuse feature when they encountered them second. 
-Conversely, participants who received automated assistance immediately (Group A) had not yet developed the mental model of manual block 
-assembly, making it harder for them to understand what the tool was helping them avoid. This suggests that prior experience with manual 
-coding strategies is crucial for users to fully appreciate and effectively utilize automated assistance features.
+This big difference points to a strong learning effect. The results show that participants were faster mainly because they got used to the problem, 
+not just because of the benefits of the Reuse Assistant. It did not matter if they started with the Reuse Assistant or without it. The experience from the 
+first try made the second attempt to solve the task much easier.
 
+\subsubsection{Summary of Findings}
 
+The Reuse Assistant effectively helped the end users complete the task faster. We can conclude this by comparing the average time differences and 
+standard deviations between the two groups of participants.
+
+Participants in Group B improved their time by an average of 192.4 seconds when they switched to using the feature. This is a larger change than Group A. Participants in Group A were slower by an average of 174.9 seconds when they stopped using the feature. This shows that the gain from adding the assistant was greater than the loss from removing it.
+
+The standard deviation also tells us about consistency. Group B had a low standard deviation of 90.9 seconds. In contrast, Group A had a much higher standard deviation of 158.9 seconds. This means that the performance boost was not only larger but also more consistent when users utilized the Reuse Assistant.
+
+Finally, the statistical strength confirms this result. The t-value for Group B is -6.35. This is much stronger than the t-value for Group A which is 3.30. Since the Group B result is statistically more significant, we can say that the Reuse Assistant provides a clear and robust performance advantage.
 
 % \begin{figure}[h]
 % \centering
@@ -781,17 +798,16 @@ coding strategies is crucial for users to fully appreciate and effectively utili
 % SOLUTION ACCURACY 
 % -----------------------------------------------------------------------------------------
 \subsubsection{How much does the reuse assistant promote reusability?}
-Solution accuracy was evaluated by comparing participant solutions against the optimal reference 
-solution defined in the treatment validation (see Section \ref{subsec:treatment_validation}).
 
 \paragraph{Adoption of Reusable Blocks}
-A key metric was the adoption of the custom reusable component. 
-In the \textit{Enhanced} version, $18/18$ participants successfully implemented a custom reusable block to handle the repetitive object placement steps. 
-In contrast, in the \textit{Standard} condition, participants predominantly relied on linear, repetitive code structures.
+In the \textit{Enhanced} OpenRoberta version that includes the Reuse Assistant feature, $18/18$ participants successfully implemented a custom reusable block 
+to handle the repetitive object placement steps. 
+In contrast, in the \textit{Standard} OpenRoberta version that doesn't have the Reuse Assistant benefits, participants predominantly relied on linear, 
+repetitive code structures.
 Without the guidance features, none of them recognized the opportunity to create a reusable block.
 
-While some participants provided unique solutions that differed slightly from the optimal reference solution such as skipping 
-certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. The differences primarily 
+While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
+such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
 reflected domain-specific safety practices that would matter in a real chemistry laboratory environment but had no impact on the 
 robot simulator's execution behavior. Since the simulator performed identically regardless of these variations, all solutions were 
 considered functionally correct.
@@ -800,16 +816,30 @@ considered functionally correct.
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=1\linewidth]{user_solution}
-    \Description{Screenshot showing a participant's solution after using the Reuse Assistant.}
-    \caption{Example of a different participant's solution compared to the optimal solution.}
+    \Description{Screenshot showing a participant's unique solution.}
+    \caption{Example of a different participant's solution compared to the optimal solution provided by the researchers.}
     \label{fig:user_solution}
 \end{figure}
 
+\subsubsection{Summary of Findings}
+
+The Reuse Assistant promotes reusability by automating the manual effort required to build reusable blocks. It achieves this by lowering the cognitive and 
+technical barriers associated with identifying and abstracting repetitive patterns.
+
+Specifically, the system promotes reusability through a three-step mechanism: detection, intervention, and automation. First, the feature identifies and 
+highlights duplicate block sequences within the user's block based program. Second, it interrupts the linear workflow with a binary decision prompt, offering the user an 
+immediate choice to refactor. Finally, upon confirmation, the system automatically encapsulates the repetitive block sequence logic into a reusable block, 
+defines the necessary parameters if needed, and replaces the repetitive sequences with the reusable block.
+
+The contrast in results, 0\% adopted a reusable block in the Standard OpenRoberta version that does not include the Reuse Assistant versus 100\% in the Enhanced version that includes the feature's benefits, 
+demonstrates that users do not lack the ability to understand functions, but rather the initiative to implement them manually. 
+By removing the effort required to define, parameterize, and call a function block, the Reuse Assistant transforms reusability from a complex manual task 
+into a seamless, automated decision.
 
 \subsection{Research Question 3: How do the end-users assess the reuse assistant in terms of usability?}
 \label{subsec:rq3_results}
 
-To answer the third research question regarding the perceived usability of the system, 
+To answer this research question regarding the perceived usability of the system, 
 we administered the System Usability Scale (SUS) questionnaire to all $N=18$ participants 
 immediately following the treatment validation.
 
@@ -822,52 +852,59 @@ According to the interpretive ranges defined by Bangor et al. \cite{bangor2009de
 is considered ``Excellent'' and places the system in the top 10\% of products in terms of 
 usability.
 
-As detailed in Table \ref{tab:sus_scores}, the individual scores ranged from a low of 
+As illustrated in the figure \ref{fig:sus_dist}, the individual scores ranged from a low of 
 52.5 to a perfect score of 100. Notably, $94\%$ of participants (17 out of 18) rated the 
 system above the industry average of 68, with the majority falling into the Excellent'' 
 or Very Good'' categories.
 
-\begin{table}[h]
-    \centering
-    \setlength{\tabcolsep}{10pt}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|l|c|c|}
-        \hline
-        \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
-        \hline
-        P01 & 100.0 & Excellent \\
-        P02 & 100.0 & Excellent \\
-        P03 & 97.5 & Excellent \\
-        P04 & 95.0 & Excellent \\
-        P05 & 95.0 & Excellent \\
-        P06 & 92.5 & Excellent \\
-        P07 & 87.5 & Excellent \\
-        P08 & 85.0 & Excellent \\
-        P09 & 82.5 & Very Good \\
-        P10 & 80.0 & Very Good \\
-        P11 & 80.0 & Very Good \\
-        P12 & 80.0 & Very Good \\
-        P13 & 80.0 & Very Good \\
-        P14 & 77.5 & Very Good \\
-        P15 & 77.5 & Very Good \\
-        P16 & 75.0 & Very Good \\
-        P17 & 75.0 & Very Good \\
-        P18 & 52.5 & OK \\
-        \hline
-        \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
-        \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
-        \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
-        \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
-        \hline
-    \end{tabular}
-    \caption{System Usability Scale (SUS) Scores}
-    \label{tab:sus_scores}
-\end{table}
+% \begin{table}[h]
+%     \centering
+%     \setlength{\tabcolsep}{10pt}
+%     \renewcommand{\arraystretch}{1.2}
+%     \begin{tabular}{|l|c|c|}
+%         \hline
+%         \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
+%         \hline
+%         P01 & 100.0 & Excellent \\
+%         P02 & 100.0 & Excellent \\
+%         P03 & 97.5 & Excellent \\
+%         P04 & 95.0 & Excellent \\
+%         P05 & 95.0 & Excellent \\
+%         P06 & 92.5 & Excellent \\
+%         P07 & 87.5 & Excellent \\
+%         P08 & 85.0 & Excellent \\
+%         P09 & 82.5 & Very Good \\
+%         P10 & 80.0 & Very Good \\
+%         P11 & 80.0 & Very Good \\
+%         P12 & 80.0 & Very Good \\
+%         P13 & 80.0 & Very Good \\
+%         P14 & 77.5 & Very Good \\
+%         P15 & 77.5 & Very Good \\
+%         P16 & 75.0 & Very Good \\
+%         P17 & 75.0 & Very Good \\
+%         P18 & 52.5 & OK \\
+%         \hline
+%         \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
+%         \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
+%         \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
+%         \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
+%         \hline
+%     \end{tabular}
+%     \caption{System Usability Scale (SUS) Scores}
+%     \label{tab:sus_scores}
+% \end{table}
 
-\begin{figure}[h]
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{our_sus graphs_noOutlier.png}
+%     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
+%     \label{fig:sus_dist}
+% \end{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{histogram.png}
-    \caption{Distribution of SUS Scores}
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.9\linewidth]{our_sus graphs_noOutlier}
+    \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
     \label{fig:sus_dist}
 \end{figure}
 \FloatBarrier
@@ -875,7 +912,7 @@ or Very Good'' categories.
 The results show that users found the system very easy to use. 
 17 out of 18 participants (94\%) rated it above the industry average of 68. The scores 
 mostly split into two high-performing groups: eight people rated it as "Excellent" (85–100),
-and nine people rated it as "Very Good" (75–82.5). This suggests that almost everyone 
+and nine people rated it as "Very Good" (75–80). This suggests that almost everyone 
 understood how to use the system right away.
 
 The scores ranged from 52.5 to 100, with a high average score of 84.0. It is worth noting 
@@ -883,12 +920,24 @@ that 17 of the users had scores very close to each other (between 75 and 100), w
 the system is consistently easy to use for most people.
 
 There was only one exception: a single user scored the system at 52.5. This person 
-mentioned needing more technical help and time to learn. While this shows there might be a 
+mentioned needing more technical help and time to learn based on this user's answers. While this shows there might be a 
 small learning curve for some, it was an isolated case and does not change the overall 
 positive feedback.
 
 % \subsubsection{Conclusion for RQ2}
 % Based on the high mean score of 84.1 and the consistent positive feedback across 10 of the 11 participants, the answer to Research Question 2 is affirmative. The Reuse Assistant is assessed as sufficiently usable, with the majority of end-users finding it easy to use, well-integrated, and confidence-inspiring.
+\subsubsection{Summary of Findings}
+
+End-users assess the Reuse Assistant as an exceptionally usable system. They rate it as "Excellent" and evaluate it with a high degree of consistency.
+
+First, users judge the system to be far superior to the industry standard. They gave it an average score of 84.0 which is much higher than the typical average 
+of 68. This shows that users perceive the feature as significantly easier to use than standard software.
+
+Second, users assess the system with strong agreement. 17 out of 18 participants rated the usability above 75. This tight clustering of scores proves that the 
+positive experience was uniform across the group. Almost every user agreed that the feature was intuitive.
+
+Third, users evaluate the system as easy to learn. The high scores indicate that participants felt confident operating the feature immediately. They did not 
+struggle to understand how it worked. Therefore, users assess the Reuse Assistant as a polished and highly accessible solution.
 
 
 
