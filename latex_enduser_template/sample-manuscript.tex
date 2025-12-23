@@ -599,8 +599,8 @@ Most optimal solution pre-defined by the researchers is illustrated in Figure \r
 Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
 This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
-All the participants will try to complete the task using both the standard and the enhanced version of OpenRoberta. 
-Half of the participants will begin using the enhanced version of OpenRoberta, while the other half will start with the standard version.
+All the participants will try to complete the task using both the enhanced version of OpenRoberta that includes the Reuse Assistant benefits and the original one that does not. 
+Half of the participants will begin solving the task first on the enhanced version, while the other half will start with the original version.
 Participants’ interactions with the platform will be observed throughout the task.
 Guidance will be provided from the researchers to the participants throughout the task.
 
@@ -622,11 +622,12 @@ end-users.
 
 To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants under 
 both conditions (Enhanced and Original versions of OpenRoberta). The study employed a within subjects design where participants were divided into two groups: 
-Group A experienced the Enhanced version of OpenRoberta first, while Group B started with the Original version. This design allowed us to assess not only the feature's 
-effectiveness but also the potential order effect arising from learning transfer between the two conditions.
+Group A experienced the Enhanced version of OpenRoberta first, while Group B started with the Original version. This design allowed us to assess not only the 
+feature's effectiveness but also the potential order effect arising from the learning curve between the two conditions.
 
-Table \ref{tab:participant_times} presents the individual completion times for all participants across both conditions. The data reveal substantial variability in 
-performance outcomes depending on the presentation order, with Group B participants showing consistent improvements when moving from Original to Enhanced, while 
+Tables \ref{tab:group_a_times} and \ref{tab:group_b_times} present the individual completion times for all participants across both conditions(with and without using the Reuse Assistant). 
+The data reveal substantial variability in performance outcomes depending on the order in which the participants performed the tasks, 
+with Group B participants showing consistent improvements when moving from the Original OpenRoberta version to the Enhanced, while 
 Group A participants exhibited the opposite pattern.
 
 \begin{table}[h]
@@ -693,7 +694,7 @@ P18 & 540 seconds & 862 seconds & -322 seconds \\
 
 \FloatBarrier
 
-The paired boxplots \ref{fig:boxplot} illustrate the impact of the Reuse Assistant on task completion times across two 
+The paired boxplots \ref{fig:boxplot} illustrate the impact of the Reuse Assistant on task completion times across the two 
 counterbalanced groups. Both groups demonstrated a learning effect, achieving faster times in their second 
 attempt regardless of condition. However, the magnitude of improvement differed substantially between the groups. 
 Group A, which transitioned from using the Reuse Assistant to working without it, showed an average time reduction of 174.9s 
@@ -779,19 +780,17 @@ first try made the second attempt to solve the task much easier.
 The Reuse Assistant effectively helped the end users complete the task faster. We can conclude this by comparing the average time differences and 
 standard deviations between the two groups of participants.
 
-Participants in Group B improved their time by an average of 192.4 seconds when they switched to using the feature. This is a larger change than Group A. Participants in Group A were slower by an average of 174.9 seconds when they stopped using the feature. This shows that the gain from adding the assistant was greater than the loss from removing it.
+Participants in Group B improved their time by an average of 192.4 seconds when they switched to using the feature. This is a larger change than Group A. 
+Participants in Group A were slower by an average of 174.9 seconds when they stopped using the feature. This shows that the gain from adding the assistant was 
+greater than the loss from removing it.
 
-The standard deviation also tells us about consistency. Group B had a low standard deviation of 90.9 seconds. In contrast, Group A had a much higher standard deviation of 158.9 seconds. This means that the performance boost was not only larger but also more consistent when users utilized the Reuse Assistant.
+The standard deviation also tells us about consistency. Group B had a low standard deviation of 90.9 seconds. In contrast, Group A had a much higher standard 
+deviation of 158.9 seconds. This means that the performance boost was not only larger but also more consistent when users utilized the Reuse Assistant.
 
-Finally, the statistical strength confirms this result. The t-value for Group B is -6.35. This is much stronger than the t-value for Group A which is 3.30. Since the Group B result is statistically more significant, we can say that the Reuse Assistant provides a clear and robust performance advantage.
+Finally, the statistical strength confirms this result. The t-value for Group B is -6.35. This is much stronger than the t-value for Group A which is 3.30. 
+Since the Group B result is statistically more significant, we can say that the Reuse Assistant provides a clear and robust performance advantage.
 
-% \begin{figure}[h]
-% \centering
-% % Use PDF (vector) if present, otherwise PNG/JPG
-% \includebestgraphics[width=1.1\columnwidth]{individual_changes}
-% \caption{Individual task completion times}
-% \label{fig:individual_times}
-% \end{figure}
+
 \subsection{Research Question 2: To what extent does the reuse assistant facilitate reusability?}
 \label{subsec:rq2_results}
 % -----------------------------------------------------------------------------------------
@@ -857,49 +856,7 @@ As illustrated in the figure \ref{fig:sus_dist}, the individual scores ranged fr
 system above the industry average of 68, with the majority falling into the Excellent'' 
 or Very Good'' categories.
 
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{10pt}
-%     \renewcommand{\arraystretch}{1.2}
-%     \begin{tabular}{|l|c|c|}
-%         \hline
-%         \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
-%         \hline
-%         P01 & 100.0 & Excellent \\
-%         P02 & 100.0 & Excellent \\
-%         P03 & 97.5 & Excellent \\
-%         P04 & 95.0 & Excellent \\
-%         P05 & 95.0 & Excellent \\
-%         P06 & 92.5 & Excellent \\
-%         P07 & 87.5 & Excellent \\
-%         P08 & 85.0 & Excellent \\
-%         P09 & 82.5 & Very Good \\
-%         P10 & 80.0 & Very Good \\
-%         P11 & 80.0 & Very Good \\
-%         P12 & 80.0 & Very Good \\
-%         P13 & 80.0 & Very Good \\
-%         P14 & 77.5 & Very Good \\
-%         P15 & 77.5 & Very Good \\
-%         P16 & 75.0 & Very Good \\
-%         P17 & 75.0 & Very Good \\
-%         P18 & 52.5 & OK \\
-%         \hline
-%         \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
-%         \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
-%         \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
-%         \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
-%         \hline
-%     \end{tabular}
-%     \caption{System Usability Scale (SUS) Scores}
-%     \label{tab:sus_scores}
-% \end{table}
 
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{our_sus graphs_noOutlier.png}
-%     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
-%     \label{fig:sus_dist}
-% \end{figure}
 \begin{figure}[htbp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
@@ -924,20 +881,22 @@ mentioned needing more technical help and time to learn based on this user's ans
 small learning curve for some, it was an isolated case and does not change the overall 
 positive feedback.
 
-% \subsubsection{Conclusion for RQ2}
-% Based on the high mean score of 84.1 and the consistent positive feedback across 10 of the 11 participants, the answer to Research Question 2 is affirmative. The Reuse Assistant is assessed as sufficiently usable, with the majority of end-users finding it easy to use, well-integrated, and confidence-inspiring.
 \subsubsection{Summary of Findings}
 
-End-users assess the Reuse Assistant as an exceptionally usable system. They rate it as "Excellent" and evaluate it with a high degree of consistency.
+End-users assess the Reuse Assistant as an exceptionally usable system. They rate it as "Excellent" and evaluate it with a 
+high degree of consistency.
 
-First, users judge the system to be far superior to the industry standard. They gave it an average score of 84.0 which is much higher than the typical average 
-of 68. This shows that users perceive the feature as significantly easier to use than standard software.
+First, users judge the system to be far superior to the industry standard. They gave it an average score of 84.0 which is 
+much higher than the typical average of 68. This shows that users perceive the feature as significantly easier to use than 
+standard software.
 
-Second, users assess the system with strong agreement. 17 out of 18 participants rated the usability above 75. This tight clustering of scores proves that the 
-positive experience was uniform across the group. Almost every user agreed that the feature was intuitive.
+Second, users assess the system with strong agreement. 17 out of 18 participants rated the usability above 75. This tight 
+clustering of scores proves that the positive experience was uniform across the group. Almost every user agreed that the 
+feature was intuitive.
 
-Third, users evaluate the system as easy to learn. The high scores indicate that participants felt confident operating the feature immediately. They did not 
-struggle to understand how it worked. Therefore, users assess the Reuse Assistant as a polished and highly accessible solution.
+Third, users evaluate the system as easy to learn. The high scores indicate that participants felt confident operating the 
+feature immediately. They did not struggle to understand how it worked. Therefore, users assess the Reuse Assistant as a 
+polished and highly accessible solution.
 
 
 
@@ -946,58 +905,26 @@ struggle to understand how it worked. Therefore, users assess the Reuse Assistan
 
 To assess the cognitive demands imposed by the Reuse Assistant, we administered the NASA 
 Task Load Index (NASA-TLX) questionnaire to all participants after completing the task with 
-the enhanced version. The NASA-TLX is a widely used multidimensional assessment questionnaire 
+the Reuse Assistant benefits. The NASA-TLX is a widely used multidimensional assessment questionnaire 
 that measures perceived workload across six subscales, each rated on a scale 
 from 1 (Very Low) to 10 (Very High).
 
 \subsubsection{Overall Workload Assessment}
-The Reuse Assistant imposes a remarkably low workload on users, with an overall mean score of \textbf{2.00} on a scale of 10. 
-This indicates that the feature is highly usable and demands very little effort
+The Reuse Assistant imposes a remarkably low workload on users, with an overall mean score of \textbf{20.00} on a scale of 
+100. This indicates that the feature is highly usable and demands very little effort
 from the user in terms of physical or mental cost.
 
-\begin{table}[h]
-    \centering
-    \setlength{\tabcolsep}{8pt}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|l|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Participant} & \textbf{Mental} & \textbf{Physical} & \textbf{Temporal} & \textbf{Performance} & \textbf{Effort} & \textbf{Frustration} & \textbf{Mean} \\
-        \hline
-        P01 & 2 & 1 & 1 & 1 & 2 & 1 & 1.33 \\
-        P02 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-        P03 & 5 & 5 & 1 & 5 & 5 & 5 & 4.33 \\
-        P04 & 1 & 1 & 1 & 1 & 2 & 1 & 1.17 \\
-        P05 & 3 & 3 & 1 & 2 & 3 & 2 & 2.33 \\
-        P06 & 4 & 2 & 1 & 3 & 5 & 2 & 2.83 \\
-        P07 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-        P08 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-        P09 & 2 & 2 & 1 & 2 & 2 & 2 & 1.83 \\
-        P10 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-        P11 & 3 & 2 & 1 & 2 & 4 & 2 & 2.33 \\
-        P12 & 3 & 1 & 1 & 2 & 3 & 2 & 2.00 \\
-        P13 & 4 & 1 & 1 & 2 & 5 & 3 & 2.67 \\
-        P14 & 2 & 2 & 1 & 3 & 3 & 1 & 2.00 \\
-        P15 & 3 & 2 & 1 & 2 & 3 & 3 & 2.33 \\
-        P16 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-        P17 & 3 & 1 & 1 & 2 & 1 & 1 & 1.50 \\
-        P18 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-        \hline
-        \multicolumn{7}{|r|}{\textbf{Overall Mean Score:}} & \textbf{1.92} \\
-        \hline
-    \end{tabular}
-    \caption{Workload Scores by Participant and Dimension}
-    \label{tab:nasa_tlx}
-\end{table}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1.0\textwidth]{workload_hist.png}
-    \caption{Workload mean scores for the Reuse Assistant on each dimension. Scores are presented on a scale of 1–10.}
-    \label{fig:workload_dist}
-\end{figure}
 
+\begin{figure}[htbp]
+    \centering
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.9\linewidth]{nasa_tlx_analysis_scaled}
+    \caption{NASA-tlx workload analysis results. (a) Distribution of NASA-TLX overall workload score (b) Mean workload scores for each dimension. (c) Distribution of workload scores across participants.}
+    \label{fig:nasa_tlx_dist}
+\end{figure}
 \FloatBarrier
 \subsubsection{Dimension-Specific Analysis}
-As shown in Table \ref{tab:nasa_tlx}, the six NASA-TLX dimensions assessed were:
+As shown in the figure \ref{fig:nasa_tlx_dist}, the six NASA-TLX dimensions assessed were:
 
 \begin{itemize}
     \item \textbf{Mental Demand:} How much mental and perceptual activity was required to understand and use the Reuse Assistant? (Mean: 2.2)
@@ -1008,34 +935,31 @@ As shown in Table \ref{tab:nasa_tlx}, the six NASA-TLX dimensions assessed were:
     \item \textbf{Frustration:} How insecure, discouraged, irritated, stressed and annoyed were you when using the Reuse Assistant feature? (Mean: 1.7)
 \end{itemize}
 
-
-
-
 There is a distinct contrast between the highest and lowest contributing factors:
 \begin{itemize}
-    \item \textbf{Lowest Demand (Temporal):} With a mean score of \textbf{1.06}, Temporal Demand was negligible. This confirms that users felt \textbf{zero time pressure}, allowing them to work at their own pace without stress.
-    \item \textbf{Highest Demand (Effort):} Effort received the highest rating (\textbf{3.00}), yet this is still considered ``Low'' on a 10-point scale. This suggests a positive trade-off: users were cognitively engaged (concentrating) but not overworked. The feature requires attention, but not exhaustion.
+    \item \textbf{Lowest Demand (Temporal):} With a mean score of \textbf{10.6}, Temporal Demand was negligible. This confirms that users felt \textbf{zero time pressure}, allowing them to work at their own pace without stress.
+    \item \textbf{Highest Demand (Effort):} Effort received the highest rating (\textbf{30.00}), yet this is still considered ``Low'' on a 100-point scale. This suggests a positive trade-off: users were cognitively engaged (concentrating) but not overworked. The feature requires attention, but not exhaustion.
 \end{itemize}
 
 \subsubsection{Consistency and Outlier Analysis}
 The data shows high consistency among the 18 participants, with one notable exception:
 \begin{itemize}
-    \item \textbf{The Outlier (P03):} Participant P03 reported a ``Moderate'' workload (Mean: \textbf{4.33}), rating several dimensions at 5/10. This deviation suggests that while the feature is intuitive for the vast majority, a small subset of users may lack specific prerequisite knowledge or experience an edge-case interaction.
-    \item \textbf{Consistency:} When excluding P03, the mean workload for the remaining 17 participants drops to \textbf{1.86}. Furthermore, \textbf{94\%} of users (17/18) reported an overall workload below 3.0. This strong consistency statistically validates the Reuse Assistant as a low-load feature for the target population.
+    \item \textbf{The Outlier (P03):} Participant P03 reported a ``Moderate'' workload (Mean: \textbf{43.3}), rating several dimensions at 5/10. This deviation suggests that while the feature is intuitive for the vast majority, a small subset of users may lack specific prerequisite knowledge or experience an edge-case interaction.
+    \item \textbf{Consistency:} When excluding P03, the mean workload for the remaining 17 participants drops to \textbf{18.6}. Furthermore, \textbf{94\%} of users (17/18) reported an overall workload below 30.0. This strong consistency statistically validates the Reuse Assistant as a low-load feature for the target population.
 \end{itemize}
 
-%\vspace{1em}
-%\noindent\textit{``The statistical analysis reveals a highly efficient user experience (M=2.00). While users invested a modest amount of effort to complete tasks (M=3.00), they did so without feeling rushed (Temporal M=1.06) or frustrated (Frustration M=1.83). With the exception of a single outlier, the data demonstrates a strong consistency that the feature requires minimal cognitive and physical load.''}
+\subsubsection{Summary of findings}
+Participants assess the perceived workload of the Reuse Assistant as remarkably low. The data indicates that operating 
+this specific feature imposes very little mental or physical cost on the user.
 
-% \subsubsection{Outlier Consideration}
-% Participant P03 reported significantly elevated workload scores across most dimensions 
-% (mean: 4.33) compared to the rest of the participants, with ratings of 5 (Moderate workload) for mental demand, physical demand, 
-% effort, and frustration. 
-% Excluding this outlier, the remaining participants showed remarkably consistent low 
-% workload scores (mean: 1.58), with 17 out of 18 reporting individual mean scores below 
-% 2.0. This consistency demonstrates that the Reuse Assistant imposes a low cognitive load 
-% on the vast majority of the target user population.
+Specifically, participants evaluate the feature's workload with an overall mean score of 20.0 on a scale of 100. 
+This is exceptionally low and proves that the feature itself is easy to understand and handle.
 
+Furthermore, participants assess the "Effort" required to use the feature as manageable. While "Effort" was the highest 
+rated factor (30.0), it remains in the low range. This distinction is important: it shows that users were concentrating on 
+the feature's feedback (engaged), but the interaction did not overwork them. Finally, this assessment is highly consistent,
+with 94\% of users reporting a low workload. Therefore, participants perceive the Reuse Assistant as a supportive feature 
+that aids their work without adding new cognitive burdens.
 
 %----------------------------------------------------------------------------------------------------------------------
 \section{Discussion}
@@ -1099,7 +1023,6 @@ feature location irrelevant. Users do not need to search the interface because t
 to their attention at the appropriate moment. Second, context-aware suggestions eliminate the decision burden about when to 
 apply reuse. The system identifies appropriate opportunities and presents them when relevant, allowing users to focus on 
 domain-level acceptance decisions rather than technical feature selection. 
-%what does domain-level acceptance decisions mean here??
 
 This finding extends Ko et al.'s framework by demonstrating that in block-based environments targeting end-users, the selection 
 barrier comes before and is more important than other barriers. The low NASA-TLX workload scores (mean: 1.92) and high SUS 
@@ -1457,3 +1380,114 @@ For odd-numbered items (1, 3, 5, 7, 9), the score contribution is the scale posi
 % improve clarity. Another participant noted that the function call block should be pre-configured for immediate 
 % use in the blockchain. These suggestions highlight a need for clearer labeling in future iterations of the 
 % interface.
+
+
+
+
+
+% \begin{table}[h]
+%     \centering
+%     \setlength{\tabcolsep}{10pt}
+%     \renewcommand{\arraystretch}{1.2}
+%     \begin{tabular}{|l|c|c|}
+%         \hline
+%         \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
+%         \hline
+%         P01 & 100.0 & Excellent \\
+%         P02 & 100.0 & Excellent \\
+%         P03 & 97.5 & Excellent \\
+%         P04 & 95.0 & Excellent \\
+%         P05 & 95.0 & Excellent \\
+%         P06 & 92.5 & Excellent \\
+%         P07 & 87.5 & Excellent \\
+%         P08 & 85.0 & Excellent \\
+%         P09 & 82.5 & Very Good \\
+%         P10 & 80.0 & Very Good \\
+%         P11 & 80.0 & Very Good \\
+%         P12 & 80.0 & Very Good \\
+%         P13 & 80.0 & Very Good \\
+%         P14 & 77.5 & Very Good \\
+%         P15 & 77.5 & Very Good \\
+%         P16 & 75.0 & Very Good \\
+%         P17 & 75.0 & Very Good \\
+%         P18 & 52.5 & OK \\
+%         \hline
+%         \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
+%         \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
+%         \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
+%         \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
+%         \hline
+%     \end{tabular}
+%     \caption{System Usability Scale (SUS) Scores}
+%     \label{tab:sus_scores}
+% \end{table}
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{our_sus graphs_noOutlier.png}
+%     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
+%     \label{fig:sus_dist}
+% \end{figure}
+
+
+% \begin{figure}[h]
+% \centering
+% % Use PDF (vector) if present, otherwise PNG/JPG
+% \includebestgraphics[width=1.1\columnwidth]{individual_changes}
+% \caption{Individual task completion times}
+% \label{fig:individual_times}
+% \end{figure}
+
+
+%\vspace{1em}
+%\noindent\textit{``The statistical analysis reveals a highly efficient user experience (M=2.00). While users invested a modest amount of effort to complete tasks (M=3.00), they did so without feeling rushed (Temporal M=1.06) or frustrated (Frustration M=1.83). With the exception of a single outlier, the data demonstrates a strong consistency that the feature requires minimal cognitive and physical load.''}
+
+% \subsubsection{Outlier Consideration}
+% Participant P03 reported significantly elevated workload scores across most dimensions 
+% (mean: 4.33) compared to the rest of the participants, with ratings of 5 (Moderate workload) for mental demand, physical demand, 
+% effort, and frustration. 
+% Excluding this outlier, the remaining participants showed remarkably consistent low 
+% workload scores (mean: 1.58), with 17 out of 18 reporting individual mean scores below 
+% 2.0. This consistency demonstrates that the Reuse Assistant imposes a low cognitive load 
+% on the vast majority of the target user population.
+
+
+% \begin{table}[h]
+%     \centering
+%     \setlength{\tabcolsep}{8pt}
+%     \renewcommand{\arraystretch}{1.2}
+%     \begin{tabular}{|l|c|c|c|c|c|c|c|}
+%         \hline
+%         \textbf{Participant} & \textbf{Mental} & \textbf{Physical} & \textbf{Temporal} & \textbf{Performance} & \textbf{Effort} & \textbf{Frustration} & \textbf{Mean} \\
+%         \hline
+%         P01 & 2 & 1 & 1 & 1 & 2 & 1 & 1.33 \\
+%         P02 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
+%         P03 & 5 & 5 & 1 & 5 & 5 & 5 & 4.33 \\
+%         P04 & 1 & 1 & 1 & 1 & 2 & 1 & 1.17 \\
+%         P05 & 3 & 3 & 1 & 2 & 3 & 2 & 2.33 \\
+%         P06 & 4 & 2 & 1 & 3 & 5 & 2 & 2.83 \\
+%         P07 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
+%         P08 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
+%         P09 & 2 & 2 & 1 & 2 & 2 & 2 & 1.83 \\
+%         P10 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
+%         P11 & 3 & 2 & 1 & 2 & 4 & 2 & 2.33 \\
+%         P12 & 3 & 1 & 1 & 2 & 3 & 2 & 2.00 \\
+%         P13 & 4 & 1 & 1 & 2 & 5 & 3 & 2.67 \\
+%         P14 & 2 & 2 & 1 & 3 & 3 & 1 & 2.00 \\
+%         P15 & 3 & 2 & 1 & 2 & 3 & 3 & 2.33 \\
+%         P16 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
+%         P17 & 3 & 1 & 1 & 2 & 1 & 1 & 1.50 \\
+%         P18 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
+%         \hline
+%         \multicolumn{7}{|r|}{\textbf{Overall Mean Score:}} & \textbf{1.92} \\
+%         \hline
+%     \end{tabular}
+%     \caption{Workload Scores by Participant and Dimension}
+%     \label{tab:nasa_tlx}
+% \end{table}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=1.0\textwidth]{nasa_tlx_analysis_scaled.png}
+%     \caption{Workload mean scores for the Reuse Assistant on each dimension. Scores are presented on a scale of 1–10.}
+%     \label{fig:workload_dist}
+% \end{figure}
