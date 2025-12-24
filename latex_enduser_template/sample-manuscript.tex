@@ -60,7 +60,7 @@
 %   bottom=1in,
 %   asymmetric
 % }
-
+\usepackage{enumitem}
 \usepackage{array}
 \usepackage{placeins}
 \usepackage{algorithm}
@@ -86,13 +86,13 @@
 %% the commands and values with those provided to you when you
 %% complete the rights form.
 \setcopyright{acmlicensed}
-\copyrightyear{2018}
-\acmYear{2018}
+\copyrightyear{2025}
+\acmYear{2025}
 \acmDOI{XXXXXXX.XXXXXXX}
 %% These commands are for a PROCEEDINGS abstract or paper.
 \acmConference[Conference acronym 'XX]{Make sure to enter the correct
   conference title from your rights confirmation email}{June 03--05,
-  2018}{Woodstock, NY}
+  2025}{Woodstock, NY}
 %%
 %%  Uncomment \acmBooktitle if the title of the proceedings is different
 %%  from ``Proceedings of ...''!
@@ -193,7 +193,7 @@
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
-\renewcommand{\shortauthors}{Anne, Jeremy, Dimitrios, Nasifa, Mohammad}
+\renewcommand{\shortauthors}{Anne Rommerdahl, Jeremy Galeotti, Dimitrios Dafnis, Nasifa Akter, Mohammad Kardouni}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
@@ -355,16 +355,29 @@ It encourages users to build programs that are modular and easier to maintain, h
 \section{Study Design}
 \label{sec:study_design}
 
-Following the Design Science methodology \cite{Wieringa2014}, our study is structured into three main phases: problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to assess the artifact's performance in a controlled environment.
+Following the Design Science methodology \cite{Wieringa2014}, our study is structured into three main phases: 
+problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to 
+assess the artifact's performance in a controlled environment.
 
 \subsection{Problem Investigation}
 \label{subsec:prob_investigation}
 
 \subsubsection{Problem Context and Motivation}
-End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, end-users need to program 
-robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured code.
-In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes require modifications in multiple locations, increasing the risk of errors. So, while the use of robots in chemistry lab work offer great benefits, the challenge of automating the repetitive work may turn chemists away from using robots.
+End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without 
+formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, 
+end-users need to program 
+robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured 
+code.
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to
+test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate 
+experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, 
+such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with 
+more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
+One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize 
+duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. 
+This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes 
+require modifications in multiple locations, increasing the risk of errors. So, while the use of robots in chemistry lab 
+work offer great benefits, the challenge of automating the repetitive work may turn chemists away from using robots.
 
 \subsubsection{Stakeholder Analysis}
 
@@ -376,12 +389,21 @@ Their primary need is to quickly create and modify robot programs without becomi
 \subsection{Treatment Design}
 \label{subsec:treatment_design}
 
-To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to the chemist's goal of creating maintainable and reusable robot programs.
-Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences and visually highlighting these duplications within the user's workspace.
-These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go unnoticed. Once detected, the system must suggest the creation of reusable custom blocks, allowing the user to accept or reject these suggestions.
-These signals are important, as they give the end-user control over the reuse process, allowing them to decide when and how to apply reuse in their programs.
-Regarding non-functional requirements, the artifact must seamlessly integrate with the existing Open Roberta Lab environment to ensure a smooth user experience.
-The interface should be intuitive for end-users, minimizing the learning curve and making it easy to understand and use the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to help users understand what the system is doing and how to respond to its suggestions.
+To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to 
+the chemist's goal of creating maintainable and reusable robot programs.
+Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences and visually 
+highlighting these duplications within the user's workspace.
+These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go 
+unnoticed. Once detected, the system must suggest the creation of reusable custom blocks, allowing the user to accept or 
+reject these suggestions.
+These signals are important, as they give the end-user control over the reuse process, allowing them to decide when and 
+how to apply reuse in their programs.
+Regarding non-functional requirements, the artifact must seamlessly integrate with the existing Open Roberta Lab 
+environment to ensure a smooth user experience.
+The interface should be intuitive for end-users, minimizing the learning curve and making it easy to understand and use 
+the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue 
+their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to 
+help users understand what the system is doing and how to respond to its suggestions.
 To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
 
 \subsubsection{Architecture}
@@ -411,25 +433,11 @@ The system enables the execution of block-based programs on a simulated cobot th
 \subsubsection{Detection Algorithm}
 The approach is intentionally simple so it is easy to read
 and to implement in a real block editor. The algorithm follows three main steps:
-%\begin{itemize}
- %   \item \textbf{Linearization:} Convert the workspace into a flat, ordered list of blocks (preserving execution order).
- %   \item \textbf{Identify sequences:} Slide a window over the list and extract contiguous sequences whose length is at least a minimum (e.g. 3).
- %   \item \textbf{Pattern Matching:} Use the block type sequence as a key; group occurrences with the same key and report keys seen more than once.
-%\end{itemize}
-
-\begin{itemize}
-
-
+\begin{itemize}[nosep]
     \item \textbf{Linearization:} First, the algorithm linearizes the block workspace into a sequential list of blocks. 
-    
     \item \textbf{Identify sequences:} It then iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks) that can be repeated more than once.
-    
     \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the CustomReusableCandidates list which will eventually be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
-
-
 \end{itemize}
-
-
 The pseudocode below is short, explicit, and uses straightforward data structures (lists).
 
 \begin{algorithm}[H]
@@ -524,7 +532,8 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \caption{Reuse Assistant workflow: refactoring - the automated refactoring result, showing the new custom block definition and the simplified main program.}
     \label{fig:ui_interaction_refactor}
 \end{figure}
-
+\FloatBarrier
+\clearpage
 \begin{figure}[htbp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
@@ -534,7 +543,7 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \label{fig:mujoco_simulator}
 \end{figure}
 % --- END: Split UI figures ---
-\FloatBarrier
+
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 % validity threat here or in discussion?
 % Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
@@ -547,7 +556,6 @@ the OpenRoberta environment.
 
 \subsubsection{Participant Recruitment}
 A total of 18 participants were selected with similar level of expertise in block-based programming. 
-Time constraints and resource availability have influenced the decision to limit the number of participants.
 Participants were recruited from a diverse pool of individuals affiliated with the University of Southern Denmark and the broader chemistry community. 
 This group of participants includes chemistry teachers, professional chemical engineers, and students currently enrolled in chemistry-intensive curricula. 
 To ensure relevant practical expertise, the selection specifically targets those who frequently engage in laboratory environments. 
@@ -559,6 +567,7 @@ For remote participants, sessions were administered virtually using Discord for 
 Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
 It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\clearpage
 \subsubsection{Task Execution}
 The participants were initially given a short introduction to the OpenRoberta UI, as well as the mujoco robot simulator. 
 They then performed one task which is described by a set of pre-defined steps to perform. This task has been specifically designed to promote the reusability aspect.
@@ -608,8 +617,8 @@ Guidance will be provided from the researchers to the participants throughout th
 \subsubsection{Data Gathering and Analysis}
 Data collection focuses on both quantitative performance and qualitative feedback from participants:
 \begin{enumerate}
-    \item \textbf{Task Completion Time:} Measured for both versions (Enhanced and Original) to compare performance across groups. Statistical analysis included paired t-tests to evaluate within-group improvements and between-group comparisons to identify order effects (carryover effects).
-    \item \textbf{Solution Accuracy:} Evaluated by comparing participant solutions against the optimal reference solution. The primary metric was the voluntary adoption of reusable custom blocks, with assessment of whether participants successfully implemented code reuse practices or relied on linear, repetitive code structures.
+    \item \textbf{Task Completion Time:} Measured in seconds for both conditions (Enhanced and Original) to evaluate efficiency gains. Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
+    \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. This primarily measured adoption rates (pass/fail of reuse implementation). Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
     \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature.
     \item \textbf{Workload Assessment:} Measured using the NASA post-task Workload questionnaire (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
@@ -636,7 +645,7 @@ Group A participants exhibited the opposite pattern.
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|r|r|r|}
 \hline
-\textbf{Participant ID} & \textbf{Completion time with Reuse Assistant} & \textbf{Completion time without Reuse Assistant} & \textbf{Difference} \\
+\textbf{Participant ID} & \textbf{Performance with Reuse Assistant} & \textbf{Performance without Reuse Assistant} & \textbf{Difference} \\
 \hline
 P01 & 481 seconds & 331 seconds & 150 seconds \\
 \hline
@@ -657,7 +666,7 @@ P15 & 410 seconds & 540 seconds & -130 seconds \\
 P17 & 560 seconds & 440 seconds & 120 seconds \\
 \hline
 \end{tabular}
-\caption{Task Completion Times of group A: Group A participants solved the task first with the benefits of the Reuse Assistant feature and then without it.}
+\caption{Task Completion Times of group A}
 \label{tab:group_a_times}
 \end{table}
 
@@ -667,7 +676,7 @@ P17 & 560 seconds & 440 seconds & 120 seconds \\
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|r|r|r|}
 \hline
-\textbf{Participant ID} & \textbf{Completion time with Reuse Assistant} & \textbf{Completion time without Reuse Assistant} & \textbf{Difference} \\
+\textbf{Participant ID} & \textbf{Performance with Reuse Assistant} & \textbf{Performance without Reuse Assistant} & \textbf{Difference} \\
 \hline
 P02 & 411 seconds & 477 seconds & -66 seconds \\
 \hline
@@ -688,7 +697,7 @@ P16 & 335 seconds & 400 seconds & -65 seconds \\
 P18 & 540 seconds & 862 seconds & -322 seconds \\
 \hline
 \end{tabular}
-\caption{Task Completion Times of group B: Group B participants solved the task first without the benefits of the Reuse Assistant feature and then with it.}
+\caption{Task Completion Times of group B}
 \label{tab:group_b_times}
 \end{table}
 
@@ -703,6 +712,12 @@ In contrast, Group B participants, which operated without the feature benefits i
 significantly larger efficiency gain, with an average time reduction of 192.4 seconds (Standard Deviation = 90.9 seconds). This suggests that while task 
 familiarity contributed to speed, the introduction of the Reuse Assistant provided a distinct performance advantage.
 
+
+
+To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
+to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
+including overall comparisons, within-group improvements, and the analysis of the order effect.
+\clearpage
 \begin{figure}[h]
 \centering
 % Use PDF (vector) if present, otherwise PNG/JPG
@@ -710,10 +725,6 @@ familiarity contributed to speed, the introduction of the Reuse Assistant provid
 \caption{Distribution of task completion times (in seconds) comparing Group A and Group B participants across both conditions (with and without Reuse Assistant).}
 \label{fig:boxplot}
 \end{figure}
-
-To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
-to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
-including overall comparisons, within-group improvements, and the analysis of the order effect.
 
 \begin{table}[h]
 \centering
@@ -794,7 +805,7 @@ Since the Group B result is statistically more significant, we can say that the 
 \subsection{Research Question 2: To what extent does the reuse assistant facilitate reusability?}
 \label{subsec:rq2_results}
 % -----------------------------------------------------------------------------------------
-% SOLUTION ACCURACY 
+% REUSE ADOPTION
 % -----------------------------------------------------------------------------------------
 \subsubsection{How much does the reuse assistant promote reusability?}
 
@@ -805,20 +816,20 @@ In contrast, in the \textit{Standard} OpenRoberta version that doesn't have the 
 repetitive code structures.
 Without the guidance features, none of them recognized the opportunity to create a reusable block.
 
-While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
-such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
-reflected domain-specific safety practices that would matter in a real chemistry laboratory environment but had no impact on the 
-robot simulator's execution behavior. Since the simulator performed identically regardless of these variations, all solutions were 
-considered functionally correct.
+% While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
+% such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
+% reflected domain-specific safety practices that would matter in a real chemistry laboratory environment but had no impact on the 
+% robot simulator's execution behavior. Since the simulator performed identically regardless of these variations, all solutions were 
+% considered functionally correct.
 
-\begin{figure}[htbp]
-    \centering
-    % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=1\linewidth]{user_solution}
-    \Description{Screenshot showing a participant's unique solution.}
-    \caption{Example of a different participant's solution compared to the optimal solution provided by the researchers.}
-    \label{fig:user_solution}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     % Prefer vector PDF when available, fallback to PNG/JPG
+%     \includebestgraphics[width=1\linewidth]{user_solution}
+%     \Description{Screenshot showing a participant's unique solution.}
+%     \caption{Example of a different participant's solution compared to the optimal solution provided by the researchers.}
+%     \label{fig:user_solution}
+% \end{figure}
 
 \subsubsection{Summary of Findings}
 
@@ -839,7 +850,7 @@ into a seamless, automated decision.
 \label{subsec:rq3_results}
 
 To answer this research question regarding the perceived usability of the system, 
-we administered the System Usability Scale (SUS) questionnaire to all $N=18$ participants 
+we administered the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) to all $N=18$ participants 
 immediately following the treatment validation.
 
 The SUS yields a single number representing a composite measure of the overall usability of 
@@ -864,7 +875,7 @@ or Very Good'' categories.
     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
     \label{fig:sus_dist}
 \end{figure}
-\FloatBarrier
+
 \subsubsection{Distribution Analysis}
 The results show that users found the system very easy to use. 
 17 out of 18 participants (94\%) rated it above the industry average of 68. The scores 
@@ -904,16 +915,16 @@ polished and highly accessible solution.
 \label{subsec:rq4_results}
 
 To assess the cognitive demands imposed by the Reuse Assistant, we administered the NASA 
-Task Load Index (NASA-TLX) questionnaire to all participants after completing the task with 
+Task Load Index (NASA-TLX) questionnaire (see Appendix~\ref{appendix:nasa_tlx} for the full questionnaire details) to all participants after completing the task with 
 the Reuse Assistant benefits. The NASA-TLX is a widely used multidimensional assessment questionnaire 
 that measures perceived workload across six subscales, each rated on a scale 
-from 1 (Very Low) to 10 (Very High).
+from 1 (Very Low) to 10 (Very High). The scores were calculated by multiplying each rating by 10 to convert them to a 0-100 scale.
 
 \subsubsection{Overall Workload Assessment}
-The Reuse Assistant imposes a remarkably low workload on users, with an overall mean score of \textbf{20.00} on a scale of 
-100. This indicates that the feature is highly usable and demands very little effort
+As illustrated in figure \ref{fig:nasa_tlx_dist}, the Reuse Assistant imposes a remarkably low workload on users, 
+with an overall mean score of \textbf{20.00}. 
+This indicates that the feature is highly usable and demands very little effort
 from the user in terms of physical or mental cost.
-
 
 \begin{figure}[htbp]
     \centering
@@ -922,18 +933,8 @@ from the user in terms of physical or mental cost.
     \caption{NASA-tlx workload analysis results. (a) Distribution of NASA-TLX overall workload score (b) Mean workload scores for each dimension. (c) Distribution of workload scores across participants.}
     \label{fig:nasa_tlx_dist}
 \end{figure}
-\FloatBarrier
-\subsubsection{Dimension-Specific Analysis}
-As shown in the figure \ref{fig:nasa_tlx_dist}, the six NASA-TLX dimensions assessed were:
 
-\begin{itemize}
-    \item \textbf{Mental Demand:} How much mental and perceptual activity was required to understand and use the Reuse Assistant? (Mean: 2.2)
-    \item \textbf{Physical Demand:} How much physical activity was required (e.g., clicking, modifying program) while using the Reuse Assistant? (Mean: 1.9)
-    \item \textbf{Temporal Demand:} How much time pressure did you feel while completing the task using the Reuse Assistant? (Mean: 1.2)
-    \item \textbf{Performance:} How successful do you think you were in accomplishing the goals using the Reuse Assistant? (Mean: 1.9)
-    \item \textbf{Effort:} How hard did you have to work to accomplish your level of performance when using the Reuse Assistant? (Mean: 2.8)
-    \item \textbf{Frustration:} How insecure, discouraged, irritated, stressed and annoyed were you when using the Reuse Assistant feature? (Mean: 1.7)
-\end{itemize}
+\subsubsection{Dimension-Specific Analysis}
 
 There is a distinct contrast between the highest and lowest contributing factors:
 \begin{itemize}
@@ -1116,7 +1117,7 @@ capabilities to actively guiding their use.
 % automated detection with alternative pathways (manual invocation, documentation, tutorials) 
 % to ensure users who reject proactive guidance can still access reuse mechanisms if they 
 % choose to seek them out.
-
+\clearpage
 \subsection{Threats to Validity}
 
 \subsubsection{Internal Validity}
@@ -1246,8 +1247,40 @@ The System Usability Scale (SUS) is a widely used standardized questionnaire for
 \end{enumerate}
 
 \subsection{Scoring Method}
+We calculate the System Usability Scale (SUS) score based on the standard method defined by Brooke~\cite{brooke1996sus}. The process consists of three steps:
 
-For odd-numbered items (1, 3, 5, 7, 9), the score contribution is the scale position minus 1. For even-numbered items (2, 4, 6, 8, 10), the contribution is 5 minus the scale position. The sum of all item contributions is then multiplied by 2.5 to obtain the overall SUS score, which ranges from 0 to 100.
+\begin{enumerate}
+    \item \textbf{Normalize the responses:} 
+    \begin{itemize}
+        \item For \textbf{odd-numbered} items (1, 3, 5, 7, 9), subtract 1 from the user response.
+        \item For \textbf{even-numbered} items (2, 4, 6, 8, 10), subtract the user response from 5.
+    \end{itemize}
+    This converts every answer to a range of 0 to 4.
+    
+    \item \textbf{Sum the contributions:} Add the normalized scores for all 10 items together.
+    
+    \item \textbf{Scale the total:} Multiply the sum by 2.5 to convert the range from 0--40 to 0--100.
+\end{enumerate}
+
+Formally, if $x_i$ is the score for the $i$-th question, the total SUS score is given by:
+
+\[
+\text{SUS Score} = 2.5 \times \left( \sum_{i \in \text{odd}} (x_i - 1) + \sum_{i \in \text{even}} (5 - x_i) \right)
+\]
+
+\section{NASA-TLX post-task Questionnaire}
+\label{appendix:nasa_tlx}
+
+The NASA Task Load Index (NASA-TLX) is a multi-dimensional questionnaire that provides an overall workload score based on a weighted average of ratings on six subscales. For this study, we utilized the "Raw TLX" method (unweighted). Participants rated the following six dimensions on a scale from 1 (Very Low) to 10 (Very High), which were then normalized to a 0--100 scale.
+
+\begin{enumerate}
+    \item \textbf{Mental Demand:} How much mental and perceptual activity was required (e.g., thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
+    \item \textbf{Physical Demand:} How much physical activity was required (e.g., pushing, pulling, turning, controlling, activating, etc.)? Was the task easy or demanding, slow or brisk, slack or strenuous, restful or laborious?
+    \item \textbf{Temporal Demand:} How much time pressure did you feel due to the rate or pace at which the tasks or task elements occurred? Was the pace slow and leisurely or rapid and frantic?
+    \item \textbf{Performance:} How successful do you think you were in accomplishing the goals of the task set by the experimenter (or yourself)? How satisfied were you with your performance in accomplishing these goals?
+    \item \textbf{Effort:} How hard did you have to work (mentally and physically) to accomplish your level of performance?
+    \item \textbf{Frustration Level:} How insecure, discouraged, irritated, stressed and annoyed versus secure, gratified, content, relaxed and complacent did you feel during the task?
+\end{enumerate}
 
 
 \end{document}
