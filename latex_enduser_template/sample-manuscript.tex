@@ -262,12 +262,13 @@ This study addresses the question: Can automated guidance help end-users recogni
 We developed the Reuse Assistant, a feature that automatically detects duplicate code sequences and guides users to create reusable custom blocks through visual highlighting and one-click refactoring. Through a within subjects study with 18 participants from the chemistry domain, we evaluated whether proactive automated assistance can overcome the barriers that prevent end-users from adopting reuse practices.
 
 Our investigation examined three research questions: 
-\vspace{-0.5em}
+\vspace{-0.2em}
 \begin{enumerate}
     \item How does the Reuse Assistant affect the end-users performance?
     \item To what extent does the Reuse Assistant facilitate reusability?
     \item How do end-users assess the Reuse Assistant in terms of usability?
 \end{enumerate}
+\vspace{-0.2em}
 The results showed that automated guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.03), and imposed minimal cognitive burden (NASA-TLX mean score: 2).
 
 The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} 
@@ -331,11 +332,10 @@ Building upon all these concepts and ideas, our project introduces a guided Reus
 
 By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our tool aims to make block-based programming more structured and efficient.
 It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
-%In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
+\vspace{-2.1mm}
 \section{Study Design}
 \label{sec:study_design}
-
-Following the Design Science methodology \cite{Wieringa2014}, our study is structured into three main phases: 
+Following the Design Science methodology \cite{Wieringa2014}, the study is structured into three main phases: 
 problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to 
 assess the artifact's performance in a controlled environment.
 
@@ -344,37 +344,35 @@ assess the artifact's performance in a controlled environment.
 
 \subsubsection{Problem Context and Motivation}
 End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without 
-formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, 
+formal programming training. In domains such as chemistry, educational robotics, and industrial settings, 
 end-users need to program 
 robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured 
 code.
-In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to
-test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate 
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs. %in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
+Robots can be used in chemistry labs to automate 
 experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, 
 such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with 
-more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize 
+more time for other work, with the added bonus of not having to handle dangerous chemicals.\\
+One critical challenge in EUD is code reuse. Users frequently create repetitive code as they struggle to recognize 
 duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. 
 This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes 
 require modifications in multiple locations, increasing the risk of errors. So, while the use of robots in chemistry lab 
 work offer great benefits, the challenge of automating the repetitive work may turn chemists away from using robots.
 
 \subsubsection{Stakeholder Analysis}
-
-Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality control procedures. 
+Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, mixing, quality control procedures, etc. 
 They possess deep domain expertise in chemistry but limited programming knowledge, often creating long, repetitive programs that become difficult to maintain when adapting experimental protocols. 
 Their primary need is to quickly create and modify robot programs without becoming programming experts.
 
 
 \subsection{Treatment Design}
 \label{subsec:treatment_design}
-
 To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to 
 the chemist's goal of creating maintainable and reusable robot programs.
 Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences and visually 
 highlighting these duplications within the user's workspace.
-These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go 
-unnoticed. Once detected, the system must suggest the creation of reusable custom blocks, allowing the user to accept or 
+These requirements are necessary to help the end-user recognize opportunities for reuse, that would otherwise go 
+unnoticed. Once detected, the system must offer to create reusable custom blocks, allowing the user to accept or 
 reject these suggestions.
 These signals are important, as they give the end-user control over the reuse process, allowing them to decide when and 
 how to apply reuse in their programs.
@@ -384,7 +382,7 @@ The interface should be intuitive for end-users, minimizing the learning curve a
 the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue 
 their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to 
 help users understand what the system is doing and how to respond to its suggestions.
-To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
+To satisfy the requirements above, we designed the Reuse Assistant as a feature for the Open Roberta Lab. 
 
 \subsubsection{Architecture}
 
