@@ -206,26 +206,23 @@
 \begin{abstract}
 
 
-\noindent\textbf{\textit{Abstract}—Background: End-users who program collaborative 
-robots for laboratory automation often create repetitive code because they struggle to 
-recognize opportunities for reuse. While block-based programming environments provide 
-accessible interfaces, they do not actively guide users toward creating reusable components.}
+\noindent\textbf{\textit{Abstract}—End-users who program collaborative 
+robots for laboratory automation often create repetitive code because they struggle to recognize opportunities for reuse. ot actWhile block-based programming environments provide accessible interfaces, 
+they do not actively guide end-users toward creating reusable components. This study investigates whether automated guidance can help end-users recognize and apply code reuse practices. We developed the Reuse Assistant, 
+a feature that automatically detects duplicate code sequences within the OpenRoberta environment and guides users to create reusable custom blocks through visual highlighting and one-click refactoring. Through a 
+within-subjects study with 18 participants from the chemistry domain, we evaluated the feature's impact on performance, usability, and perceived workload.
+Automated guidance increased reuse adoption from 0\% in the standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved high usability scores (SUS mean: 84.03) and imposed minimal 
+cognitive burden (NASA-TLX mean score: 1.92). The significant order effect revealed that prior manual experience helps users appreciate automation benefits.
+This dramatic shift in adoption suggests that end-users are capable of using advanced features if the system actively guides them.}
+%However, the order effect suggests that some manual experience is necessary to fully benefit from automation. Participants who struggled with manual coding first developed a mental model that allowed them to better appreciate and efficiently use the automated assistance.}
+%Last part is basically the part of implications for practice that thiago told us to remove, so lets cut it out as well
 
-\noindent\textbf{Objective: This study investigates whether automated guidance can help 
-end-users recognize and apply code reuse practices. We developed the Reuse Assistant,
-a feature that automatically detects duplicate code sequences within the OpenRoberta environment and guides users to create reusable custom blocks through visual highlighting and one-click refactoring.}
 
-\noindent\textbf{Study Design: Through a within subjects study with 18 participants from the chemistry domain, we evaluated the feature's impact on performance, usability, and perceived workload.}
 
-\noindent\textbf{Results: Automated guidance increased reuse adoption from 0\% in the 
-standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved 
-high usability scores (SUS mean: 84.03) and imposed minimal cognitive burden (NASA-TLX mean score: 1.92). 
-The significant carryover effect revealed that prior manual experience helps users appreciate automation benefits.}
 
-\noindent\textbf{Conclusions: The dramatic shift in adoption proves that users are capable of using advanced features if the system actively guides them. 
-However, the order effect suggests that some manual experience is necessary to fully benefit from automation. Participants who struggled with manual coding first 
-developed a mental model that allowed them to better appreciate and efficiently use the automated assistance.}
+
 \end{abstract}
+
 \maketitle
 %%
 %% This command processes the author and affiliation and title
@@ -258,7 +255,7 @@ the risk of errors and discouraging adoption of automation features.
 
 This study addresses the question: Can automated guidance help end-users recognize and apply code reuse in block-based programming? 
 We developed the Reuse Assistant, a feature that automatically detects duplicate code sequences and guides users to create reusable custom 
-blocks through visual highlighting and one-click refactoring. Through a within subjects study with 18 participants from the chemistry domain, 
+blocks through visual highlighting and one-click refactoring. Through a within-subjects study with 18 participants from the chemistry domain, 
 we evaluated whether proactive automated assistance can overcome the barriers that prevent end-users from adopting reuse practices.
 
 Our investigation examined four research questions: 
@@ -272,11 +269,13 @@ Our investigation examined four research questions:
 The results showed that automated guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.03), and imposed minimal cognitive burden (NASA-TLX mean score: 2).
 
 The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} 
-and Learning Barriers Framework \cite{KoLearningBarriers} by demonstrating that proactive assistance transforms feature adoption from a 
-high-cost investment to a low-cost opportunistic choice, effectively eliminating the selection barrier. However, we also identify a critical 
-"order effect," suggesting that manual experience is a prerequisite for maximizing the efficiency of automated tools. 
-From a practical perspective, our results show that while simple design principles (visual highlighting, one-click acceptance) achieve high usability, 
-the most effective adoption occurs when automation is introduced after users have developed a mental model of the manual process.
+and Learning Barriers Framework \cite{KoLearningBarriers} by demonstrating that proactive assistance transforms feature adoption from a high-cost investment to a low-cost opportunistic choice, 
+effectively reducing the selection barrier. 
+%However, we also identify a critical "order effect," suggesting that manual experience is a prerequisite for maximizing the efficiency of automated tools. 
+%From a practical perspective, our results show that while simple design principles (visual highlighting, one-click acceptance) achieve high usability, the most effective adoption occurs when automation is introduced after users have developed a mental model of the manual process.
+% Also outcommenting this, as this is also about the implications for practice that thiago wanted removed
+
+
 
 \section{Background and Related Work}
 \label{sec:background_relatedWork}
@@ -288,8 +287,8 @@ the most effective adoption occurs when automation is introduced after users hav
 %% 5 Based on the identified weaknesses in current practices for reuse, we propose our own idea (explain how it's gonna work) (Nasifa)
 
 %% ----Re-done intro----
-Software reuse is a broad term, that refers to the practice of reusing previously written code, rather than coding from scratch. It is such an important part of software engineering, that one of the ways to measure the quality of software is by its 'Reusability'\cite{SoftwareArchitectureInPractice}, i.e. the degree to which the application or its components can be reused. 
-There are multiple benefits to practicing reuse in software engineering. One developer could save time by using another developer's reusable component, rather than coding their own. The developer avoids both the work of writing the syntax and designing the logic of the component. The developer can design their own reusable components, keeping all the logic in one place, which can then be tested thoroughly. However, despite reuse being an important practice in software engineering, there is still a limited focus on this practice when it comes to low-code development platforms (LCDP).
+Software reuse is the practice of reusing previously written code, rather than writing new code from scratch. It is such an important part of software engineering, that one of the ways to measure the quality of software is by its 'Reusability'\cite{SoftwareArchitectureInPractice}, i.e. the degree to which the application or its components can be reused. 
+There are multiple benefits to practicing reuse in software engineering. One developer could save time by using another developer's reusable component, rather than coding their own. The developer avoids both the work of writing the syntax and designing the logic of the component. The developer can also design their own reusable components, keeping all the logic in one place, making both testing and maintenance easier to perform. However, despite reuse being an important practice in software engineering, there is still a limited focus on this practice when it comes to low-code development platforms (LCDP).
 
 %%--from here: what reuse is there for low-code? What research? IN GENERAL
 %%-- Then, what tools? examples of how tools tackle reuse
@@ -297,14 +296,15 @@ There are multiple benefits to practicing reuse in software engineering. One dev
 %%-- Show the tool we'll be working on (what does it do for reuse, and weaknesses).
 %%-- Based on all that, what is our idea? What gap is it, we're addressing and how?
 %% ---------------------
-A study from 2021 studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequent they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. This lack of focus on promoting reuse may impact the so-called 'Citizen Developers', who have little or no coding knowledge, and whom may then miss out on the benefits of reuse. Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting the transition to text-based languages rather than exploring how features within BBP environments \cite{Lin2021Landscape}, such as abstraction or reuse, can enhance learning outcomes.
+A study by Bock and Frank (2021) studied several low-code platforms (LCPs), in order to identify characteristic features of LCPs. The identified features were presented according to how frequently they occured, with domain-specific reference artifacts being categorized as 'rare'. Most studied systems offered catalogs of "reusable functions or examples of predefined processes", but they were found to be generic, or have a limited scope\cite{LowCodePlatform}. This lack of focus on promoting reuse may impact the so-called 'Citizen Developers', who have little or no coding knowledge, and whom may then miss out on the benefits of reuse. Lin and Weintrop (2021) noted that most existing research on block-based programming focuses on supporting the transition to text-based languages rather than exploring how features within BBP environments, such as abstraction or reuse, can enhance learning outcomes\cite{Lin2021Landscape}.
 
-There have been proposed some ideas on how to promote reuse for LCPs, such as the templating language OSTRICH, developed for model-driven low-code platform OutSystems\cite{OSTRICH}. OSTRICH is designed to assist the end-user in making use of OutSystems' available templates, by abstracting and parameterizing the templates. However, OSTRICH only supports the top nine most used production-ready screen templates, and does not allow the end-user to create and save their own templates, or re-apply a template which they have customized. Another approach focused on enabling the reuse of models, by providing recommendations to the end-user, based on the models stored in a graph acting as a repository. While the graph allows end-users to reuse their own models, there is no mention of guiding the user towards reusing their own models.
+There have been proposed some ideas on how to promote reuse for LCPs, such as the templating language OSTRICH, developed for the model-driven low-code platform OutSystems\cite{OSTRICH}. OSTRICH is designed to assist the end-user in making use of OutSystems' available templates, by abstracting and parameterizing the templates. However, OSTRICH only supports the top nine most used production-ready screen templates, and does not allow the end-user to create and save their own templates, or re-apply a template which they have customized. Another approach focused on enabling the reuse of models, by providing recommendations to the end-user, based on the models stored in a graph acting as a repository. While the graph allows end-users to reuse their own models, there is no mention of guiding the user towards reusing their own models.
 
 %Low code platform tools that focus on reuse
 %[x does this, y does that, but a common trend seen in all of them is the almost nonexistent guidance towards using these features. If a user doesnt know/care about reuse, that mentality is never challenged.]
 Several popular low-code development platforms (LCDPs) provide different kinds of support for reuse. Webflow\cite{webflow}, a LCDP for responsive websites, offers the ability to create reusable components and UI kits, which can be reused across multiple pages and projects. 
-Mendix\cite{mendix} and OutSystems offer even more functionality to support reuse, offering several ways to end-users to share their code with each other, and offering pre-made components. Both of these platforms also utilize AI to enhance reuse. Outsystems provides AI suggestions to spot and create reusable pieces, while Mendix uses AI to suggest the best solutions and components for specific tasks. However, for both of these platforms, the AI suggestions provided are not always accurate to successfully guide the end-user to create custom reusable components.\\
+Mendix\cite{mendix} and OutSystems offer even more functionality to support reuse, offering several ways to end-users to share their code with each other, and offering pre-made components. Both of these platforms also utilize AI to enhance reuse. Outsystems provides AI suggestions to spot and create reusable pieces, while Mendix uses AI to suggest the best solutions and components for specific tasks. 
+However, well-known pitfalls of AI are its tendency to generate non-deterministic outputs, and hallucinations. While an experienced programmer can critically analyze the output of the AI, the common end-user lacks that ability. %However, for both of these platforms, the AI suggestions provided are not always accurate to successfully guide the end-user to create custom reusable components.\\
 In order to analyze how block-based robotics environments address reuse, 4 representative platforms were compared: mBlock, MakeCode, SPIKE LEGO, VEXcode GO and Open Roberta. The comparison focused on three main dimensions of reuse: structural reuse (through user-defined blocks or functions), social reuse (through sharing or remixing existing projects), and interoperable reuse (through import/export capabilities).
 \begin{table}[H]
   \small   
@@ -326,23 +326,17 @@ In this context, “reuse support” represents a scale that measures how effect
 
 As shown in Table \ref{tab:reuse_support}, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\\\
 A study by Techapalokul and Tilevich (2019) suggests that supporting mechanisms for reusing smaller, modular pieces of code can enhance programmer productivity, creativity and learning outcomes. 
-%Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with facilities for reusing individual custom blocks to promote procedural abstraction and improve code quality. They observed that while Scratch enables remixing of entire projects, it lacks mechanisms for reusing smaller, modular pieces of code. Their work suggests that supporting such fine-grained code reuse could enhance programmer productivity, creativity, and learning outcomes. Building on this idea, our project applies similar principles within the OpenRoberta environment by automating the detection of duplicate code segments and guiding users toward creating reusable custom blocks.
-Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. Building upon this concept, our project applies similar principles in the OpenRoberta environment, focusing on detecting duplicate code segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}.
+Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts\cite{Adler2021Improving}. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. 
 
-Existing block-based environments provide mechanisms for reuse, but lack intelligent support to help users recognize and apply reuse in practice. To address this gap, our project introduces a guided reuse assistant within the Open Roberta Lab environment.
-The tool is designed to help users identify and apply reuse more easily while creating their robot programs. It works by automatically scanning a user’s block-based program to detect repeated code segments in the workspace. The system visually highlights the found duplicates, drawing the user’s attention to patterns that could be simplified.
-
-The tool also offers the functionality to create the custom block for the end-user, by identifying the small differences between the repeated parts (such as numbers, variables, or parameters) and turning these differences into inputs for the new block. The tool automatically replaces all relevant duplicate sequences with the new custom block.
-
-%When repeated blocks are detected, the assistant suggests creating a reusable custom block (function). It then helps the user generate this new block by identifying the small differences between the repeated parts (such as numbers, variables, or parameters) and turning these differences into inputs for the new block. After the user confirms, the system automatically replaces all the repeated sequences with calls to the newly created reusable block.
+Building upon all these concepts and ideas, our project introduces a guided Reuse Assistant within the OpenRoberta Lab environment. The tool is designed to help users identify and apply reuse more easily while creating their robot programs. Focused on guiding users toward creating reusable custom blocks to promote modularity and abstraction, the tool automatically scans a user's block-based program to detect repeated code segments in the workspace. The system visually highlights the found duplicates, drawing the user’s attention to patterns that can be reused. The tool also offers the functionality to create the custom block for the end-user, by identifying the small differences between the repeated parts (such as numbers, variables, or parameters) and turning these differences into inputs for the new block. The tool automatically replaces all relevant duplicate sequences with the new custom block.
 
 By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our tool aims to make block-based programming more structured and efficient.
 It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
 %In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
+
 \section{Study Design}
 \label{sec:study_design}
-
-Following the Design Science methodology \cite{Wieringa2014}, our study is structured into three main phases: 
+Following the Design Science methodology \cite{Wieringa2014}, the study is structured into three main phases: 
 problem investigation to define goals, treatment design to specify the artifact requirements, and treatment validation to 
 assess the artifact's performance in a controlled environment.
 
@@ -351,37 +345,35 @@ assess the artifact's performance in a controlled environment.
 
 \subsubsection{Problem Context and Motivation}
 End-user development (EUD) for collaborative robots (cobots) presents unique challenges, particularly for users without 
-formal programming training. In domains such as chemistry laboratories, educational robotics, and industrial settings, 
+formal programming training. In domains such as chemistry, educational robotics, and industrial settings, 
 end-users need to program 
 robots to perform specific tasks but often lack the software engineering knowledge to write maintainable, well-structured 
 code.
-In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs in order to
-test a hypothesis, or to aid in the understanding of how chemicals react. Robots can be used in chemistry labs to automate 
+In the domain of Chemistry, one of the most relevant and important tasks is performing experiments in labs. %in order to test a hypothesis, or to aid in the understanding of how chemicals react. 
+Robots can be used in chemistry labs to automate 
 experiments with great effect, as many experiments involve steps that are repetitive, and susceptible to human error, 
 such as a step being overlooked, instructions being misread, etc. Automation of menial tasks will leave the chemists with 
-more time for other work, and also comes with the added bonus of chemists not having to handle dangerous chemicals.\\
-One critical challenge in EUD is code reuse. Users frequently create repetitive code because they struggle to recognize 
+more time for other work, with the added bonus of not having to handle dangerous chemicals.\\
+One critical challenge in EUD is code reuse. Users frequently create repetitive code as they struggle to recognize 
 duplicate patterns, lack knowledge about abstraction mechanisms, or find existing tools too complex to use effectively. 
 This problem manifests in several ways: programs become unnecessarily long and difficult to maintain and small changes 
 require modifications in multiple locations, increasing the risk of errors. So, while the use of robots in chemistry lab 
 work offer great benefits, the challenge of automating the repetitive work may turn chemists away from using robots.
 
 \subsubsection{Stakeholder Analysis}
-
-Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, dispensing, mixing, and quality control procedures. 
+Chemists and lab technicians who use cobots for repetitive tasks such as sample preparation, mixing, quality control procedures, etc. 
 They possess deep domain expertise in chemistry but limited programming knowledge, often creating long, repetitive programs that become difficult to maintain when adapting experimental protocols. 
 Their primary need is to quickly create and modify robot programs without becoming programming experts.
 
 
 \subsection{Treatment Design}
 \label{subsec:treatment_design}
-
 To address the problem of code reuse in EUD for cobots, we have derived a set of requirements designed to contribute to 
 the chemist's goal of creating maintainable and reusable robot programs.
 Functionally, the artifact must be capable of automatically detecting duplicate or similar block sequences and visually 
 highlighting these duplications within the user's workspace.
-These requirements are necessarry to help the end-user recognize opportunities for reuse, that would otherwise go 
-unnoticed. Once detected, the system must suggest the creation of reusable custom blocks, allowing the user to accept or 
+These requirements are necessary to help the end-user recognize opportunities for reuse, that would otherwise go 
+unnoticed. Once detected, the system must offer to create reusable custom blocks, allowing the user to accept or 
 reject these suggestions.
 These signals are important, as they give the end-user control over the reuse process, allowing them to decide when and 
 how to apply reuse in their programs.
@@ -391,7 +383,8 @@ The interface should be intuitive for end-users, minimizing the learning curve a
 the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue 
 their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to 
 help users understand what the system is doing and how to respond to its suggestions.
-To satisfy the requirements above, we designed the Reuse Assistant as an extension of Open Roberta Lab. 
+To satisfy the requirements above, we designed the Reuse Assistant as a feature for the Open Roberta Lab. 
+
 
 \subsubsection{Architecture}
 
