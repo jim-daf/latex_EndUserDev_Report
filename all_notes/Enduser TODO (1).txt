@@ -1,0 +1,53 @@
+Enduser TODO
+
+- We CANNOT change the latex template! It must be reverted back to how it originally was!! Very important!
+
+- AM add her text about Measurement Instruments validity threat
+
+- Remove Attention Investment Model mention in Study Design
+
+- Outlier: Try to figure out WHY there is an outlier, based on the data we gathered. It's ok if we can't find a reason.
+
+==Research Questions==
+	RQ1: How does the Reuse Assistant affect user performance? (Then we can elaborate on HOW it affects performance)
+	RQ2: How well does the Reuse Assistant promote reuse?
+	RQ3: How do the participants experience (OR assess) the Reuse Assistant in terms of 	usability?
+
+- The research questions should be bulletpoints or something. They should be on separate lines. 
+=======================
+
+- Remove the table with results from SUS questions. Use graphs instead. Annahid will show the document with some good examples on Friday 19th. 
+	We should perhaps also ask her about the box plot? Thiago seemed a bit confused about it.
+
+- Separate the results of the NASA TLX graph between A/B groups, so we can see the difference between groups.
+
+- Separate results from usability test between A/B groups.
+
+- Discussion, Strategic introduction of automation - remove this section, as our suggestions should only be aimed at tool design.  
+
+==Implications for Theory==
+- Attention Investment Model should be introduced in 1-2 lines. So cut that section down. 
+
+- Link the actual results of workload to the Attention Investment Model. Can we make the point that our tool proves the model, as our tool lowers the cognitive load and ALL users made custom blocks with Reuse Assistant?
+
+- We can't say that we destroy the selection barrier. We can only prophesize that we reduce it.
+===========================
+
+- Conclusion, talk about generalization. We focus on chemistry. If our tool was used in any other setting, would it still be useful?
+
+==Background==
+- "A study from 2021..." needs to be cited properly. Put author name and \cite
+
+- How did we get inspired by reuse features from other tools (if we even DID get inspired at all)
+
+- Conclude with 'our work differentiates from tools A,B,C by doing X and Y ...'
+===============
+
+
+==Study Design==
+- Merge text from subsection 3.2.1 into running text. 
+
+- The pictures need to be smaller! Make sure we dont waste space
+	Architectural diagram should be more compact. 
+
+

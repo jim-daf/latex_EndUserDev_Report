@@ -1,0 +1,93 @@
+Enduser Tuesday 16th december
+
+==Questions==
+- Should results be kept in introduction? Not how it usually is, but thats what its like in Project Work.pdf
+* Yes, it should be kept there. 
+
+- Should we mention investment model/selection barrier in study design? Or just discussion?
+* No need, people within this domain of study will know about the model. So just bring it up in discussion!
+
+- In results, Consistency and Outlier Analysis, what should we do about the outlier? Should his results be fully excluded, or should it just be mentioned?
+* keep them. But try to make reason of why the outlier is there. Try to look at qualitative answers to see why. Potential reasons for why its an outlier.
+
+- In introduction, should we talk about Chemistry domain in introduction and 'Background and related work'? Rn we only talk about reuse in general. 
+* Thiago says it's fine. We just picked the chemistry as an example case for our study. But our feature can be useful for many different domains. 
+
+- We must prepare a presentation for the exam. Thiago will post more info about that and times. 
+
+==Own Notes==
+- AM changes are at lines:
+(implications for theory) Reducing Attention Investment through Proactive Assistance: 
+The upfront attention investment is reduced to a single decision: accept or reject the system's suggestion. This also greatly reduces the 'risk'-factor. While there still is a risk for no payoff, the user will not stand to lose much due to the low investment. This dramatic reduction in cognitive cost (from a complex multi-step learning process to a binary choice) explains the 100\% adoption rate in the Enhanced condition. 
+
+(validity threat) measurement instruments:
+From the perspective of the Attention Investment Model, however, this is not necessarily a problem, as the cost-risk analysis performed by end-users is based on their own perceived cost, risk and payoff.  
+
+==Teacher Feedback==
+
+Performance: solution accuracy. How do we calculate their solution accuracy compared to ours. 
+We can combine time and accuracy. Best case scenario is short time and high accuracy. We can make a formula.
+Fx count blocks, we have X correct ones in our solution, for each block participant got correct in their solution, that's one point. We come up with score for time completion. Then make formula that combines these results in final result. So best performing users should be those that are fast with high accuracy. (SEE NEXT PARAGRAPH)!
+
+RQ1 is wrong. Answer should be yes or no, while our current answer is 'yes, but...'. Question should be HOW reuse assistant affects end user performance. Then we can elaborate on HOW it affects the performance. (Look at AMs research question.) 
+
+We CAN combine performance and accuracy, but it would be simpler to divide into two RQs. Then the results (time, accuracy) will be separated. 
+
+By the end of EACH section of Results, have a box saying 'answer to RQx', then present a summary of the ACTUAL answer to the question. Give a concrete answer, like 3 lines. 
+
+Important to highligt: All participants completed the task in the original version, but none of them used the original reusable component to do it. 
+We compare their solution to the solution we made with the reuse assistant. But what is our solution in the original version? (It's nearly identical)
+
+Instead of accuracy RQ: how much your reuse assistant actually stimulates the reuse? How much does it promote reuse? It reduces the result to how many used the custom blocks for each version, instead of accuracy. Accuracy may not be very relevant to what we're actually interested in. 
+
+Third research question should be about usability. RQs dont have to be yes/no. We cant say if its usable or not, but rather to which degree. RQx: How do the participants assess/experience the reuse assistant in terms of usability? What is the usability of the reuse assistant? How usable is the reuse assistant for the participants? 
+
+Dont use tables to show SUS score - remove the table! Use graphs. Show average on graph. Annahid will show the document with the example Thiago showed on Friday 19th dec. 
+
+Box plot: Users still take a long time completing the task using the reuse assistant, when using the original first. When starting with the enhanced, they are much faster using the original afterwards. Variation is smaller. 
+
+Separate NASA TLX graph between the A/B groups. Would be cool to see the differences between the groups, if any. Do this for usability score as well. 
+
+Discussion: very very short intro 1-2 lines about investment model. 
+
+investment model: if you want to make a point our tool reduces investment needed, (need to look at difference between groups. Does workload reduce depending on sequence?). Usability score is ONLY based on reuse assistant. Try to make a link, SUS says our workload was low, how is that connected with the attention investment being reduced? Can we make a point that our tool proves the attention investment model, because our tool lowers the cognitive load? 
+
+We DONT destroy the selection barrier, we can only prophesize that we do that, or at least reduce it. 
+
+Thiago wants us to link it to previous tools, but we cant do that because no tools study the effect of their reuse mechanics, not even those that provide new ideas for tools (double check this). So it seems ok we don't do this link. 
+
+Strategic introduction of automation - our suggestions is more aimed at experiment. But it should be aimed at design. We should only give design recommendations. Should remove that section abt experiment. 
+
+Is 18 participants still low number? Yes, so it still needs to be in validity threat.
+
+Generalization in conclusion - we focus on chemistry. If our task was focused on something else, like cooking food general, or in another domain like biology, would our tool be affected? Would our tool still be useful in these contexts?  
+
+
+Intro:
+Separate RQs. They should be on a line by themselves. Remember to change these as well, based on feedback above. 
+
+Background:
+A study from 2021... (PUT AUTHOR NAME!!, CITATION!!). 
+
+The features we identify in low-code tools, which kind of strategies do they use to promote reuse? Fx automatic detection? How did we get inspired by these (if we did get inspired), and why do they not the problem? Why is their 'solution' not enough? We did answer that though. 
+Conclude with 'our work differentiates from tools A,B,C by doing X and Y ...'
+
+Study design:
+We dont need the subsections like 3.2.1. It can all be one paragraph.
+Architecture subsection should be kept, bc its a lot of text.
+
+Full page of architecture diagram is bad. We need architectural diagram. Make it VERY compact, a whole page is a waste of space. The content of the model is good, but the visuals need to be changed to more compact. 
+
+Figures showing the actual tool are too large. Try to make the figures smaller, or just show fx the popup without the workspace behind. 
+
+We have a half empty page after a photo.
+
+We CANNOT have the latex template changed. The red numbers and such MUST be put back. 
+
+
+
+
+
+
+
+

@@ -51,15 +51,6 @@
   \providecommand\BibTeX{{%
     Bib\TeX}}}
 
-% % Force one-sided layout with uniform margins
-% \usepackage{geometry}
-% \geometry{
-%   left=1in,
-%   right=1in,
-%   top=1in,
-%   bottom=1in,
-%   asymmetric
-% }
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{placeins}
@@ -86,20 +77,20 @@
 %% the commands and values with those provided to you when you
 %% complete the rights form.
 \setcopyright{acmlicensed}
-\copyrightyear{2025}
-\acmYear{2025}
+\copyrightyear{2018}
+\acmYear{2018}
 \acmDOI{XXXXXXX.XXXXXXX}
 %% These commands are for a PROCEEDINGS abstract or paper.
 \acmConference[Conference acronym 'XX]{Make sure to enter the correct
   conference title from your rights confirmation email}{June 03--05,
-  2025}{Woodstock, NY}
+  2018}{Woodstock, NY}
 %%
 %%  Uncomment \acmBooktitle if the title of the proceedings is different
 %%  from ``Proceedings of ...''!
 %%
 %%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
 %%  June 03--05, 2018, Woodstock, NY}
-\acmISBN{978-1-4503-XXXX-X/2018/06}
+\acmISBN{978-1-4503-XXXX-X/2018/01}
 
 
 %%
@@ -200,7 +191,17 @@
 %% article.
 \settopmatter{printacmref=true, printccs=true, printfolios=true} % Remove ACM Reference Format and copyright info
 % \renewcommand\footnotetextcopyrightpermission[1]{} % Remove copyright footer
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10011007.10011074.10011092.10011096</concept_id>
+       <concept_desc>Software and its engineering~Reusability</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
 
+\ccsdesc[500]{Software and its engineering~Reusability}
 
 \begin{abstract}
 
@@ -235,23 +236,7 @@ developed a mental model that allowed them to better appreciate and efficiently 
 %% https://dl.acm.org/ccs.cfm
 %% Please copy and paste the code instead of the example below.
 %%
-% \begin{CCSXML}
-% <ccs2012>
-% <concept>
-% <concept_id>10011007.10011006.10011008</concept_id>
-% <concept_desc>Software and its engineering~General programming languages</concept_desc>
-% <concept_significance>500</concept_significance>
-% </concept>
-% <concept>
-% <concept_id>10003456.10003457.10003521.10003525</concept_id>
-% <concept_desc>Social and professional topics~History of programming languages</concept_desc>
-% <concept_significance>300</concept_significance>
-% </concept>
-% </ccs2012>
-% \end{CCSXML}
 
-% \ccsdesc[500]{Software and its engineering~General programming languages}
-% \ccsdesc[300]{Social and professional topics~History of programming languages}
 
 %%
 %% Keywords. The author(s) should pick words that accurately describe
@@ -276,12 +261,14 @@ We developed the Reuse Assistant, a feature that automatically detects duplicate
 blocks through visual highlighting and one-click refactoring. Through a within subjects study with 18 participants from the chemistry domain, 
 we evaluated whether proactive automated assistance can overcome the barriers that prevent end-users from adopting reuse practices.
 
-Our investigation examined three research questions: 
-\begin{enumerate}
-    \item How does the Reuse Assistant affect the end-users performance?
-    \item To what extent does the Reuse Assistant facilitate reusability?
-    \item How do end-users assess the Reuse Assistant in terms of usability?
+Our investigation examined four research questions: 
+\begin{enumerate}[nosep, label=\textbf{\arabic*)}]
+    \item How does the Reuse Assistant affect the end-users' performance?
+    \item To what extent does the reuse assistant facilitate reusability?
+    \item How do the end-users assess the reuse assistant in terms of usability?
+    \item How do the end-users assess the perceived workload when operating the Reuse Assistant?
 \end{enumerate}
+    
 The results showed that automated guidance increased reuse adoption from 0\% to 100\%, achieved high usability scores (SUS mean: 84.03), and imposed minimal cognitive burden (NASA-TLX mean score: 2).
 
 The contributions of this work are both theoretical and practical. We extend the Attention Investment Model \cite{BlackwellAttentionInvestment} 
@@ -337,7 +324,7 @@ In order to analyze how block-based robotics environments address reuse, 4 repre
 \end{table}
 In this context, “reuse support” represents a scale that measures how effectively each platform facilitates reuse-related features. High reuse support indicates that users can easily create, share, and adapt existing components or projects. Medium reuse support suggests that some reuse mechanisms are available but limited in scope or flexibility. Low reuse support implies that the platform provides only minimal or restricted features to promote reuse.
 
-As shown in Table 1, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\\\
+As shown in Table \ref{tab:reuse_support}, although these platforms include reusability features, they are quite limited, as none of them provide users with clear guidance on how to use these tools effectively, which restricts their ability to fully leverage them.\\\\
 A study by Techapalokul and Tilevich (2019) suggests that supporting mechanisms for reusing smaller, modular pieces of code can enhance programmer productivity, creativity and learning outcomes. 
 %Techapalokul and Tilevich (2019) proposed extending the Scratch programming environment with facilities for reusing individual custom blocks to promote procedural abstraction and improve code quality. They observed that while Scratch enables remixing of entire projects, it lacks mechanisms for reusing smaller, modular pieces of code. Their work suggests that supporting such fine-grained code reuse could enhance programmer productivity, creativity, and learning outcomes. Building on this idea, our project applies similar principles within the OpenRoberta environment by automating the detection of duplicate code segments and guiding users toward creating reusable custom blocks.
 Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. Building upon this concept, our project applies similar principles in the OpenRoberta environment, focusing on detecting duplicate code segments and guiding users toward creating reusable custom blocks to promote modularity and abstraction.\cite{Adler2021Improving}.
@@ -423,7 +410,7 @@ The system enables the execution of block-based programs on a simulated cobot th
     \centering
     % width=\textwidth ensures it fills the page width
     % keepaspectratio ensures it doesn't get distorted
-    \includegraphics[width=\textwidth, keepaspectratio]{ArchitectureH2.png}
+    \includegraphics[width=\textwidth, keepaspectratio]{images/ArchitectureH2.png}
     \caption{System architecture: Data flow from Client Side to Simulator}
     \label{fig:architecture}
 \end{figure}
@@ -438,10 +425,10 @@ and to implement in a real block editor. The algorithm follows three main steps:
     \item \textbf{Identify sequences:} It then iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks) that can be repeated more than once.
     \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the CustomReusableCandidates list which will eventually be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
 \end{itemize}
-The pseudocode below is short, explicit, and uses straightforward data structures (lists).
+The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is short, explicit, and uses straightforward data structures (lists).
 
-\begin{algorithm}[H]
-\caption{Duplicate Sequence Detection}
+\begin{algorithm}[htbp]
+\caption{Illustrates the core logic for identifying duplicate block sequences in the user's workspace.}
 \label{alg:detection_refined}
 \begin{algorithmic}[1]
 \REQUIRE Workspace, StartBlock \quad // user's block workspace
@@ -467,7 +454,54 @@ The pseudocode below is short, explicit, and uses straightforward data structure
 \end{algorithm}
 
 
-Algorithm 1. Illustrates the core logic for identifying duplicate block sequences
+
+
+\subsubsection{User Interface and Interaction}
+The user interface is designed to be intuitive and non-disruptive. When the detection 
+algorithm identifies a candidate, the system visually highlights the blocks on the canvas as illustrated in Figure \ref{fig:ui_interaction_highlight}. 
+A non-blocking toast notification appears, prompting the user to confirm the refactoring. 
+If confirmed, the system automatically generates the custom block definition in a dedicated 
+workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
+the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
+This process abstracts the complexity of manual function creation, guiding the user toward modular 
+design practices. 
+After the user presses the run simulation button, the robot simulator of mujoco opens up and executes the commands provided by the user inside the Open Roberta workspace. This is illustrated in Figure \ref{fig:mujoco_simulator}.
+
+
+% --- START: Split UI figures ---
+\begin{figure}[htbp]
+    \centering
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.85\linewidth]{images/highlight}
+    \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
+    \caption{Reuse Assistant workflow: detection - the interface detects and highlights duplicate blocks by changing their color to green.}
+    \label{fig:ui_interaction_highlight}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.85\linewidth]{images/custom_component}
+    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
+    \caption{Reuse Assistant workflow: refactoring - the automated refactoring result, showing the new custom block definition and the simplified main program.}
+    \label{fig:ui_interaction_refactor}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    % Prefer vector PDF when available, fallback to PNG/JPG
+    \includebestgraphics[width=0.85\linewidth]{images/mujoco}
+    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
+    \caption{Mujoco robot simulator executing the commands from Open Roberta.}
+    \label{fig:mujoco_simulator}
+\end{figure}
+
+
+\FloatBarrier
+
+
+
 
 %\begin{algorithm}[H]
 %\caption{Highlight duplicate sequences}
@@ -502,46 +536,7 @@ Algorithm 1. Illustrates the core logic for identifying duplicate block sequence
 
 % [TODO: Insert here your technical description from your original section 3.2.1. 
 % Explain briefly the architecture, the detection algorithm, and how the UI works.]
-\subsubsection{User Interface and Interaction}
-The user interface is designed to be intuitive and non-disruptive. When the detection 
-algorithm identifies a candidate, the system visually highlights the blocks on the canvas as illustrated in Figure \ref{fig:ui_interaction_highlight}. 
-A non-blocking toast notification appears, prompting the user to confirm the refactoring. 
-If confirmed, the system automatically generates the custom block definition in a dedicated 
-workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
-the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
-This process abstracts the complexity of manual function creation, guiding the user toward modular 
-design practices. 
-After the user presses the run simulation button, the robot simulator of mujoco opens up and executes the commands provided by the user inside the Open Roberta workspace. This is illustrated in Figure \ref{fig:mujoco_simulator}.
 
-
-% --- START: Split UI figures ---
-\begin{figure}[htbp]
-    \centering
-    % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.85\linewidth]{highlight}
-    \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
-    \caption{Reuse Assistant workflow: detection - the interface detects and highlights duplicate blocks by changing their color to green.}
-    \label{fig:ui_interaction_highlight}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.85\linewidth]{custom_component}
-    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
-    \caption{Reuse Assistant workflow: refactoring - the automated refactoring result, showing the new custom block definition and the simplified main program.}
-    \label{fig:ui_interaction_refactor}
-\end{figure}
-\FloatBarrier
-\clearpage
-\begin{figure}[htbp]
-    \centering
-    % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.85\linewidth]{mujoco}
-    \Description{Screenshot showing the code after refactoring. The main program is now much shorter. A side panel shows the definition of the new custom block with parameters for coordinates.}
-    \caption{Mujoco robot simulator executing the commands from Open Roberta.}
-    \label{fig:mujoco_simulator}
-\end{figure}
 % --- END: Split UI figures ---
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -563,11 +558,10 @@ The experimental sessions were conducted across a range of environments to accom
 Physical sessions took place within the chemistry laboratories at the University of Southern Denmark (SDU) as well as a private residential setting. 
 For remote participants, sessions were administered virtually using Discord for communication and AnyDesk for remote desktop control.
 
-\paragraph{Ethical Considerations and Sampling}
-Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
-It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
-% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
+% \paragraph{Ethical Considerations and Sampling}
+% Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
+% It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
+% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsubsection{Task Execution}
 The participants were initially given a short introduction to the OpenRoberta UI, as well as the mujoco robot simulator. 
 They then performed one task which is described by a set of pre-defined steps to perform. This task has been specifically designed to promote the reusability aspect.
@@ -599,12 +593,11 @@ The participants were instructed to program the robot to execute the following s
 Most optimal solution pre-defined by the researchers is illustrated in Figure \ref{fig:optimal_solution}.
  \begin{figure}[h]
      \centering
-     \includegraphics[width=0.8\textwidth]{most optimal solution.png}
+     \includegraphics[width=0.75\textwidth]{images/most optimal solution.png}
      \caption{The optimal solution implemented in OpenRoberta, utilizing a custom block for the object placement sequence.}
      \Description{Block-based program showing the optimal solution with a custom reusable block for placing chemistry objects into toolbox slots.}
      \label{fig:optimal_solution}
  \end{figure}
-\FloatBarrier
 Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
 This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
@@ -627,7 +620,7 @@ This comprehensive evaluation provided a detailed understanding of how useful an
 end-users.
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Results}
-\subsection{Research Question 1: How does the Reuse Assistant affect the end-users performance? }
+\subsection{Research Question 1: How does the Reuse Assistant affect the end-users' performance? }
 
 To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants under 
 both conditions (Enhanced and Original versions of OpenRoberta). The study employed a within subjects design where participants were divided into two groups: 
@@ -717,11 +710,12 @@ familiarity contributed to speed, the introduction of the Reuse Assistant provid
 To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
 to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
 including overall comparisons, within-group improvements, and the analysis of the order effect.
-\clearpage
-\begin{figure}[h]
+
+\begin{figure}[htbp]
 \centering
 % Use PDF (vector) if present, otherwise PNG/JPG
-\includebestgraphics[width=1.1\columnwidth]{Boxplot}
+\includebestgraphics[width=1\columnwidth]{images/Boxplot}
+\vspace{-1em}
 \caption{Distribution of task completion times (in seconds) comparing Group A and Group B participants across both conditions (with and without Reuse Assistant).}
 \label{fig:boxplot}
 \end{figure}
@@ -737,7 +731,6 @@ including overall comparisons, within-group improvements, and the analysis of th
 \hline
 Overall Comparison & -0.16 & 0.872 \\
 \hline
-%Wilcoxon Signed-Rank (Overall) & 27.00 & 1.000 \\
 Group A Improvement & 3.30 & 0.011 \\
 \hline
 Group B Improvement & -6.35 & < 0.001 \\
@@ -871,7 +864,7 @@ or Very Good'' categories.
 \begin{figure}[htbp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.9\linewidth]{our_sus graphs_noOutlier}
+    \includebestgraphics[width=0.9\linewidth]{images/our_sus graphs_noOutlier}
     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
     \label{fig:sus_dist}
 \end{figure}
@@ -911,7 +904,7 @@ polished and highly accessible solution.
 
 
 
-\subsection{Research Question 4: How do participants assess the perceived workload when operating the Reuse Assistant? }
+\subsection{Research Question 4: How do the end-users assess the perceived workload when operating the Reuse Assistant? }
 \label{subsec:rq4_results}
 
 To assess the cognitive demands imposed by the Reuse Assistant, we administered the NASA 
@@ -929,7 +922,7 @@ from the user in terms of physical or mental cost.
 \begin{figure}[htbp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.9\linewidth]{nasa_tlx_analysis_scaled}
+    \includebestgraphics[width=0.9\linewidth]{images/nasa_tlx_analysis_scaled}
     \caption{NASA-tlx workload analysis results. (a) Distribution of NASA-TLX overall workload score (b) Mean workload scores for each dimension. (c) Distribution of workload scores across participants.}
     \label{fig:nasa_tlx_dist}
 \end{figure}
@@ -1117,7 +1110,7 @@ capabilities to actively guiding their use.
 % automated detection with alternative pathways (manual invocation, documentation, tutorials) 
 % to ensure users who reject proactive guidance can still access reuse mechanisms if they 
 % choose to seek them out.
-\clearpage
+
 \subsection{Threats to Validity}
 
 \subsubsection{Internal Validity}
@@ -1271,7 +1264,7 @@ Formally, if $x_i$ is the score for the $i$-th question, the total SUS score is 
 \section{NASA-TLX post-task Questionnaire}
 \label{appendix:nasa_tlx}
 
-The NASA Task Load Index (NASA-TLX) is a multi-dimensional questionnaire that provides an overall workload score based on a weighted average of ratings on six subscales. For this study, we utilized the "Raw TLX" method (unweighted). Participants rated the following six dimensions on a scale from 1 (Very Low) to 10 (Very High), which were then normalized to a 0--100 scale.
+The NASA Task Load Index (NASA-TLX) \cite{hart1988development} is a multi-dimensional questionnaire that provides an overall workload score based on a weighted average of ratings on six subscales. For this study, we utilized the "Raw TLX" method (unweighted). Participants rated the following six dimensions on a scale from 1 (Very Low) to 10 (Very High), which were then normalized to a 0--100 scale.
 
 \begin{enumerate}
     \item \textbf{Mental Demand:} How much mental and perceptual activity was required (e.g., thinking, deciding, calculating, remembering, looking, searching, etc.)? Was the task easy or demanding, simple or complex, exacting or forgiving?
