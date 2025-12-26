@@ -566,7 +566,7 @@ The data collection focused on numerical measurements of performance and partici
     Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
     \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. It was measured how many participants let the Reuse Assistant create custom blocks for them. %This primarily measured adoption rates (pass/fail of reuse implementation). 
     Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
-    \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature.
+    \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature. The SUS yields a single number representing a composite measure of the overall usability of the system, with scores ranging from 0 to 100.
     \item \textbf{Workload Assessment:} Measured using the NASA post-task Workload questionnaire (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
 
@@ -729,7 +729,8 @@ This big difference points to a strong learning effect. The results show that pa
 The Reuse Assistant effectively helped the end users complete the task faster. We can conclude this by comparing the average time differences and standard deviations between the two groups of participants.
 
 Participants in Group B improved their time by an average of 192.4 seconds when they switched to using the feature. This is a larger change than Group A. 
-Participants in Group A were slower by an average of 174.9 seconds when they stopped using the feature. This shows that the gain from adding the assistant was greater than the loss from removing it.
+Participants in Group A were faster by an average of 174.9 seconds when they switched to using the original version. This shows that the gain from adding the assistant was greater than the loss from removing it.
+% Participants were overall FASTER when using the original by 174.9 seconds, not slower. 
 
 The standard deviation also tells us about consistency. Group B had a low standard deviation of 90.9 seconds. In contrast, Group A had a much higher standard 
 deviation of 158.9 seconds. This means that the performance boost was not only larger but also more consistent when users utilized the Reuse Assistant.
@@ -745,11 +746,10 @@ Since the Group B result is statistically more significant, we can say that the 
 % -----------------------------------------------------------------------------------------
 
 \paragraph{Adoption of Reusable Blocks}
-In the \textit{Enhanced} OpenRoberta version that includes the Reuse Assistant feature, $18/18$ participants successfully implemented a custom reusable block 
-to handle the repetitive object placement steps. 
-In contrast, in the \textit{Standard} OpenRoberta version that doesn't have the Reuse Assistant benefits, participants predominantly relied on linear, 
-repetitive code structures.
-Without the guidance features, none of them recognized the opportunity to create a reusable block.
+In the \textit{Enhanced} Open Roberta version that includes the Reuse Assistant feature, $18/18$ participants accepted the Reuse Assistant's offer to create a custom reusable block to handle the repetitive object placement steps
+%successfully implemented a custom reusable block to handle the repetitive object placement steps. 
+In contrast, in the \textit{original} Open Roberta version, participants predominantly relied on linear, repetitive code structures. Without the guidance features, none of them attempted creating a reusable block.
+%Without the guidance features, none of them recognized the opportunity to create a reusable block.
 
 % While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
 % such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
@@ -768,28 +768,20 @@ Without the guidance features, none of them recognized the opportunity to create
 
 \subsubsection{Summary of Findings}
 
-The Reuse Assistant promotes reusability by automating the manual effort required to build reusable blocks. It achieves this by lowering the cognitive and 
-technical barriers associated with identifying and abstracting repetitive patterns.
+The Reuse Assistant promotes reusability by automating the manual effort required to build reusable blocks. It achieves this by lowering the cognitive and technical barriers associated with identifying and abstracting repetitive patterns.
 
-Specifically, the system promotes reusability through a three-step mechanism: detection, intervention, and automation. First, the feature identifies and 
-highlights duplicate block sequences within the user's block based program. Second, it interrupts the linear workflow with a binary decision prompt, offering the user an 
-immediate choice to refactor. Finally, upon confirmation, the system automatically encapsulates the repetitive block sequence logic into a reusable block, 
-defines the necessary parameters if needed, and replaces the repetitive sequences with the reusable block.
+%Specifically, the system promotes reusability through a three-step mechanism: detection, intervention, and automation. First, the feature identifies and highlights duplicate block sequences within the user's block based program. Second, it interrupts the linear workflow with a binary decision prompt, offering the user an immediate choice to refactor. Finally, upon confirmation, the system automatically encapsulates the repetitive block sequence logic into a reusable block, defines the necessary parameters if needed, and replaces the repetitive sequences with the reusable block.
+% this section is only about results. We don't need to explain how the system is designed, we already did that way earlier
+For both Group A and B, there were 0 out of 18 participants who created custom blocks while using the original Open Roberta. On the other hand, all 18 participants both created and used a custom block when the Reuse Assistant was available. Thus we can conclude that the Reuse Assistant successfully helped faciliate reuse whenever it was available to the participants. 
 
-The contrast in results, 0\% adopted a reusable block in the Standard OpenRoberta version that does not include the Reuse Assistant versus 100\% in the Enhanced version that includes the feature's benefits, 
-demonstrates that users do not lack the ability to understand functions, but rather the initiative to implement them manually. 
-By removing the effort required to define, parameterize, and call a function block, the Reuse Assistant transforms reusability from a complex manual task 
-into a seamless, automated decision.
+%The contrast in results, 0\% adopted a reusable block in the Standard OpenRoberta version that does not include the Reuse Assistant versus 100\% in the Enhanced version that includes the feature's benefits, demonstrates that users do not lack the ability to understand functions, but rather the initiative to implement them manually. 
+%By removing the effort required to define, parameterize, and call a function block, the Reuse Assistant transforms reusability from a complex manual task into a seamless, automated decision.
+% the RQ isn't about the participant's skills and such. It's ONLY about how well the feature promoted reuse. Also again, dont care abt HOW it faciliates reuse, only how well it does.
 
 \subsection{Research Question 3: How do the end-users assess the reuse assistant in terms of usability?}
 \label{subsec:rq3_results}
-
-To answer this research question regarding the perceived usability of the system, 
-we administered the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) to all $N=18$ participants 
-immediately following the treatment validation.
-
-The SUS yields a single number representing a composite measure of the overall usability of 
-the system, with scores ranging from 0 to 100.
+Data about perceived usability of the Reuse Assistant feature was collected by having all $N=18$ participants answer the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) immediately after they had finished their two tasks.
+%To answer this research question regarding the perceived usability of the system, we administered the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) to all $N=18$ participants immediately following the treatment validation.
 
 \subsubsection{Overall Usability Scores}
 The analysis of the survey data yielded a mean SUS score of \textbf{84.0} ($Median = 81.25$).
