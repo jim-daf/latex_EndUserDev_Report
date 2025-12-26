@@ -381,8 +381,8 @@ Regarding non-functional requirements, the artifact must seamlessly integrate wi
 environment to ensure a smooth user experience.
 The interface should be intuitive for end-users, minimizing the learning curve and making it easy to understand and use 
 the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue 
-their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to 
-help users understand what the system is doing and how to respond to its suggestions.
+their programming tasks without disruption. %Finally, clear visual feedback during the detection process is essential to help users understand what the system is doing and how to respond to its suggestions.
+% this is already mentioned further up. 
 To satisfy the requirements above, we designed the Reuse Assistant as a feature for the Open Roberta Lab. 
 
 
@@ -392,18 +392,18 @@ The system enables the execution of block-based programs on a simulated cobot th
 
 \begin{enumerate}
     \item \textbf{Client Side (Open Roberta):} The user interacts with the Open Roberta UI to assemble block sequences. The Reuse Assistant operates at this layer, analyzing blocks in real-time. Upon execution, the client generates specific data structures ("Generated Headers") representing the program logic.
-    \item \textbf{Backend (Flask Server):} The client transmits these headers via HTTP POST requests to a Flask-based API Endpoint. A "Translator" component processes the data, mapping the abstract block definitions to concrete Python methods compatible with the robot's control logic.
+    \item \textbf{Backend (Flask Server):} The client transmits these headers via HTTP GET requests to a Flask-based API Endpoint. A "Translator" component processes the data, mapping the abstract block definitions to concrete Python methods compatible with the robot's control logic. %Its GET, not POST
     \item \textbf{Simulation (Mujoco):} The mapped methods trigger the execution of commands within the Mujoco Simulator, which renders the physical behavior of the cobot in the virtual environment.
 \end{enumerate}
 
 
-
+% FIX FIGURE - GET, remove 'translation'
 % Zoomed version of the architecture figure on its own page
 \begin{figure}[ht] 
     \centering
     % width=\textwidth ensures it fills the page width
     % keepaspectratio ensures it doesn't get distorted
-    \includegraphics[width=\textwidth, keepaspectratio]{images/ArchitectureH2.png}
+    \includegraphics[width=0.81\textwidth, keepaspectratio]{images/ArchitectureH2.png}
     \caption{System architecture: Data flow from Client Side to Simulator}
     \label{fig:architecture}
 \end{figure}
@@ -411,15 +411,17 @@ The system enables the execution of block-based programs on a simulated cobot th
 \FloatBarrier
 
 \subsubsection{Detection Algorithm}
-The approach is intentionally simple so it is easy to read
-and to implement in a real block editor. The algorithm follows three main steps:
+%The approach is intentionally simple so it is easy to read and to implement in a real block editor. 
+% this sentence is irrelevant. Also, whats a 'real block editor'? 
+The algorithm follows three main steps:
 \begin{itemize}[nosep]
     \item \textbf{Linearization:} First, the algorithm linearizes the block workspace into a sequential list of blocks. 
-    \item \textbf{Identify sequences:} It then iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks) that can be repeated more than once.
-    \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the CustomReusableCandidates list which will eventually be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
+    \item \textbf{Identify sequences:} It iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks). % that can be repeated more than once.
+    % Every block sequence can be repeated more than once? So unecessary?
+    \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the ReusableComponentCandidates list, which will be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
 \end{itemize}
-The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is short, explicit, and uses straightforward data structures (lists).
-
+The pseudocode is illustrated in Algorithm~\ref{alg:detection_refined}.
+%The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is short, explicit, and uses straightforward data structures (lists).
 \begin{algorithm}[htbp]
 \caption{Illustrates the core logic for identifying duplicate block sequences in the user's workspace.}
 \label{alg:detection_refined}
@@ -447,31 +449,29 @@ The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is 
 \end{algorithm}
 
 
-
-
 \subsubsection{User Interface and Interaction}
 The user interface is designed to be intuitive and non-disruptive. When the detection 
-algorithm identifies a candidate, the system visually highlights the blocks on the canvas as illustrated in Figure \ref{fig:ui_interaction_highlight}. 
+algorithm identifies a candidate, the system visually highlights the relevant blocks on the canvas as shown in Figure \ref{fig:ui_interaction_highlight}. 
 A non-blocking toast notification appears, prompting the user to confirm the refactoring. 
-If confirmed, the system automatically generates the custom block definition in a dedicated 
-workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
-the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
-This process abstracts the complexity of manual function creation, guiding the user toward modular 
-design practices. 
+If confirmed, the system automatically generates the custom block definition in a dedicated workspace area and updates the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}.
+%If confirmed, the system automatically generates the custom block definition in a dedicated workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
+% The reader doesn't know what revealDefinitionWorkspacePane is. We shouldn't mention parts of the code that we don't explicitly show in the report
+This process abstracts the complexity of manual function creation, guiding the user toward modular design practices. 
 After the user presses the run simulation button, the robot simulator of mujoco opens up and executes the commands provided by the user inside the Open Roberta workspace. This is illustrated in Figure \ref{fig:mujoco_simulator}.
 
-
 % --- START: Split UI figures ---
-\begin{figure}[htbp]
+% h - Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot)
+% p - Put on a special page for floats only.
+\begin{figure}[hp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.85\linewidth]{images/highlight}
     \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
-    \caption{Reuse Assistant workflow: detection - the interface detects and highlights duplicate blocks by changing their color to green.}
+    \caption{Reuse Assistant workflow: detection - the interface highlights detected duplicate blocks by changing their color to green.}
     \label{fig:ui_interaction_highlight}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[hp]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.85\linewidth]{images/custom_component}
@@ -479,9 +479,9 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \caption{Reuse Assistant workflow: refactoring - the automated refactoring result, showing the new custom block definition and the simplified main program.}
     \label{fig:ui_interaction_refactor}
 \end{figure}
-
-
-\begin{figure}[htbp]
+\FloatBarrier
+% figure 4 doesn't have 'p', and Floatbarrier is moved to be before figure 4. Thus, part 3.3 starts immediately under figure 4
+\begin{figure}[h]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.85\linewidth]{images/mujoco}
@@ -490,57 +490,12 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \label{fig:mujoco_simulator}
 \end{figure}
 
-
-\FloatBarrier
-
-
-
-
-%\begin{algorithm}[H]
-%\caption{Highlight duplicate sequences}
-%\label{alg:detection_refined}
-%\begin{algorithmic}[1]
-%\REQUIRE Workspace, StartBlock \quad // user's block workspace
-%\STATE SequenceToHighlight = DuplicateDetectionAlgorithm()
-%\FOR{each SequenceToHighlight in Workspace}
-%    \FOR{block in SequenceToHighlight} 
-%        \STATE block.changeColor(GREEN) \quad // highlight duplicate blocks
-%        \STATE alertUser("Duplicate sequence detected. Create reusable block?")
-%        \IF{userConfirms()} 
-%            \STATE createReusableBlockFromSequence(block)
-%        \ENDIF
-%    \ENDFOR
-%   \ENDFOR
-%\end{algorithmic}
-%\end{algorithm}
-%Algorithm 2. Illustrates when the system highlights duplicate sequences and alerts the user to create reusable blocks
-
-
-%\begin{algorithm}[H]
-%\caption{Event Listener}
-%\label{alg:detection_refined}
-%\begin{algorithmic}[1]
-%\REQUIRE Workspace, StartBlock \quad // user's block workspace
-%\STATE Window.eventListener("onEachEvent", HighlightDuplicateSequences,ResetBlockColors)
-%\end{algorithmic}
-%\end{algorithm}
-
-%Algorithm 3. Illustrates how the detection algorithm is triggered on each user event in the workspace
-
-% [TODO: Insert here your technical description from your original section 3.2.1. 
-% Explain briefly the architecture, the detection algorithm, and how the UI works.]
-
-% --- END: Split UI figures ---
-
-% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-% validity threat here or in discussion?
 % Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
 %"Task execution" We need to explain what exactly will be the task
 \subsection{Treatment Validation}
 \label{subsec:treatment_validation}
-The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
-the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within 
-the OpenRoberta environment. 
+% We only collect quantitative data, so its not mixed-method
+The treatment validation for this study adopts a quantitative evaluation approach to assess the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within the Open Roberta environment. 
 
 \subsubsection{Participant Recruitment}
 A total of 18 participants were selected with similar level of expertise in block-based programming. 
@@ -552,13 +507,10 @@ Physical sessions took place within the chemistry laboratories at the University
 For remote participants, sessions were administered virtually using Discord for communication and AnyDesk for remote desktop control.
 
 % \paragraph{Ethical Considerations and Sampling}
-% Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
-% It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
-% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. ----------------------------------------------------------------------
 \subsubsection{Task Execution}
-The participants were initially given a short introduction to the OpenRoberta UI, as well as the mujoco robot simulator. 
-They then performed one task which is described by a set of pre-defined steps to perform. This task has been specifically designed to promote the reusability aspect.
-The task is focused on the domain of chemistry, as it is modelled after a real lab experiment perfomed by chemistry students at SDU. 
+The participants were initially given a short introduction to the Open Roberta UI, as well as the mujoco robot simulator. 
+They then performed one task which is described by a set of pre-defined steps. This task has been specifically designed to promote the reusability aspect. The task is focused on the domain of chemistry, as it is modelled after a real lab experiment performed by chemistry students at SDU. 
 
 The participants were instructed to program the robot to execute the following sequence of operations:
 
@@ -583,7 +535,7 @@ The participants were instructed to program the robot to execute the following s
     \end{itemize}
 \end{enumerate}
 
-Most optimal solution pre-defined by the researchers is illustrated in Figure \ref{fig:optimal_solution}.
+The most optimal solution as defined by the researchers is illustrated in Figure \ref{fig:optimal_solution}.
  \begin{figure}[h]
      \centering
      \includegraphics[width=0.75\textwidth]{images/most optimal solution.png}
@@ -591,25 +543,29 @@ Most optimal solution pre-defined by the researchers is illustrated in Figure \r
      \Description{Block-based program showing the optimal solution with a custom reusable block for placing chemistry objects into toolbox slots.}
      \label{fig:optimal_solution}
  \end{figure}
-Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
+Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object in its corresponding slot inside the equipment toolbox. 
 This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
-All the participants will try to complete the task using both the enhanced version of OpenRoberta that includes the Reuse Assistant benefits and the original one that does not. 
-Half of the participants will begin solving the task first on the enhanced version, while the other half will start with the original version.
+All the participants will perform the task using both the enhanced version of Open Roberta, which includes the Reuse Assistant, and the original one which does not. 
+Half of the participants will first perform the task using the enhanced version, then the original version. The other participants will do the opposite order.
+%begin solving the task first on the enhanced version, while the other half will start with the original version.
 Participants’ interactions with the platform will be observed throughout the task.
 Guidance will be provided from the researchers to the participants throughout the task.
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsubsection{Data Gathering and Analysis}
-Data collection focuses on both quantitative performance and qualitative feedback from participants:
+% We dont do qualitative anymore. All results are numerical in nature, so only quantitative
+%Data collection focuses on both quantitative performance and qualitative feedback from participants:
+The data collection focused on numerical measurements of performance and participant feedback:
 \begin{enumerate}
-    \item \textbf{Task Completion Time:} Measured in seconds for both conditions (Enhanced and Original) to evaluate efficiency gains. Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
-    \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. This primarily measured adoption rates (pass/fail of reuse implementation). Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
+    \item \textbf{Task Completion Time:} Measured in seconds for both versions of Open Roberta (enhanced and original) to evaluate efficiency gains. Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
+    \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. It was measured how many participants let the Reuse Assistant create custom blocks for them. %This primarily measured adoption rates (pass/fail of reuse implementation). 
+    Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
     \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature.
     \item \textbf{Workload Assessment:} Measured using the NASA post-task Workload questionnaire (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
 
-This comprehensive evaluation provided a detailed understanding of how useful and effective is the Reuse Assistant feature to the 
+This comprehensive evaluation provided a detailed understanding of how useful and effective the Reuse Assistant feature is to the 
 end-users.
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Results}
