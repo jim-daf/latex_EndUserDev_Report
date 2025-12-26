@@ -973,41 +973,21 @@ effective use of advanced features.
 \subsection{Implications for Practice}
 
 \subsubsection{High Usability and Low Workload Support Simple Design Principles}
-The SUS results (mean: 84.03) place the Reuse Assistant in the "Excellent" category, with 94\% of participants (17 out of 18) 
-rating it above the industry average of 68. This high usability score demonstrates that automated guidance can be both powerful 
-and easy to use. The feature achieved this by focusing on simplicity: visual highlighting to show duplicates and one-click 
-acceptance to create reusable blocks. This suggests that effective end-user features should prioritize clarity over complexity.
-
-The NASA-TLX workload results (mean: 2) further support this finding, showing that effective guidance does not require complex 
-interactions. The combination of high SUS scores and low NASA-TLX workload scores demonstrates that the Reuse Assistant 
-successfully reduces barriers without adding cognitive burden. The key to this success is directly showing users duplicate code 
-patterns through visual highlighting and providing one-click refactoring, rather than adding complexity.
+%The SUS results (mean: 84.03) place the Reuse Assistant in the "Excellent" category, with 94\% of participants (17 out of 18) rating it above the industry average of 68. 
+The high usability score seen in section 4.4 demonstrates that automated guidance can be both powerful and easy to use. The feature achieved high scores by focusing on simplicity: visual highlighting to show duplicates and one-click acceptance to create reusable blocks. This suggests that effective end-user features should prioritize clarity over complexity. This is further supported by the low NASA-TLX workload results (mean: 2), which, combined with the high SUS scores demonstrates that the Reuse Assistant successfully reduces barriers without adding cognitive burden.
+%The NASA-TLX workload results (mean: 2) further support this finding, showing that effective guidance does not require complex interactions. The combination of high SUS scores and low NASA-TLX workload scores demonstrates that the Reuse Assistant successfully reduces barriers without adding cognitive burden. %The key to this success is directly showing users duplicate code patterns through visual highlighting and providing one-click refactoring, rather than adding complexity.
 
 The bimodal distribution in both SUS scores and NASA-TLX workload (with one outlier for each) suggests that while most users 
 experience minimal burden, a small subset encounters significant difficulties. This pattern indicates individual differences 
 in openness to automated guidance, potentially related to prior mental models, learning preferences, or comfort with 
 system-initiated interactions.
 
-
 \subsubsection{From Passive Toolboxes to Active Assistants}
-Current block-based programming environments (Scratch, Blockly, standard OpenRoberta) follow a passive interaction model where reuse 
-mechanisms exist as features waiting to be discovered. The 0\% adoption rate in the standard condition demonstrates the limitations of this 
-approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
-The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing 
-capabilities to actively guiding their use.
+Current block-based programming environments (Scratch, Blockly, standard OpenRoberta) follow a passive interaction model where reuse mechanisms exist as features waiting to be discovered. As seen in section 4.2, the passive approach resulted in 0\% of participants creating reusable blocks, while an active approach resulted in 100\% of participants creating reusable blocks. These findings suggests that tool designers must shift from providing capabilities to actively guiding their use.
+%The 0\% adoption rate in the standard condition demonstrates the limitations of this approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
+%The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing capabilities to actively guiding their use.
 
 % \textbf{Practical Recommendation:} Development environments targeting domain experts should implement background analysis systems that continuously monitor for patterns that show code smells (repetition, long sequences, similar structures). Rather than requiring users to manually invoke refactoring tools, the system should actively show opportunities through non-intrusive notifications. This "ambient intelligence" approach respects user agency (through opt-in confirmations) while addressing the fundamental recognition barrier.
-
-%\subsubsection{Strategic Introduction of Automation}
-%The order effect findings have direct implications for training and onboarding. Organizations introducing automated coding assistants should consider implementing a staged approach:
-
-%\begin{enumerate}
-%    \item \textbf{Initial Exposure Phase:} Allow users to complete initial tasks without automated assistance, building experiential understanding of manual processes and their pain points.
-%    \item \textbf{Guided Automation Phase:} Introduce automated suggestions after users have established baseline workflows, ensuring they can appreciate what the automation provides.
-%    \item \textbf{Full Automation Phase:} Enable all automation features once users have developed adequate mental models.
-%\end{enumerate}
-
-%This staged approach goes against the intuitive "make it easy from the start" philosophy but may lead to better long-term adoption and appropriate use of automation features.
 
 % \textbf{Practical Recommendation:} Designers should resist the temptation to add 
 % configuration options, customization parameters, or complex workflows to guidance features. 
