@@ -878,8 +878,8 @@ that aids their work without adding new cognitive burdens.
 \section{Discussion}
 %Do your results support or challenge existing theories? If they support them, what new information do they contribute? If they challenge them, why do you think that is?
 This study evaluated the Reuse Assistant, an automated guidance feature designed to help end-users recognize and implement code 
-reuse in block-based programming environments. Through a crossover study with 10 participants from the chemistry domain, we 
-assessed the feature's impact on performance (RQ1), usability (RQ2), and perceived workload (RQ3).
+reuse in block-based programming environments. Through a crossover study with 18 participants from the chemistry domain, we 
+assessed the feature's impact on performance (RQ1), facilitation of reuse (RQ2), usability (RQ3), and perceived workload (RQ4).
 The findings reveal both the potential and limitations of automated assistance in promoting software reuse practices among 
 domain experts with limited programming expertise.
 
@@ -1035,14 +1035,11 @@ capabilities to actively guiding their use.
 \subsubsection{Internal Validity}
 
 \paragraph{Carryover effect}
-While the within subjects design allowed within-subjects comparison, the significant carryover effect (p<0.001) indicates that the sequence of 
-conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse 
-Assistant from the impact of prior experience. The 417 seconds performance gap between the two groups' average time differences suggests that learning from the first 
-condition substantially influenced performance in the second condition.
+While the within subjects design allowed within-subjects comparison, the significant carryover effect (p<0.001) indicates that the sequence of conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse Assistant from the impact of prior experience. The 417 seconds performance gap between the two groups' average time differences suggests that learning from the first version substantially influenced performance in the second version.
 
-\textit{Mitigation:} We explicitly analyzed and reported the carryover effect as a finding rather than treating it as unwanted noise. Furthermore, 
-the experiments were balanced, meaning half of the participants performed the task with the Reuse Assistant first, then again using the standard OpenRoberta. 
-The other half did the reverse sequence. In this way, the overall effect on the results is minimized.
+\textit{Mitigation:} We explicitly analyzed and reported the carryover effect as a finding rather than treating it as unwanted noise. Furthermore, the experiments were balanced by having half of the participants perform one sequence of tasks, with the other half performing the reverse order. In this way, the overall effect on the results is minimized.
+%Furthermore, the experiments were balanced, meaning half of the participants performed the task with the Reuse Assistant first, then again using the standard Open Roberta. 
+%The other half did the reverse sequence. In this way, the overall effect on the results is minimized.
 
 \subsubsection{External Validity}
 \paragraph{Convenience Sampling and Population Representation}
@@ -1051,8 +1048,9 @@ convenience sample. This introduces several limitations:
 
 \begin{itemize}
     \item \textbf{Geographic and institutional diversity:} While the study included participants from multiple countries (both local and international participants connected online), recruitment relied primarily on the researchers' professional networks, which may not represent the full geographic and cultural diversity of potential end-users in the domain of chemistry. %laboratory automation contexts.
-    \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory coursework experience, they represent primarily academic contexts rather than industrial laboratory settings where cobot programming would be used professionally.
-    \item \textbf{Sample size:} With 18 participants for performance evaluation, usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles(outliers), limiting the generalizability of findings to broader populations.
+    \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory experience, they represent primarily academic contexts rather than industrial laboratory settings.
+    \item \textbf{Sample size:} The small number of participants (18 total) limits the generalizability of the findings.  
+    %With 18 participants for performance evaluation, usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles(outliers), limiting the generalizability of findings to broader populations.
 \end{itemize}
 
 \textit{Implications:} Findings should be interpreted as preliminary evidence rather than final proof of effectiveness across all end-user developer populations. 
@@ -1082,11 +1080,7 @@ We used standardized instruments (SUS questionnaire, NASA-TLX questionnaire) whi
     \item \textbf{NASA-TLX limitation:} NASA-TLX assesses subjective workload perception, which may not correlate perfectly with objective cognitive load or learning outcomes.
     % \item \textbf{Performance metrics:} Completion time captures efficiency but not code quality, maintainability, or the user's conceptual understanding of reuse principles.
 \end{itemize}
-
-%add this maybe if enough space***
-%\subsubsection{Descriptive Validity - Limitations to observation} 
-%Due to constraints with time and flexibility between the authors and the participants, only one of the authors was present to observe the participants during the experiment. 
-%To ensure that data from the observation was not affected by this, a screen recording of each participant performing the task was saved. Several of the authors reviewed and discussed these recordings together to extract data.
+From the perspective of the Attention Investment Model however, this is not necessarily a problem, as the cost-risk analysis performed by end-users is based on their own perceived cost, risk and payoff - which is subjective.
 
 %\textit{Future work:} Add to these measures with code quality metrics (complexity, maintainability indices), comprehension assessments (asking users to explain or modify reusable components), and longitudinal evaluation of whether users internalize reuse concepts or remain dependent on automated detection.
 
@@ -1104,17 +1098,13 @@ We used standardized instruments (SUS questionnaire, NASA-TLX questionnaire) whi
 
 \section{Conclusion and Future Work}
 This study examined whether automated guidance can help end-users recognize and apply code reuse in block-based programming. 
-We developed the Reuse Assistant, a tool that automatically detects duplicate code sequences and guides users to create reusable 
-custom blocks in the OpenRoberta environment.
+We developed the Reuse Assistant, a tool that automatically detects duplicate code sequences and guides users to create reusable custom blocks in the OpenRoberta environment.
 
 The results showed a clear difference in reuse adoption. While no participants created reusable blocks in the standard environment, 
-all participants successfully created reusable blocks when help from the Reuse Assistant was available. The feature received high usability ratings (SUS mean: 84.03) and low 
-workload scores (NASA-TLX mean: 1.92), demonstrating that automated guidance can be both effective and easy to use.
+all participants successfully created reusable blocks when help from the Reuse Assistant was available. The feature received high usability ratings (SUS mean: 84.03) and low workload scores (NASA-TLX mean: 1.92), demonstrating that automated guidance can be both effective and easy to use.
 
 Our findings contribute to theory by extending the Attention Investment Model and the Learning Barriers Framework. 
-We showed that proactive assistance reduces the upfront cost of adopting new features and that the selection barrier is particularly 
-important in block-based environments for end-users. The significant order effect revealed that prior manual experience helps users 
-appreciate automation benefits.
+We showed that proactive assistance reduces the upfront cost of adopting new features and that the selection barrier is particularly important in block-based environments for end-users. The significant order effect revealed that prior manual experience helps users appreciate automation benefits.
 
 For practice, this study demonstrates that simple design choices matter. Visual highlighting, one-click acceptance, and immediate 
 feedback were sufficient to achieve high adoption of reusable blocks without adding complexity. 
