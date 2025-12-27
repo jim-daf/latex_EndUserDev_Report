@@ -560,8 +560,7 @@ The data collection focused on numerical measurements of performance and partici
 \begin{enumerate}
     \item \textbf{Task Completion Time:} Measured in seconds for both versions of Open Roberta (enhanced and original) to evaluate efficiency gains. 
     Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
-    \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. It was measured how many participants let the Reuse Assistant create custom blocks for them. %This primarily measured adoption rates (pass/fail of reuse implementation). 
-    Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
+    \item \textbf{Reuse adoption:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. It was measured how many participants let the Reuse Assistant create custom blocks for them. %This primarily measured adoption rates (pass/fail of reuse implementation). 
     \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature. The SUS yields a single number representing a composite measure of the overall usability of the system, with scores ranging from 0 to 100.
     \item \textbf{Workload Assessment:} Measured using the NASA post-task Workload questionnaire (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
@@ -747,20 +746,7 @@ In the \textit{Enhanced} Open Roberta version that includes the Reuse Assistant 
 In contrast, in the \textit{original} Open Roberta version, participants predominantly relied on linear, repetitive code structures. Without the guidance features, none of them attempted creating a reusable block.
 %Without the guidance features, none of them recognized the opportunity to create a reusable block.
 
-% While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
-% such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
-% reflected domain-specific safety practices that would matter in a real chemistry laboratory environment but had no impact on the 
-% robot simulator's execution behavior. Since the simulator performed identically regardless of these variations, all solutions were 
-% considered functionally correct.
 
-% \begin{figure}[htbp]
-%     \centering
-%     % Prefer vector PDF when available, fallback to PNG/JPG
-%     \includebestgraphics[width=1\linewidth]{user_solution}
-%     \Description{Screenshot showing a participant's unique solution.}
-%     \caption{Example of a different participant's solution compared to the optimal solution provided by the researchers.}
-%     \label{fig:user_solution}
-% \end{figure}
 
 \subsubsection{Summary of Findings}
 
@@ -895,7 +881,7 @@ attention investment that end-users, focused on their primary domain tasks rathe
 unwilling or unable to make. In this study the result was 0\% adoption of reusable components while using the standard 
 Open Roberta Lab, despite participants possessing the cognitive capacity to understand and use custom blocks when guided to do so.
 %smth about they just need to think about what the tool is offering to do, and how expensive it would be to undo it. Also risk is decreased by custom blocks being created by more experienced ppl (us).
-The Reuse Assistant changes this attention investment equation by eliminating steps 1-4 entirely. Users do not need to recognize 
+The Reuse Assistant changes this attention investment equation by eliminating steps 1-5 entirely. Users do not need to recognize 
 duplication patterns (the system detects them automatically), discover the feature exists (the system actively presents opportunities), locate the feature in the interface (the notification appears over the user's workspace)
 %(visual highlighting brings the opportunity directly to users' attention), 
 or understand complex configuration procedures (automated parameterization handles technical 
@@ -982,28 +968,7 @@ Current block-based programming environments (Scratch, Blockly, standard OpenRob
 %The 0\% adoption rate in the standard condition demonstrates the limitations of this approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
 %The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing capabilities to actively guiding their use.
 
-% \textbf{Practical Recommendation:} Development environments targeting domain experts should implement background analysis systems that continuously monitor for patterns that show code smells (repetition, long sequences, similar structures). Rather than requiring users to manually invoke refactoring tools, the system should actively show opportunities through non-intrusive notifications. This "ambient intelligence" approach respects user agency (through opt-in confirmations) while addressing the fundamental recognition barrier.
 
-% \textbf{Practical Recommendation:} Designers should resist the temptation to add 
-% configuration options, customization parameters, or complex workflows to guidance features. 
-% The key is directly showing users opportunities for improvement in their code 
-% (duplicate sequence of blocks that could become reusable components) and offering an 
-% immediate solution (one-click refactoring), not adding settings menus or advanced 
-% configuration panels. 
-% For end-users, the interaction cost must be minimal to avoid creating new barriers
-% while removing old ones.
-
-% \subsubsection{Plan for Individual Differences}
-% The consistent outlier pattern (one participant with low SUS scores and high workload 
-% across all dimensions) indicates that approximately 10\% of users may struggle with 
-% automated guidance. This cannot be avoided given individual differences in learning 
-% preferences and comfort with system-initiated interactions.
-
-% \textbf{Practical Recommendation:} Provide a clearly visible mechanism to disable automated 
-% suggestions for users who find them distracting or confusing. Additionally, supplement 
-% automated detection with alternative pathways (manual invocation, documentation, tutorials) 
-% to ensure users who reject proactive guidance can still access reuse mechanisms if they 
-% choose to seek them out.
 
 \subsection{Threats to Validity}
 
@@ -1057,19 +1022,6 @@ We used standardized instruments (SUS questionnaire, NASA-TLX questionnaire) whi
 \end{itemize}
 From the perspective of the Attention Investment Model however, this is not necessarily a problem, as the cost-risk analysis performed by end-users is based on their own perceived cost, risk and payoff - which is subjective.
 
-%\textit{Future work:} Add to these measures with code quality metrics (complexity, maintainability indices), comprehension assessments (asking users to explain or modify reusable components), and longitudinal evaluation of whether users internalize reuse concepts or remain dependent on automated detection.
-
-% \paragraph{Single Outlier Pattern}
-% One participant (P03) consistently reported low usability (SUS: 52.5) and high workload (NASA-TLX: 4.33) across all measures. While we interpreted this as evidence of individual differences, alternative explanations include:
-
-% \begin{itemize}
-%     \item Technical issues during the session (software bugs, hardware problems)
-%     \item Misunderstanding of questionnaire items or rating scales
-%     \item Fatigue or external stressors unrelated to the tool
-%     \item Genuine fundamental incompatibility between the user's mental model and the tool's interaction paradigm
-% \end{itemize}
-
-% \textit{Limitation:} With only one outlier, we cannot determine which explanation is correct or whether this represents 10\% of the population or a unique case. Larger samples are needed to characterize the distribution of user experiences.
 
 \section{Conclusion and Future Work}
 This study examined whether automated guidance can help end-users recognize and apply code reuse in block-based programming. 
@@ -1087,10 +1039,14 @@ feedback were sufficient to achieve high adoption of reusable blocks without add
 The results suggest that programming environments for 
 domain experts should actively guide users towards using features they are unaware of and/or do not understand, rather than wait for them to discover such features on their own.
 
+
+
 \subsection{Future Work}
 Future research should test the Reuse Assistant in real laboratory settings over extended periods to determine whether users eventually learn to recognize reuse opportunities independently, after using the Reuse Assistant. Studies with more participants from diverse backgrounds would help identify which user groups benefit most from automated guidance. The feature should also be evaluated with more complex programming tasks and tested in other end-user programming 
 environments beyond Open Roberta Lab. Finally, for any of these scenarios it would be interesting to gather qualitative data, in order to gain a better understanding of exactly why end-users may or may not find the feature worth using. 
-
+\newline
+A live deployment of the Reuse Assistant is available for public use at: 
+\url{https://reuse-assistant-e4dwemeugwfmafem.germanywestcentral-01.azurewebsites.net/}
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
@@ -1161,242 +1117,3 @@ The NASA Task Load Index (NASA-TLX) \cite{hart1988development} is a multi-dimens
 
 \end{document}
 \endinput
-%%
-%% End of file `sample-manuscript.tex'.
-% -----------------------------------------------------------------------------------------
-% OVERVIEW
-% -----------------------------------------------------------------------------------------
-% The treatment validation was concluded with a total of 10 participants. 
-% The analysis of the collected data combines quantitative metrics regarding user preference and satisfaction 
-% with qualitative feedback derived from survey responses.
-
-
-% \subsection{Performance Evaluation}
-% To evaluate the efficiency and effectiveness of the proposed reusable component 
-% features, we analyzed two primary metrics: Task Completion Time and Solution Accuracy.
-
-% % -----------------------------------------------------------------------------------------
-% % TASK COMPLETION TIME
-% % -----------------------------------------------------------------------------------------
-% \subsubsection{Task Completion Time}
-
-% The total time required to complete the experimental task was recorded for both 
-% the participants that first used the \textit{Standard} version of OpenRoberta and 
-% for those who used the \textit{Enhanced} version first. 
-
-% We compared the performance of participants based on the order of conditions (see Table \ref{tab:time_comparison_vertical}).
-% The analysis reveals a significant reduction in task duration when using the Enhanced 
-% version. The average completion time for the participants that used the Enhanced version first was $8.5$ 
-% minutes, compared to $10$ minutes for the Standard version. 
-% \begin{equation}
-%     \text{Efficiency Improvement} = \frac{10.0 - 8.5}{10.0} \times 100\% = 15\%
-% \end{equation} 
-
-
-
-%\begin{itemize}
- %   \item \textbf{Enhanced OpenRoberta version First:} Participants who started with the Enhanced version completed the task in an average of 8 and a half minutes.
- %   \item \textbf{Standard OpenRoberta version First:} Participants who started with the Standard version completed the task in an average of 10 minutes.
-%\end{itemize}
-% \begin{table}[h]
-%     \centering
-%     \caption{Breakdown of Mean Task Completion Times}
-%     \label{tab:time_comparison_vertical}
-%     \begin{tabular}{| p{8cm} | c | c |} 
-%         \hline
-%         \textbf{Experimental Condition} & \textbf{Mean Time (min)} & \textbf{Efficiency} \\
-%         \hline
-%         \textit{Participants who used Enhanced Version First} & 8.5 & 15\% \\
-%         \hline
-%         \textit{Participants who used Standard Version First} & 10.0 & --- \\
-%         \hline
-%     \end{tabular}
-% \end{table}
-
-
-
-
-
-
-
-% \subsection{Survey Quantitative Results}
-
-% \subsubsection{User preference between Standard and Enhanced Versions of OpenRoberta}
-% The survey results indicate a unanimous preference for the enhanced version of the OpenRoberta Lab. 
-% As illustrated in Figure \ref{fig:compare_versions}, 70\% of participants rated the enhanced version 
-% as ``much better'' than the standard version, while the remaining 30\% rated it as ``better.'' 
-% No participants preferred the standard version or rated the two versions as equivalent.
-
-% \begin{figure}[h]
-%     \centering
-%     % Use PDF (vector) if present, otherwise PNG/JPG
-%     \includebestgraphics[width=\textwidth]{survey_comp_enh_sta}
-%     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
-%     \label{fig:compare_versions}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{usability_of_feature}
-%     \caption{Summary of participant responses regarding usability of the guidance feature in the enhanced version of OpenRoberta}
-%     \label{fig:usability_of_feature}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{hl_eval}
-%     \caption{Summary of participant responses regarding evaluation of the visual highlighting in the enhanced version of OpenRoberta}
-%     \label{fig:hl_eval}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{hl_pref}
-%     \caption{Summary of participant responses regarding visual highlighting style preference in the enhanced version of OpenRoberta}
-%     \label{fig:hl_pref}
-% \end{figure}
-
-% \subsubsection{Usability of the Guidance Feature}
-% Regarding usability of the enhanced OpenRoberta version, we received high acceptance scores. As illustrated in Figure \ref{fig:usability_of_feature}, 40\% of participants found the 
-% enhanced version ``very easy'' to use, and 60\% rated it as ``easy.''
-% No participants rated the enhanced version as ``Neither easy nor difficult,'' ``Difficult,'' or ``Very difficult'' to use.
-
-% \subsubsection{Evaluation of the Visual Highlighting}
-% A key component of the enhanced version was the visual highlighting designed 
-% to guide the user into an automatic custom reusable block creation. 
-% As shown in Figure \ref{fig:hl_eval}, results showed a high level of user satisfaction,
-% with 90\% of participants reporting they were either ``satisfied'' 
-% (20\%) or ``very satisfied'' (70\%) with the features. Only one participant (10\%) expressed a neutral stance.
-
-% \subsubsection{Visual Highlighting Style Preference}
-% When asked about specific highlighting preferences, as depicted in Figure \ref{fig:hl_pref} the \textit{Animated Color Highlight} was the most popular choice, 
-% preferred by 50\% of the users. A significant portion of participants (30\%) expressed no strong preference 
-% between the styles, suggesting that the presence of guidance was more important than the specific highlight style 
-% used.
-
-% % -----------------------------------------------------------------------------------------
-% % SURVEY QUALITATIVE RESULTS
-% % -----------------------------------------------------------------------------------------
-% \subsection{Qualitative Feedback}
-% The post-experiment survey included open-ended questions to gather detailed feedback. The thematic analysis of 
-% these responses revealed two primary findings:
-
-% \paragraph{Efficiency and Speed}
-% When asked to identify the biggest difference between the two versions, the majority of participants cited 
-% \textit{efficiency}. Responses frequently described the enhanced version as ``faster''. This aligns with the quantitative preference data, suggesting that the reusability 
-% features successfully reduced the perceived workload.
-
-% \paragraph{Suggestions for Improvement}
-% Participants also provided constructive feedback regarding the function blocks. Two participants specifically 
-% suggested that the system should more clearly \textit{``specify parameter names''} within the function blocks to 
-% improve clarity. Another participant noted that the function call block should be pre-configured for immediate 
-% use in the blockchain. These suggestions highlight a need for clearer labeling in future iterations of the 
-% interface.
-
-
-
-
-
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{10pt}
-%     \renewcommand{\arraystretch}{1.2}
-%     \begin{tabular}{|l|c|c|}
-%         \hline
-%         \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
-%         \hline
-%         P01 & 100.0 & Excellent \\
-%         P02 & 100.0 & Excellent \\
-%         P03 & 97.5 & Excellent \\
-%         P04 & 95.0 & Excellent \\
-%         P05 & 95.0 & Excellent \\
-%         P06 & 92.5 & Excellent \\
-%         P07 & 87.5 & Excellent \\
-%         P08 & 85.0 & Excellent \\
-%         P09 & 82.5 & Very Good \\
-%         P10 & 80.0 & Very Good \\
-%         P11 & 80.0 & Very Good \\
-%         P12 & 80.0 & Very Good \\
-%         P13 & 80.0 & Very Good \\
-%         P14 & 77.5 & Very Good \\
-%         P15 & 77.5 & Very Good \\
-%         P16 & 75.0 & Very Good \\
-%         P17 & 75.0 & Very Good \\
-%         P18 & 52.5 & OK \\
-%         \hline
-%         \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
-%         \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
-%         \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
-%         \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
-%         \hline
-%     \end{tabular}
-%     \caption{System Usability Scale (SUS) Scores}
-%     \label{tab:sus_scores}
-% \end{table}
-
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{our_sus graphs_noOutlier.png}
-%     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
-%     \label{fig:sus_dist}
-% \end{figure}
-
-
-% \begin{figure}[h]
-% \centering
-% % Use PDF (vector) if present, otherwise PNG/JPG
-% \includebestgraphics[width=1.1\columnwidth]{individual_changes}
-% \caption{Individual task completion times}
-% \label{fig:individual_times}
-% \end{figure}
-
-
-%\vspace{1em}
-%\noindent\textit{``The statistical analysis reveals a highly efficient user experience (M=2.00). While users invested a modest amount of effort to complete tasks (M=3.00), they did so without feeling rushed (Temporal M=1.06) or frustrated (Frustration M=1.83). With the exception of a single outlier, the data demonstrates a strong consistency that the feature requires minimal cognitive and physical load.''}
-
-% \subsubsection{Outlier Consideration}
-% Participant P03 reported significantly elevated workload scores across most dimensions 
-% (mean: 4.33) compared to the rest of the participants, with ratings of 5 (Moderate workload) for mental demand, physical demand, 
-% effort, and frustration. 
-% Excluding this outlier, the remaining participants showed remarkably consistent low 
-% workload scores (mean: 1.58), with 17 out of 18 reporting individual mean scores below 
-% 2.0. This consistency demonstrates that the Reuse Assistant imposes a low cognitive load 
-% on the vast majority of the target user population.
-
-
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{8pt}
-%     \renewcommand{\arraystretch}{1.2}
-%     \begin{tabular}{|l|c|c|c|c|c|c|c|}
-%         \hline
-%         \textbf{Participant} & \textbf{Mental} & \textbf{Physical} & \textbf{Temporal} & \textbf{Performance} & \textbf{Effort} & \textbf{Frustration} & \textbf{Mean} \\
-%         \hline
-%         P01 & 2 & 1 & 1 & 1 & 2 & 1 & 1.33 \\
-%         P02 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-%         P03 & 5 & 5 & 1 & 5 & 5 & 5 & 4.33 \\
-%         P04 & 1 & 1 & 1 & 1 & 2 & 1 & 1.17 \\
-%         P05 & 3 & 3 & 1 & 2 & 3 & 2 & 2.33 \\
-%         P06 & 4 & 2 & 1 & 3 & 5 & 2 & 2.83 \\
-%         P07 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-%         P08 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-%         P09 & 2 & 2 & 1 & 2 & 2 & 2 & 1.83 \\
-%         P10 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-%         P11 & 3 & 2 & 1 & 2 & 4 & 2 & 2.33 \\
-%         P12 & 3 & 1 & 1 & 2 & 3 & 2 & 2.00 \\
-%         P13 & 4 & 1 & 1 & 2 & 5 & 3 & 2.67 \\
-%         P14 & 2 & 2 & 1 & 3 & 3 & 1 & 2.00 \\
-%         P15 & 3 & 2 & 1 & 2 & 3 & 3 & 2.33 \\
-%         P16 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-%         P17 & 3 & 1 & 1 & 2 & 1 & 1 & 1.50 \\
-%         P18 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-%         \hline
-%         \multicolumn{7}{|r|}{\textbf{Overall Mean Score:}} & \textbf{1.92} \\
-%         \hline
-%     \end{tabular}
-%     \caption{Workload Scores by Participant and Dimension}
-%     \label{tab:nasa_tlx}
-% \end{table}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=1.0\textwidth]{nasa_tlx_analysis_scaled.png}
-%     \caption{Workload mean scores for the Reuse Assistant on each dimension. Scores are presented on a scale of 1–10.}
-%     \label{fig:workload_dist}
-% \end{figure}
