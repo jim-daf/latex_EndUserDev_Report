@@ -211,7 +211,7 @@ they do not actively guide end-users toward creating reusable components. This s
 a feature that automatically detects duplicate code sequences within the OpenRoberta environment and guides users to create reusable custom blocks through visual highlighting and one-click refactoring. Through a 
 within-subjects study with 18 participants from the chemistry domain, we evaluated the feature's impact on performance, usability, and perceived workload.
 Automated guidance increased reuse adoption from 0\% in the standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved high usability scores (SUS mean: 84.03) and imposed minimal 
-cognitive burden (NASA-TLX mean score: 1.92). The significant order effect revealed that prior manual experience helps users appreciate automation benefits.
+cognitive burden (NASA-TLX mean score: 1.92). The significant carryover effect revealed that prior manual experience helps users appreciate automation benefits.
 This dramatic shift in adoption suggests that end-users are capable of using advanced features if the system actively guides them.}
 %However, the order effect suggests that some manual experience is necessary to fully benefit from automation. Participants who struggled with manual coding first developed a mental model that allowed them to better appreciate and efficiently use the automated assistance.}
 %Last part is basically the part of implications for practice that thiago told us to remove, so lets cut it out as well
@@ -652,7 +652,7 @@ significantly larger efficiency gain, with an average time reduction of 192.4 se
 
 To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
 to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
-including overall comparisons, within-group improvements, and the calculated order effect.
+including overall comparisons, within-group improvements, and the calculated carryover effect.
 
 \begin{figure}[htbp]
 \centering
@@ -707,9 +707,9 @@ The mean improvement was -192.44 seconds (SD = 90.91), yielding a t-value of -6.
 result demonstrates that these participants were a lot \textit{faster} on their second attempt, where the Reuse Assistant was available.
 The low standard deviation reveals that there was a consistent pattern in how much faster participants worked with the feature being available.
 
-\paragraph{Order Effect Analysis}
+\paragraph{Carryover Effect Analysis}
 To determine whether the order in which participants used the two versions influenced their performance, we conducted a Welch's 
-t-test, comparing the improvement scores between Group A and Group B. This analysis revealed a highly significant order effect 
+t-test, comparing the improvement scores between Group A and Group B. This analysis revealed a highly significant carryover effect 
 (t = 6.02, \textit{p} < 0.001).
 
 The difference between the two groups was massive with a gap of 367 seconds. Group B participants, who started the task without the Reuse Assistant, 
@@ -935,8 +935,8 @@ The Reuse Assistant addresses both barriers simultaneously
 through automated pattern detection (recognition) and proactive presentation (selection), explaining the dramatic shift 
 from 0\% to 100\% adoption.
 
-\subsubsection{The Order Effect: Prior Experience as a Prerequisite for Appreciating Automation}
-The significant order effect (t=-4.37, p=.008) reveals a counter-intuitive finding: participants who received automated 
+\subsubsection{The carryover Effect: Prior Experience as a Prerequisite for Appreciating Automation}
+The significant carryover effect (t=-4.37, p=.008) reveals a counter-intuitive finding: participants who received automated 
 assistance first showed smaller performance improvements than those who completed the task manually first. %first struggled with the manual approach. 
 This 481-second performance gap suggests that automation effectiveness depends on users having established mental models of the problem space.
 
