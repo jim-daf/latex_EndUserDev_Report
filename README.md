@@ -1,9 +1,4 @@
 # Deployment of Reuse Assistant
-This repository contains the deployment information and source code links
-for the **Reuse Assistant**, a feature integrated into the OpenRoberta Lab
-to support end-users in identifying and applying code reuse.
-
-## Live Deployment
 
 ### Frontend (OpenRoberta)
 https://reuse-assistant-e4dwemeugwfmafem.germanywestcentral-01.azurewebsites.net/ 
@@ -29,6 +24,6 @@ https://github.com/jim-daf/end_user_deploy/tree/flask-deploy
 
 ## Running the Simulator Locally
 
-To run the simulator locally, follow the instructions in the repository below:
+Source code for running the simulator locally through mujoco GUI:
 
 https://github.com/VictoriousAnnro/openroberta-lab_enduser/tree/final_version_EndUserSemesterProject/mj_pick_and_place
