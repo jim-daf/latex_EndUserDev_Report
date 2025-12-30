@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sample-manuscript.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: sample-base.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--empty address in Adler2021Improving
+Warning--page numbers missing in both pages and numpages fields in Adler2021Improving
+Warning--empty address in SoftwareArchitectureInPractice
+Warning--empty address in BlackwellAttentionInvestment
+Warning--no number and no volume in BlackwellCognitiveDimensions
+Warning--page numbers missing in both pages and numpages fields in LowCodePlatform
+Warning--no number and no volume in KoLearningBarriers
+Warning--empty publisher in OSTRICH
+Warning--empty address in OSTRICH
+You've used 16 entries,
+            6273 wiz_defined-function locations,
+            1790 strings with 23588 characters,
+and the built_in function-call counts, 16634 in all, are:
+= -- 2184
+> -- 460
+< -- 0
++ -- 147
+- -- 171
+* -- 1105
+:= -- 1620
+add.period$ -- 85
+call.type$ -- 16
+change.case$ -- 100
+chr.to.int$ -- 16
+cite$ -- 25
+duplicate$ -- 1505
+empty$ -- 1052
+format.name$ -- 207
+if$ -- 4053
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 173
+num.names$ -- 116
+pop$ -- 545
+preamble$ -- 1
+purify$ -- 227
+quote$ -- 0
+skip$ -- 557
+stack$ -- 0
+substring$ -- 1239
+swap$ -- 153
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 351
+warning$ -- 9
+while$ -- 115
+width$ -- 0
+write$ -- 352
+(There were 9 warnings)

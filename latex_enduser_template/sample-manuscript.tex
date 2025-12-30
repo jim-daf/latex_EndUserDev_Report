@@ -76,21 +76,17 @@
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
 %% complete the rights form.
-\setcopyright{acmlicensed}
-\copyrightyear{2018}
-\acmYear{2018}
+\setcopyright{none}
+\copyrightyear{2026}
+\acmYear{2026}
 \acmDOI{XXXXXXX.XXXXXXX}
-%% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[Conference acronym 'XX]{Make sure to enter the correct
-  conference title from your rights confirmation email}{June 03--05,
-  2018}{Woodstock, NY}
-%%
-%%  Uncomment \acmBooktitle if the title of the proceedings is different
-%%  from ``Proceedings of ...''!
-%%
-%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-%%  June 03--05, 2018, Woodstock, NY}
 \acmISBN{978-1-4503-XXXX-X/2018/01}
+% \acmISBN{}
+%% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Conference acronym 'XX]{Make sure to enter the correct
+%   conference title from your rights confirmation email}{June 03--05,
+%   2018}{Woodstock, NY}
+\acmConference[Under Review]{Submitted to ACM Conference}{2026}{Location To Be Decided}
 
 
 %%
@@ -184,7 +180,7 @@
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
-\renewcommand{\shortauthors}{Anne Rommerdahl, Jeremy Galeotti, Dimitrios Dafnis, Nasifa Akter, Mohammad Kardouni}
+\renewcommand{\shortauthors}{Anne-Marie Rommerdahl, Jeremy Galeotti, Dimitrios Dafnis, Nasifa Akter, Mohammad Kardouni}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
@@ -206,13 +202,12 @@
 \begin{abstract}
 
 
-\noindent\textbf{\textit{Abstract}—End-users who program collaborative 
-robots for laboratory automation often create repetitive code because they struggle to recognize opportunities for reuse. ot actWhile block-based programming environments provide accessible interfaces, 
+\noindent\textbf{\textit{Abstract}—End-users who program collaborative robots for laboratory automation often create repetitive code because they struggle to recognize opportunities for reuse. While block-based programming environments provide accessible interfaces, 
 they do not actively guide end-users toward creating reusable components. This study investigates whether automated guidance can help end-users recognize and apply code reuse practices. We developed the Reuse Assistant, 
 a feature that automatically detects duplicate code sequences within the OpenRoberta environment and guides users to create reusable custom blocks through visual highlighting and one-click refactoring. Through a 
 within-subjects study with 18 participants from the chemistry domain, we evaluated the feature's impact on performance, usability, and perceived workload.
 Automated guidance increased reuse adoption from 0\% in the standard OpenRoberta version to 100\% when using the Reuse Assistant. The feature achieved high usability scores (SUS mean: 84.03) and imposed minimal 
-cognitive burden (NASA-TLX mean score: 1.92). The significant order effect revealed that prior manual experience helps users appreciate automation benefits.
+cognitive burden (NASA-TLX mean score: 1.92). The significant carryover effect revealed that prior manual experience helps users appreciate automation benefits.
 This dramatic shift in adoption suggests that end-users are capable of using advanced features if the system actively guides them.}
 %However, the order effect suggests that some manual experience is necessary to fully benefit from automation. Participants who struggled with manual coding first developed a mental model that allowed them to better appreciate and efficiently use the automated assistance.}
 %Last part is basically the part of implications for practice that thiago told us to remove, so lets cut it out as well
@@ -328,9 +323,9 @@ As shown in Table \ref{tab:reuse_support}, although these platforms include reus
 A study by Techapalokul and Tilevich (2019) suggests that supporting mechanisms for reusing smaller, modular pieces of code can enhance programmer productivity, creativity and learning outcomes. 
 Adler et al. (2021) introduced a search-based refactoring approach to improve the readability of Scratch programs by automatically applying small code transformations, such as simplifying control structures and splitting long scripts\cite{Adler2021Improving}. Their findings demonstrated that automated refactoring can significantly enhance code quality and readability for novice programmers. 
 
-Building upon all these concepts and ideas, our project introduces a guided Reuse Assistant within the OpenRoberta Lab environment. The tool is designed to help users identify and apply reuse more easily while creating their robot programs. Focused on guiding users toward creating reusable custom blocks to promote modularity and abstraction, the tool automatically scans a user's block-based program to detect repeated code segments in the workspace. The system visually highlights the found duplicates, drawing the user’s attention to patterns that can be reused. The tool also offers the functionality to create the custom block for the end-user, by identifying the small differences between the repeated parts (such as numbers, variables, or parameters) and turning these differences into inputs for the new block. The tool automatically replaces all relevant duplicate sequences with the new custom block.
+Building upon all these concepts and ideas, our project introduces a guided Reuse Assistant feature within the OpenRoberta Lab environment. The feature is designed to help users identify and apply reuse more easily while creating their robot programs. Focused on guiding users toward creating reusable custom blocks to promote modularity and abstraction, the feature automatically scans a user's block-based program to detect repeated code segments in the workspace. The system visually highlights the found duplicates, drawing the user’s attention to patterns that can be reused. The feature also offers the functionality to create the custom block for the end-user, by identifying the small differences between the repeated parts (such as numbers, variables, or parameters) and turning these differences into inputs for the new block. The feature automatically replaces all relevant duplicate sequences with the new custom block.
 
-By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our tool aims to make block-based programming more structured and efficient.
+By combining ideas from procedural abstraction (organizing code into meaningful, reusable parts) and automated refactoring (improving code through intelligent transformations), our feature aims to make block-based programming more structured and efficient.
 It encourages users to build programs that are modular and easier to maintain, helps reduce unnecessary repetition, and supports learning by making the concept of reuse clear and hands-on.
 %In summary, our work bridges the gap between existing theoretical approaches to software reuse and their real-world application in block-based programming environments. Through this guided and semi-automated approach, we aim to make reuse visible, understandable, and practical for end-users working in Open Roberta.
 
@@ -381,9 +376,9 @@ Regarding non-functional requirements, the artifact must seamlessly integrate wi
 environment to ensure a smooth user experience.
 The interface should be intuitive for end-users, minimizing the learning curve and making it easy to understand and use 
 the reuse features. Additionally, the artifact should not interfere with the existing workflow, allowing users to continue 
-their programming tasks without disruption. Finally, clear visual feedback during the detection process is essential to 
-help users understand what the system is doing and how to respond to its suggestions.
-To satisfy the requirements above, we designed the Reuse Assistant as a feature for the Open Roberta Lab. 
+their programming tasks without disruption. %Finally, clear visual feedback during the detection process is essential to help users understand what the system is doing and how to respond to its suggestions.
+% this is already mentioned further up. 
+To satisfy the requirements above, we designed the Reuse Assistant (source code available at: \url{https://github.com/jim-daf/end_user_deploy}) as a feature for the Open Roberta Lab. 
 
 
 \subsubsection{Architecture}
@@ -392,18 +387,18 @@ The system enables the execution of block-based programs on a simulated cobot th
 
 \begin{enumerate}
     \item \textbf{Client Side (Open Roberta):} The user interacts with the Open Roberta UI to assemble block sequences. The Reuse Assistant operates at this layer, analyzing blocks in real-time. Upon execution, the client generates specific data structures ("Generated Headers") representing the program logic.
-    \item \textbf{Backend (Flask Server):} The client transmits these headers via HTTP POST requests to a Flask-based API Endpoint. A "Translator" component processes the data, mapping the abstract block definitions to concrete Python methods compatible with the robot's control logic.
+    \item \textbf{Backend (Flask Server):} The client transmits these headers via HTTP GET requests to a Flask-based API Endpoint. A "Translator" component processes the data, mapping the abstract block definitions to concrete Python methods compatible with the robot's control logic. %Its GET, not POST
     \item \textbf{Simulation (Mujoco):} The mapped methods trigger the execution of commands within the Mujoco Simulator, which renders the physical behavior of the cobot in the virtual environment.
 \end{enumerate}
 
 
-
+% FIX FIGURE - GET, remove 'translation'
 % Zoomed version of the architecture figure on its own page
 \begin{figure}[ht] 
     \centering
     % width=\textwidth ensures it fills the page width
     % keepaspectratio ensures it doesn't get distorted
-    \includegraphics[width=\textwidth, keepaspectratio]{images/ArchitectureH2.png}
+    \includegraphics[width=0.81\textwidth, keepaspectratio]{images/ArchitectureH2.png}
     \caption{System architecture: Data flow from Client Side to Simulator}
     \label{fig:architecture}
 \end{figure}
@@ -411,16 +406,18 @@ The system enables the execution of block-based programs on a simulated cobot th
 \FloatBarrier
 
 \subsubsection{Detection Algorithm}
-The approach is intentionally simple so it is easy to read
-and to implement in a real block editor. The algorithm follows three main steps:
+%The approach is intentionally simple so it is easy to read and to implement in a real block editor. 
+% this sentence is irrelevant. Also, whats a 'real block editor'? 
+The algorithm follows three main steps:
 \begin{itemize}[nosep]
     \item \textbf{Linearization:} First, the algorithm linearizes the block workspace into a sequential list of blocks. 
-    \item \textbf{Identify sequences:} It then iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks) that can be repeated more than once.
-    \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the CustomReusableCandidates list which will eventually be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
+    \item \textbf{Identify sequences:} It iterates through this list to identify all possible sequences of blocks that meet a minimum unique block type length requirement (three blocks). % that can be repeated more than once.
+    % Every block sequence can be repeated more than once? So unecessary?
+    \item \textbf{Sequences Matching:} If the same sequence of block types is found more than once, it will be added to the ReusableComponentCandidates list, which will be sorted by longest and most recent duplicated sequences. In the end the highest priority candidate gets returned.
 \end{itemize}
-The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is short, explicit, and uses straightforward data structures (lists).
-
-\begin{algorithm}[htbp]
+The pseudocode is illustrated in Algorithm~\ref{alg:detection_refined}.
+%The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is short, explicit, and uses straightforward data structures (lists).
+\begin{algorithm}[ht]
 \caption{Illustrates the core logic for identifying duplicate block sequences in the user's workspace.}
 \label{alg:detection_refined}
 \begin{algorithmic}[1]
@@ -446,32 +443,26 @@ The pseudocode which is illustrated in Algorithm~\ref{alg:detection_refined} is 
 \end{algorithmic}
 \end{algorithm}
 
-
-
-
+\vspace{-5mm}
 \subsubsection{User Interface and Interaction}
-The user interface is designed to be intuitive and non-disruptive. When the detection 
-algorithm identifies a candidate, the system visually highlights the blocks on the canvas as illustrated in Figure \ref{fig:ui_interaction_highlight}. 
-A non-blocking toast notification appears, prompting the user to confirm the refactoring. 
-If confirmed, the system automatically generates the custom block definition in a dedicated 
-workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates
-the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
-This process abstracts the complexity of manual function creation, guiding the user toward modular 
-design practices. 
+The user interface is designed to be intuitive and as non-disruptive as possible. When the detection algorithm identifies a candidate, the system visually highlights the relevant blocks on the canvas as shown in Figure \ref{fig:ui_interaction_highlight}. A toast notification appears, prompting the user to confirm the refactoring. The workspace is blocked until the user gives an answer (ideally, this notification should be non-blocking, and we consider this a limitation of the feature). If the user confirms, the system automatically generates the custom block definition in a dedicated workspace area and updates the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}.
+%If confirmed, the system automatically generates the custom block definition in a dedicated workspace area (handling visibility via \texttt{revealDefinitionWorkspacePane}) and updates the main workspace, replacing the redundant code with concise function calls as shown in Figure \ref{fig:ui_interaction_refactor}. 
+% The reader doesn't know what revealDefinitionWorkspacePane is. We shouldn't mention parts of the code that we don't explicitly show in the report
+This process abstracts the complexity of manual function creation, guiding the user toward modular design practices. 
 After the user presses the run simulation button, the robot simulator of mujoco opens up and executes the commands provided by the user inside the Open Roberta workspace. This is illustrated in Figure \ref{fig:mujoco_simulator}.
 
-
 % --- START: Split UI figures ---
-\begin{figure}[htbp]
+
+\vspace{-1mm}
+\begin{figure}[h]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
-    \includebestgraphics[width=0.85\linewidth]{images/highlight}
+    \includebestgraphics[width=0.85\linewidth]{images/updatedHighlight}
     \Description{A screenshot of the Open Roberta environment. Two identical sequences of blocks are highlighted. A pop-up message in the bottom right asks the user if they want to create a reusable block.}
-    \caption{Reuse Assistant workflow: detection - the interface detects and highlights duplicate blocks by changing their color to green.}
+    \caption{Reuse Assistant workflow: detection - the interface highlights detected duplicate blocks by changing their color to green.}
     \label{fig:ui_interaction_highlight}
 \end{figure}
-
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.85\linewidth]{images/custom_component}
@@ -479,9 +470,9 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \caption{Reuse Assistant workflow: refactoring - the automated refactoring result, showing the new custom block definition and the simplified main program.}
     \label{fig:ui_interaction_refactor}
 \end{figure}
+\FloatBarrier
 
-
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.85\linewidth]{images/mujoco}
@@ -490,57 +481,12 @@ After the user presses the run simulation button, the robot simulator of mujoco 
     \label{fig:mujoco_simulator}
 \end{figure}
 
-
-\FloatBarrier
-
-
-
-
-%\begin{algorithm}[H]
-%\caption{Highlight duplicate sequences}
-%\label{alg:detection_refined}
-%\begin{algorithmic}[1]
-%\REQUIRE Workspace, StartBlock \quad // user's block workspace
-%\STATE SequenceToHighlight = DuplicateDetectionAlgorithm()
-%\FOR{each SequenceToHighlight in Workspace}
-%    \FOR{block in SequenceToHighlight} 
-%        \STATE block.changeColor(GREEN) \quad // highlight duplicate blocks
-%        \STATE alertUser("Duplicate sequence detected. Create reusable block?")
-%        \IF{userConfirms()} 
-%            \STATE createReusableBlockFromSequence(block)
-%        \ENDIF
-%    \ENDFOR
-%   \ENDFOR
-%\end{algorithmic}
-%\end{algorithm}
-%Algorithm 2. Illustrates when the system highlights duplicate sequences and alerts the user to create reusable blocks
-
-
-%\begin{algorithm}[H]
-%\caption{Event Listener}
-%\label{alg:detection_refined}
-%\begin{algorithmic}[1]
-%\REQUIRE Workspace, StartBlock \quad // user's block workspace
-%\STATE Window.eventListener("onEachEvent", HighlightDuplicateSequences,ResetBlockColors)
-%\end{algorithmic}
-%\end{algorithm}
-
-%Algorithm 3. Illustrates how the detection algorithm is triggered on each user event in the workspace
-
-% [TODO: Insert here your technical description from your original section 3.2.1. 
-% Explain briefly the architecture, the detection algorithm, and how the UI works.]
-
-% --- END: Split UI figures ---
-
-% -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-% validity threat here or in discussion?
 % Treatment validation needs to be split into subsections "data gathering and analysis" How we gather the data and how we analyze them
 %"Task execution" We need to explain what exactly will be the task
 \subsection{Treatment Validation}
 \label{subsec:treatment_validation}
-The treatment validation for this study adopts a mixed-methods evaluation approach to assess 
-the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within 
-the OpenRoberta environment. 
+% We only collect quantitative data, so its not mixed-method
+The treatment validation for this study adopts a quantitative evaluation approach to assess the effectiveness of the proposed features for guiding users in creating custom reusable components (blocks) within the Open Roberta environment. 
 
 \subsubsection{Participant Recruitment}
 A total of 18 participants were selected with similar level of expertise in block-based programming. 
@@ -552,13 +498,10 @@ Physical sessions took place within the chemistry laboratories at the University
 For remote participants, sessions were administered virtually using Discord for communication and AnyDesk for remote desktop control.
 
 % \paragraph{Ethical Considerations and Sampling}
-% Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. 
-% It should be noted that this recruitment strategy constitutes \textit{convenience sampling}. As such, they may not represent the general population.
-% ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Prior to the commencement of the study, all participants are required to sign a consent form acknowledging their voluntary participation and granting permission for screen recording and data usage. ----------------------------------------------------------------------
 \subsubsection{Task Execution}
-The participants were initially given a short introduction to the OpenRoberta UI, as well as the mujoco robot simulator. 
-They then performed one task which is described by a set of pre-defined steps to perform. This task has been specifically designed to promote the reusability aspect.
-The task is focused on the domain of chemistry, as it is modelled after a real lab experiment perfomed by chemistry students at SDU. 
+The participants were initially given a short introduction to the Open Roberta UI, as well as the mujoco robot simulator. 
+They then performed one task which is described by a set of pre-defined steps. This task has been specifically designed to promote the reusability aspect. The task is focused on the domain of chemistry, as it is modelled after a real lab experiment performed by chemistry students at SDU. 
 
 The participants were instructed to program the robot to execute the following sequence of operations:
 
@@ -583,7 +526,7 @@ The participants were instructed to program the robot to execute the following s
     \end{itemize}
 \end{enumerate}
 
-Most optimal solution pre-defined by the researchers is illustrated in Figure \ref{fig:optimal_solution}.
+The most optimal solution as defined by the researchers is illustrated in Figure \ref{fig:optimal_solution}.
  \begin{figure}[h]
      \centering
      \includegraphics[width=0.75\textwidth]{images/most optimal solution.png}
@@ -591,38 +534,46 @@ Most optimal solution pre-defined by the researchers is illustrated in Figure \r
      \Description{Block-based program showing the optimal solution with a custom reusable block for placing chemistry objects into toolbox slots.}
      \label{fig:optimal_solution}
  \end{figure}
-Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object to its corresponding slot inside the equipment toolbox. 
+Instead of creating a long linear sequence of blocks, the most optimal solution utilizes a Custom Reusable Component to handle the repetitive action of placing an object in its corresponding slot inside the equipment toolbox. 
 This approach not only reduces redundancy but also enhances code maintainability and readability, aligning with best practices in software development.
 
-All the participants will try to complete the task using both the enhanced version of OpenRoberta that includes the Reuse Assistant benefits and the original one that does not. 
-Half of the participants will begin solving the task first on the enhanced version, while the other half will start with the original version.
+%To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants using either version (enhanced or original) of Open Roberta.
+% both conditions (Enhanced and Original versions of OpenRoberta). 
+%The study employed a within-subjects design where participants were divided into two groups: 
+%Group A used the enhanced version of Open Roberta first, while group B started with the Original version. This design allowed us to assess not only the feature's effectiveness but also the potential order effect arising from the learning curve between the two conditions.
+
+All the participants will perform the task using both the enhanced version of Open Roberta, which includes the Reuse Assistant, and the original one which does not. 
+The study employs a within-subjects design, where all participants are divided into two groups. Half of the participants (Group A) will first perform the task using the enhanced version, then the original version. The other participants (Group B) will do the opposite order.
 Participants’ interactions with the platform will be observed throughout the task.
 Guidance will be provided from the researchers to the participants throughout the task.
 
 % -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \subsubsection{Data Gathering and Analysis}
-Data collection focuses on both quantitative performance and qualitative feedback from participants:
+% We dont do qualitative anymore. All results are numerical in nature, so only quantitative
+%Data collection focuses on both quantitative performance and qualitative feedback from participants:
+The data collection focused on numerical measurements of performance and participant feedback:
 \begin{enumerate}
-    \item \textbf{Task Completion Time:} Measured in seconds for both conditions (Enhanced and Original) to evaluate efficiency gains. Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
-    \item \textbf{Reuse adoption and functional correctness:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. This primarily measured adoption rates (pass/fail of reuse implementation). Functional correctness was assessed by verifying if the robot successfully executed the chemical mixing protocol, with minor variations in safety steps deemed acceptable if they did not affect the simulation outcome.
-    \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature.
+    \item \textbf{Task Completion Time:} Measured in seconds for both versions of Open Roberta (enhanced and original) to evaluate efficiency gains. 
+    Statistical analysis employed paired t-tests to assess within-group improvements and a Welch’s t-test to compare improvement scores between groups, specifically isolating the impact of the order effect arising from the sequence of conditions.
+    \item \textbf{Reuse adoption:} Evaluated by tracking the voluntary implementation of reusable custom blocks during the task. It was measured how many participants let the Reuse Assistant create custom blocks for them. %This primarily measured adoption rates (pass/fail of reuse implementation). 
+    \item \textbf{Usability Assessment:} Evaluated using the System Usability Scale (SUS) questionnaire to measure participants' perceived usability of the Reuse Assistant feature. The SUS yields a single number representing a composite measure of the overall usability of the system, with scores ranging from 0 to 100.
     \item \textbf{Workload Assessment:} Measured using the NASA post-task Workload questionnaire (NASA-TLX) to assess the cognitive demands imposed by the Reuse Assistant across six dimensions (mental demand, physical demand, temporal demand, performance, effort, and frustration).
 \end{enumerate}
 
-This comprehensive evaluation provided a detailed understanding of how useful and effective is the Reuse Assistant feature to the 
+This comprehensive evaluation provided a detailed understanding of how useful and effective the Reuse Assistant feature is to the 
 end-users.
 %-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \section{Results}
 \subsection{Research Question 1: How does the Reuse Assistant affect the end-users' performance? }
+To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants using either version (enhanced or original) of Open Roberta.
+% both conditions (Enhanced and Original versions of OpenRoberta). 
+%The study employed a within-subjects design where participants were divided into two groups: 
+%Group A used the enhanced version of Open Roberta first, while group B started with the Original version. This design allowed us to assess not only the feature's effectiveness but also the potential order effect arising from the learning curve between the two conditions.
+% In this section, we focus only on the results. Everything about HOW we gathered the results should be explained in 'Treatment Validation'
 
-To evaluate the impact of the Reuse Assistant on end-user performance, we measured task completion times for all participants under 
-both conditions (Enhanced and Original versions of OpenRoberta). The study employed a within subjects design where participants were divided into two groups: 
-Group A experienced the Enhanced version of OpenRoberta first, while Group B started with the Original version. This design allowed us to assess not only the 
-feature's effectiveness but also the potential order effect arising from the learning curve between the two conditions.
-
-Tables \ref{tab:group_a_times} and \ref{tab:group_b_times} present the individual completion times for all participants across both conditions(with and without using the Reuse Assistant). 
-The data reveal substantial variability in performance outcomes depending on the order in which the participants performed the tasks, 
-with Group B participants showing consistent improvements when moving from the Original OpenRoberta version to the Enhanced, while 
+Tables \ref{tab:group_a_times} and \ref{tab:group_b_times} present the individual completion times for all participants using either version of Open Roberta. %across both conditions (with and without using the Reuse Assistant). 
+The data reveals substantial variability in performance outcomes depending on the order in which the participants performed the tasks, 
+with Group B participants showing consistent improvements when moving from the original Open Roberta version to the enhanced, while 
 Group A participants exhibited the opposite pattern.
 
 \begin{table}[h]
@@ -689,27 +640,22 @@ P18 & 540 seconds & 862 seconds & -322 seconds \\
 
 \FloatBarrier
 
-The paired boxplots \ref{fig:boxplot} illustrate the impact of the Reuse Assistant on task completion times across the two 
-counterbalanced groups. Both groups demonstrated a learning effect, achieving faster times in their second 
-attempt regardless of condition. However, the magnitude of improvement differed substantially between the groups. 
+The paired boxplots \ref{fig:boxplot} illustrate the impact of the Reuse Assistant on task completion times across the two groups. Both groups demonstrated a learning effect, achieving faster times in their second attempt regardless of Open Roberta version. However, the magnitude of improvement differed substantially between the groups. 
 Group A, which transitioned from using the Reuse Assistant to working without it, showed an average time reduction of 174.9s 
 (Standard Deviation = 158.9s).
 In contrast, Group B participants, which operated without the feature benefits in their first attempt and utilized the Reuse Assistant in their second attempt, exhibited a 
-significantly larger efficiency gain, with an average time reduction of 192.4 seconds (Standard Deviation = 90.9 seconds). This suggests that while task 
-familiarity contributed to speed, the introduction of the Reuse Assistant provided a distinct performance advantage.
-
-
+significantly larger efficiency gain, with an average time reduction of 192.4 seconds (Standard Deviation = 90.9 seconds).  This suggests that while task familiarity contributed to speed, the introduction of the Reuse Assistant provided a distinct performance advantage.
 
 To statistically evaluate these observed differences, we conducted paired t-tests \cite{devore2015probability} and a Welch's t-test \cite{welch1947generalization} 
 to compare performance improvements between groups. Table \ref{tab:stat_results} summarizes the statistical test results, 
-including overall comparisons, within-group improvements, and the analysis of the order effect.
+including overall comparisons, within-group improvements, and the calculated carryover effect.
 
 \begin{figure}[htbp]
 \centering
 % Use PDF (vector) if present, otherwise PNG/JPG
-\includebestgraphics[width=1\columnwidth]{images/Boxplot}
+\includebestgraphics[width=1.05\columnwidth]{images/Boxplot}
 \vspace{-1em}
-\caption{Distribution of task completion times (in seconds) comparing Group A and Group B participants across both conditions (with and without Reuse Assistant).}
+\caption{Distribution of task completion times, comparing Group A and Group B participants across both versions of Open Roberta.}
 \label{fig:boxplot}
 \end{figure}
 
@@ -741,45 +687,40 @@ The analysis reveals distinct patterns between the two groups and identifies a s
 effect.
 
 \paragraph{Overall Comparison}
-When combining all 18 participants regardless of the order in which they experienced the two OpenRoberta versions (the one with the reuse assistant feature 
-benefits and the other without them), 
-the overall mean time difference was -8.78 seconds (Standard Deviation = 226.90), leading to a t-value = -0.16 (\textit{p} = 0.872). This non-significant 
-result indicates no overall difference when order is ignored.
+When combining all 18 participants, regardless of the order in which they experienced the two versions of Open Roberta, 
+the overall mean time difference was -8.78 seconds (Standard Deviation = 226.90), leading to a t-value = -0.16 (\textit{p} = 0.872). This non-significant result indicates no overall difference when order is ignored.
 
 \paragraph{Group A Analysis}
-Group A participants experienced the benefits of the Reuse Assistant in their first attempt and then tried to solve the task without them in their second attempt. 
+Group A first performed the task with the Reuse Assistant available, and then without it.
+%Group A participants experienced the benefits of the Reuse Assistant in their first attempt and then tried to solve the task without them in their second attempt. 
 The mean difference (Completion time with Reuse Assistant - Completion time without Reuse Assistant) was 174.9 seconds (Standard Deviation = 158.9 seconds), 
-producing a significant result with a t-value of 3.30 (\textit{p} = 0.011). The positive value indicates that these participants were \textit{faster} on their 
-second attempt which was without the Reuse Assistant benefits. 
+producing a significant result with a t-value of 3.30 (\textit{p} = 0.011). The positive value indicates that these participants were \textit{faster} on their second attempt, where the Reuse Assistant was unavailable.
 
 \paragraph{Group B Analysis}
-Group B participants experienced the benefits of the Reuse Assistant in their second attempt and tried to solve the task without them in their first attempt. 
+Group B first performed the task with the Reuse Assistant being unavailable, then again with it being available.
 We calculated the time difference (Completion time with Reuse Assistant - Completion time without Reuse Assistant) for each participant. 
 The mean improvement was -192.44 seconds (SD = 90.91), yielding a t-value of -6.35 (\textit{p} < 0.001). This statistically significant 
-result demonstrates that these participants were a lot \textit{faster} on their second attempt which was with the Reuse Assistant benefits. 
-The low standard deviation reveals that there was a consistent pattern in how much faster participants worked with the feature.
+result demonstrates that these participants were a lot \textit{faster} on their second attempt, where the Reuse Assistant was available.
+The low standard deviation reveals that there was a consistent pattern in how much faster participants worked with the feature being available.
 
-\paragraph{Order Effect Analysis}
-To determine whether the order in which participants experienced the two versions influenced their performance, we conducted a Welch's 
-t-test, comparing the improvement scores between Group A and Group B. This analysis revealed a highly significant order effect 
+\paragraph{Carryover Effect Analysis}
+To determine whether the order in which participants used the two versions influenced their performance, we conducted a Welch's 
+t-test, comparing the improvement scores between Group A and Group B. This analysis revealed a highly significant carryover effect 
 (t = 6.02, \textit{p} < 0.001).
 
 The difference between the two groups was massive with a gap of 367 seconds. Group B participants, who started the task without the Reuse Assistant, 
-finished 192 seconds faster once they had the Reuse Assistant benefits. In contrast, Group A participants started with the Reuse Assistant, but they actually 
+finished 192 seconds faster once they had the Reuse Assistant available. In contrast, Group A participants started with the Reuse Assistant, but they actually 
 took 175 seconds longer to finish compared to their subsequent performance in the unassisted condition.
 
-This big difference points to a strong learning effect. The results show that participants were faster mainly because they got used to the problem, 
-not just because of the benefits of the Reuse Assistant. It did not matter if they started with the Reuse Assistant or without it. The experience from the 
-first try made the second attempt to solve the task much easier.
+This big difference points to a strong learning effect. The results show that participants were faster mainly because they got used to the task, not just because of the benefits of the Reuse Assistant. It did not matter if they started with the Reuse Assistant or without it. The experience from the first try made the second attempt to solve the task much easier.
 
 \subsubsection{Summary of Findings}
 
-The Reuse Assistant effectively helped the end users complete the task faster. We can conclude this by comparing the average time differences and 
-standard deviations between the two groups of participants.
+The Reuse Assistant effectively helped the end users complete the task faster. We can conclude this by comparing the average time differences and standard deviations between the two groups of participants.
 
 Participants in Group B improved their time by an average of 192.4 seconds when they switched to using the feature. This is a larger change than Group A. 
-Participants in Group A were slower by an average of 174.9 seconds when they stopped using the feature. This shows that the gain from adding the assistant was 
-greater than the loss from removing it.
+Participants in Group A were faster by an average of 174.9 seconds when they switched to using the original version. This shows that the gain from adding the assistant was greater than the loss from removing it.
+% Participants were overall FASTER when using the original by 174.9 seconds, not slower. 
 
 The standard deviation also tells us about consistency. Group B had a low standard deviation of 90.9 seconds. In contrast, Group A had a much higher standard 
 deviation of 158.9 seconds. This means that the performance boost was not only larger but also more consistent when users utilized the Reuse Assistant.
@@ -795,51 +736,29 @@ Since the Group B result is statistically more significant, we can say that the 
 % -----------------------------------------------------------------------------------------
 
 \paragraph{Adoption of Reusable Blocks}
-In the \textit{Enhanced} OpenRoberta version that includes the Reuse Assistant feature, $18/18$ participants successfully implemented a custom reusable block 
-to handle the repetitive object placement steps. 
-In contrast, in the \textit{Standard} OpenRoberta version that doesn't have the Reuse Assistant benefits, participants predominantly relied on linear, 
-repetitive code structures.
-Without the guidance features, none of them recognized the opportunity to create a reusable block.
+In the \textit{Enhanced} Open Roberta version that includes the Reuse Assistant feature, $18/18$ participants accepted the Reuse Assistant's offer to create a custom reusable block to handle the repetitive object placement steps
+%successfully implemented a custom reusable block to handle the repetitive object placement steps. 
+In contrast, in the \textit{original} Open Roberta version, participants predominantly relied on linear, repetitive code structures. Without the guidance features, none of them attempted creating a reusable block.
+%Without the guidance features, none of them recognized the opportunity to create a reusable block.
 
-% While some participants provided unique solutions that differed slightly from the optimal solution \ref{fig:optimal_solution} provided by the researchers, 
-% such as skipping certain precautionary steps or reordering non-critical operations, these variations were deemed acceptable. These differences primarily 
-% reflected domain-specific safety practices that would matter in a real chemistry laboratory environment but had no impact on the 
-% robot simulator's execution behavior. Since the simulator performed identically regardless of these variations, all solutions were 
-% considered functionally correct.
 
-% \begin{figure}[htbp]
-%     \centering
-%     % Prefer vector PDF when available, fallback to PNG/JPG
-%     \includebestgraphics[width=1\linewidth]{user_solution}
-%     \Description{Screenshot showing a participant's unique solution.}
-%     \caption{Example of a different participant's solution compared to the optimal solution provided by the researchers.}
-%     \label{fig:user_solution}
-% \end{figure}
 
 \subsubsection{Summary of Findings}
 
-The Reuse Assistant promotes reusability by automating the manual effort required to build reusable blocks. It achieves this by lowering the cognitive and 
-technical barriers associated with identifying and abstracting repetitive patterns.
+The Reuse Assistant promotes reusability by automating the manual effort required to build reusable blocks. It achieves this by lowering the cognitive and technical barriers associated with identifying and abstracting repetitive patterns.
 
-Specifically, the system promotes reusability through a three-step mechanism: detection, intervention, and automation. First, the feature identifies and 
-highlights duplicate block sequences within the user's block based program. Second, it interrupts the linear workflow with a binary decision prompt, offering the user an 
-immediate choice to refactor. Finally, upon confirmation, the system automatically encapsulates the repetitive block sequence logic into a reusable block, 
-defines the necessary parameters if needed, and replaces the repetitive sequences with the reusable block.
+%Specifically, the system promotes reusability through a three-step mechanism: detection, intervention, and automation. First, the feature identifies and highlights duplicate block sequences within the user's block based program. Second, it interrupts the linear workflow with a binary decision prompt, offering the user an immediate choice to refactor. Finally, upon confirmation, the system automatically encapsulates the repetitive block sequence logic into a reusable block, defines the necessary parameters if needed, and replaces the repetitive sequences with the reusable block.
+% this section is only about results. We don't need to explain how the system is designed, we already did that way earlier
+For both Group A and B, there were 0 out of 18 participants who created custom blocks while using the original Open Roberta. On the other hand, all 18 participants both created and used a custom block when the Reuse Assistant was available. Thus we can conclude that the Reuse Assistant successfully helped faciliate reuse whenever it was available to the participants. 
 
-The contrast in results, 0\% adopted a reusable block in the Standard OpenRoberta version that does not include the Reuse Assistant versus 100\% in the Enhanced version that includes the feature's benefits, 
-demonstrates that users do not lack the ability to understand functions, but rather the initiative to implement them manually. 
-By removing the effort required to define, parameterize, and call a function block, the Reuse Assistant transforms reusability from a complex manual task 
-into a seamless, automated decision.
+%The contrast in results, 0\% adopted a reusable block in the Standard OpenRoberta version that does not include the Reuse Assistant versus 100\% in the Enhanced version that includes the feature's benefits, demonstrates that users do not lack the ability to understand functions, but rather the initiative to implement them manually. 
+%By removing the effort required to define, parameterize, and call a function block, the Reuse Assistant transforms reusability from a complex manual task into a seamless, automated decision.
+% the RQ isn't about the participant's skills and such. It's ONLY about how well the feature promoted reuse. Also again, dont care abt HOW it faciliates reuse, only how well it does.
 
 \subsection{Research Question 3: How do the end-users assess the reuse assistant in terms of usability?}
 \label{subsec:rq3_results}
-
-To answer this research question regarding the perceived usability of the system, 
-we administered the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) to all $N=18$ participants 
-immediately following the treatment validation.
-
-The SUS yields a single number representing a composite measure of the overall usability of 
-the system, with scores ranging from 0 to 100.
+Data about perceived usability of the Reuse Assistant feature was collected by having all $N=18$ participants answer the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) immediately after they had finished their two tasks.
+%To answer this research question regarding the perceived usability of the system, we administered the System Usability Scale (SUS) questionnaire (see Appendix~\ref{appendix:sus} for the full questionnaire details) to all $N=18$ participants immediately following the treatment validation.
 
 \subsubsection{Overall Usability Scores}
 The analysis of the survey data yielded a mean SUS score of \textbf{84.0} ($Median = 81.25$).
@@ -863,55 +782,43 @@ or Very Good'' categories.
 
 \subsubsection{Distribution Analysis}
 The results show that users found the system very easy to use. 
-17 out of 18 participants (94\%) rated it above the industry average of 68. The scores 
-mostly split into two high-performing groups: eight people rated it as "Excellent" (85–100),
-and nine people rated it as "Very Good" (75–80). This suggests that almost everyone 
-understood how to use the system right away.
+17 out of 18 participants (94\%) rated it above the industry average of 68. The scores mostly split into two high-performing groups: eight people rated it as "Excellent" (85–100),
+and nine people rated it as "Very Good" (75–80). This suggests that almost everyone understood how to use the system right away.
 
 The scores ranged from 52.5 to 100, with a high average score of 84.0. It is worth noting 
-that 17 of the users had scores very close to each other (between 75 and 100), which proves 
-the system is consistently easy to use for most people.
+that 17 of the users had scores very close to each other (between 75 and 100), which suggests the system is consistently easy to use for most people.
 
-There was only one exception: a single user scored the system at 52.5. This person 
-mentioned needing more technical help and time to learn based on this user's answers. While this shows there might be a 
-small learning curve for some, it was an isolated case and does not change the overall 
-positive feedback.
+%There was only one exception: a single user scored the system at 52.5. This person mentioned needing more technical help and time to learn based on this user's answers. While this shows there might be a small learning curve for some, it was an isolated case and does not change the overall positive feedback.
+% We haven't formally recorded and presented this feedback anywhere (like a survey). Thus, we cannot present it as a result, as it is not reproducable by others
 
 \subsubsection{Summary of Findings}
+End-users assess the Reuse Assistant as an exceptionally usable system, with a majority rating it "Excellent", and the scores showing a high degree of consistency.
+%They rate it as "Excellent" and evaluate it with a high degree of consistency.
 
-End-users assess the Reuse Assistant as an exceptionally usable system. They rate it as "Excellent" and evaluate it with a 
-high degree of consistency.
+Firstly, users judge the system to be superior to the industry standard. They gave it an average score of 84.0 which is higher than the typical average of 68. This shows that users perceive the feature as significantly easier to use than standard software.
 
-First, users judge the system to be far superior to the industry standard. They gave it an average score of 84.0 which is 
-much higher than the typical average of 68. This shows that users perceive the feature as significantly easier to use than 
-standard software.
-
-Second, users assess the system with strong agreement. 17 out of 18 participants rated the usability above 75. This tight 
+Secondly, the scores show a strong consistency between users. %users assess the system with strong agreement. 
+17 out of 18 participants rated the usability above 75. This tight 
 clustering of scores proves that the positive experience was uniform across the group. Almost every user agreed that the 
 feature was intuitive.
 
-Third, users evaluate the system as easy to learn. The high scores indicate that participants felt confident operating the 
+Thirdly, users evaluated the system as easy to learn. The high scores indicate that participants felt confident operating the 
 feature immediately. They did not struggle to understand how it worked. Therefore, users assess the Reuse Assistant as a 
 polished and highly accessible solution.
-
-
 
 \subsection{Research Question 4: How do the end-users assess the perceived workload when operating the Reuse Assistant? }
 \label{subsec:rq4_results}
 
 To assess the cognitive demands imposed by the Reuse Assistant, we administered the NASA 
 Task Load Index (NASA-TLX) questionnaire (see Appendix~\ref{appendix:nasa_tlx} for the full questionnaire details) to all participants after completing the task with 
-the Reuse Assistant benefits. The NASA-TLX is a widely used multidimensional assessment questionnaire 
-that measures perceived workload across six subscales, each rated on a scale 
-from 1 (Very Low) to 10 (Very High). The scores were calculated by multiplying each rating by 10 to convert them to a 0-100 scale.
+the Reuse Assistant available. The NASA-TLX is a widely used multidimensional assessment questionnaire that measures perceived workload across six subscales, each rated on a scale from 1 (Very Low) to 10 (Very High). The scores were calculated by multiplying each rating by 10 to convert them to a 0-100 scale.
 
 \subsubsection{Overall Workload Assessment}
 As illustrated in figure \ref{fig:nasa_tlx_dist}, the Reuse Assistant imposes a remarkably low workload on users, 
 with an overall mean score of \textbf{20.00}. 
 This indicates that the feature is highly usable and demands very little effort
 from the user in terms of physical or mental cost.
-
-\begin{figure}[htbp]
+\begin{figure}[ht]
     \centering
     % Prefer vector PDF when available, fallback to PNG/JPG
     \includebestgraphics[width=0.9\linewidth]{images/nasa_tlx_analysis_scaled}
@@ -920,7 +827,6 @@ from the user in terms of physical or mental cost.
 \end{figure}
 
 \subsubsection{Dimension-Specific Analysis}
-
 There is a distinct contrast between the highest and lowest contributing factors:
 \begin{itemize}
     \item \textbf{Lowest Demand (Temporal):} With a mean score of \textbf{10.6}, Temporal Demand was negligible. This confirms that users felt \textbf{zero time pressure}, allowing them to work at their own pace without stress.
@@ -936,10 +842,8 @@ The data shows high consistency among the 18 participants, with one notable exce
 
 \subsubsection{Summary of findings}
 Participants assess the perceived workload of the Reuse Assistant as remarkably low. The data indicates that operating 
-this specific feature imposes very little mental or physical cost on the user.
-
-Specifically, participants evaluate the feature's workload with an overall mean score of 20.0 on a scale of 100. 
-This is exceptionally low and proves that the feature itself is easy to understand and handle.
+this specific feature imposes very little mental or physical cost on the user. Specifically, participants evaluate the feature's workload with an overall mean score of 20.0 on a scale of 0-100. 
+This is exceptionally low and proves that the feature is easy to understand and handle.
 
 Furthermore, participants assess the "Effort" required to use the feature as manageable. While "Effort" was the highest 
 rated factor (30.0), it remains in the low range. This distinction is important: it shows that users were concentrating on 
@@ -951,8 +855,8 @@ that aids their work without adding new cognitive burdens.
 \section{Discussion}
 %Do your results support or challenge existing theories? If they support them, what new information do they contribute? If they challenge them, why do you think that is?
 This study evaluated the Reuse Assistant, an automated guidance feature designed to help end-users recognize and implement code 
-reuse in block-based programming environments. Through a crossover study with 10 participants from the chemistry domain, we 
-assessed the feature's impact on performance (RQ1), usability (RQ2), and perceived workload (RQ3).
+reuse in block-based programming environments. Through a crossover study with 18 participants from the chemistry domain, we 
+assessed the feature's impact on performance (RQ1), facilitation of reuse (RQ2), usability (RQ3), and perceived workload (RQ4).
 The findings reveal both the potential and limitations of automated assistance in promoting software reuse practices among 
 domain experts with limited programming expertise.
 
@@ -961,33 +865,31 @@ domain experts with limited programming expertise.
 \subsubsection{Reducing Attention Investment through Proactive Assistance}
 Our study provides empirical support for the Attention Investment Model \cite{BlackwellAttentionInvestment} as applied to 
 end-user development tools. The Attention Investment Model states that users make rational decisions about whether to adopt 
-new tools or features based on a cost-benefit analysis of the attention they must invest upfront versus the perceived benefits 
-they expect to receive, as well as the risk of there being no payoff at all \cite{BlackwellCognitiveDimensions}. 
-The higher the upfront attention cost (learning curve, discovery effort, comprehension requirements), the less likely users are 
-to adopt and utilize available features, even when those features would ultimately benefit their work.
+new tools or features based on a cost-benefit analysis of the perceived benefits they expect to receive versus the attention they must invest upfront, as well as the risk of there being no payoff at all \cite{BlackwellCognitiveDimensions}.
+The higher the upfront attention cost (learning curve, discovery effort, comprehension requirements), the less likely users are to adopt and utilize available features, even when those features would ultimately benefit their work.
 
-In the standard OpenRoberta environment, creating reusable custom blocks requires users to: (1) recognize that code duplication 
-exists and represents an opportunity for abstraction, (2) discover that custom block functionality is available in the system, 
+In the standard Open Roberta environment, creating reusable custom blocks requires users to: (1) recognize that code duplication 
+exists and represents an opportunity for abstraction, (2) discover that the functionality to make custom blocks is available in the system, 
 (3) locate where this feature resides in the interface, (4) understand how to use the feature correctly, and 
 (5) manually configure the custom block with appropriate parameters. This multi-step process represents a large upfront 
 attention investment that end-users, focused on their primary domain tasks rather than software engineering practices, are 
 unwilling or unable to make. In this study the result was 0\% adoption of reusable components while using the standard 
-OpenRoberta Lab, despite participants possessing the cognitive capacity to understand and use custom blocks when guided to do so.
+Open Roberta Lab, despite participants possessing the cognitive capacity to understand and use custom blocks when guided to do so.
 %smth about they just need to think about what the tool is offering to do, and how expensive it would be to undo it. Also risk is decreased by custom blocks being created by more experienced ppl (us).
-The Reuse Assistant changes this attention investment equation by eliminating steps 1-4 entirely. Users do not need to recognize 
-duplication patterns (the system detects them automatically), discover the feature exists 
-(the system actively presents opportunities), locate the feature in the interface (visual highlighting brings the opportunity 
-directly to users' attention), or understand complex configuration procedures (automated parameterization handles technical 
+The Reuse Assistant changes this attention investment equation by eliminating steps 1-5 entirely. Users do not need to recognize 
+duplication patterns (the system detects them automatically), discover the feature exists (the system actively presents opportunities), locate the feature in the interface (the notification appears over the user's workspace)
+%(visual highlighting brings the opportunity directly to users' attention), 
+or understand complex configuration procedures (automated parameterization handles technical 
 details). The upfront attention investment is reduced to a single decision: accept or reject the system's suggestion. 
 This dramatic reduction in cognitive cost (from a complex multi-step learning process to a binary choice) explains the 100\% 
-adoption rate in the Enhanced condition.
+adoption rate in the enhanced version of Open Roberta.
 
 Our findings extend the Attention Investment Model \cite{BlackwellAttentionInvestment} by demonstrating that proactive, 
 context-aware assistance can transform feature adoption from an investment decision into an opportunistic choice. 
-Rather than requiring users to invest attention before experiencing any benefit, the Reuse Assistant delivers immediate, real 
+Rather than requiring users to invest significant attention before experiencing any benefit, the Reuse Assistant delivers immediate, real 
 value (highlighted duplicates, one-click refactoring) that users can evaluate in real-time within their workflow. 
-This "zero-cost trial" approach eliminates the adoption barrier built-in to traditional feature-discovery models, where users 
-must commit attention resources before knowing whether the investment will prove worthwhile \cite{BlackwellCognitiveDimensions}.
+This "zero-cost trial" approach weakens the adoption barrier present in traditional feature-discovery models, where users must commit attention resources before knowing whether the investment will prove worthwhile \cite{BlackwellCognitiveDimensions}.
+%This "zero-cost trial" approach weakens the adoption barrier built-in to traditional feature-discovery models, where users must commit attention resources before knowing whether the investment will prove worthwhile \cite{BlackwellCognitiveDimensions}.
 
 \subsubsection{Addressing the Selection Barrier in End-User Development}
 The results provide empirical evidence for a critical distinction between different types of barriers to software reuse within 
@@ -998,23 +900,25 @@ the available options.
 
 The selection barrier appears in two distinct ways in block-based programming environments \cite{KoLearningBarriers}. 
 First, users must know that reuse mechanisms exist and where to find them within the interface. Second, even when aware of 
-available features, users must determine when and how to apply them appropriately. Our 0\% adoption rate in the standard 
-OpenRoberta condition demonstrates that the selection barrier is difficult to overcome for domain experts without programming 
+available features, users must determine when and how to apply them appropriately. The 0\% adoption rate in the standard 
+Open Roberta version demonstrates that the selection barrier is difficult to overcome for users without programming 
 backgrounds, even when the interface provides the necessary functionality. Participants did not lack the capability to create 
-custom blocks (the same individuals achieved 100\% adoption in the Enhanced condition) but rather lacked the knowledge of where 
+custom blocks (the same individuals achieved 100\% adoption in the enhanced version) but lacked the knowledge of where 
 to look for this feature and when to apply it.
 
-The Reuse Assistant eliminates the selection barrier through two supporting mechanisms. First, automated detection makes the 
-feature location irrelevant. Users do not need to search the interface because the system proactively brings the functionality 
+The Reuse Assistant eliminates the selection barrier through two supporting mechanisms. First, automated detection makes locating the 
+feature irrelevant. Users do not need to search the interface because the system proactively brings the functionality 
 to their attention at the appropriate moment. Second, context-aware suggestions eliminate the decision burden about when to 
 apply reuse. The system identifies appropriate opportunities and presents them when relevant, allowing users to focus on 
 domain-level acceptance decisions rather than technical feature selection. 
 
 This finding extends Ko et al.'s framework by demonstrating that in block-based environments targeting end-users, the selection 
-barrier comes before and is more important than other barriers. The low NASA-TLX workload scores (mean: 1.92) and high SUS 
-scores (mean: 84.03) indicate that once the selection barrier is removed, once users no longer need to find and choose features, 
+barrier has a high impact.
+%comes before and is more important than other barriers. 
+The low NASA-TLX workload scores (mean: 1.92) and high SUS 
+scores (mean: 84.03) indicate that once the selection barrier is weakened, once users no longer need to find and choose features, 
 the remaining barriers (use, understanding, coordination) impose minimal mental burden. This suggests that tool designers should 
-prioritize eliminating selection barriers through proactive assistance before addressing other barrier types, as the latter 
+prioritize minimizing the selection barrier through proactive assistance before addressing other barrier types, as the latter 
 become manageable once users are successfully guided to appropriate features. 
 %removed a cite here for Ko et al. We've already referenced it plenty of times shortly before this passage. We don't need to cite it with an actual \cite every single time. 
 
@@ -1022,16 +926,15 @@ become manageable once users are successfully guided to appropriate features.
 While Ko et al.'s selection barrier focuses on knowing where to look for features, our work identifies a related but 
 distinct \textit{recognition barrier} specific to code reuse: users' inability to identify opportunities for abstraction 
 within their own code. These barriers are complementary. Even if users know where the custom block feature is located 
-(overcoming the selection barrier), they cannot use it effectively without recognizing when their code contains patterns 
-suitable for abstraction (overcoming the recognition barrier). Our Reuse Assistant addresses both barriers simultaneously 
+(overcoming the selection barrier), they cannot use it effectively if they are unable to recognize patterns suitable for abstraction (overcoming the recognition barrier).
+The Reuse Assistant addresses both barriers simultaneously 
 through automated pattern detection (recognition) and proactive presentation (selection), explaining the dramatic shift 
 from 0\% to 100\% adoption.
 
-\subsubsection{The Order Effect: Prior Experience as a Prerequisite for Appreciating Automation}
-The significant order effect (t=-4.37, p=.008) reveals a counter-intuitive finding: participants who received automated 
-assistance first were actually \textit{slower} to complete tasks than those who first struggled with the manual approach. 
-This 481-second performance gap suggests that automation effectiveness depends on users having established mental models of the 
-problem space.
+\subsubsection{The carryover Effect: Prior Experience as a Prerequisite for Appreciating Automation}
+The significant carryover effect (t=-4.37, p=.008) reveals a counter-intuitive finding: participants who received automated 
+assistance first showed smaller performance improvements than those who completed the task manually first. %first struggled with the manual approach. 
+This 481-second performance gap suggests that automation effectiveness depends on users having established mental models of the problem space.
 
 This finding has theoretical implications for understanding how end-users learn to value productivity tools. Participants in 
 Group B (Original → Enhanced) developed an experiential baseline that allowed them to recognize what the automation was helping 
@@ -1046,76 +949,32 @@ effective use of advanced features.
 \subsection{Implications for Practice}
 
 \subsubsection{High Usability and Low Workload Support Simple Design Principles}
-The SUS results (mean: 84.03) place the Reuse Assistant in the "Excellent" category, with 94\% of participants (17 out of 18) 
-rating it above the industry average of 68. This high usability score demonstrates that automated guidance can be both powerful 
-and easy to use. The feature achieved this by focusing on simplicity: visual highlighting to show duplicates and one-click 
-acceptance to create reusable blocks. This suggests that effective end-user features should prioritize clarity over complexity.
-
-The NASA-TLX workload results (mean: 2) further support this finding, showing that effective guidance does not require complex 
-interactions. The combination of high SUS scores and low NASA-TLX workload scores demonstrates that the Reuse Assistant 
-successfully reduces barriers without adding cognitive burden. The key to this success is directly showing users duplicate code 
-patterns through visual highlighting and providing one-click refactoring, rather than adding complexity.
+%The SUS results (mean: 84.03) place the Reuse Assistant in the "Excellent" category, with 94\% of participants (17 out of 18) rating it above the industry average of 68. 
+The high usability score seen in section 4.4 demonstrates that automated guidance can be both powerful and easy to use. The feature achieved high scores by focusing on simplicity: visual highlighting to show duplicates and one-click acceptance to create reusable blocks. This suggests that effective end-user features should prioritize clarity over complexity. This is further supported by the low NASA-TLX workload results (mean: 2), which, combined with the high SUS scores demonstrates that the Reuse Assistant successfully reduces barriers without adding cognitive burden.
+%The NASA-TLX workload results (mean: 2) further support this finding, showing that effective guidance does not require complex interactions. The combination of high SUS scores and low NASA-TLX workload scores demonstrates that the Reuse Assistant successfully reduces barriers without adding cognitive burden. %The key to this success is directly showing users duplicate code patterns through visual highlighting and providing one-click refactoring, rather than adding complexity.
 
 The bimodal distribution in both SUS scores and NASA-TLX workload (with one outlier for each) suggests that while most users 
 experience minimal burden, a small subset encounters significant difficulties. This pattern indicates individual differences 
 in openness to automated guidance, potentially related to prior mental models, learning preferences, or comfort with 
 system-initiated interactions.
 
-
 \subsubsection{From Passive Toolboxes to Active Assistants}
-Current block-based programming environments (Scratch, Blockly, standard OpenRoberta) follow a passive interaction model where reuse 
-mechanisms exist as features waiting to be discovered. The 0\% adoption rate in the standard condition demonstrates the limitations of this 
-approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
-The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing 
-capabilities to actively guiding their use.
+Current block-based programming environments (Scratch, Blockly, standard OpenRoberta) follow a passive interaction model where reuse mechanisms exist as features waiting to be discovered. As seen in section 4.2, the passive approach resulted in 0\% of participants creating reusable blocks, while an active approach resulted in 100\% of participants creating reusable blocks. These findings suggests that tool designers must shift from providing capabilities to actively guiding their use.
+%The 0\% adoption rate in the standard condition demonstrates the limitations of this approach for the end-users, as participants created functional but non-optimal solutions using linear, repetitive code structures. 
+%The 100\% adoption rate with the enhanced OpenRoberta version proves that tool designers must shift from providing capabilities to actively guiding their use.
 
-% \textbf{Practical Recommendation:} Development environments targeting domain experts should implement background analysis systems that continuously monitor for patterns that show code smells (repetition, long sequences, similar structures). Rather than requiring users to manually invoke refactoring tools, the system should actively show opportunities through non-intrusive notifications. This "ambient intelligence" approach respects user agency (through opt-in confirmations) while addressing the fundamental recognition barrier.
 
-%\subsubsection{Strategic Introduction of Automation}
-%The order effect findings have direct implications for training and onboarding. Organizations introducing automated coding assistants should consider implementing a staged approach:
-
-%\begin{enumerate}
-%    \item \textbf{Initial Exposure Phase:} Allow users to complete initial tasks without automated assistance, building experiential understanding of manual processes and their pain points.
-%    \item \textbf{Guided Automation Phase:} Introduce automated suggestions after users have established baseline workflows, ensuring they can appreciate what the automation provides.
-%    \item \textbf{Full Automation Phase:} Enable all automation features once users have developed adequate mental models.
-%\end{enumerate}
-
-%This staged approach goes against the intuitive "make it easy from the start" philosophy but may lead to better long-term adoption and appropriate use of automation features.
-
-% \textbf{Practical Recommendation:} Designers should resist the temptation to add 
-% configuration options, customization parameters, or complex workflows to guidance features. 
-% The key is directly showing users opportunities for improvement in their code 
-% (duplicate sequence of blocks that could become reusable components) and offering an 
-% immediate solution (one-click refactoring), not adding settings menus or advanced 
-% configuration panels. 
-% For end-users, the interaction cost must be minimal to avoid creating new barriers
-% while removing old ones.
-
-% \subsubsection{Plan for Individual Differences}
-% The consistent outlier pattern (one participant with low SUS scores and high workload 
-% across all dimensions) indicates that approximately 10\% of users may struggle with 
-% automated guidance. This cannot be avoided given individual differences in learning 
-% preferences and comfort with system-initiated interactions.
-
-% \textbf{Practical Recommendation:} Provide a clearly visible mechanism to disable automated 
-% suggestions for users who find them distracting or confusing. Additionally, supplement 
-% automated detection with alternative pathways (manual invocation, documentation, tutorials) 
-% to ensure users who reject proactive guidance can still access reuse mechanisms if they 
-% choose to seek them out.
 
 \subsection{Threats to Validity}
 
 \subsubsection{Internal Validity}
 
 \paragraph{Carryover effect}
-While the within subjects design allowed within-subjects comparison, the significant carryover effect (p<0.001) indicates that the sequence of 
-conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse 
-Assistant from the impact of prior experience. The 417 seconds performance gap between the two groups' average time differences suggests that learning from the first 
-condition substantially influenced performance in the second condition.
+While the within subjects design allowed within-subjects comparison, the significant carryover effect (p<0.001) indicates that the sequence of conditions fundamentally altered the user experience. This carryover effect means we cannot cleanly separate the impact of the Reuse Assistant from the impact of prior experience. The 417 seconds performance gap between the two groups' average time differences suggests that learning from the first version substantially influenced performance in the second version.
 
-\textit{Mitigation:} We explicitly analyzed and reported the carryover effect as a finding rather than treating it as unwanted noise. Furthermore, 
-the experiments were balanced, meaning half of the participants performed the task with the Reuse Assistant first, then again using the standard OpenRoberta. 
-The other half did the reverse sequence. In this way, the overall effect on the results is minimized.
+\textit{Mitigation:} We explicitly analyzed and reported the carryover effect as a finding rather than treating it as unwanted noise. Furthermore, the experiments were balanced by having half of the participants perform one sequence of tasks, with the other half performing the reverse order. In this way, the overall effect on the results is minimized.
+%Furthermore, the experiments were balanced, meaning half of the participants performed the task with the Reuse Assistant first, then again using the standard Open Roberta. 
+%The other half did the reverse sequence. In this way, the overall effect on the results is minimized.
 
 \subsubsection{External Validity}
 \paragraph{Convenience Sampling and Population Representation}
@@ -1124,8 +983,9 @@ convenience sample. This introduces several limitations:
 
 \begin{itemize}
     \item \textbf{Geographic and institutional diversity:} While the study included participants from multiple countries (both local and international participants connected online), recruitment relied primarily on the researchers' professional networks, which may not represent the full geographic and cultural diversity of potential end-users in the domain of chemistry. %laboratory automation contexts.
-    \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory coursework experience, they represent primarily academic contexts rather than industrial laboratory settings where cobot programming would be used professionally.
-    \item \textbf{Sample size:} With 18 participants for performance evaluation, usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles(outliers), limiting the generalizability of findings to broader populations.
+    \item \textbf{Domain representation:} While participants came from diverse scientific backgrounds (chemistry, agronomy, biochemistry) united by laboratory experience, they represent primarily academic contexts rather than industrial laboratory settings.
+    \item \textbf{Sample size:} The small number of participants (18 total) limits the generalizability of the findings.  
+    %With 18 participants for performance evaluation, usability assessment and workload assessment, the study lacks statistical power to detect small effects or to adequately characterize rare user profiles(outliers), limiting the generalizability of findings to broader populations.
 \end{itemize}
 
 \textit{Implications:} Findings should be interpreted as preliminary evidence rather than final proof of effectiveness across all end-user developer populations. 
@@ -1155,51 +1015,33 @@ We used standardized instruments (SUS questionnaire, NASA-TLX questionnaire) whi
     \item \textbf{NASA-TLX limitation:} NASA-TLX assesses subjective workload perception, which may not correlate perfectly with objective cognitive load or learning outcomes.
     % \item \textbf{Performance metrics:} Completion time captures efficiency but not code quality, maintainability, or the user's conceptual understanding of reuse principles.
 \end{itemize}
+From the perspective of the Attention Investment Model however, this is not necessarily a problem, as the cost-risk analysis performed by end-users is based on their own perceived cost, risk and payoff - which is subjective.
 
-%add this maybe if enough space***
-%\subsubsection{Descriptive Validity - Limitations to observation} 
-%Due to constraints with time and flexibility between the authors and the participants, only one of the authors was present to observe the participants during the experiment. 
-%To ensure that data from the observation was not affected by this, a screen recording of each participant performing the task was saved. Several of the authors reviewed and discussed these recordings together to extract data.
-
-%\textit{Future work:} Add to these measures with code quality metrics (complexity, maintainability indices), comprehension assessments (asking users to explain or modify reusable components), and longitudinal evaluation of whether users internalize reuse concepts or remain dependent on automated detection.
-
-% \paragraph{Single Outlier Pattern}
-% One participant (P03) consistently reported low usability (SUS: 52.5) and high workload (NASA-TLX: 4.33) across all measures. While we interpreted this as evidence of individual differences, alternative explanations include:
-
-% \begin{itemize}
-%     \item Technical issues during the session (software bugs, hardware problems)
-%     \item Misunderstanding of questionnaire items or rating scales
-%     \item Fatigue or external stressors unrelated to the tool
-%     \item Genuine fundamental incompatibility between the user's mental model and the tool's interaction paradigm
-% \end{itemize}
-
-% \textit{Limitation:} With only one outlier, we cannot determine which explanation is correct or whether this represents 10\% of the population or a unique case. Larger samples are needed to characterize the distribution of user experiences.
 
 \section{Conclusion and Future Work}
 This study examined whether automated guidance can help end-users recognize and apply code reuse in block-based programming. 
-We developed the Reuse Assistant, a tool that automatically detects duplicate code sequences and guides users to create reusable 
-custom blocks in the OpenRoberta environment.
+We developed the Reuse Assistant, a feature that automatically detects duplicate code sequences and guides users to create reusable custom blocks in the Open Roberta Lab environment.
 
-The results showed a clear difference in reuse adoption. While no participants created reusable blocks in the standard environment, 
-all participants successfully created reusable blocks when help from the Reuse Assistant was available. The feature received high usability ratings (SUS mean: 84.03) and low 
-workload scores (NASA-TLX mean: 1.92), demonstrating that automated guidance can be both effective and easy to use.
+The results showed a clear difference in reuse adoption. While no participants created reusable blocks in the standard Open Roberta environment, all participants chose to create reusable blocks when help from the Reuse Assistant was available. While the carryover effect impacted the results for performance, the results still suggest that usage of the Reuse Assistant improved performance.
+The feature received high usability ratings (SUS mean: 84.03) and low workload scores (NASA-TLX mean: 1.92), demonstrating that the automated guidance was both effective and easy to use.
 
-Our findings contribute to theory by extending the Attention Investment Model and the Learning Barriers Framework. 
-We showed that proactive assistance reduces the upfront cost of adopting new features and that the selection barrier is particularly 
-important in block-based environments for end-users. The significant order effect revealed that prior manual experience helps users 
-appreciate automation benefits.
+Our findings contribute to the existing theory by extending the Attention Investment Model and the Learning Barriers Framework. 
+We showed that proactive assistance reduces the upfront cost of adopting new features and that the selection barrier is particularly important in block-based environments for end-users. %The significant order effect revealed that prior manual experience helps users appreciate automation benefits.
+%not sure if this line is relevant? but we've got space, so put it back if you want
 
 For practice, this study demonstrates that simple design choices matter. Visual highlighting, one-click acceptance, and immediate 
 feedback were sufficient to achieve high adoption of reusable blocks without adding complexity. 
 The results suggest that programming environments for 
-domain experts should actively guide users rather than waiting for them to discover features independently.
+domain experts should actively guide users towards using features they are unaware of and/or do not understand, rather than wait for them to discover such features on their own.
+
+
 
 \subsection{Future Work}
-Future research should test the Reuse Assistant in real laboratory settings over extended periods to determine whether users learn to recognize reuse opportunities 
-independently. Studies with more participants from diverse backgrounds would help identify which user 
-groups benefit most from automated guidance. The feature should also be evaluated with more complex programming tasks and tested in other end-user programming 
-environments beyond OpenRoberta.
-
+Future research should test the Reuse Assistant in real laboratory settings over extended periods to determine whether users eventually learn to recognize reuse opportunities independently, after using the Reuse Assistant. Studies with more participants from diverse backgrounds would help identify which user groups benefit most from automated guidance. The feature should also be evaluated with more complex programming tasks and tested in other end-user programming 
+environments beyond Open Roberta Lab. Finally, for any of these scenarios it would be interesting to gather qualitative data, in order to gain a better understanding of exactly why end-users may or may not find the feature worth using. 
+\newline
+A live deployment of the Reuse Assistant is available for public use at: 
+\url{https://reuse-assistant-e4dwemeugwfmafem.germanywestcentral-01.azurewebsites.net/}
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
@@ -1270,242 +1112,3 @@ The NASA Task Load Index (NASA-TLX) \cite{hart1988development} is a multi-dimens
 
 \end{document}
 \endinput
-%%
-%% End of file `sample-manuscript.tex'.
-% -----------------------------------------------------------------------------------------
-% OVERVIEW
-% -----------------------------------------------------------------------------------------
-% The treatment validation was concluded with a total of 10 participants. 
-% The analysis of the collected data combines quantitative metrics regarding user preference and satisfaction 
-% with qualitative feedback derived from survey responses.
-
-
-% \subsection{Performance Evaluation}
-% To evaluate the efficiency and effectiveness of the proposed reusable component 
-% features, we analyzed two primary metrics: Task Completion Time and Solution Accuracy.
-
-% % -----------------------------------------------------------------------------------------
-% % TASK COMPLETION TIME
-% % -----------------------------------------------------------------------------------------
-% \subsubsection{Task Completion Time}
-
-% The total time required to complete the experimental task was recorded for both 
-% the participants that first used the \textit{Standard} version of OpenRoberta and 
-% for those who used the \textit{Enhanced} version first. 
-
-% We compared the performance of participants based on the order of conditions (see Table \ref{tab:time_comparison_vertical}).
-% The analysis reveals a significant reduction in task duration when using the Enhanced 
-% version. The average completion time for the participants that used the Enhanced version first was $8.5$ 
-% minutes, compared to $10$ minutes for the Standard version. 
-% \begin{equation}
-%     \text{Efficiency Improvement} = \frac{10.0 - 8.5}{10.0} \times 100\% = 15\%
-% \end{equation} 
-
-
-
-%\begin{itemize}
- %   \item \textbf{Enhanced OpenRoberta version First:} Participants who started with the Enhanced version completed the task in an average of 8 and a half minutes.
- %   \item \textbf{Standard OpenRoberta version First:} Participants who started with the Standard version completed the task in an average of 10 minutes.
-%\end{itemize}
-% \begin{table}[h]
-%     \centering
-%     \caption{Breakdown of Mean Task Completion Times}
-%     \label{tab:time_comparison_vertical}
-%     \begin{tabular}{| p{8cm} | c | c |} 
-%         \hline
-%         \textbf{Experimental Condition} & \textbf{Mean Time (min)} & \textbf{Efficiency} \\
-%         \hline
-%         \textit{Participants who used Enhanced Version First} & 8.5 & 15\% \\
-%         \hline
-%         \textit{Participants who used Standard Version First} & 10.0 & --- \\
-%         \hline
-%     \end{tabular}
-% \end{table}
-
-
-
-
-
-
-
-% \subsection{Survey Quantitative Results}
-
-% \subsubsection{User preference between Standard and Enhanced Versions of OpenRoberta}
-% The survey results indicate a unanimous preference for the enhanced version of the OpenRoberta Lab. 
-% As illustrated in Figure \ref{fig:compare_versions}, 70\% of participants rated the enhanced version 
-% as ``much better'' than the standard version, while the remaining 30\% rated it as ``better.'' 
-% No participants preferred the standard version or rated the two versions as equivalent.
-
-% \begin{figure}[h]
-%     \centering
-%     % Use PDF (vector) if present, otherwise PNG/JPG
-%     \includebestgraphics[width=\textwidth]{survey_comp_enh_sta}
-%     \caption{Summary of participant responses regarding overall preference between the standard and enhanced versions of OpenRoberta}
-%     \label{fig:compare_versions}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{usability_of_feature}
-%     \caption{Summary of participant responses regarding usability of the guidance feature in the enhanced version of OpenRoberta}
-%     \label{fig:usability_of_feature}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{hl_eval}
-%     \caption{Summary of participant responses regarding evaluation of the visual highlighting in the enhanced version of OpenRoberta}
-%     \label{fig:hl_eval}
-% \end{figure}
-% \begin{figure}[h]
-%     \centering
-%     \includebestgraphics[width=\textwidth]{hl_pref}
-%     \caption{Summary of participant responses regarding visual highlighting style preference in the enhanced version of OpenRoberta}
-%     \label{fig:hl_pref}
-% \end{figure}
-
-% \subsubsection{Usability of the Guidance Feature}
-% Regarding usability of the enhanced OpenRoberta version, we received high acceptance scores. As illustrated in Figure \ref{fig:usability_of_feature}, 40\% of participants found the 
-% enhanced version ``very easy'' to use, and 60\% rated it as ``easy.''
-% No participants rated the enhanced version as ``Neither easy nor difficult,'' ``Difficult,'' or ``Very difficult'' to use.
-
-% \subsubsection{Evaluation of the Visual Highlighting}
-% A key component of the enhanced version was the visual highlighting designed 
-% to guide the user into an automatic custom reusable block creation. 
-% As shown in Figure \ref{fig:hl_eval}, results showed a high level of user satisfaction,
-% with 90\% of participants reporting they were either ``satisfied'' 
-% (20\%) or ``very satisfied'' (70\%) with the features. Only one participant (10\%) expressed a neutral stance.
-
-% \subsubsection{Visual Highlighting Style Preference}
-% When asked about specific highlighting preferences, as depicted in Figure \ref{fig:hl_pref} the \textit{Animated Color Highlight} was the most popular choice, 
-% preferred by 50\% of the users. A significant portion of participants (30\%) expressed no strong preference 
-% between the styles, suggesting that the presence of guidance was more important than the specific highlight style 
-% used.
-
-% % -----------------------------------------------------------------------------------------
-% % SURVEY QUALITATIVE RESULTS
-% % -----------------------------------------------------------------------------------------
-% \subsection{Qualitative Feedback}
-% The post-experiment survey included open-ended questions to gather detailed feedback. The thematic analysis of 
-% these responses revealed two primary findings:
-
-% \paragraph{Efficiency and Speed}
-% When asked to identify the biggest difference between the two versions, the majority of participants cited 
-% \textit{efficiency}. Responses frequently described the enhanced version as ``faster''. This aligns with the quantitative preference data, suggesting that the reusability 
-% features successfully reduced the perceived workload.
-
-% \paragraph{Suggestions for Improvement}
-% Participants also provided constructive feedback regarding the function blocks. Two participants specifically 
-% suggested that the system should more clearly \textit{``specify parameter names''} within the function blocks to 
-% improve clarity. Another participant noted that the function call block should be pre-configured for immediate 
-% use in the blockchain. These suggestions highlight a need for clearer labeling in future iterations of the 
-% interface.
-
-
-
-
-
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{10pt}
-%     \renewcommand{\arraystretch}{1.2}
-%     \begin{tabular}{|l|c|c|}
-%         \hline
-%         \textbf{Participant ID} & \textbf{SUS Score} & \textbf{Adjective Rating} \\
-%         \hline
-%         P01 & 100.0 & Excellent \\
-%         P02 & 100.0 & Excellent \\
-%         P03 & 97.5 & Excellent \\
-%         P04 & 95.0 & Excellent \\
-%         P05 & 95.0 & Excellent \\
-%         P06 & 92.5 & Excellent \\
-%         P07 & 87.5 & Excellent \\
-%         P08 & 85.0 & Excellent \\
-%         P09 & 82.5 & Very Good \\
-%         P10 & 80.0 & Very Good \\
-%         P11 & 80.0 & Very Good \\
-%         P12 & 80.0 & Very Good \\
-%         P13 & 80.0 & Very Good \\
-%         P14 & 77.5 & Very Good \\
-%         P15 & 77.5 & Very Good \\
-%         P16 & 75.0 & Very Good \\
-%         P17 & 75.0 & Very Good \\
-%         P18 & 52.5 & OK \\
-%         \hline
-%         \textbf{Mean Score} & \textbf{84.03} & \textbf{Excellent} \\
-%         \textbf{Median Score} & \textbf{81.25} & \textbf{Very Good} \\
-%         \textbf{Highest Score} & \textbf{100.0} & \textbf{Excellent} \\
-%         \textbf{Lowest Score} & \textbf{52.5} & \textbf{OK} \\
-%         \hline
-%     \end{tabular}
-%     \caption{System Usability Scale (SUS) Scores}
-%     \label{tab:sus_scores}
-% \end{table}
-
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{our_sus graphs_noOutlier.png}
-%     \caption{System Usability Scale (SUS) Analysis Results. (a) Distribution of SUS Scores among Participants. (b) Dual classification showing Bangor et al.'s adjective ratings (left) and Sauro \& Lewis letter grades (right).}
-%     \label{fig:sus_dist}
-% \end{figure}
-
-
-% \begin{figure}[h]
-% \centering
-% % Use PDF (vector) if present, otherwise PNG/JPG
-% \includebestgraphics[width=1.1\columnwidth]{individual_changes}
-% \caption{Individual task completion times}
-% \label{fig:individual_times}
-% \end{figure}
-
-
-%\vspace{1em}
-%\noindent\textit{``The statistical analysis reveals a highly efficient user experience (M=2.00). While users invested a modest amount of effort to complete tasks (M=3.00), they did so without feeling rushed (Temporal M=1.06) or frustrated (Frustration M=1.83). With the exception of a single outlier, the data demonstrates a strong consistency that the feature requires minimal cognitive and physical load.''}
-
-% \subsubsection{Outlier Consideration}
-% Participant P03 reported significantly elevated workload scores across most dimensions 
-% (mean: 4.33) compared to the rest of the participants, with ratings of 5 (Moderate workload) for mental demand, physical demand, 
-% effort, and frustration. 
-% Excluding this outlier, the remaining participants showed remarkably consistent low 
-% workload scores (mean: 1.58), with 17 out of 18 reporting individual mean scores below 
-% 2.0. This consistency demonstrates that the Reuse Assistant imposes a low cognitive load 
-% on the vast majority of the target user population.
-
-
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{8pt}
-%     \renewcommand{\arraystretch}{1.2}
-%     \begin{tabular}{|l|c|c|c|c|c|c|c|}
-%         \hline
-%         \textbf{Participant} & \textbf{Mental} & \textbf{Physical} & \textbf{Temporal} & \textbf{Performance} & \textbf{Effort} & \textbf{Frustration} & \textbf{Mean} \\
-%         \hline
-%         P01 & 2 & 1 & 1 & 1 & 2 & 1 & 1.33 \\
-%         P02 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-%         P03 & 5 & 5 & 1 & 5 & 5 & 5 & 4.33 \\
-%         P04 & 1 & 1 & 1 & 1 & 2 & 1 & 1.17 \\
-%         P05 & 3 & 3 & 1 & 2 & 3 & 2 & 2.33 \\
-%         P06 & 4 & 2 & 1 & 3 & 5 & 2 & 2.83 \\
-%         P07 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-%         P08 & 1 & 1 & 1 & 1 & 1 & 1 & 1.00 \\
-%         P09 & 2 & 2 & 1 & 2 & 2 & 2 & 1.83 \\
-%         P10 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-%         P11 & 3 & 2 & 1 & 2 & 4 & 2 & 2.33 \\
-%         P12 & 3 & 1 & 1 & 2 & 3 & 2 & 2.00 \\
-%         P13 & 4 & 1 & 1 & 2 & 5 & 3 & 2.67 \\
-%         P14 & 2 & 2 & 1 & 3 & 3 & 1 & 2.00 \\
-%         P15 & 3 & 2 & 1 & 2 & 3 & 3 & 2.33 \\
-%         P16 & 2 & 1 & 1 & 2 & 3 & 1 & 1.67 \\
-%         P17 & 3 & 1 & 1 & 2 & 1 & 1 & 1.50 \\
-%         P18 & 1 & 1 & 2 & 1 & 2 & 1 & 1.33 \\
-%         \hline
-%         \multicolumn{7}{|r|}{\textbf{Overall Mean Score:}} & \textbf{1.92} \\
-%         \hline
-%     \end{tabular}
-%     \caption{Workload Scores by Participant and Dimension}
-%     \label{tab:nasa_tlx}
-% \end{table}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=1.0\textwidth]{nasa_tlx_analysis_scaled.png}
-%     \caption{Workload mean scores for the Reuse Assistant on each dimension. Scores are presented on a scale of 1–10.}
-%     \label{fig:workload_dist}
-% \end{figure}

@@ -1,0 +1,231 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{16}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Adler et~al\mbox{.}(2021)]%
+        {Adler2021Improving}
+\bibfield{author}{\bibinfo{person}{Felix Adler}, \bibinfo{person}{Gordon
+  Fraser}, \bibinfo{person}{Eva Gr{\"u}ndinger}, \bibinfo{person}{Nina
+  K{\"o}rber}, \bibinfo{person}{Simon Labrenz}, \bibinfo{person}{Jonas
+  Lerchenberger}, \bibinfo{person}{Stephan Lukasczyk}, {and}
+  \bibinfo{person}{Sebastian Schweikl}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Improving Readability of Scratch Programs with
+  Search-Based Refactoring}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  IEEE/ACM 43rd International Conference on Software Engineering: Companion
+  Proceedings (ICSE-SEET)}}. \bibinfo{publisher}{IEEE}.
+\newblock
+\href{https://doi.org/10.1109/ICSE-Companion.2021.00105}{doi:\nolinkurl{10.1109/ICSE-Companion.2021.00105}}
+
+
+\bibitem[Bangor et~al\mbox{.}(2009)]%
+        {bangor2009determining}
+\bibfield{author}{\bibinfo{person}{Aaron Bangor}, \bibinfo{person}{Philip
+  Kortum}, {and} \bibinfo{person}{James~T Miller}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Determining what individual SUS scores mean: Adding
+  an adjective rating scale}.
+\newblock \bibinfo{journal}{\emph{Journal of usability studies}}
+  \bibinfo{volume}{4}, \bibinfo{number}{3} (\bibinfo{year}{2009}),
+  \bibinfo{pages}{114--123}.
+\newblock
+
+
+\bibitem[Bass et~al\mbox{.}(2021)]%
+        {SoftwareArchitectureInPractice}
+\bibfield{author}{\bibinfo{person}{Len Bass}, \bibinfo{person}{Paul Clements},
+  {and} \bibinfo{person}{Rick Kazman}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Software Architecture in Practice, 4th
+  Edition}}.
+\newblock \bibinfo{publisher}{Addison-Wesley Professional}.
+\newblock
+
+
+\bibitem[Blackwell(2002)]%
+        {BlackwellAttentionInvestment}
+\bibfield{author}{\bibinfo{person}{Alan~F. Blackwell}.}
+  \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{First Steps in Programming: A Rationale for
+  Attention Investment Models}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  IEEE Symposia on Human Centric Computing Languages and Environments}}.
+  \bibinfo{publisher}{IEEE Computer Society}, \bibinfo{pages}{2--10}.
+\newblock
+\href{https://doi.org/10.1109/HCC.2002.1046334}{doi:\nolinkurl{10.1109/HCC.2002.1046334}}
+
+
+\bibitem[Blackwell and Green(2003)]%
+        {BlackwellCognitiveDimensions}
+\bibfield{author}{\bibinfo{person}{Alan~F. Blackwell} {and}
+  \bibinfo{person}{Thomas R.~G. Green}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Notational Systems - The Cognitive Dimensions of
+  Notations Framework}.
+\newblock \bibinfo{journal}{\emph{HCI Models, Theories, and Frameworks: Toward
+  a Multidisciplinary Science}} (\bibinfo{year}{2003}),
+  \bibinfo{pages}{103--133}.
+\newblock
+
+
+\bibitem[Bock and Frank(2021)]%
+        {LowCodePlatform}
+\bibfield{author}{\bibinfo{person}{Alexander Bock} {and}
+  \bibinfo{person}{Ulrich Frank}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Low-Code Platform}.
+\newblock \bibinfo{journal}{\emph{Business and Information Systems
+  Engineering}}  \bibinfo{volume}{63} (\bibinfo{year}{2021}).
+\newblock
+\href{https://doi.org/10.1007/s12599-021-00726-8}{doi:\nolinkurl{10.1007/s12599-021-00726-8}}
+
+
+\bibitem[Brooke(1996)]%
+        {brooke1996sus}
+\bibfield{author}{\bibinfo{person}{John Brooke}.}
+  \bibinfo{year}{1996}\natexlab{}.
+\newblock \showarticletitle{SUS: A 'Quick and Dirty' Usability Scale}.
+\newblock In \bibinfo{booktitle}{\emph{Usability Evaluation in Industry}},
+  \bibfield{editor}{\bibinfo{person}{Patrick~W. Jordan}, \bibinfo{person}{Bruce
+  Thomas}, \bibinfo{person}{Bernard~A. Weerdmeester}, {and}
+  \bibinfo{person}{Ian~L. McClelland}} (Eds.). \bibinfo{publisher}{Taylor \&
+  Francis}, \bibinfo{address}{London}, \bibinfo{pages}{189--194}.
+\newblock
+
+
+\bibitem[Devore(2015)]%
+        {devore2015probability}
+\bibfield{author}{\bibinfo{person}{Jay~L Devore}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Probability and Statistics for Engineering
+  and the Sciences} (\bibinfo{edition}{9th} ed.)}.
+\newblock \bibinfo{publisher}{Cengage Learning}, \bibinfo{address}{Boston, MA}.
+\newblock
+
+
+\bibitem[Hart and Staveland(1988)]%
+        {hart1988development}
+\bibfield{author}{\bibinfo{person}{Sandra~G Hart} {and}
+  \bibinfo{person}{Lowell~E Staveland}.} \bibinfo{year}{1988}\natexlab{}.
+\newblock \showarticletitle{Development of NASA-TLX (Task Load Index): Results
+  of empirical and theoretical research}.
+\newblock In \bibinfo{booktitle}{\emph{Human Mental Workload}},
+  \bibfield{editor}{\bibinfo{person}{Peter~A Hancock} {and}
+  \bibinfo{person}{Najmedin Meshkati}} (Eds.).
+  \bibinfo{publisher}{North-Holland}, \bibinfo{address}{Amsterdam},
+  \bibinfo{pages}{139--183}.
+\newblock
+
+
+\bibitem[Ko et~al\mbox{.}(2004)]%
+        {KoLearningBarriers}
+\bibfield{author}{\bibinfo{person}{Andrew~J. Ko}, \bibinfo{person}{Brad~A.
+  Myers}, {and} \bibinfo{person}{Htet~Htet Aung}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Six Learning Barriers in End-User Programming
+  Systems}.
+\newblock \bibinfo{journal}{\emph{IEEE Symposium on Visual Languages and
+  Human-Centric Computing (VL/HCC)}} (\bibinfo{year}{2004}),
+  \bibinfo{pages}{199--206}.
+\newblock
+\href{https://doi.org/10.1109/VLHCC.2004.47}{doi:\nolinkurl{10.1109/VLHCC.2004.47}}
+
+
+\bibitem[Lin and Weintrop(2021)]%
+        {Lin2021Landscape}
+\bibfield{author}{\bibinfo{person}{Yuhan Lin} {and} \bibinfo{person}{David
+  Weintrop}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{The Landscape of Block-Based Programming:
+  Characteristics of Block-Based Environments and How They Support the
+  Transition to Text-Based Programming}.
+\newblock \bibinfo{journal}{\emph{Journal of Computer Languages}}
+  \bibinfo{volume}{67} (\bibinfo{year}{2021}), \bibinfo{pages}{101075}.
+\newblock
+\href{https://doi.org/10.1016/j.cola.2021.101075}{doi:\nolinkurl{10.1016/j.cola.2021.101075}}
+
+
+\bibitem[Lourenço et~al\mbox{.}(2021)]%
+        {OSTRICH}
+\bibfield{author}{\bibinfo{person}{Hugo Lourenço}, \bibinfo{person}{Carla
+  Ferreira}, {and} \bibinfo{person}{João~Costa Seco}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{OSTRICH - A Type-Safe Template Language for
+  Low-Code Development}. In \bibinfo{booktitle}{\emph{2021 ACM/IEEE 24th
+  International Conference on Model Driven Engineering Languages and Systems
+  (MODELS)}}. \bibinfo{pages}{216--226}.
+\newblock
+\href{https://doi.org/10.1109/MODELS50736.2021.00030}{doi:\nolinkurl{10.1109/MODELS50736.2021.00030}}
+
+
+\bibitem[Magdalin(2012)]%
+        {webflow}
+\bibfield{author}{\bibinfo{person}{Vlad Magdalin}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \bibinfo{title}{Low code platform tool Webflow}.
+\newblock \bibinfo{howpublished}{\url{https://webflow.com/}}.
+\newblock
+
+
+\bibitem[Roos(2005)]%
+        {mendix}
+\bibfield{author}{\bibinfo{person}{Derek Roos}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \bibinfo{title}{Low code platform tool Mendix}.
+\newblock \bibinfo{howpublished}{\url{https://www.mendix.com/}}.
+\newblock
+
+
+\bibitem[Welch(1947)]%
+        {welch1947generalization}
+\bibfield{author}{\bibinfo{person}{Bernard~L Welch}.}
+  \bibinfo{year}{1947}\natexlab{}.
+\newblock \showarticletitle{The generalization of 'Student's' problem when
+  several different population variances are involved}.
+\newblock \bibinfo{journal}{\emph{Biometrika}} \bibinfo{volume}{34},
+  \bibinfo{number}{1-2} (\bibinfo{year}{1947}), \bibinfo{pages}{28--35}.
+\newblock
+\href{https://doi.org/10.1093/biomet/34.1-2.28}{doi:\nolinkurl{10.1093/biomet/34.1-2.28}}
+
+
+\bibitem[Wieringa(2014)]%
+        {Wieringa2014}
+\bibfield{author}{\bibinfo{person}{Roel~J. Wieringa}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Design Science Methodology for Information
+  Systems and Software Engineering}}.
+\newblock \bibinfo{publisher}{Springer}, \bibinfo{address}{Berlin, Heidelberg}.
+\newblock
+\showISBNx{978-3-662-43838-1}
+\href{https://doi.org/10.1007/978-3-662-43839-8}{doi:\nolinkurl{10.1007/978-3-662-43839-8}}
+
+
+\end{thebibliography}
