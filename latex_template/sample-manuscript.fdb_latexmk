@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex sample-manuscript"] 1767171855.70513 "sample-manuscript.aux" "sample-manuscript.bbl" "sample-manuscript" 1767171861.19043 0
+["bibtex sample-manuscript"] 1767171855.70513 "sample-manuscript.aux" "sample-manuscript.bbl" "sample-manuscript" 1767174782.03811 0
   "./ACM-Reference-Format.bst" 1767170764 96784 12e0ced1522ea2bfa9b2fb12855c7e9e ""
   "./sample-base.bib" 1767170764 62038 d9215c0b84d7b181cf52fa9a3c03454f ""
-  "sample-manuscript.aux" 1767171860 16146 85b418d30badfeb0913cfe50ebe9f541 "pdflatex"
+  "sample-manuscript.aux" 1767174781 16146 85b418d30badfeb0913cfe50ebe9f541 "pdflatex"
   (generated)
   "sample-manuscript.bbl"
   "sample-manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1767171855.98869 "c:/Users/annem/Desktop/latex_EndUserDev_Report/latex_template/sample-manuscript.tex" "sample-manuscript.pdf" "sample-manuscript" 1767171861.19104 0
+["pdflatex"] 1767174777.06298 "c:/Users/annem/Desktop/latex_EndUserDev_Report/latex_template/sample-manuscript.tex" "sample-manuscript.pdf" "sample-manuscript" 1767174782.03869 0
   "C:/Users/annem/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766151482 187664 65fa417f6850b604c49bfafe76826e39 ""
   "C:/Users/annem/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1766077589 13333512 64e1b6aeb8e6869c8433e28606e46164 ""
   "C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1497089888 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
@@ -210,7 +210,7 @@
   "C:/Users/annem/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/annem/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "acmart.cls" 1767170764 126053 bf94e8b8ef9ae7d25b87840eb83e79b2 ""
-  "c:/Users/annem/Desktop/latex_EndUserDev_Report/latex_template/sample-manuscript.tex" 1767171849 87102 0cdf369c0428c1c496b4a14a3c5e35f0 ""
+  "c:/Users/annem/Desktop/latex_EndUserDev_Report/latex_template/sample-manuscript.tex" 1767174776 83674 82c2649f0b4b02b09b519cbbaad58cf7 ""
   "images/ArchitectureH2.png" 1767170764 800081 fa4c8ed549ba41e00f7cfbad80fa192f ""
   "images/Boxplot.png" 1767170764 606728 1977ad735532e9e8ead4242f17c3fbea ""
   "images/custom_component.png" 1767170764 157569 770fff73b7fd5557c320ee2369fcf02a ""
@@ -219,10 +219,10 @@
   "images/nasa_tlx_analysis_scaled.png" 1767170764 284888 cf43e515670ffe6914298ab02912feeb ""
   "images/our_sus graphs_noOutlier.png" 1767170764 401143 bd81114d5bccd5060a04b31bdc0461ce ""
   "images/updatedHighlight.png" 1767170764 140660 f1f6e634ad89cec0bb4619863e1259c6 ""
-  "sample-manuscript.aux" 1767171860 16146 85b418d30badfeb0913cfe50ebe9f541 "pdflatex"
+  "sample-manuscript.aux" 1767174781 16146 85b418d30badfeb0913cfe50ebe9f541 "pdflatex"
   "sample-manuscript.bbl" 1767171855 10002 bdc61426de9922b530a851cd67ecc226 "bibtex sample-manuscript"
-  "sample-manuscript.out" 1767171860 5420 b114f3e950f87c311b3292ee915725a5 "pdflatex"
-  "sample-manuscript.tex" 1767171849 87102 0cdf369c0428c1c496b4a14a3c5e35f0 ""
+  "sample-manuscript.out" 1767174781 5420 b114f3e950f87c311b3292ee915725a5 "pdflatex"
+  "sample-manuscript.tex" 1767174776 83674 82c2649f0b4b02b09b519cbbaad58cf7 ""
   (generated)
   "sample-manuscript.aux"
   "sample-manuscript.log"
