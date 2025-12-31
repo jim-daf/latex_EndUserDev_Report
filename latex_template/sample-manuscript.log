@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.18)  31 DEC 2025 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.18)  31 DEC 2025 11:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1086,13 +1086,13 @@ Package rerunfilecheck Info: File `sample-manuscript.out' has not changed.
 Here is how much of TeX's memory you used:
  22281 strings out of 467871
  367412 string characters out of 5418375
- 848959 words of memory out of 5000000
+ 849958 words of memory out of 5000000
  49906 multiletter control sequences out of 15000+600000
  827023 words of font info for 475 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,17n,131p,1076b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/LibertineMathMI7.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumT.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTB.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTBI.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/annem/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-manuscript.pdf (22 pages, 3022909 bytes).
+Output written on sample-manuscript.pdf (22 pages, 3022911 bytes).
 PDF statistics:
  491 PDF objects out of 1000 (max. 8388607)
  163 named destinations out of 1000 (max. 500000)
