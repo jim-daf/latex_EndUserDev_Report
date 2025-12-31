@@ -1,0 +1,119 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{7}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Adler et~al\mbox{.}(2021)]%
+        {Adler2021Improving}
+\bibfield{author}{\bibinfo{person}{Felix Adler}, \bibinfo{person}{Gordon
+  Fraser}, \bibinfo{person}{Eva Gr{\"u}ndinger}, \bibinfo{person}{Nina
+  K{\"o}rber}, \bibinfo{person}{Simon Labrenz}, \bibinfo{person}{Jonas
+  Lerchenberger}, \bibinfo{person}{Stephan Lukasczyk}, {and}
+  \bibinfo{person}{Sebastian Schweikl}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Improving Readability of Scratch Programs with
+  Search-Based Refactoring}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  IEEE/ACM 43rd International Conference on Software Engineering: Companion
+  Proceedings (ICSE-SEET)}}. \bibinfo{publisher}{IEEE}.
+\newblock
+\href{https://doi.org/10.1109/ICSE-Companion.2021.00105}{doi:\nolinkurl{10.1109/ICSE-Companion.2021.00105}}
+
+
+\bibitem[Bass et~al\mbox{.}(2021)]%
+        {SoftwareArchitectureInPractice}
+\bibfield{author}{\bibinfo{person}{Len Bass}, \bibinfo{person}{Paul Clements},
+  {and} \bibinfo{person}{Rick Kazman}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Software Architecture in Practice, 4th
+  Edition}}.
+\newblock \bibinfo{publisher}{Addison-Wesley Professional}.
+\newblock
+
+
+\bibitem[Bock and Frank(2021)]%
+        {LowCodePlatform}
+\bibfield{author}{\bibinfo{person}{Alexander Bock} {and}
+  \bibinfo{person}{Ulrich Frank}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Low-Code Platform}.
+\newblock \bibinfo{journal}{\emph{Business and Information Systems
+  Engineering}}  \bibinfo{volume}{63} (\bibinfo{year}{2021}).
+\newblock
+\href{https://doi.org/10.1007/s12599-021-00726-8}{doi:\nolinkurl{10.1007/s12599-021-00726-8}}
+
+
+\bibitem[Lin and Weintrop(2021)]%
+        {Lin2021Landscape}
+\bibfield{author}{\bibinfo{person}{Yuhan Lin} {and} \bibinfo{person}{David
+  Weintrop}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{The Landscape of Block-Based Programming:
+  Characteristics of Block-Based Environments and How They Support the
+  Transition to Text-Based Programming}.
+\newblock \bibinfo{journal}{\emph{Journal of Computer Languages}}
+  \bibinfo{volume}{67} (\bibinfo{year}{2021}), \bibinfo{pages}{101075}.
+\newblock
+\href{https://doi.org/10.1016/j.cola.2021.101075}{doi:\nolinkurl{10.1016/j.cola.2021.101075}}
+
+
+\bibitem[Lourenço et~al\mbox{.}(2021)]%
+        {OSTRICH}
+\bibfield{author}{\bibinfo{person}{Hugo Lourenço}, \bibinfo{person}{Carla
+  Ferreira}, {and} \bibinfo{person}{João~Costa Seco}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{OSTRICH - A Type-Safe Template Language for
+  Low-Code Development}. In \bibinfo{booktitle}{\emph{2021 ACM/IEEE 24th
+  International Conference on Model Driven Engineering Languages and Systems
+  (MODELS)}}. \bibinfo{pages}{216--226}.
+\newblock
+\href{https://doi.org/10.1109/MODELS50736.2021.00030}{doi:\nolinkurl{10.1109/MODELS50736.2021.00030}}
+
+
+\bibitem[Magdalin(2012)]%
+        {webflow}
+\bibfield{author}{\bibinfo{person}{Vlad Magdalin}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \bibinfo{title}{Low code platform tool Webflow}.
+\newblock \bibinfo{howpublished}{\url{https://webflow.com/}}.
+\newblock
+
+
+\bibitem[Roos(2005)]%
+        {mendix}
+\bibfield{author}{\bibinfo{person}{Derek Roos}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \bibinfo{title}{Low code platform tool Mendix}.
+\newblock \bibinfo{howpublished}{\url{https://www.mendix.com/}}.
+\newblock
+
+
+\end{thebibliography}
